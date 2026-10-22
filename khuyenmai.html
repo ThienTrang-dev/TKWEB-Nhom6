@@ -6,16 +6,686 @@
   <title>Khuyến Mãi Đặc Biệt - NETTO Clothes</title>
   <!-- Google Fonts tạo phong cách nữ tính, thanh lịch cho Nét Tơ -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Liên kết External CSS theo chuẩn Chương 3 -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <!-- Liên kết External JS với defer theo chuẩn Chương 5 -->
-  <script src="assets/js/app.js" defer></script>
+  
+  <!-- ==================== PHẦN 2 ĐÃ GỘP: INTERNAL CSS ==================== -->
+  <style>
+    /* 1. BIẾN MÀU SẮC & RESET CƠ BẢN (DESIGN SYSTEM NETTO CLOTHES) */
+    :root {
+      --netto-pink: #FAD2D8;         /* Hồng phấn pastel thanh Header */
+      --netto-pink-light: #FFF5F7;   /* Nền hồng nhạt */
+      --netto-accent: #E86C8D;       /* Hồng đậm cho nút bấm & điểm nhấn */
+      --netto-cream: #FFFDF9;        /* Nền trang kem ấm */
+      --netto-black: #111111;        /* Đen tuyền cho dải dịch vụ & Footer */
+      --text-primary: #232837;
+      --text-secondary: #666666;
+      --border-soft: #F0E4E6;
+      --success-green: #18794E;
+      --success-bg: #E6F7ED;
+      --shadow-card: 0 6px 20px rgba(232, 108, 141, 0.08);
+      --radius-md: 12px;
+      --radius-lg: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+      background-color: var(--netto-cream);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: 0.25s ease;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* 2. HEADER & NAVIGATION (2 TẦNG) */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #ffffff;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .header-top {
+      background-color: var(--netto-pink);
+      padding: 14px 0;
+    }
+
+    .header-top-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 8px;
+      color: var(--netto-black);
+    }
+
+    .search-bar {
+      display: flex;
+      flex: 1;
+      max-width: 480px;
+      background: #ffffff;
+      border-radius: 999px;
+      padding: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .search-bar select {
+      border: none;
+      background: transparent;
+      padding: 8px 14px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-right: 1px solid #eeeeee;
+      outline: none;
+    }
+
+    .search-bar input {
+      flex: 1;
+      border: none;
+      padding: 8px 14px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .search-bar button {
+      background: var(--netto-black);
+      color: #ffffff;
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .user-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .cart-badge {
+      background: var(--netto-black);
+      color: #ffffff;
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 99px;
+      margin-left: 4px;
+    }
+
+    .header-nav {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 52px;
+    }
+
+    .main-menu {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .main-menu a:hover,
+    .main-menu a.active {
+      color: var(--netto-accent);
+    }
+
+    .hotline {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .hotline strong {
+      color: var(--netto-accent);
+    }
+
+    /* 3. DẢI DỊCH VỤ NỀN ĐEN (4 CAM KẾT) */
+    .service-strip {
+      background-color: var(--netto-black);
+      color: #ffffff;
+      padding: 18px 0;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      text-align: center;
+    }
+
+    .service-item h4 {
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .service-item p {
+      font-size: 12px;
+      color: #bbbbbb;
+    }
+
+    /* 4. BREADCRUMB & BANNER MỞ ĐẦU */
+    .breadcrumb {
+      padding: 18px 0;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .breadcrumb .current {
+      color: var(--netto-accent);
+      font-weight: 600;
+    }
+
+    .promo-hero {
+      background: linear-gradient(135deg, #FDE8EC 0%, #FFF7F8 100%);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 40px 28px;
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .hero-subtitle {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--netto-accent);
+      margin-bottom: 8px;
+    }
+
+    .promo-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: var(--netto-black);
+      margin-bottom: 10px;
+    }
+
+    .promo-hero p {
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+
+    .promo-filter-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .filter-btn {
+      background: #ffffff;
+      border: 1px solid var(--border-soft);
+      padding: 10px 20px;
+      border-radius: 99px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--netto-accent);
+    }
+
+    .filter-btn.active {
+      background: var(--netto-black);
+      color: #ffffff;
+      border-color: var(--netto-black);
+    }
+
+    /* 5. KHỐI CHƯƠNG TRÌNH KHUYẾN MÃI TỰ ĐỘNG */
+    .promo-section {
+      margin-bottom: 56px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--netto-pink);
+      gap: 16px;
+    }
+
+    .section-header h2 {
+      font-size: 22px;
+      color: var(--netto-black);
+      margin-bottom: 4px;
+    }
+
+    .section-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .status-pill {
+      background: var(--success-bg);
+      color: var(--success-green);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 99px;
+      white-space: nowrap;
+    }
+
+    .campaign-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .campaign-card {
+      background: #ffffff;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      padding: 26px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease;
+    }
+
+    .campaign-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .campaign-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .campaign-badge {
+      background: var(--netto-pink);
+      color: var(--netto-black);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 6px;
+    }
+
+    .campaign-badge.hot {
+      background: #FFE4E6;
+      color: #E11D48;
+    }
+
+    .campaign-badge.gift {
+      background: #FEF3C7;
+      color: #B45309;
+    }
+
+    .discount-tag {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--netto-accent);
+    }
+
+    .campaign-card h3 {
+      font-size: 19px;
+      color: var(--netto-black);
+      margin-bottom: 8px;
+    }
+
+    .campaign-quote {
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-secondary);
+      background: var(--netto-pink-light);
+      padding: 10px 12px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+
+    .campaign-details {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .campaign-details li {
+      margin-bottom: 8px;
+    }
+
+    .text-success {
+      color: var(--success-green);
+      font-weight: 700;
+    }
+
+    .btn-explore {
+      display: inline-block;
+      text-align: center;
+      background: var(--netto-pink-light);
+      color: var(--netto-accent);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--netto-pink);
+    }
+
+    .btn-explore:hover {
+      background: var(--netto-accent);
+      color: #ffffff;
+    }
+
+    /* 6. KHỐI MÃ KHUYẾN MÃI (VOUCHER TICKET) */
+    .voucher-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .voucher-ticket {
+      display: flex;
+      background: #ffffff;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.25s ease;
+    }
+
+    .voucher-ticket:hover {
+      transform: translateY(-4px);
+      border-color: var(--netto-accent);
+    }
+
+    .voucher-stub {
+      width: 118px;
+      background: var(--netto-pink);
+      color: var(--netto-black);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 10px;
+      text-align: center;
+      border-right: 2px dashed #ffffff;
+      flex-shrink: 0;
+    }
+
+    .voucher-stub.freeship {
+      background: #FDE2E7;
+    }
+
+    .voucher-stub.newfriend {
+      background: #F9E8EC;
+    }
+
+    .stub-type {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .stub-value {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--netto-accent);
+      line-height: 1.2;
+      margin: 4px 0;
+    }
+
+    .stub-max {
+      font-size: 11px;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.75);
+      padding: 2px 8px;
+      border-radius: 99px;
+    }
+
+    .voucher-body {
+      flex: 1;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .voucher-info h3 {
+      font-size: 16px;
+      color: var(--netto-black);
+      margin-bottom: 6px;
+    }
+
+    .voucher-info p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+
+    .voucher-meta {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    .voucher-meta li {
+      margin-bottom: 4px;
+    }
+
+    .voucher-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 12px;
+      border-top: 1px dashed #eeeeee;
+    }
+
+    .code-wrapper {
+      font-size: 13px;
+    }
+
+    .voucher-code {
+      background: var(--netto-pink-light);
+      color: var(--netto-accent);
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--netto-pink);
+      font-size: 13px;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-copy {
+      background: var(--netto-black);
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .btn-copy:hover {
+      background: var(--netto-accent);
+    }
+
+    .btn-copy.copied {
+      background: var(--success-green);
+    }
+
+    .promo-reminder {
+      margin-top: 28px;
+      background: #ffffff;
+      border-left: 4px solid var(--success-green);
+      padding: 18px 22px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-card);
+    }
+
+    .promo-reminder p {
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+
+    .promo-reminder span {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    /* 7. FOOTER NỀN ĐEN */
+    .site-footer {
+      background: var(--netto-black);
+      color: #ffffff;
+      padding: 56px 0 24px;
+      margin-top: 64px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 32px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #2a2a2a;
+    }
+
+    .footer-brand .logo {
+      color: #ffffff;
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    .footer-contact li {
+      font-size: 14px;
+      color: #cccccc;
+      margin-bottom: 10px;
+    }
+
+    .footer-contact strong {
+      color: var(--netto-pink);
+    }
+
+    .footer-col h4 {
+      font-size: 15px;
+      margin-bottom: 18px;
+      color: var(--netto-pink);
+      text-transform: uppercase;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #bbbbbb;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--netto-pink);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 24px;
+      font-size: 13px;
+      color: #777777;
+    }
+
+    /* Toast thông báo góc phải dưới */
+    .toast-notify {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--netto-black);
+      color: #ffffff;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-size: 14px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      border-left: 4px solid var(--netto-accent);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(12px);
+      transition: 0.3s ease;
+      z-index: 2000;
+    }
+
+    .toast-notify.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 8. RESPONSIVE MEDIA QUERIES (CHƯƠNG 4) */
+    @media (max-width: 992px) {
+      .campaign-grid,
+      .voucher-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .service-grid,
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-top-inner,
+      .nav-inner,
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .search-bar {
+        width: 100%;
+        max-width: 100%;
+      }
+      .main-menu {
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+      .campaign-grid,
+      .voucher-grid,
+      .service-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ==================== LAYER 1: HEADER & NAVIGATION ==================== -->
+  <!-- ==================== PHẦN 1: CẤU TRÚC HTML5 ==================== -->
+  <!-- LAYER 1: HEADER & NAVIGATION -->
   <header class="site-header">
-    <!-- Topbar hồng pastel đặc trưng của NETTO -->
     <div class="header-top">
       <div class="container header-top-inner">
         <a href="index.html" class="logo">NETTO</a>
@@ -39,7 +709,6 @@
       </div>
     </div>
 
-    <!-- Thanh điều hướng chính (8 mục theo mục 2.1.3 báo cáo) -->
     <nav class="header-nav" aria-label="Menu chính">
       <div class="container nav-inner">
         <ul class="main-menu">
@@ -59,7 +728,7 @@
     </nav>
   </header>
 
-  <!-- ==================== LAYER 2: DẢI DỊCH VỤ NỀN ĐEN ==================== -->
+  <!-- LAYER 2: DẢI DỊCH VỤ NỀN ĐEN -->
   <section class="service-strip" aria-label="Quyền lợi mua sắm">
     <div class="container service-grid">
       <div class="service-item">
@@ -81,20 +750,17 @@
     </div>
   </section>
 
-  <!-- ==================== LAYER 3: NỘI DUNG KHUYẾN MÃI (MAIN) ==================== -->
+  <!-- LAYER 3: NỘI DUNG KHUYẾN MÃI (MAIN) -->
   <main class="container">
-    <!-- Điều hướng phụ Breadcrumb -->
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="index.html">Trang chủ</a> &nbsp;›&nbsp; <span class="current">Khuyến mãi đặc biệt</span>
     </nav>
 
-    <!-- Hero Banner giới thiệu trang Khuyến mãi -->
     <section class="promo-hero">
       <span class="hero-subtitle">NETTO EXCLUSIVE DEALS</span>
       <h1>Khuyến Mãi Đặc Biệt</h1>
       <p>Khám phá các chương trình ưu đãi tự động và kho mã voucher độc quyền dành riêng cho nàng tại Nét Tơ.</p>
       
-      <!-- Bộ lọc chuyển nhanh giữa 2 nhóm khuyến mãi -->
       <div class="promo-filter-bar">
         <button type="button" class="filter-btn active" data-filter="all">Tất cả ưu đãi (6)</button>
         <button type="button" class="filter-btn" data-filter="campaign">Chương trình tự động (3)</button>
@@ -102,7 +768,7 @@
       </div>
     </section>
 
-    <!-- KHỐI 1: CHƯƠNG TRÌNH KHUYẾN MÃI (Áp dụng tự động vào giỏ hàng) -->
+    <!-- KHỐI 1: CHƯƠNG TRÌNH KHUYẾN MÃI (Áp dụng tự động) -->
     <section id="section-campaign" class="promo-section" data-category="campaign">
       <div class="section-header">
         <div>
@@ -113,51 +779,54 @@
       </div>
 
       <div class="campaign-grid">
-        <!-- Chương trình 1: Combo Bạn Thân -->
         <article class="campaign-card">
-          <div class="campaign-top">
-            <span class="campaign-badge">👭 OUTFIT ĐÔI</span>
-            <span class="discount-tag">-15%</span>
+          <div>
+            <div class="campaign-top">
+              <span class="campaign-badge">👭 OUTFIT ĐÔI</span>
+              <span class="discount-tag">-15%</span>
+            </div>
+            <h3>COMBO BẠN THÂN</h3>
+            <p class="campaign-quote">"Tag ngay cạ cứng – Cùng hứng deal sâu! Lên đồ đôi tiểu thư cực chất xuống phố."</p>
+            <ul class="campaign-details">
+              <li><strong>Ưu đãi:</strong> Giảm ngay <strong>15%</strong> cho các sản phẩm thuộc danh mục <strong>Combo bạn thân</strong> khi mua theo nhóm hoặc từ 2 sản phẩm.</li>
+              <li><strong>Hình thức:</strong> Giảm giá trực tiếp vào giá sản phẩm.</li>
+              <li><strong>Trạng thái:</strong> <span class="text-success">Đang áp dụng</span></li>
+            </ul>
           </div>
-          <h3>COMBO BẠN THÂN</h3>
-          <p class="campaign-quote">"Tag ngay cạ cứng – Cùng hứng deal sâu! Lên đồ đôi tiểu thư cực chất xuống phố."</p>
-          <ul class="campaign-details">
-            <li><strong>Ưu đãi:</strong> Giảm ngay <strong>15%</strong> cho các sản phẩm thuộc danh mục <strong>Combo bạn thân</strong> khi mua theo nhóm hoặc từ 2 sản phẩm.</li>
-            <li><strong>Hình thức:</strong> Giảm giá trực tiếp vào giá sản phẩm.</li>
-            <li><strong>Trạng thái:</strong> <span class="text-success">Đang áp dụng</span></li>
-          </ul>
           <a href="san-pham.html" class="btn-explore">Xem danh mục Combo →</a>
         </article>
 
-        <!-- Chương trình 2: Đông Giá Sốc -->
         <article class="campaign-card">
-          <div class="campaign-top">
-            <span class="campaign-badge hot">🔥 FLASH SALE</span>
-            <span class="discount-tag">-15%</span>
+          <div>
+            <div class="campaign-top">
+              <span class="campaign-badge hot">🔥 FLASH SALE</span>
+              <span class="discount-tag">-15%</span>
+            </div>
+            <h3>HÈ RỰC RỠ - ĐÔNG GIÁ SỐC</h3>
+            <p class="campaign-quote">"Chiến thần mua sắm thông minh săn đồ thu đông trái mùa với mức giá ưu đãi cực sốc."</p>
+            <ul class="campaign-details">
+              <li><strong>Ưu đãi:</strong> Giảm ngay <strong>15%</strong> toàn bộ áo kiểu dài tay, cardigan dệt kim thuộc danh mục <strong>Hè rực rỡ - Đông giá sốc</strong> (số lượng có hạn).</li>
+              <li><strong>Hình thức:</strong> Gạch giá cũ, hiển thị giá mới trực tiếp.</li>
+              <li><strong>Trạng thái:</strong> <span class="text-success">Đang áp dụng</span></li>
+            </ul>
           </div>
-          <h3>HÈ RỰC RỠ - ĐÔNG GIÁ SỐC</h3>
-          <p class="campaign-quote">"Chiến thần mua sắm thông minh săn đồ thu đông trái mùa với mức giá ưu đãi cực sốc."</p>
-          <ul class="campaign-details">
-            <li><strong>Ưu đãi:</strong> Giảm ngay <strong>15%</strong> toàn bộ áo kiểu dài tay, cardigan dệt kim thuộc danh mục <strong>Hè rực rỡ - Đông giá sốc</strong> (số lượng có hạn).</li>
-            <li><strong>Hình thức:</strong> Gạch giá cũ, hiển thị giá mới trực tiếp.</li>
-            <li><strong>Trạng thái:</strong> <span class="text-success">Đang áp dụng</span></li>
-          </ul>
           <a href="san-pham.html" class="btn-explore">Săn deal Đông giá sốc →</a>
         </article>
 
-        <!-- Chương trình 3: Mua X Tặng Y -->
         <article class="campaign-card">
-          <div class="campaign-top">
-            <span class="campaign-badge gift">🎁 MUA X TẶNG Y</span>
-            <span class="discount-tag">QUÀ 0Đ</span>
+          <div>
+            <div class="campaign-top">
+              <span class="campaign-badge gift">🎁 MUA X TẶNG Y</span>
+              <span class="discount-tag">QUÀ 0Đ</span>
+            </div>
+            <h3>QUÀ TẶNG SẢN PHẨM HOT</h3>
+            <p class="campaign-quote">"Chốt áo xinh, rinh kẹp tóc độc quyền – Trọn bộ visual tiểu thư ngọt ngào cùng Netto."</p>
+            <ul class="campaign-details">
+              <li><strong>Ưu đãi:</strong> Mua tối thiểu <strong>01 sản phẩm</strong> thuộc danh mục <strong>Sản phẩm hot</strong>, nhận ngay <strong>01 Kẹp tóc tiểu thư (giá 0đ)</strong> trong mục Quà tặng không bán.</li>
+              <li><strong>Lưu ý:</strong> Khách vui lòng <strong>thêm quà tặng vào giỏ hàng</strong> để hệ thống áp dụng (tối đa 1 lần/đơn).</li>
+              <li><strong>Trạng thái:</strong> <span class="text-success">Đang áp dụng</span></li>
+            </ul>
           </div>
-          <h3>QUÀ TẶNG SẢN PHẨM HOT</h3>
-          <p class="campaign-quote">"Chốt áo xinh, rinh kẹp tóc độc quyền – Trọn bộ visual tiểu thư ngọt ngào cùng Netto."</p>
-          <ul class="campaign-details">
-            <li><strong>Ưu đãi:</strong> Mua tối thiểu <strong>01 sản phẩm</strong> thuộc danh mục <strong>Sản phẩm hot</strong>, nhận ngay <strong>01 Kẹp tóc tiểu thư (giá 0đ)</strong> trong mục Quà tặng không bán.</li>
-            <li><strong>Lưu ý:</strong> Khách vui lòng <strong>thêm quà tặng vào giỏ hàng</strong> để hệ thống áp dụng (tối đa 1 lần/đơn).</li>
-            <li><strong>Trạng thái:</strong> <span class="text-success">Đang áp dụng</span></li>
-          </ul>
           <a href="san-pham.html" class="btn-explore">Khám phá Sản phẩm Hot →</a>
         </article>
       </div>
@@ -174,7 +843,6 @@
       </div>
 
       <div class="voucher-grid">
-        <!-- Voucher 1: GIAM20% -->
         <article class="voucher-ticket">
           <div class="voucher-stub">
             <span class="stub-type">VOUCHER ĐƠN</span>
@@ -201,7 +869,6 @@
           </div>
         </article>
 
-        <!-- Voucher 2: FREESHIP -->
         <article class="voucher-ticket">
           <div class="voucher-stub freeship">
             <span class="stub-type">VẬN CHUYỂN</span>
@@ -214,7 +881,7 @@
               <p>Miễn phí vận chuyển tối đa <strong>40.000đ</strong> (qua đối tác GHN) cho đơn hàng từ <strong>1.000.000đ</strong> trở lên.</p>
               <ul class="voucher-meta">
                 <li>• Hình thức: Miễn phí vận chuyển</li>
-                <li>• Đặc quyền: <strong>Được áp dụng cùng ưu đãi khác</strong> (cộng dồn mã GIAM20% & Đông giá sốc)</li>
+                <li>• Đặc quyền: <strong>Được áp dụng cùng ưu đãi khác</strong></li>
                 <li>• Trạng thái: Đang áp dụng</li>
               </ul>
             </div>
@@ -228,7 +895,6 @@
           </div>
         </article>
 
-        <!-- Voucher 3: CHAOBANMOI -->
         <article class="voucher-ticket">
           <div class="voucher-stub newfriend">
             <span class="stub-type">BẠN MỚI</span>
@@ -256,7 +922,6 @@
         </article>
       </div>
 
-      <!-- Hộp nhắc nhở khách hàng ở cuối trang Khuyến mãi (giống ảnh chụp trang 20 báo cáo) -->
       <div class="promo-reminder">
         <p>💚 <strong>Đừng quên nhập mã khuyến mãi khi thanh toán để nhận ưu đãi tốt nhất từ NETTO nhé!</strong></p>
         <span>NETTO luôn mong muốn mang đến trải nghiệm mua sắm đơn giản, tinh tế và tiết kiệm hơn mỗi ngày.</span>
@@ -264,7 +929,7 @@
     </section>
   </main>
 
-  <!-- ==================== LAYER 4: FOOTER NỀN ĐEN CHUẨN BÁO CÁO ==================== -->
+  <!-- LAYER 4: FOOTER NỀN ĐEN -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -321,5 +986,64 @@
   <!-- Toast thông báo khi bấm Copy mã -->
   <div id="toastNotify" class="toast-notify" role="status" aria-live="polite"></div>
 
+  <!-- ==================== PHẦN 3 ĐÃ GỘP: JAVASCRIPT ==================== -->
+  <script>
+    // 1. Xử lý sự kiện Copy Mã Khuyến Mãi và lưu vào localStorage
+    const copyButtons = document.querySelectorAll('.btn-copy');
+    const toastNotify = document.getElementById('toastNotify');
+
+    function showToast(message) {
+      toastNotify.textContent = message;
+      toastNotify.classList.add('show');
+      setTimeout(() => {
+        toastNotify.classList.remove('show');
+      }, 2800);
+    }
+
+    copyButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const voucherCode = this.getAttribute('data-code');
+
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(voucherCode);
+        }
+
+        localStorage.setItem('selectedNettoVoucher', voucherCode);
+
+        const originalLabel = this.textContent;
+        this.textContent = 'Đã copy ✓';
+        this.classList.add('copied');
+
+        showToast(`🎉 Đã sao chép mã "${voucherCode}"! Hãy dán vào ô Mã giảm giá khi thanh toán.`);
+
+        setTimeout(() => {
+          this.textContent = originalLabel;
+          this.classList.remove('copied');
+        }, 2200);
+      });
+    });
+
+    // 2. Xử lý bộ lọc hiển thị (Tất cả / Chương trình tự động / Mã Voucher)
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const promoSections = document.querySelectorAll('.promo-section');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const selectedFilter = this.getAttribute('data-filter');
+
+        filterButtons.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        promoSections.forEach(section => {
+          const category = section.getAttribute('data-category');
+          if (selectedFilter === 'all' || selectedFilter === category) {
+            section.style.display = 'block';
+          } else {
+            section.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
