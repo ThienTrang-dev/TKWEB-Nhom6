@@ -2,32 +2,677 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Tin Tức</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tin Tức Thời Trang & Cộng Đồng - NETTO Clothes</title>
+  <!-- Google Fonts thanh lịch, nữ tính -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- ==================== INTERNAL CSS ==================== -->
+  <style>
+    :root {
+      --netto-pink: #FAD2D8;         /* Hồng phấn pastel thanh Header */
+      --netto-pink-light: #FFF5F7;   /* Nền hồng nhạt */
+      --netto-accent: #E86C8D;       /* Hồng đậm điểm nhấn */
+      --netto-cream: #FFFDF9;        /* Nền kem ấm đặc trưng */
+      --netto-black: #111111;        /* Đen tuyền cho Footer & dải dịch vụ */
+      --text-primary: #232837;
+      --text-secondary: #666666;
+      --border-soft: #F0E4E6;
+      --shadow-card: 0 6px 20px rgba(232, 108, 141, 0.08);
+      --radius-md: 12px;
+      --radius-lg: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+      background-color: var(--netto-cream);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: 0.25s ease;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* 1. HEADER & NAVIGATION (2 TẦNG) */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #ffffff;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .header-top {
+      background-color: var(--netto-pink);
+      padding: 14px 0;
+    }
+
+    .header-top-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 8px;
+      color: var(--netto-black);
+    }
+
+    .search-bar {
+      display: flex;
+      flex: 1;
+      max-width: 480px;
+      background: #ffffff;
+      border-radius: 999px;
+      padding: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .search-bar select {
+      border: none;
+      background: transparent;
+      padding: 8px 14px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-right: 1px solid #eeeeee;
+      outline: none;
+    }
+
+    .search-bar input {
+      flex: 1;
+      border: none;
+      padding: 8px 14px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .search-bar button {
+      background: var(--netto-black);
+      color: #ffffff;
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .user-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .cart-badge {
+      background: var(--netto-black);
+      color: #ffffff;
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 99px;
+      margin-left: 4px;
+    }
+
+    .header-nav {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 52px;
+    }
+
+    .main-menu {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .main-menu a:hover,
+    .main-menu a.active {
+      color: var(--netto-accent);
+    }
+
+    .hotline {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .hotline strong {
+      color: var(--netto-accent);
+    }
+
+    /* 2. DẢI DỊCH VỤ NỀN ĐEN */
+    .service-strip {
+      background-color: var(--netto-black);
+      color: #ffffff;
+      padding: 18px 0;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      text-align: center;
+    }
+
+    .service-item h4 {
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .service-item p {
+      font-size: 12px;
+      color: #bbbbbb;
+    }
+
+    /* 3. BREADCRUMB & HERO BANNER */
+    .breadcrumb {
+      padding: 18px 0;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .breadcrumb .current {
+      color: var(--netto-accent);
+      font-weight: 600;
+    }
+
+    .news-hero {
+      background: linear-gradient(135deg, #FDE8EC 0%, #FFF7F8 100%);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .news-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      color: var(--netto-black);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .news-hero p {
+      color: var(--text-secondary);
+      max-width: 580px;
+      margin: 0 auto 24px;
+    }
+
+    /* Thanh lọc danh mục tin tức */
+    .news-filter-bar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .filter-btn {
+      background: #ffffff;
+      border: 1px solid var(--border-soft);
+      padding: 8px 18px;
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--netto-accent);
+    }
+
+    .filter-btn.active {
+      background: var(--netto-black);
+      color: #ffffff;
+      border-color: var(--netto-black);
+    }
+
+    /* 4. KHỐI DANH SÁCH BÀI VIẾT (GRID 3 CỘT) */
+    .news-section {
+      margin-bottom: 60px;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .news-card {
+      background: #ffffff;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .news-thumb {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background-color: #fce4ec;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .news-content {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .news-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+
+    .news-card h3 {
+      font-size: 17px;
+      color: var(--netto-black);
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .news-card h3 a:hover {
+      color: var(--netto-accent);
+    }
+
+    .news-excerpt {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .read-more {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--netto-accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .read-more:hover {
+      color: var(--netto-black);
+    }
+
+    /* 5. FOOTER NỀN ĐEN */
+    .site-footer {
+      background: var(--netto-black);
+      color: #ffffff;
+      padding: 56px 0 24px;
+      margin-top: 60px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 32px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #2a2a2a;
+    }
+
+    .footer-brand .logo {
+      color: #ffffff;
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    .footer-contact li {
+      font-size: 14px;
+      color: #cccccc;
+      margin-bottom: 10px;
+    }
+
+    .footer-contact strong {
+      color: var(--netto-pink);
+    }
+
+    .footer-col h4 {
+      font-size: 15px;
+      margin-bottom: 18px;
+      color: var(--netto-pink);
+      text-transform: uppercase;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #bbbbbb;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--netto-pink);
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 24px;
+      font-size: 13px;
+      color: #777777;
+    }
+
+    /* 6. RESPONSIVE MEDIA QUERIES (CHƯƠNG 4) */
+    @media (max-width: 992px) {
+      .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .service-grid,
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-top-inner,
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .search-bar {
+        width: 100%;
+        max-width: 100%;
+      }
+      .main-menu {
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+      .news-grid,
+      .service-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Tin Tức & Thông Báo</h1>
-  <p>Cập nhật những tin tức và hoạt động mới nhất từ cửa hàng.</p>
 
-  <hr>
+  <!-- ==================== HTML5 SEMANTIC STRUCTURE ==================== -->
+  <!-- LAYER 1: HEADER & NAVIGATION -->
+  <header class="site-header">
+    <div class="header-top">
+      <div class="container header-top-inner">
+        <a href="index.html" class="logo">NETTO</a>
+        
+        <form class="search-bar" action="#" method="get">
+          <select aria-label="Danh mục tìm kiếm">
+            <option value="all">Tất cả</option>
+            <option value="ao-ngan">Áo ngắn tay</option>
+            <option value="ao-dai">Áo dài tay</option>
+            <option value="vay">Váy</option>
+            <option value="quan">Quần</option>
+          </select>
+          <input type="text" placeholder="Tìm sản phẩm bạn mong muốn...">
+          <button type="submit" aria-label="Tìm kiếm">🔍</button>
+        </form>
 
-  <h2>Danh sách bài viết</h2>
-  
-  <ul>
-    <li>
-      <h3><a href="#">Tin tức khuyến mãi mùa hè</a></h3>
-      <p>Chương trình giảm giá đặc biệt dành cho khách hàng mua sắm trong tháng này...</p>
-    </li>
-    
-    <li>
-      <h3><a href="#">Ra mắt bộ sưu tập mới</a></h3>
-      <p>Khám phá ngay những thiết kế quần áo mới nhất vừa được đưa lên kệ...</p>
-    </li>
-    
-    <li>
-      <h3><a href="#">Mẹo phối đồ đi dạo phố</a></h3>
-      <p>Gợi ý một vài cách kết hợp trang phục đơn giản nhưng vẫn nổi bật cho dịp cuối tuần...</p>
-    </li>
-  </ul>
+        <div class="user-actions">
+          <a href="dang-nhap.html">👤 Đăng nhập / Đăng ký</a>
+          <a href="gio-hang.html">🛍️ Giỏ hàng <span class="cart-badge">0</span></a>
+        </div>
+      </div>
+    </div>
 
+    <nav class="header-nav" aria-label="Menu chính">
+      <div class="container nav-inner">
+        <ul class="main-menu">
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+          <li><a href="san-pham.html">Sản phẩm ▾</a></li>
+          <li><a href="huong-dan.html">Hướng dẫn</a></li>
+          <li><a href="khuyen-mai.html">Khuyến mãi ▾</a></li>
+          <li><a href="chinh-sach.html">Chính sách ▾</a></li>
+          <li><a href="tin-tuc.html" class="active">Tin tức</a></li>
+          <li><a href="lien-he.html">Liên hệ</a></li>
+        </ul>
+        <div class="hotline">
+          📞 Hotline: <strong>0817923001</strong>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- LAYER 2: DẢI DỊCH VỤ NỀN ĐEN -->
+  <section class="service-strip" aria-label="Quyền lợi mua sắm">
+    <div class="container service-grid">
+      <div class="service-item">
+        <h4>🚚 MIỄN PHÍ GIAO HÀNG</h4>
+        <p>Miễn phí ship với đơn hàng > 1tr</p>
+      </div>
+      <div class="service-item">
+        <h4>💵 THANH TOÁN COD</h4>
+        <p>Thanh toán khi nhận hàng (COD)</p>
+      </div>
+      <div class="service-item">
+        <h4>👑 KHÁCH HÀNG VIP</h4>
+        <p>Ưu đãi dành cho khách hàng VIP</p>
+      </div>
+      <div class="service-item">
+        <h4>🔄 HỖ TRỢ BẢO HÀNH</h4>
+        <p>Hỗ trợ đổi trả trong vòng 7 ngày</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAYER 3: NỘI DUNG CHÍNH (MAIN) -->
+  <main class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Trang chủ</a> &nbsp;›&nbsp; <span class="current">Tin tức thời trang</span>
+    </nav>
+
+    <section class="news-hero">
+      <h1>Tin Tức & Thông Báo</h1>
+      <p>Cập nhật nhanh nhất các bộ sưu tập mới, xu hướng thời trang hiện đại và những hoạt động cộng đồng ý nghĩa từ NETTO.</p>
+      
+      <!-- Bộ lọc phân loại tin tức -->
+      <div class="news-filter-bar">
+        <button type="button" class="filter-btn active" data-category="all">Tất cả bài viết</button>
+        <button type="button" class="filter-btn" data-category="community">Cộng đồng & Thiện nguyện</button>
+        <button type="button" class="filter-btn" data-category="promo">Khuyến mãi & Sự kiện</button>
+        <button type="button" class="filter-btn" data-category="arrival">Bộ sưu tập mới (New Arrival)</button>
+      </div>
+    </section>
+
+    <!-- DANH SÁCH BÀI VIẾT (Dựa trên báo cáo chi tiết nhóm 8) -->
+    <section class="news-section">
+      <div class="news-grid">
+        
+        <!-- Bài viết 1: Hành trình Vòng Tay Ấm -->
+        <article class="news-card" data-category="community">
+          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=600&auto=format&fit=crop" alt="Hành trình vòng tay ấm" class="news-thumb">
+          <div class="news-content">
+            <div>
+              <div class="news-meta">
+                <span>👤 Bảo Ngọc</span>
+                <span>📅 22/05/2026</span>
+              </div>
+              <h3><a href="#">[COMMUNITY] HÀNH TRÌNH "VÒNG TAY ẤM": KHI THỜI TRANG KẾT NỐI NHỮNG NHỊP ĐẬP TỬ TẾ</a></h3>
+              <p class="news-excerpt">Tại Netto, chúng tôi luôn trăn trở về một câu hỏi: "Giá trị thực sự của một bộ trang phục nằm ở đâu?". Trích lập 10.000đ từ mỗi đơn hàng thành công để gửi tặng áo ấm cho trẻ em vùng cao...</p>
+            </div>
+            <a href="#" class="read-more">Xem thêm →</a>
+          </div>
+        </article>
+
+        <!-- Bài viết 2: Welcome Summer - Giảm 20% -->
+        <article class="news-card" data-category="promo">
+          <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=600&auto=format&fit=crop" alt="Welcome Summer" class="news-thumb">
+          <div class="news-content">
+            <div>
+              <div class="news-meta">
+                <span>👤 Bảo Ngọc</span>
+                <span>📅 21/05/2026</span>
+              </div>
+              <h3><a href="#">[PROMO] WELCOME SUMMER: RỰC RỠ NẮNG VÀNG - ƯU ĐÃI NGỠ NGÀNG 20% TOÀN BỘ BST ÁO KIỂU</a></h3>
+              <p class="news-excerpt">Hè đã gõ cửa với những tia nắng rực rỡ, những chuyến đi xa đang vẫy gọi và đây chính là lúc để nàng nâng cấp tủ đồ với mức chiết khấu hấp dẫn...</p>
+            </div>
+            <a href="#" class="read-more">Xem thêm →</a>
+          </div>
+        </article>
+
+        <!-- Bài viết 3: New Arrival - The First Look -->
+        <article class="news-card" data-category="arrival">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600&auto=format&fit=crop" alt="The First Look Collection" class="news-thumb">
+          <div class="news-content">
+            <div>
+              <div class="news-meta">
+                <span>👤 Bảo Ngọc</span>
+                <span>📅 14/05/2026</span>
+              </div>
+              <h3><a href="#">[NEW ARRIVAL] "The First Look": CHIÊM NGƯỠNG TRỌN BỘ SƯU TẬP MỚI NHẤT VỪA CÓ MẶT TRÊN KỆ CỦA NETTO</a></h3>
+              <p class="news-excerpt">Bạn có bao giờ cảm thấy mệt mỏi khi đứng trước tủ đồ đầy ắp nhưng vẫn không biết mặc gì? Năm 2026, thế giới thời trang chứng kiến sự lên ngôi của phong cách tối giản thanh lịch...</p>
+            </div>
+            <a href="#" class="read-more">Xem thêm →</a>
+          </div>
+        </article>
+
+        <!-- Bài viết 4: Mẹo phối đồ Street Style -->
+        <article class="news-card" data-category="arrival">
+          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=600&auto=format&fit=crop" alt="Mix and Match Street Style" class="news-thumb">
+          <div class="news-content">
+            <div>
+              <div class="news-meta">
+                <span>👤 Bảo Ngọc</span>
+                <span>📅 10/05/2026</span>
+              </div>
+              <h3><a href="#">[BLOG] MIX & MATCH: STREET STYLE – 5 CÁCH PHỐI ĐỒ CỰC "CHÁY" VỚI VÁY NGẮN NHÀ NETTO</a></h3>
+              <p class="news-excerpt">Có một định nghĩa về sự sang trọng mà các cô gái Pháp luôn theo đuổi suốt nhiều thập kỷ: Effortless Chic – tức là thanh lịch không cần cố gắng. Khám phá ngay 5 cách phối...</p>
+            </div>
+            <a href="#" class="read-more">Xem thêm →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- LAYER 4: FOOTER NỀN ĐEN -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo">NETTO</span>
+          <ul class="footer-contact">
+            <li>📍 Địa chỉ: 12 Chùa Bộc, Đống Đa, Hà Nội</li>
+            <li>⏰ Giờ làm việc: Từ 9:00 đến 22:00 các ngày trong tuần từ Thứ 2 đến Chủ nhật</li>
+            <li>📞 Hotline: <strong>0817923001</strong></li>
+            <li>✉️ Email: nettoclothes@gmail.com</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Về chúng tôi</h4>
+          <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="gioi-thieu.html">Giới thiệu</a></li>
+            <li><a href="san-pham.html">Sản phẩm</a></li>
+            <li><a href="huong-dan.html">Hướng dẫn</a></li>
+            <li><a href="khuyen-mai.html">Khuyến mãi</a></li>
+            <li><a href="tin-tuc.html">Tin tức</a></li>
+            <li><a href="lien-he.html">Liên hệ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Chính sách</h4>
+          <ul>
+            <li><a href="chinh-sach.html">Chính sách thành viên</a></li>
+            <li><a href="chinh-sach.html">Chính sách đổi trả</a></li>
+            <li><a href="chinh-sach.html">Chính sách bảo mật</a></li>
+            <li><a href="chinh-sach.html">Chính sách thanh toán</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Dịch vụ</h4>
+          <ul>
+            <li><a href="#">Tìm kiếm</a></li>
+            <li><a href="#">Đăng nhập</a></li>
+            <li><a href="#">Đăng ký</a></li>
+            <li><a href="#">Giỏ hàng</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright">
+        © 2026 Bản quyền thuộc về Nhóm 8 - NETTO Clothes | Học viện Ngân hàng.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== JAVASCRIPT (TƯƠNG TÁC LỌC TIN TỨC) ==================== -->
+  <script>
+    const filterButtons = document.querySelectorAll('.news-filter-bar .filter-btn');
+    const newsCards = document.querySelectorAll('.news-grid .news-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        // Cập nhật trạng thái active trên nút lọc
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+
+        const selectedCategory = this.getAttribute('data-category');
+
+        // Lọc hiển thị bài viết qua DOM
+        newsCards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category');
+          if (selectedCategory === 'all' || cardCategory === selectedCategory) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
