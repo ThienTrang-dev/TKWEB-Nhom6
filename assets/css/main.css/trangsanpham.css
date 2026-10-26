@@ -1,0 +1,128 @@
+.sp-banner {
+  background: var(--pink);
+  text-align: center;
+  padding: 60px 24px;
+}
+.sp-banner h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: 14px;
+  color: var(--black);
+}
+
+.trang-sanpham {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 24px;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Bộ lọc bên trái */
+.bo-loc {
+  position: sticky;
+  top: 16px;
+}
+.bo-loc fieldset {
+  border: none;
+  border-right: 1px solid #eee;
+  padding-right: 20px;
+  min-width: 0;
+}
+.bo-loc legend {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 12px;
+}
+.bo-loc h4 {
+  font-size: 14px;
+  color: var(--black);
+  margin: 18px 0 8px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+.bo-loc legend + h4 {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+.bo-loc input[type="radio"] {
+  accent-color: #e2543f;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.bo-loc label {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 2;
+  cursor: pointer;
+}
+.bo-loc label:hover {
+  color: #e2543f;
+}
+
+/* Lưới sản phẩm bên phải */
+.luoi-sanpham {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.sp-card {
+  background: var(--white);
+  border: 1px solid #f0e4de;
+  border-radius: var(--radius);
+  padding: 10px;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+.sp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+.sp-card img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+.sp-ten {
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--black);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .luoi-sanpham {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .sp-banner h1 {
+    font-size: 34px;
+    letter-spacing: 8px;
+  }
+  .trang-sanpham {
+    grid-template-columns: 1fr;
+  }
+  .bo-loc {
+    position: static;
+  }
+  .bo-loc fieldset {
+    border-right: none;
+  }
+  .luoi-sanpham {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

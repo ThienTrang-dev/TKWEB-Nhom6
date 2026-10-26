@@ -1,0 +1,169 @@
+.sp-card{ cursor: pointer; }
+
+.ct-breadcrumb{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px 24px 0;
+  font-size: 13px;
+  color: var(--text-light);
+}
+.ct-breadcrumb a:hover{ color: var(--black); }
+.ct-breadcrumb span{ color: #e2543f; }
+
+.ct-wrap{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 32px 24px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Ảnh */
+.ct-anh img#ct-anh-lon{
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  border-radius: var(--radius);
+}
+.ct-thumbs{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 14px;
+}
+.ct-thumbs img{
+  width: 64px; height: 64px;
+  object-fit: cover;
+  border: 2px solid #e2543f;
+  border-radius: var(--radius);
+}
+
+/* Thông tin */
+.ct-ten{
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--black);
+}
+.ct-sao{ color: #e2543f; margin-top: 8px; letter-spacing: 2px; }
+.ct-ma{ font-size: 13px; color: var(--text-light); margin-top: 4px; }
+
+.ct-gia{
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+#ct-gia{ font-size: 26px; font-weight: 600; color: #d0021b; }
+.ct-gia-cu{ font-size: 14px; color: var(--text-light); text-decoration: line-through; }
+.ct-sale{
+  background: #d0021b;
+  color: var(--white);
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.ct-nhan{ margin-top: 20px; margin-bottom: 8px; font-size: 14px; color: var(--text-light); }
+
+.ct-size{ display: flex; gap: 10px; }
+.ct-size button{
+  min-width: 40px; height: 36px;
+  padding: 0 12px;
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  background: var(--white);
+  cursor: pointer;
+}
+.ct-size button:hover{ border-color: var(--pink-dark); }
+.ct-size button.active{
+  border-color: #e2543f;
+  color: #e2543f;
+  font-weight: 600;
+}
+
+.ct-mau{ display: flex; gap: 10px; }
+.ct-mau button{
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+.ct-mau button.active{ outline: 2px solid #e2543f; outline-offset: 2px; }
+
+/* Gợi ý size */
+.ct-goiy{
+  margin-top: 24px;
+  padding: 16px;
+  border: 1px dashed var(--pink-dark);
+  border-radius: var(--radius);
+}
+.ct-goiy-tieude{ font-size: 13px; font-weight: 600; color: #d0021b; margin-bottom: 10px; }
+.ct-goiy-input{ display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.ct-goiy-input input{
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: var(--radius);
+  font-size: 13px;
+}
+.ct-btn-size{
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--pink);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.ct-btn-size:hover{ background: var(--pink-dark); }
+.ct-ketqua{ margin-top: 8px; font-size: 13px; color: var(--black); font-weight: 500; }
+
+/* Số lượng + nút mua */
+.ct-soluong{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  font-size: 14px;
+}
+.ct-soluong span{ margin-right: 8px; color: var(--text-light); }
+.ct-soluong button{
+  width: 32px; height: 32px;
+  border: 1px solid #ddd;
+  background: var(--white);
+  cursor: pointer;
+  font-size: 16px;
+}
+.ct-soluong input{
+  width: 48px; height: 32px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.ct-mua{
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--pink-dark);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s;
+}
+.ct-mua:hover{ background: #e2543f; }
+
+.ct-mota{ margin-top: 32px; border-top: 1px solid #eee; padding-top: 16px; }
+.ct-mota h3{ font-size: 15px; margin-bottom: 8px; color: var(--black); }
+.ct-mota p{ font-size: 14px; color: var(--text); }
+
+@media (max-width: 900px){
+  .ct-wrap{ grid-template-columns: 1fr; gap: 24px; }
+}

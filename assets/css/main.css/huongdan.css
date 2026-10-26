@@ -1,0 +1,45 @@
+/* Nội dung trang hướng dẫn */
+
+/* Điện thoại */
+@media (max-width: 800px) {
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .menu ul {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+}
+.noidung {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.noidung h1 {
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.noidung h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 16px 0 12px;
+}
+
+.noidung p {
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.noidung img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 5px;
+}
