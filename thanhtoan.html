@@ -2,91 +2,193 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trang thanh toán</title>
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --pink: #f7d9de;
       --pink-light: #fdf1ec;
       --pink-dark: #e8b8c2;
+      --text-color: #2c3e50;
     }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Montserrat', sans-serif;
       background: var(--pink-light);
       margin: 0;
       padding: 20px;
+      color: var(--text-color);
     }
+
+    .page-title {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
     .checkout-container {
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
     }
+
     .section {
       flex: 1;
-      min-width: 280px;
+      min-width: 300px;
       background: #fff;
       padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      height: fit-content;
     }
+
     h2 {
       margin-top: 0;
-      color: #2c3e50;
+      color: var(--text-color);
       font-weight: 700;
+      font-size: 1.25rem;
+      border-bottom: 2px solid var(--pink-light);
+      padding-bottom: 10px;
+      margin-bottom: 15px;
     }
+
     label {
       display: block;
       margin: 12px 0 6px;
       font-weight: 600;
       color: #34495e;
+      font-size: 0.9rem;
     }
-    input, textarea {
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
       width: 100%;
-      padding: 10px;
+      padding: 10px 12px;
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 14px;
       font-family: 'Montserrat', sans-serif;
       transition: border-color 0.3s;
     }
+
     input:focus, textarea:focus {
       border-color: var(--pink-dark);
       outline: none;
     }
-    .summary {
+
+    /* Option phương thức thanh toán */
+    .payment-option {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      cursor: pointer;
+      padding: 10px;
+      border: 1px solid #eee;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .payment-option:hover {
       background: var(--pink-light);
-      border: 1px solid var(--pink-dark);
     }
-    .summary p {
-      margin: 8px 0;
+
+    .payment-option input {
+      margin-right: 10px;
+      cursor: pointer;
     }
-    .summary strong {
-      font-size: 18px;
+
+    /* Khung hiển thị mã QR chuyển khoản */
+    #bank-qr-section {
+      display: none; /* Mặc định ẩn */
+      text-align: center;
+      margin-top: 15px;
+      padding: 15px;
+      background: var(--pink-light);
+      border-radius: 8px;
+      border: 1px dashed var(--pink-dark);
+    }
+
+    #bank-qr-section img {
+      max-width: 180px;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .bank-info {
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    /* Phần tổng giá trị */
+    .summary {
+      background: #fff;
+      border: 2px solid var(--pink-dark);
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+      font-size: 0.95rem;
+    }
+
+    .summary-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px dashed #ccc;
+    }
+
+    .summary-total strong {
+      font-size: 20px;
       color: #d35400;
     }
+
     .buttons {
       margin-top: 20px;
+      display: flex;
+      gap: 10px;
     }
+
     .buttons button {
-      padding: 12px 20px;
+      flex: 1;
+      padding: 12px;
       border: none;
       border-radius: 6px;
       cursor: pointer;
-      margin-right: 10px;
       font-weight: 700;
       font-family: 'Montserrat', sans-serif;
       text-transform: uppercase;
       transition: background 0.3s, color 0.3s;
     }
+
     .back {
-      background: #ccc;
+      background: #e0e0e0;
       color: #333;
     }
+
+    .back:hover {
+      background: #d0d0d0;
+    }
+
     .confirm {
       background: var(--pink);
       color: #000;
     }
+
     .confirm:hover {
       background: var(--pink-dark);
       color: #fff;
@@ -94,84 +196,166 @@
   </style>
 </head>
 <body>
-  <h2>Thanh toán</h2>
-  <div class="checkout-container">
-    <!-- Thông tin đặt hàng -->
-    <div class="section">
-      <h2>Thông tin đặt hàng</h2>
-      <form>
-        <label>Họ và tên đệm:</label>
-        <input type="text" name="lastname" required>
 
-        <label>Tên:</label>
-        <input type="text" name="firstname" required>
+  <h1 class="page-title">Thanh toán đơn hàng</h1>
 
-        <label>Email (Tùy chọn):</label>
-        <input type="email" name="email">
+  <form id="checkout-form">
+    <div class="checkout-container">
+      
+      <!-- Thông tin đặt hàng -->
+      <div class="section">
+        <h2>Thông tin giao hàng</h2>
+        
+        <label for="lastname">Họ và tên đệm *</label>
+        <input type="text" id="lastname" name="lastname" required placeholder="Nguyễn Văn">
 
-        <label>Địa chỉ:</label>
-        <input type="text" name="address" required>
+        <label for="firstname">Tên *</label>
+        <input type="text" id="firstname" name="firstname" required placeholder="A">
 
-        <label>Số điện thoại:</label>
-        <input type="tel" name="phone" required>
+        <label for="email">Email (Tùy chọn)</label>
+        <input type="email" id="email" name="email" placeholder="example@gmail.com">
 
-        <label>Zip code (Tùy chọn):</label>
-        <input type="text" name="zipcode">
+        <label for="address">Địa chỉ nhận hàng *</label>
+        <input type="text" id="address" name="address" required placeholder="Số nhà, đường, phường/xã...">
 
-        <label>Ghi chú (Tùy chọn):</label>
-        <textarea name="note" rows="4"></textarea>
-      </form>
-    </div>
+        <label for="phone">Số điện thoại *</label>
+        <input type="tel" id="phone" name="phone" required placeholder="0901234567">
 
-    <!-- Phương thức thanh toán -->
-    <div class="section">
-      <h2>Phương thức thanh toán</h2>
-      <form>
-        <input type="radio" name="payment" value="cod" checked> Thanh toán khi nhận hàng<br>
-        <input type="radio" name="payment" value="bank"> Chuyển khoản ngân hàng
-      </form>
-    </div>
+        <label for="zipcode">Mã Zip (Tùy chọn)</label>
+        <input type="text" id="zipcode" name="zipcode" placeholder="700000">
 
-    <!-- Tổng giá trị -->
-    <div class="section summary">
-      <h2>Tổng giá trị</h2>
-      <div id="cart-items">
-        <!-- Sản phẩm sẽ được hiển thị ở đây -->
+        <label for="note">Ghi chú (Tùy chọn)</label>
+        <textarea id="note" name="note" rows="3" placeholder="Ghi chú thêm..."></textarea>
       </div>
-      <strong id="total">Tổng: 0₫</strong>
-      <div class="buttons">
-        <button class="back" onclick="window.location.href='giohang.html'">Quay lại giỏ hàng</button>
-        <button class="confirm">Xác nhận</button>
+
+      <!-- Phương thức thanh toán -->
+      <div class="section">
+        <h2>Phương thức thanh toán</h2>
+        
+        <label class="payment-option">
+          <input type="radio" name="payment" value="cod" checked>
+          <span>Thanh toán khi nhận hàng (COD)</span>
+        </label>
+        
+        <label class="payment-option">
+          <input type="radio" name="payment" value="bank">
+          <span>Chuyển khoản ngân hàng</span>
+        </label>
+
+        <!-- Khung hiển thị mã QR chuyển khoản -->
+        <div id="bank-qr-section">
+          <p style="margin: 0 0 10px 0; font-weight: 600; font-size: 0.9rem;">Quét mã QR để chuyển khoản:</p>
+          <img src="https://via.placeholder.com/180" alt="QR Code Chuyển Khoản">
+          <div class="bank-info">
+            <strong>Ngân hàng:</strong> MBBANK<br>
+            <strong>Số tài khoản:</strong> 1009200609<br>
+            <strong>Chủ tài khoản:</strong> NGUYEN THI THU TRANG<br>
+            <em>Nội dung: [Họ tên + Số điện thoại]</em>
+          </div>
+        </div>
       </div>
+
+      <!-- Tổng giá trị -->
+      <div class="section summary">
+        <h2>Tóm tắt đơn hàng</h2>
+        <div id="cart-items">
+          <!-- Sản phẩm sẽ được nạp động từ localStorage -->
+        </div>
+        
+        <div class="summary-total">
+          <span>Tổng tiền:</span>
+          <strong id="total">0₫</strong>
+        </div>
+
+        <div class="buttons">
+          <button type="button" class="back" onclick="window.location.href='giohang.html'">Quay lại</button>
+          <button type="submit" class="confirm">Xác nhận</button>
+        </div>
+      </div>
+
     </div>
-  </div>
+  </form>
 
   <script>
-    // Ví dụ dữ liệu giỏ hàng (sẽ thay bằng dữ liệu thực tế từ giỏ hàng)
-    const cart = [
-      { name: "Áo thun nữ", price: 150000 },
-      { name: "Quần jeans nam", price: 350000 }
-    ];
+    // 1. Lấy dữ liệu giỏ hàng thực tế từ localStorage
+    let cart = [];
+    try {
+      const storedCart = localStorage.getItem('cart');
+      if (storedCart) {
+        cart = JSON.parse(storedCart);
+      }
+    } catch (e) {
+      console.error("Không thể đọc giỏ hàng:", e);
+    }
+
+    // Dữ liệu mẫu dự phòng (nếu truy cập trực tiếp trang thanh toán mà chưa qua giỏ hàng)
+    if (!cart || cart.length === 0) {
+      cart = [
+        { name: "Áo thun nữ (Mẫu)", price: 150000 },
+        { name: "Quần jeans nam (Mẫu)", price: 350000 }
+      ];
+    }
 
     const cartItemsDiv = document.getElementById("cart-items");
     const totalDiv = document.getElementById("total");
 
     let total = 0;
+
+    // Hiển thị danh sách sản phẩm động
     cart.forEach(item => {
-      const p = document.createElement("p");
-      p.textContent = `${item.name}: ${item.price.toLocaleString()}₫`;
-      cartItemsDiv.appendChild(p);
-      total += item.price;
+      const itemRow = document.createElement("div");
+      itemRow.className = "summary-item";
+      // Hỗ trợ hiển thị số lượng nếu có (ví dụ item.quantity)
+      const quantityText = item.quantity ? ` (x${item.quantity})` : '';
+      const itemPrice = item.quantity ? (item.price * item.quantity) : item.price;
+      
+      itemRow.innerHTML = `<span>${item.name}${quantityText}</span> <span>${itemPrice.toLocaleString('vi-VN')}₫</span>`;
+      cartItemsDiv.appendChild(itemRow);
+      
+      total += itemPrice;
     });
 
-    // giả sử phí vận chuyển cố định
+    // Thêm phí vận chuyển cố định
     const shipping = 35000;
-    const shippingP = document.createElement("p");
-    shippingP.textContent = `Vận chuyển: ${shipping.toLocaleString()}₫`;
-    cartItemsDiv.appendChild(shippingP);
+    const shippingRow = document.createElement("div");
+    shippingRow.className = "summary-item";
+    shippingRow.style.color = "#7f8c8d";
+    shippingRow.innerHTML = `<span>Phí vận chuyển</span> <span>${shipping.toLocaleString('vi-VN')}₫</span>`;
+    cartItemsDiv.appendChild(shippingRow);
 
     total += shipping;
-    totalDiv.textContent = `Tổng: ${total.toLocaleString()}₫`;
+    totalDiv.textContent = `${total.toLocaleString('vi-VN')}₫`;
+
+    // 2. Xử lý ẩn/hiện mã QR khi chọn phương thức thanh toán
+    const paymentRadios = document.querySelectorAll('input[name="payment"]');
+    const bankQrSection = document.getElementById('bank-qr-section');
+
+    paymentRadios.forEach(radio => {
+      radio.addEventListener('change', function() {
+        if (this.value === 'bank') {
+          bankQrSection.style.display = 'block';
+        } else {
+          bankQrSection.style.display = 'none';
+        }
+      });
+    });
+
+    // 3. Xử lý khi bấm nút Xác nhận đặt hàng
+    document.getElementById('checkout-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const orderData = Object.fromEntries(formData.entries());
+      orderData.items = cart;
+      orderData.totalAmount = total;
+
+      console.log("Dữ liệu đơn hàng gửi đi:", orderData);
+      alert("Đặt hàng thành công!");
+
+      // Xóa giỏ hàng sau khi đặt thành công
+      // localStorage.removeItem('cart');
+      // window.location.href = 'hoadon.html';
+    });
   </script>
 </body>
 </html>
