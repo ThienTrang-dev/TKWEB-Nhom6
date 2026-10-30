@@ -43,3 +43,13 @@ radios.forEach(function (r) {
   r.addEventListener("change", locSanPham);
 });
 locSanPham();
+
+// Vào từ menu có ?loai=... thì chọn sẵn bộ lọc tương ứng
+const loaiTuUrl = new URLSearchParams(location.search).get("loai");
+if (loaiTuUrl) {
+  const r = document.querySelector('.bo-loc input[value="' + loaiTuUrl + '"]');
+  if (r) {
+    r.checked = true;
+    locSanPham();
+  }
+}

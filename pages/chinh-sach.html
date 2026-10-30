@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chính Sách Khách Hàng - NETTO Clothes</title>
   
+  
   <!-- Google Fonts thanh lịch, nữ tính cho Nét Tơ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  
+ <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/main.css/style.css" />
   <style>
     /* ==========================================================================
        1. DESIGN SYSTEM & CSS VARIABLES (Chuẩn nhóm NETTO Clothes)
@@ -498,48 +500,7 @@
 <body>
 
   <!-- ==================== LAYER 1: HEADER & NAVIGATION ==================== -->
-  <header class="site-header">
-    <div class="header-top">
-      <div class="container header-top-inner">
-        <a href="index.html" class="logo">NETTO</a>
-        
-        <form class="search-bar" action="#" method="get">
-          <select aria-label="Danh mục tìm kiếm">
-            <option value="all">Tất cả</option>
-            <option value="ao-ngan">Áo ngắn tay</option>
-            <option value="ao-dai">Áo dài tay</option>
-            <option value="vay">Váy</option>
-            <option value="quan">Quần</option>
-          </select>
-          <input type="text" placeholder="Tìm sản phẩm bạn mong muốn...">
-          <button type="submit" aria-label="Tìm kiếm">🔍</button>
-        </form>
-
-        <div class="user-actions">
-          <a href="dang-nhap.html">👤 Đăng nhập / Đăng ký</a>
-          <a href="gio-hang.html">🛍️ Giỏ hàng <span class="cart-badge">0</span></a>
-        </div>
-      </div>
-    </div>
-
-    <nav class="header-nav" aria-label="Menu chính">
-      <div class="container nav-inner">
-        <ul class="main-menu">
-          <li><a href="index.html">Trang chủ</a></li>
-          <li><a href="gioi-thieu.html">Giới thiệu</a></li>
-          <li><a href="san-pham.html">Sản phẩm ▾</a></li>
-          <li><a href="huong-dan.html">Hướng dẫn</a></li>
-          <li><a href="khuyen-mai.html">Khuyến mãi ▾</a></li>
-          <li><a href="chinh-sach.html" class="active">Chính sách ▾</a></li>
-          <li><a href="tin-tuc.html">Tin tức</a></li>
-          <li><a href="lien-he.html">Liên hệ</a></li>
-        </ul>
-        <div class="hotline">
-          📞 Hotline: <strong>0817923001</strong>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <div id="site-header"></div>
 
   <!-- ==================== LAYER 2: DẢI DỊCH VỤ NỀN ĐEN ==================== -->
   <section class="service-strip" aria-label="Quyền lợi mua sắm">
@@ -662,61 +623,11 @@
   </main>
 
   <!-- ==================== LAYER 4: FOOTER NỀN ĐEN ==================== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <span class="logo">NETTO</span>
-          <ul class="footer-contact">
-            <li>📍 Địa chỉ: 12 Chùa Bộc, Đống Đa, Hà Nội</li>
-            <li>⏰ Giờ làm việc: Từ 9:00 đến 22:00 các ngày trong tuần từ Thứ 2 đến Chủ nhật</li>
-            <li>📞 Hotline: <strong>0817923001</strong></li>
-            <li>✉️ Email: nettoclothes@gmail.com</li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Về chúng tôi</h4>
-          <ul>
-            <li><a href="index.html">Trang chủ</a></li>
-            <li><a href="gioi-thieu.html">Giới thiệu</a></li>
-            <li><a href="san-pham.html">Sản phẩm</a></li>
-            <li><a href="huong-dan.html">Hướng dẫn</a></li>
-            <li><a href="khuyen-mai.html">Khuyến mãi</a></li>
-            <li><a href="chinh-sach.html">Chính sách</a></li>
-            <li><a href="tin-tuc.html">Tin tức</a></li>
-            <li><a href="lien-he.html">Liên hệ</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Chính sách</h4>
-          <ul>
-            <li><a href="chinh-sach.html">Chính sách thành viên</a></li>
-            <li><a href="chinh-sach.html">Chính sách đổi trả</a></li>
-            <li><a href="chinh-sach.html">Chính sách bảo mật</a></li>
-            <li><a href="chinh-sach.html">Chính sách thanh toán</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Dịch vụ</h4>
-          <ul>
-            <li><a href="#">Tìm kiếm</a></li>
-            <li><a href="#">Đăng nhập</a></li>
-            <li><a href="#">Đăng ký</a></li>
-            <li><a href="#">Giỏ hàng</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="copyright">
-        © 2026 Bản quyền thuộc về Nhóm 8 - NETTO Clothes | Học viện Ngân hàng.
-      </div>
-    </div>
-  </footer>
-
+  
+  <div id="site-footer"></div>
   <!-- ==================== JAVASCRIPT XỬ LÝ TƯƠNG TÁC TABS ==================== -->
+     <script src="../assets/js/layout.js"></script>
+  <script src="../assets/js/main.js"></script>
   <script>
     const tabButtons = document.querySelectorAll('.policy-tab-btn');
     const policyPanels = document.querySelectorAll('.policy-panel');
