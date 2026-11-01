@@ -5,23 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chính Sách Khách Hàng - NETTO Clothes</title>
   
-  
-  <!-- Google Fonts thanh lịch, nữ tính cho Nét Tơ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Be+Vietnam+Pro:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   
- <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/css/main.css/style.css" />
+  
   <style>
     /* ==========================================================================
-       1. DESIGN SYSTEM & CSS VARIABLES (Chuẩn nhóm NETTO Clothes)
+       1. DESIGN SYSTEM & CSS VARIABLES
        ========================================================================== */
     :root {
-      --netto-pink: #FAD2D8;         /* Hồng phấn pastel thanh Header */
-      --netto-pink-light: #FFF5F7;   /* Nền hồng nhạt */
-      --netto-accent: #E86C8D;       /* Hồng đất/đậm điểm nhấn */
-      --netto-cream: #FFFDF9;        /* Nền kem ấm đặc trưng */
-      --netto-black: #111111;        /* Đen tuyền cho Footer & dải dịch vụ */
+      --netto-pink: #FAD2D8;
+      --netto-pink-light: #FFF5F7;
+      --netto-accent: #E86C8D;
+      --netto-cream: #FFFDF9;
+      --netto-black: #111111;
       --text-primary: #232837;
       --text-secondary: #666666;
       --border-soft: #F0E4E6;
@@ -30,12 +29,8 @@
       --radius-lg: 16px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
     body {
       font-family: 'Plus Jakarta Sans', Arial, sans-serif;
       background-color: var(--netto-cream);
@@ -43,181 +38,19 @@
       line-height: 1.7;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: 0.25s ease;
-    }
-
-    ul {
-      list-style: none;
-    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    a { text-decoration: none; color: inherit; transition: 0.25s ease; }
+    ul { list-style: none; }
 
     /* ==========================================================================
-       2. LAYER HEADER & NAVIGATION (2 TẦNG)
-       ========================================================================== */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: #ffffff;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-    }
-
-    .header-top {
-      background-color: var(--netto-pink);
-      padding: 14px 0;
-    }
-
-    .header-top-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: 8px;
-      color: var(--netto-black);
-    }
-
-    .search-bar {
-      display: flex;
-      flex: 1;
-      max-width: 480px;
-      background: #ffffff;
-      border-radius: 999px;
-      padding: 4px;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-    }
-
-    .search-bar select {
-      border: none;
-      background: transparent;
-      padding: 8px 14px;
-      font-size: 13px;
-      color: var(--text-secondary);
-      border-right: 1px solid #eeeeee;
-      outline: none;
-    }
-
-    .search-bar input {
-      flex: 1;
-      border: none;
-      padding: 8px 14px;
-      font-size: 14px;
-      outline: none;
-    }
-
-    .search-bar button {
-      background: var(--netto-black);
-      color: #ffffff;
-      border: none;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
-    .user-actions {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    .cart-badge {
-      background: var(--netto-black);
-      color: #ffffff;
-      font-size: 11px;
-      padding: 2px 7px;
-      border-radius: 99px;
-      margin-left: 4px;
-    }
-
-    .header-nav {
-      background: #ffffff;
-      border-bottom: 1px solid var(--border-soft);
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 52px;
-    }
-
-    .main-menu {
-      display: flex;
-      gap: 28px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .main-menu a:hover,
-    .main-menu a.active {
-      color: var(--netto-accent);
-    }
-
-    .hotline {
-      font-size: 14px;
-      color: var(--text-secondary);
-    }
-
-    .hotline strong {
-      color: var(--netto-accent);
-    }
-
-    /* ==========================================================================
-       3. DẢI DỊCH VỤ NỀN ĐEN (4 CAM KẾT)
-       ========================================================================== */
-    .service-strip {
-      background-color: var(--netto-black);
-      color: #ffffff;
-      padding: 18px 0;
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      text-align: center;
-    }
-
-    .service-item h4 {
-      font-size: 13px;
-      letter-spacing: 0.5px;
-      margin-bottom: 4px;
-    }
-
-    .service-item p {
-      font-size: 12px;
-      color: #bbbbbb;
-    }
-
-    /* ==========================================================================
-       4. BREADCRUMB & MAIN POLICY CONTAINER
+       2. BREADCRUMB & MAIN POLICY CONTAINER
        ========================================================================== */
     .breadcrumb {
       padding: 18px 0;
       font-size: 13px;
       color: var(--text-secondary);
     }
-
-    .breadcrumb .current {
-      color: var(--netto-accent);
-      font-weight: 600;
-    }
+    .breadcrumb .current { color: var(--netto-accent); font-weight: 600; }
 
     .policy-wrapper {
       max-width: 1000px;
@@ -231,9 +64,10 @@
 
     .policy-header {
       text-align: center;
-      margin-bottom: 36px;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 2px solid var(--border-soft);
     }
-
     .policy-header h1 {
       font-family: 'Playfair Display', serif;
       font-size: 34px;
@@ -241,7 +75,6 @@
       color: #111;
       margin-bottom: 8px;
     }
-
     .policy-header h2 {
       font-family: 'Playfair Display', serif;
       font-size: 20px;
@@ -250,7 +83,6 @@
       font-weight: 400;
       margin-bottom: 14px;
     }
-
     .policy-header p {
       color: var(--text-secondary);
       font-size: 15px;
@@ -259,88 +91,43 @@
     }
 
     /* ==========================================================================
-       5. TABS ĐIỀU HƯỚNG CHÍNH SÁCH (TƯƠNG TÁC BẰNG JS)
+       3. NỘI DUNG CHI TIẾT CHÍNH SÁCH
        ========================================================================== */
-    .policy-tabs-nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
+    .policy-section {
       margin-bottom: 40px;
-      border-bottom: 1px solid var(--border-soft);
-      padding-bottom: 20px;
-    }
-
-    .policy-tab-btn {
-      padding: 10px 20px;
-      border-radius: 99px;
-      border: 1px solid var(--border-soft);
-      background: var(--netto-cream);
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-primary);
-      cursor: pointer;
-      transition: 0.25s;
-    }
-
-    .policy-tab-btn:hover {
-      border-color: var(--netto-accent);
-      color: var(--netto-accent);
-    }
-
-    .policy-tab-btn.active {
-      background: var(--netto-black);
-      color: #ffffff;
-      border-color: var(--netto-black);
-    }
-
-    .policy-panel {
-      display: none;
-    }
-
-    .policy-panel.active {
-      display: block;
-      animation: fadeIn 0.4s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ==========================================================================
-       6. NỘI DUNG CHI TIẾT CÁC CHÍNH SÁCH
-       ========================================================================== */
-    .policy-content h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      color: #222;
-      margin-bottom: 16px;
-      padding-bottom: 8px;
+      padding-bottom: 30px;
       border-bottom: 1px dashed var(--border-soft);
     }
+    .policy-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
 
-    .policy-content p {
+    .policy-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--netto-black);
+      margin-bottom: 16px;
+    }
+    
+    .policy-section > p {
       font-size: 15px;
       color: #444;
       margin-bottom: 16px;
     }
 
-    .policy-content ul {
-      list-style-type: none;
+    .policy-list {
       padding-left: 0;
-      margin-bottom: 24px;
     }
-
-    .policy-content ul li {
+    .policy-list li {
       position: relative;
       padding-left: 24px;
       margin-bottom: 14px;
       font-size: 15px;
       color: #444;
     }
-
-    .policy-content ul li::before {
+    .policy-list li::before {
       content: "■";
       color: var(--netto-accent);
       font-size: 11px;
@@ -348,51 +135,27 @@
       left: 0;
       top: 3px;
     }
+    .policy-list li b { color: #111; font-weight: 600; }
+    .policy-list li i { color: #777; font-size: 14px; }
 
-    .policy-content ul li b {
-      color: #111;
-      font-weight: 600;
-    }
-
-    .policy-content ul li i {
-      color: #777;
-      font-size: 14px;
-    }
-
-    /* Banner tích điểm / Hạng thành viên */
-    .loyalty-notice {
-      background: var(--netto-pink-light);
-      border-left: 4px solid var(--netto-accent);
-      padding: 16px 20px;
-      border-radius: 8px;
-      margin-bottom: 24px;
-      font-size: 15px;
-    }
-
+    /* Hạng thành viên */
     .tier-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
       margin-top: 20px;
     }
-
     .tier-box {
       background: #faf8f5;
       border: 1px solid var(--border-soft);
       border-radius: var(--radius-md);
       padding: 20px;
     }
-
+    .tier-box.member { border-top: 4px solid var(--netto-pink); }
     .tier-box.bronze { border-top: 4px solid #CD7F32; }
     .tier-box.silver { border-top: 4px solid #9E9E9E; }
-    .tier-box.member { border-top: 4px solid var(--netto-pink); }
-
-    .tier-box h4 {
-      font-size: 16px;
-      margin-bottom: 8px;
-      color: #111;
-    }
-
+    
+    .tier-box h4 { font-size: 16px; margin-bottom: 8px; color: #111; }
     .tier-spend {
       font-size: 12px;
       color: var(--text-secondary);
@@ -401,130 +164,22 @@
       border-bottom: 1px dashed #eee;
     }
 
-    /* ==========================================================================
-       7. FOOTER NỀN ĐEN
-       ========================================================================== */
-    .site-footer {
-      background: var(--netto-black);
-      color: #ffffff;
-      padding: 56px 0 24px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 32px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid #2a2a2a;
-    }
-
-    .footer-brand .logo {
-      color: #ffffff;
-      display: block;
-      margin-bottom: 18px;
-    }
-
-    .footer-contact li {
-      font-size: 14px;
-      color: #cccccc;
-      margin-bottom: 10px;
-    }
-
-    .footer-contact strong {
-      color: var(--netto-pink);
-    }
-
-    .footer-col h4 {
-      font-size: 15px;
-      margin-bottom: 18px;
-      color: var(--netto-pink);
-      text-transform: uppercase;
-    }
-
-    .footer-col ul li {
-      margin-bottom: 10px;
-      font-size: 14px;
-      color: #bbbbbb;
-    }
-
-    .footer-col ul li a:hover {
-      color: var(--netto-pink);
-    }
-
-    .copyright {
-      text-align: center;
-      padding-top: 24px;
-      font-size: 13px;
-      color: #777777;
-    }
-
-    /* ==========================================================================
-       8. RESPONSIVE MEDIA QUERIES (CHƯƠNG 4)
-       ========================================================================== */
+    /* Responsive */
     @media (max-width: 992px) {
-      .tier-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .service-grid,
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .tier-grid { grid-template-columns: repeat(2, 1fr); }
     }
-
     @media (max-width: 768px) {
-      .policy-wrapper {
-        margin: 15px;
-        padding: 25px 20px;
-      }
-      .header-top-inner,
-      .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .search-bar {
-        width: 100%;
-        max-width: 100%;
-      }
-      .main-menu {
-        flex-wrap: wrap;
-        gap: 14px;
-      }
-      .tier-grid,
-      .service-grid,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
+      .policy-wrapper { margin: 15px; padding: 25px 20px; }
+      .tier-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ==================== LAYER 1: HEADER & NAVIGATION ==================== -->
+  <!-- LAYER 1: HEADER -->
   <div id="site-header"></div>
 
-  <!-- ==================== LAYER 2: DẢI DỊCH VỤ NỀN ĐEN ==================== -->
-  <section class="service-strip" aria-label="Quyền lợi mua sắm">
-    <div class="container service-grid">
-      <div class="service-item">
-        <h4>🚚 MIỄN PHÍ GIAO HÀNG</h4>
-        <p>Miễn phí ship với đơn hàng > 1tr</p>
-      </div>
-      <div class="service-item">
-        <h4>💵 THANH TOÁN COD</h4>
-        <p>Thanh toán khi nhận hàng (COD)</p>
-      </div>
-      <div class="service-item">
-        <h4>👑 KHÁCH HÀNG VIP</h4>
-        <p>Ưu đãi dành cho khách hàng VIP</p>
-      </div>
-      <div class="service-item">
-        <h4>🔄 HỖ TRỢ BẢO HÀNH</h4>
-        <p>Hỗ trợ đổi trả trong vòng 7 ngày</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== LAYER 3: NỘI DUNG CHÍNH (MAIN CONTAINER) ==================== -->
+  <!-- LAYER 2: NỘI DUNG CHÍNH (MAIN CONTAINER) -->
   <main class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="index.html">Trang chủ</a> &nbsp;›&nbsp; <span class="current">Chính sách khách hàng</span>
@@ -535,123 +190,81 @@
       <div class="policy-header">
         <h1>NETTO CLOTHES</h1>
         <h2>Chính Sách Khách Hàng</h2>
-        <p>Để đảm bảo quyền lợi và mang lại trải nghiệm mua sắm tuyệt vời nhất cho nàng, NETTO xin gửi đến hệ thống chính sách chi tiết dưới đây:</p>
+        <p>Để đảm bảo quyền lợi và mang lại trải nghiệm mua sắm tuyệt vời nhất cho nàng, NETTO xin gửi đến hệ thống chính sách dưới đây.</p>
       </div>
 
-      <!-- Thanh Tabs chuyển đổi các chính sách -->
-      <div class="policy-tabs-nav" role="tablist">
-        <button type="button" class="policy-tab-btn active" data-target="policy-member">1. Chính sách thành viên</button>
-        <button type="button" class="policy-tab-btn" data-target="policy-return">2. Đổi trả & Hoàn tiền</button>
-        <button type="button" class="policy-tab-btn" data-target="policy-privacy">3. Chính sách bảo mật</button>
-        <button type="button" class="policy-tab-btn" data-target="policy-payment">4. Chính sách thanh toán</button>
+      <!-- PHẦN 1: CHÍNH SÁCH THÀNH VIÊN -->
+      <div class="policy-section">
+        <h3>1. Chính sách thành viên khách hàng</h3>
+        <p>Chương trình tích điểm và nâng hạng thành viên tự động nhằm tri ân khách hàng thân thiết:</p>
+
+        <div class="tier-grid">
+          <div class="tier-box member">
+            <h4>🌱 Hạng Thành Viên</h4>
+            <p class="tier-spend">Tổng chi tiêu: <strong>0 VNĐ</strong></p>
+            <ul class="policy-list">
+              <li><b>Quyền lợi:</b> Tham gia chương trình tích điểm thưởng của NETTO.</li>
+            </ul>
+          </div>
+
+          <div class="tier-box bronze">
+            <h4>🥉 Thành Viên Đồng</h4>
+            <p class="tier-spend">Tổng chi tiêu từ: <strong>3.000.000 VNĐ</strong></p>
+            <ul class="policy-list">
+              <li><b>Quyền lợi:</b> Giảm tối đa <b>3%</b> giá trị đơn hàng (tối đa 30.000 VNĐ/đơn).</li>
+            </ul>
+          </div>
+
+          <div class="tier-box silver">
+            <h4>🥈 Thành Viên Bạc</h4>
+            <p class="tier-spend">Tổng chi tiêu từ: <strong>5.000.000 VNĐ</strong></p>
+            <ul class="policy-list">
+              <li><b>Quyền lợi:</b> Giảm tối đa <b>5%</b> giá trị đơn hàng (tối đa 50.000 VNĐ/đơn).</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <div class="policy-content">
-        
-        <!-- PANEL 1: CHÍNH SÁCH THÀNH VIÊN -->
-        <div id="policy-member" class="policy-panel active">
-          <h3>Chính sách thành viên khách hàng</h3>
-          <p>Chương trình tích điểm và nâng hạng thành viên tự động nhằm tri ân khách hàng thân thiết:</p>
-          
-          <div class="loyalty-notice">
-            🎁 <strong>Cơ chế tích điểm:</strong> Với mỗi <b>400.000 VNĐ</b> chi tiêu trên hệ thống, khách hàng sẽ nhận được <b>1 điểm thưởng</b> để quy đổi thành các mã giảm giá hấp dẫn.
-          </div>
+      <!-- PHẦN 2: ĐỔI TRẢ & HOÀN TIỀN -->
+      <div class="policy-section">
+        <h3>2. Chính sách đổi trả và hoàn tiền</h3>
+        <ul class="policy-list">
+          <li><b>Thời gian đổi/trả:</b> Khách hàng được hỗ trợ đổi/trả trong vòng <b>7 ngày</b> kể từ ngày nhận hàng (theo xác nhận giao hàng).</li>
+          <li><b>Điều kiện đổi trả:</b> Sản phẩm còn nguyên vẹn, đầy đủ tem mác, chưa qua sử dụng, chưa giặt, chưa cắt tag. Vui lòng kèm hóa đơn mua hàng. <i>(Lưu ý: Không áp dụng với hàng sale, flash sale, set đồ, hàng custom và phụ kiện).</i></li>
+          <li><b>Quy trình xử lý:</b> Nhắn tin qua Fanpage/Zalo kèm ảnh/video sản phẩm lỗi. Shop phản hồi trong 24h và hướng dẫn gửi về kho 12 Chùa Bộc, Đống Đa, Hà Nội.</li>
+          <li><b>Chính sách hoàn tiền:</b> Xử lý hoàn tiền trong vòng <b>1-3 ngày làm việc</b> qua tài khoản ngân hàng hoặc ví điện tử. Phí ship hoàn về shop (25.000 - 35.000 VNĐ) sẽ trừ vào tiền hoàn lại trừ khi lỗi thuộc về shop.</li>
+        </ul>
+      </div>
 
-          <div class="tier-grid">
-            <div class="tier-box member">
-              <h4>🌱 Hạng Thành Viên</h4>
-              <p class="tier-spend">Tổng chi tiêu: <strong>0 VNĐ</strong></p>
-              <ul>
-                <li><b>Quyền lợi:</b> Tham gia chương trình tích điểm thưởng của NETTO.</li>
-              </ul>
-            </div>
+      <!-- PHẦN 3: CHÍNH SÁCH BẢO MẬT -->
+      <div class="policy-section">
+        <h3>3. Chính sách bảo mật</h3>
+        <ul class="policy-list">
+          <li><b>Bảo mật thông tin:</b> Cam kết bảo vệ tuyệt đối thông tin cá nhân của khách hàng theo Luật An ninh Mạng và Luật Bảo vệ Dữ liệu cá nhân Việt Nam.</li>
+          <li><b>Phạm vi thu thập:</b> Chỉ bao gồm Họ tên, SĐT, địa chỉ giao hàng và email (nếu có) để xác nhận và giao đơn hàng.</li>
+          <li><b>Cam kết:</b> Tuyệt đối <b>không bán, không chia sẻ</b> thông tin khách hàng cho bên thứ ba. Dữ liệu lưu trữ bảo mật cao, thanh toán mã hóa SSL 256-bit.</li>
+          <li><b>Quyền khách hàng:</b> Có quyền yêu cầu xóa dữ liệu bất kỳ lúc nào bằng cách nhắn tin trực tiếp cho shop.</li>
+        </ul>
+      </div>
 
-            <div class="tier-box bronze">
-              <h4>🥉 Thành Viên Đồng</h4>
-              <p class="tier-spend">Tổng chi tiêu từ: <strong>3.000.000 VNĐ</strong></p>
-              <ul>
-                <li><b>Quyền lợi:</b> Giảm tối đa <b>3%</b> giá trị đơn hàng (tối đa 30.000 VNĐ/đơn).</li>
-              </ul>
-            </div>
-
-            <div class="tier-box silver">
-              <h4>🥈 Thành Viên Bạc</h4>
-              <p class="tier-spend">Tổng chi tiêu từ: <strong>5.000.000 VNĐ</strong></p>
-              <ul>
-                <li><b>Quyền lợi:</b> Giảm tối đa <b>5%</b> giá trị đơn hàng (tối đa 50.000 VNĐ/đơn).</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- PANEL 2: ĐỔI TRẢ & HOÀN TIỀN -->
-        <div id="policy-return" class="policy-panel">
-          <h3>Chính sách đổi trả & Hoàn tiền</h3>
-          <ul>
-            <li><b>Thời gian đổi/trả:</b> Khách hàng được hỗ trợ đổi/trả trong vòng <b>7 ngày</b> kể từ ngày nhận hàng (theo xác nhận giao hàng).</li>
-            <li><b>Điều kiện đổi trả:</b> Sản phẩm còn nguyên vẹn, đầy đủ tem mác, chưa qua sử dụng, chưa giặt, chưa cắt tag. Vui lòng kèm hóa đơn mua hàng. <i>(Lưu ý: Không áp dụng với hàng sale, flash sale, set đồ, hàng custom và phụ kiện).</i></li>
-            <li><b>Quy trình xử lý:</b> Nhắn tin qua Fanpage/Zalo kèm ảnh/video sản phẩm lỗi. Shop phản hồi trong 24h và hướng dẫn gửi về kho 12 Chùa Bộc, Đống Đa, Hà Nội.</li>
-            <li><b>Chính sách hoàn tiền:</b> Xử lý hoàn tiền trong vòng <b>1-3 ngày làm việc</b> qua tài khoản ngân hàng hoặc ví điện tử. Phí ship hoàn về shop (25.000 - 35.000 VNĐ) sẽ trừ vào tiền hoàn lại trừ khi lỗi thuộc về shop.</li>
-          </ul>
-        </div>
-
-        <!-- PANEL 3: CHÍNH SÁCH BẢO MẬT -->
-        <div id="policy-privacy" class="policy-panel">
-          <h3>Chính sách bảo mật</h3>
-          <ul>
-            <li><b>Bảo mật thông tin:</b> Cam kết bảo vệ tuyệt đối thông tin cá nhân của khách hàng theo Luật An ninh Mạng và Luật Bảo vệ Dữ liệu cá nhân Việt Nam.</li>
-            <li><b>Phạm vi thu thập:</b> Chỉ bao gồm Họ tên, SĐT, địa chỉ giao hàng và email (nếu có) để xác nhận và giao đơn hàng.</li>
-            <li><b>Cam kết:</b> Tuyệt đối <b>không bán, không chia sẻ</b> thông tin khách hàng cho bên thứ ba. Dữ liệu lưu trữ bảo mật cao, thanh toán mã hóa SSL 256-bit.</li>
-            <li><b>Quyền khách hàng:</b> Có quyền yêu cầu xóa dữ liệu bất kỳ lúc nào bằng cách nhắn tin trực tiếp cho shop.</li>
-          </ul>
-        </div>
-
-        <!-- PANEL 4: CHÍNH SÁCH THANH TOÁN -->
-        <div id="policy-payment" class="policy-panel">
-          <h3>Chính sách thanh toán</h3>
-          <p>NETTO hỗ trợ các hình thức thanh toán linh hoạt và an toàn cho giới trẻ:</p>
-          <ul>
-            <li><b>1. Thanh toán khi nhận hàng (COD):</b> Phổ biến nhất, khách kiểm tra hàng trước khi trả tiền cho shipper.</li>
-            <li><b>2. Chuyển khoản ngân hàng (Quét mã VietQR / MBBank / VietinBank):</b> Nhanh chóng, tiện lợi, tự động nhận diện nội dung chuyển khoản.</li>
-            <li><b>Xác nhận đơn hàng:</b> Sau khi đặt hàng, shop sẽ gọi điện xác nhận trong vòng 15–30 phút (giờ hành chính).</li>
-          </ul>
-        </div>
-
+      <!-- PHẦN 4: CHÍNH SÁCH THANH TOÁN -->
+      <div class="policy-section">
+        <h3>4. Chính sách thanh toán</h3>
+        <p>NETTO hỗ trợ các hình thức thanh toán linh hoạt và an toàn cho giới trẻ:</p>
+        <ul class="policy-list">
+          <li><b>1. Thanh toán khi nhận hàng (COD):</b> Phổ biến nhất, khách kiểm tra hàng trước khi trả tiền cho shipper.</li>
+          <li><b>2. Chuyển khoản ngân hàng (Quét mã VietQR / MBBank / VietinBank):</b> Nhanh chóng, tiện lợi, tự động nhận diện nội dung chuyển khoản.</li>
+          <li><b>Xác nhận đơn hàng:</b> Sau khi đặt hàng, shop sẽ gọi điện xác nhận trong vòng 15–30 phút (giờ hành chính).</li>
+        </ul>
       </div>
 
     </div>
   </main>
 
-  <!-- ==================== LAYER 4: FOOTER NỀN ĐEN ==================== -->
-  
+  <!-- LAYER 3: FOOTER -->
   <div id="site-footer"></div>
-  <!-- ==================== JAVASCRIPT XỬ LÝ TƯƠNG TÁC TABS ==================== -->
-     <script src="../assets/js/layout.js"></script>
+  
+  <script src="../assets/js/layout.js"></script>
   <script src="../assets/js/main.js"></script>
-  <script>
-    const tabButtons = document.querySelectorAll('.policy-tab-btn');
-    const policyPanels = document.querySelectorAll('.policy-panel');
-
-    tabButtons.forEach(button => {
-      button.addEventListener('click', function () {
-        // Xóa class active ở tất cả các nút
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        // Thêm class active cho nút vừa bấm
-        this.classList.add('active');
-
-        // Lấy giá trị data-target tương ứng
-        const targetId = this.getAttribute('data-target');
-
-        // Ẩn/hiện panel chính sách tương ứng qua DOM
-        policyPanels.forEach(panel => {
-          if (panel.id === targetId) {
-            panel.classList.add('active');
-          } else {
-            panel.classList.remove('active');
-          }
-        });
-      });
-    });
-  </script>
 </body>
 </html>
