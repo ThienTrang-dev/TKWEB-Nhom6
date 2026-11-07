@@ -1,0 +1,117 @@
+/* ===== CÀI ĐẶT CHUNG ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #292525;
+  padding: 30px 40px;
+}
+
+/* ===== TIÊU ĐỀ SẢN PHẨM ===== */
+h1 {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+/* ===== BỘ LỌC ===== */
+fieldset {
+  width: 220px;
+  padding: 18px;
+  margin-bottom: 30px;
+  border: 1px solid #e8c4cb;
+  border-radius: 3px;
+  background-color: #fffaf9;
+}
+
+legend {
+  padding: 0 8px;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+h4 {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 16px 0 10px;
+}
+
+/* ===== NÚT LỰA CHỌN ===== */
+input[type="radio"] {
+  accent-color: #d99aa8;
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+label {
+  font-size: 13px;
+  color: #77706e;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+label:hover {
+  color: #c47789;
+}
+
+/* ===== ẢNH SẢN PHẨM ===== */
+body > img {
+  display: inline-block;
+  width: calc(25% - 12px);
+  height: auto;
+  margin: 0 12px 25px 0;
+  vertical-align: top;
+  object-fit: cover;
+  cursor: pointer;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+}
+
+/* Hiệu ứng khi di chuột */
+body > img:hover {
+  opacity: 0.9;
+  transform: translateY(-3px);
+}
+
+/* ===== MÁY TÍNH BẢNG ===== */
+@media (max-width: 900px) {
+  body {
+    padding: 25px;
+  }
+
+  body > img {
+    width: calc(33.333% - 12px);
+  }
+}
+
+/* ===== ĐIỆN THOẠI ===== */
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 23px;
+  }
+
+  fieldset {
+    width: 100%;
+  }
+
+  body > img {
+    width: calc(50% - 8px);
+    margin-right: 8px;
+    margin-bottom: 15px;
+  }
+}

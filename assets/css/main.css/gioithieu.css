@@ -1,0 +1,136 @@
+/* =====================================
+   TRANG GIỚI THIỆU - NETTO CLOTHES
+   Chỉ chỉnh sửa nội dung trang
+   Không tác động header, menu, footer
+===================================== */
+
+
+/* Tiêu đề chính */
+
+.page-gioithieu>h1:first-of-type {
+    max-width: 950px;
+    margin: 55px auto 35px;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: #986d68;
+    letter-spacing: 1px;
+}
+
+
+/* Các tiêu đề phần */
+
+.page-gioithieu>h1:not(:first-of-type) {
+    max-width: 950px;
+    margin: 65px auto 30px;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 600;
+    color: #986d68;
+    position: relative;
+}
+
+
+/* Đường trang trí dưới tiêu đề */
+
+.page-gioithieu>h1::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 2px;
+    background-color: #d8aaa3;
+    margin: 12px auto 0;
+}
+
+
+/* Nội dung đoạn văn */
+
+.page-gioithieu>p {
+    max-width: 900px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+    color: #554943;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 15px;
+    line-height: 2;
+    text-align: justify;
+}
+
+
+/* Chữ in đậm */
+
+.page-gioithieu>p strong {
+    color: #a8736d;
+    font-weight: 600;
+}
+
+
+/* Danh sách sản phẩm và cam kết */
+
+.page-gioithieu>ul {
+    max-width: 850px;
+    margin: 20px auto 30px;
+    padding: 22px 35px 22px 60px;
+    background-color: #f8eeeb;
+    border-left: 3px solid #d8aaa3;
+    border-radius: 8px;
+    color: #554943;
+    font-size: 15px;
+    line-height: 2.3;
+}
+
+
+/* Dấu đầu dòng */
+
+.page-gioithieu>ul li::marker {
+    color: #bd8981;
+}
+
+
+/* Dòng cam kết của Netto Clothes */
+
+.page-gioithieu>p:has(+ ul) {
+    font-weight: 600;
+    color: #986d68;
+    margin-top: 30px;
+}
+
+
+/* Đoạn kết thương hiệu */
+
+.page-gioithieu>p:last-of-type {
+    margin-top: 35px;
+    margin-bottom: 60px;
+    padding: 25px 30px;
+    background-color: #f8eeeb;
+    border-radius: 10px;
+    text-align: center;
+    color: #986d68;
+    font-style: italic;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .page-gioithieu>h1:first-of-type {
+        font-size: 38px;
+        margin-top: 35px;
+    }
+    .page-gioithieu>h1:not(:first-of-type) {
+        font-size: 32px;
+        margin-top: 45px;
+    }
+    .page-gioithieu>p {
+        font-size: 14px;
+        padding: 0 20px;
+        line-height: 1.9;
+    }
+    .page-gioithieu>ul {
+        margin: 15px 20px 25px;
+        padding: 18px 20px 18px 45px;
+        font-size: 14px;
+    }
+}
