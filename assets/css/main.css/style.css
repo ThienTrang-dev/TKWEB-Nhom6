@@ -946,3 +946,11 @@ input {
 @media (max-width: 900px){
   .ct-wrap{ grid-template-columns: 1fr; gap: 24px; }
 }
+.page-hero {
+  background: linear-gradient(135deg, #FDE8EC 0%, #FFF7F8 100%);
+  border: 1px solid #F0E4E6;
+  border-radius: 16px;
+  padding: 36px 28px;
+  text-align: center;
+  margin-bottom: 40px;
+}
