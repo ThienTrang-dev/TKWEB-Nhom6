@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tin Tức Thời Trang & Cộng Đồng - NETTO Clothes</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
+  <link rel="stylesheet" href="../assets/css/main.css/style.css">
   <style>
     :root {
       --netto-pink: #FAD2D8;
@@ -30,36 +30,7 @@
     a { text-decoration: none; color: inherit; transition: 0.25s ease; }
     ul { list-style: none; }
 
-    /* 1. HEADER & THANH MENU LỰA CHỌN DANH MỤC (GIỮ NGUYÊN 100%) */
-    .site-header {
-      position: sticky; top: 0; z-index: 1000;
-      background: #ffffff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-    }
-    .header-top { background-color: var(--netto-pink); padding: 14px 0; }
-    .header-top-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .logo { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; letter-spacing: 8px; color: var(--netto-black); }
-    .search-bar {
-      display: flex; flex: 1; max-width: 480px; background: #ffffff;
-      border-radius: 999px; padding: 4px; border: 1px solid rgba(0, 0, 0, 0.08);
-    }
-    .search-bar select {
-      border: none; background: transparent; padding: 8px 14px; font-size: 13px;
-      color: var(--text-secondary); border-right: 1px solid #eeeeee; outline: none;
-    }
-    .search-bar input { flex: 1; border: none; padding: 8px 14px; font-size: 14px; outline: none; }
-    .search-bar button {
-      background: var(--netto-black); color: #ffffff; border: none;
-      width: 38px; height: 38px; border-radius: 50%; cursor: pointer;
-    }
-    .user-actions { display: flex; align-items: center; gap: 20px; font-size: 14px; font-weight: 500; }
-    .cart-badge { background: var(--netto-black); color: #ffffff; font-size: 11px; padding: 2px 7px; border-radius: 99px; margin-left: 4px; }
-    .header-nav { background: #ffffff; border-bottom: 1px solid var(--border-soft); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; min-height: 52px; }
-    .main-menu { display: flex; gap: 28px; font-size: 14px; font-weight: 600; }
-    .main-menu a:hover, .main-menu a.active { color: var(--netto-accent); }
-    .hotline { font-size: 14px; color: var(--text-secondary); }
-    .hotline strong { color: var(--netto-accent); }
-
+   
     /* 2. BREADCRUMB & BỘ LỌC DANH MỤC TIN TỨC */
     .breadcrumb { padding: 18px 0; font-size: 13px; color: var(--text-secondary); }
     .breadcrumb .current { color: var(--netto-accent); font-weight: 600; }
@@ -99,16 +70,6 @@
     .read-more { font-size: 13px; font-weight: 700; color: var(--netto-accent); }
     .read-more:hover { color: var(--netto-black); }
 
-    /* 4. FOOTER NẰM DƯỚI CÙNG TRANG (100% CHIỀU RỘNG) */
-    .site-footer { background: var(--netto-black); color: #ffffff; padding: 56px 0 24px; margin-top: 60px; width: 100%; clear: both; }
-    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 32px; padding-bottom: 40px; border-bottom: 1px solid #2a2a2a; }
-    .footer-brand .logo { color: #ffffff; display: block; margin-bottom: 18px; }
-    .footer-contact li { font-size: 14px; color: #cccccc; margin-bottom: 10px; }
-    .footer-contact strong { color: var(--netto-pink); }
-    .footer-col h4 { font-size: 15px; margin-bottom: 18px; color: var(--netto-pink); text-transform: uppercase; }
-    .footer-col ul li { margin-bottom: 10px; font-size: 14px; color: #bbbbbb; }
-    .footer-col ul li a:hover { color: var(--netto-pink); }
-    .copyright { text-align: center; padding-top: 24px; font-size: 13px; color: #777777; }
 
     @media (max-width: 992px) {
       .news-grid, .footer-grid { grid-template-columns: repeat(2, 1fr); }
@@ -119,53 +80,13 @@
       .main-menu { flex-wrap: wrap; gap: 14px; }
       .news-grid, .footer-grid { grid-template-columns: 1fr; }
     }
+    
   </style>
 </head>
 <body>
 
   <!-- LAYER 1: HEADER & THANH MENU LỰA CHỌN DANH MỤC (GIỮ NGUYÊN) -->
-  <header class="site-header">
-    <div class="header-top">
-      <div class="container header-top-inner">
-        <a href="index.html" class="logo">NETTO</a>
-        
-        <form class="search-bar" action="#" method="get">
-          <select aria-label="Danh mục tìm kiếm">
-            <option value="all">Tất cả</option>
-            <option value="ao-ngan">Áo ngắn tay</option>
-            <option value="ao-dai">Áo dài tay</option>
-            <option value="vay">Váy</option>
-            <option value="quan">Quần</option>
-          </select>
-          <input type="text" placeholder="Tìm sản phẩm bạn mong muốn...">
-          <button type="submit" aria-label="Tìm kiếm">🔍</button>
-        </form>
 
-        <div class="user-actions">
-          <a href="dang-nhap.html">👤 Đăng nhập / Đăng ký</a>
-          <a href="gio-hang.html">🛍️ Giỏ hàng <span class="cart-badge">0</span></a>
-        </div>
-      </div>
-    </div>
-
-    <nav class="header-nav" aria-label="Menu chính">
-      <div class="container nav-inner">
-        <ul class="main-menu">
-          <li><a href="index.html">Trang chủ</a></li>
-          <li><a href="gioi-thieu.html">Giới thiệu</a></li>
-          <li><a href="san-pham.html">Sản phẩm ▾</a></li>
-          <li><a href="huong-dan.html">Hướng dẫn</a></li>
-          <li><a href="khuyen-mai.html">Khuyến mãi ▾</a></li>
-          <li><a href="chinh-sach.html">Chính sách ▾</a></li>
-          <li><a href="tin-tuc.html" class="active">Tin tức</a></li>
-          <li><a href="lien-he.html">Liên hệ</a></li>
-        </ul>
-        <div class="hotline">
-          📞 Hotline: <strong>0817923001</strong>
-        </div>
-      </div>
-    </nav>
-  </header>
   <!-- LAYER 2: NỘI DUNG CHÍNH TRANG TIN TỨC -->
   <main class="container">
     <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -185,7 +106,7 @@
       </div>
     </section>
 
-    <section class="news-section">
+    <section class="news-hero page-hero">
       <div class="news-grid">
         
         <!-- Bài viết 1 -->
@@ -243,62 +164,7 @@
       </div> <!-- Đóng .news-grid -->
     </section> <!-- Đóng .news-section -->
   </main> <!-- Đóng <main> để tách biệt hoàn toàn với Footer -->
-
-  <!-- LAYER 3: FOOTER NỀN ĐEN NẰM Ở DƯỚI CÙNG TRANG -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <span class="logo">NETTO</span>
-          <ul class="footer-contact">
-            <li>📍 Địa chỉ: 12 Chùa Bộc, Đống Đa, Hà Nội</li>
-            <li>⏰ Giờ làm việc: Từ 9:00 đến 22:00 các ngày trong tuần từ Thứ 2 đến Chủ nhật</li>
-            <li>📞 Hotline: <strong>0817923001</strong></li>
-            <li>✉️ Email: nettoclothes@gmail.com</li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Về chúng tôi</h4>
-          <ul>
-            <li><a href="index.html">Trang chủ</a></li>
-            <li><a href="gioi-thieu.html">Giới thiệu</a></li>
-            <li><a href="san-pham.html">Sản phẩm</a></li>
-            <li><a href="huong-dan.html">Hướng dẫn</a></li>
-            <li><a href="khuyen-mai.html">Khuyến mãi</a></li>
-            <li><a href="chinh-sach.html">Chính sách</a></li>
-            <li><a href="tin-tuc.html">Tin tức</a></li>
-            <li><a href="lien-he.html">Liên hệ</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Chính sách</h4>
-          <ul>
-            <li><a href="chinh-sach.html">Chính sách thành viên</a></li>
-            <li><a href="chinh-sach.html">Chính sách đổi trả</a></li>
-            <li><a href="chinh-sach.html">Chính sách bảo mật</a></li>
-            <li><a href="chinh-sach.html">Chính sách thanh toán</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Dịch vụ</h4>
-          <ul>
-            <li><a href="#">Tìm kiếm</a></li>
-            <li><a href="#">Đăng nhập</a></li>
-            <li><a href="#">Đăng ký</a></li>
-            <li><a href="#">Giỏ hàng</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="copyright">
-        © 2026 Bản quyền thuộc về Nhóm 8 - NETTO Clothes | Học viện Ngân hàng.
-      </div>
-    </div>
-  </footer>
-
+      <script src="../assets/js/layout.js"></script>
   <!-- JAVASCRIPT LỌC TIN TỨC -->
   <script>
     const filterButtons = document.querySelectorAll('.news-filter-bar .filter-btn');
