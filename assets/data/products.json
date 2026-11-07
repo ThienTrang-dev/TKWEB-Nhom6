@@ -1,0 +1,2269 @@
+[
+  {
+    "id": 4,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo len cổ bẻ dáng lửng vân in chìm baby BERRIES TOP",
+    "gia": "259000",
+    "ma": "NT004",
+    "mota": "NETTO® - Áo len cổ bẻ dáng lửng vân in chìm baby BERRIES TOP",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Đen",
+        "ma": "#000"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo len mỏng hồng có logo NETTO® ngắn tay cổ tròn vân hoa FLOWER TOP/PK",
+    "giaCu": "",
+    "ma": "NT005",
+    "mota": "NETTO® - Áo len mỏng hồng có logo NETTO® ngắn tay cổ tròn vân hoa FLOWER TOP/PK",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 6",
+    "giaCu": "",
+    "ma": "NT006",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 7",
+    "giaCu": "",
+    "ma": "NT007",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 8",
+    "giaCu": "",
+    "ma": "NT008",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 9",
+    "giaCu": "",
+    "ma": "NT009",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 10",
+    "giaCu": "",
+    "ma": "NT010",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 11",
+    "giaCu": "",
+    "ma": "NT011",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 12",
+    "giaCu": "",
+    "ma": "NT012",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 13",
+    "giaCu": "",
+    "ma": "NT013",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 14",
+    "giaCu": "",
+    "ma": "NT014",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 15",
+    "giaCu": "",
+    "ma": "NT015",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 16",
+    "giaCu": "",
+    "ma": "NT016",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 17",
+    "giaCu": "",
+    "ma": "NT017",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 18",
+    "giaCu": "",
+    "ma": "NT018",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 19",
+    "giaCu": "",
+    "ma": "NT019",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 20",
+    "giaCu": "",
+    "ma": "NT020",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 21",
+    "giaCu": "",
+    "ma": "NT021",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 22",
+    "giaCu": "",
+    "ma": "NT022",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 23",
+    "giaCu": "",
+    "ma": "NT023",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 24",
+    "giaCu": "",
+    "ma": "NT024",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 25",
+    "giaCu": "",
+    "ma": "NT025",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 26",
+    "giaCu": "",
+    "ma": "NT026",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 27",
+    "giaCu": "",
+    "ma": "NT027",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 28",
+    "giaCu": "",
+    "ma": "NT028",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 29",
+    "giaCu": "",
+    "ma": "NT029",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 30",
+    "giaCu": "",
+    "ma": "NT030",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 31",
+    "giaCu": "",
+    "ma": "NT031",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 32",
+    "giaCu": "",
+    "ma": "NT032",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 33",
+    "giaCu": "",
+    "ma": "NT033",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "loai": "ao-ngan-tay",
+    "ten": "NETTO® - Áo ngắn tay mã 34",
+    "giaCu": "",
+    "ma": "NT034",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "loai": "ao-dai-tay",
+    "ten": "Áo len cổ bẻ dáng lửng vân in chìm baby BERRIES TOP",
+    "gia": "399.000đ",
+    "giaCu": "",
+    "ma": "NT035",
+    "mota": "Chất len mềm, dáng lửng, cổ bẻ trẻ trung.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Xám",
+        "ma": "gray"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 36",
+    "giaCu": "",
+    "ma": "NT036",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "loai": "ao-dai-tay",
+    "ten": "Áo len mỏng hồng ngắn tay cổ tròn vân hoa FLOWER TOP/PK",
+    "gia": "349.000đ",
+    "giaCu": "420.000đ",
+    "ma": "NT037",
+    "mota": "Len mỏng thoáng, họa tiết hoa nhẹ nhàng.",
+    "size": ["S", "M"],
+    "mau": [
+      {
+        "ten": "Hồng",
+        "ma": "#f4a6b8"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 38",
+    "giaCu": "",
+    "ma": "NT038",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 39",
+    "giaCu": "",
+    "ma": "NT039",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 40",
+    "giaCu": "",
+    "ma": "NT040",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 41",
+    "giaCu": "",
+    "ma": "NT041",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 42",
+    "giaCu": "",
+    "ma": "NT042",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 43",
+    "giaCu": "",
+    "ma": "NT043",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 44",
+    "giaCu": "",
+    "ma": "NT044",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 45",
+    "giaCu": "",
+    "ma": "NT045",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 46",
+    "giaCu": "",
+    "ma": "NT046",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 47",
+    "giaCu": "",
+    "ma": "NT047",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 48",
+    "giaCu": "",
+    "ma": "NT048",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 49",
+    "giaCu": "",
+    "ma": "NT049",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 50",
+    "giaCu": "",
+    "ma": "NT050",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 51",
+    "giaCu": "",
+    "ma": "NT051",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 52",
+    "giaCu": "",
+    "ma": "NT052",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 53",
+    "giaCu": "",
+    "ma": "NT053",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 54",
+    "giaCu": "",
+    "ma": "NT054",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 55",
+    "giaCu": "",
+    "ma": "NT055",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 56",
+    "giaCu": "",
+    "ma": "NT056",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "loai": "ao-dai-tay",
+    "ten": "NETTO® - Áo dài tay mã 57",
+    "giaCu": "",
+    "ma": "NT057",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 58",
+    "giaCu": "",
+    "ma": "NT058",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 59",
+    "giaCu": "",
+    "ma": "NT059",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 60",
+    "giaCu": "",
+    "ma": "NT060",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 61",
+    "giaCu": "",
+    "ma": "NT061",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 62",
+    "giaCu": "",
+    "ma": "NT062",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 63",
+    "giaCu": "",
+    "ma": "NT063",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 64",
+    "giaCu": "",
+    "ma": "NT064",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 65",
+    "giaCu": "",
+    "ma": "NT065",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 66",
+    "giaCu": "",
+    "ma": "NT066",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 67",
+    "giaCu": "",
+    "ma": "NT067",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 68",
+    "giaCu": "",
+    "ma": "NT068",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 69",
+    "giaCu": "",
+    "ma": "NT069",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 70",
+    "giaCu": "",
+    "ma": "NT070",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 71",
+    "giaCu": "",
+    "ma": "NT071",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 72",
+    "giaCu": "",
+    "ma": "NT072",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 73",
+    "giaCu": "",
+    "ma": "NT073",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 74",
+    "giaCu": "",
+    "ma": "NT074",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 75",
+    "giaCu": "",
+    "ma": "NT075",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 76",
+    "giaCu": "",
+    "ma": "NT076",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "loai": "vay",
+    "ten": "NETTO® - Váy mã 77",
+    "giaCu": "",
+    "ma": "NT077",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 78",
+    "giaCu": "",
+    "ma": "NT078",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 79",
+    "giaCu": "",
+    "ma": "NT079",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 80",
+    "giaCu": "",
+    "ma": "NT080",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 81",
+    "giaCu": "",
+    "ma": "NT081",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 82",
+    "giaCu": "",
+    "ma": "NT082",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 83",
+    "giaCu": "",
+    "ma": "NT083",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 84",
+    "giaCu": "",
+    "ma": "NT084",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 85",
+    "giaCu": "",
+    "ma": "NT085",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 86",
+    "giaCu": "",
+    "ma": "NT086",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 87",
+    "giaCu": "",
+    "ma": "NT087",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 88",
+    "giaCu": "",
+    "ma": "NT088",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 89",
+    "giaCu": "",
+    "ma": "NT089",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 90",
+    "giaCu": "",
+    "ma": "NT090",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 91",
+    "giaCu": "",
+    "ma": "NT091",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 92",
+    "giaCu": "",
+    "ma": "NT092",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 93",
+    "giaCu": "",
+    "ma": "NT093",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 94",
+    "giaCu": "",
+    "ma": "NT094",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 95",
+    "giaCu": "",
+    "ma": "NT095",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 96",
+    "giaCu": "",
+    "ma": "NT096",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 97",
+    "giaCu": "",
+    "ma": "NT097",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 98",
+    "giaCu": "",
+    "ma": "NT098",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 99",
+    "giaCu": "",
+    "ma": "NT099",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 100",
+    "giaCu": "",
+    "ma": "NT100",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 101",
+    "giaCu": "",
+    "ma": "NT101",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 102",
+    "giaCu": "",
+    "ma": "NT102",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 103",
+    "giaCu": "",
+    "ma": "NT103",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 104",
+    "giaCu": "",
+    "ma": "NT104",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 105",
+    "giaCu": "",
+    "ma": "NT105",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 106",
+    "giaCu": "",
+    "ma": "NT106",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 107",
+    "giaCu": "",
+    "ma": "NT107",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 108",
+    "giaCu": "",
+    "ma": "NT108",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 109",
+    "giaCu": "",
+    "ma": "NT109",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 110",
+    "giaCu": "",
+    "ma": "NT110",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 111",
+    "giaCu": "",
+    "ma": "NT111",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 112",
+    "giaCu": "",
+    "ma": "NT112",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 113",
+    "giaCu": "",
+    "ma": "NT113",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 114",
+    "giaCu": "",
+    "ma": "NT114",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 115,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 115",
+    "giaCu": "",
+    "ma": "NT115",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 116",
+    "giaCu": "",
+    "ma": "NT116",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 117",
+    "giaCu": "",
+    "ma": "NT117",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "loai": "quan-ngan",
+    "ten": "NETTO® - Quần ngắn mã 118",
+    "giaCu": "",
+    "ma": "NT118",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 119,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 119",
+    "giaCu": "",
+    "ma": "NT119",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 120,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 120",
+    "giaCu": "",
+    "ma": "NT120",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 121,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 121",
+    "giaCu": "",
+    "ma": "NT121",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 122,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 122",
+    "giaCu": "",
+    "ma": "NT122",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 123,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 123",
+    "giaCu": "",
+    "ma": "NT123",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 124,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 124",
+    "giaCu": "",
+    "ma": "NT124",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 125,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 125",
+    "giaCu": "",
+    "ma": "NT125",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 126,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 126",
+    "giaCu": "",
+    "ma": "NT126",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 127,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 127",
+    "giaCu": "",
+    "ma": "NT127",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 128,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 128",
+    "giaCu": "",
+    "ma": "NT128",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 129,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 129",
+    "giaCu": "",
+    "ma": "NT129",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 130,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 130",
+    "giaCu": "",
+    "ma": "NT130",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 131,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 131",
+    "giaCu": "",
+    "ma": "NT131",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 132,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 132",
+    "giaCu": "",
+    "ma": "NT132",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 133,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 133",
+    "giaCu": "",
+    "ma": "NT133",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 134,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 134",
+    "giaCu": "",
+    "ma": "NT134",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 135,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 135",
+    "giaCu": "",
+    "ma": "NT135",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 136,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 136",
+    "giaCu": "",
+    "ma": "NT136",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 137,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 137",
+    "giaCu": "",
+    "ma": "NT137",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 138,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 138",
+    "giaCu": "",
+    "ma": "NT138",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 139,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 139",
+    "giaCu": "",
+    "ma": "NT139",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 140,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 140",
+    "giaCu": "",
+    "ma": "NT140",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 141,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 141",
+    "giaCu": "",
+    "ma": "NT141",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 142,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 142",
+    "giaCu": "",
+    "ma": "NT142",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 143,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 143",
+    "giaCu": "",
+    "ma": "NT143",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 144,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 144",
+    "giaCu": "",
+    "ma": "NT144",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 145,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 145",
+    "giaCu": "",
+    "ma": "NT145",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 146,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 146",
+    "giaCu": "",
+    "ma": "NT146",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 147,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 147",
+    "giaCu": "",
+    "ma": "NT147",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 148,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 148",
+    "giaCu": "",
+    "ma": "NT148",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 149,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 149",
+    "giaCu": "",
+    "ma": "NT149",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 150,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 150",
+    "giaCu": "",
+    "ma": "NT150",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 151,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 151",
+    "giaCu": "",
+    "ma": "NT151",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 152,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 152",
+    "giaCu": "",
+    "ma": "NT152",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 153,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 153",
+    "giaCu": "",
+    "ma": "NT153",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  },
+  {
+    "id": 154,
+    "loai": "quan-dai",
+    "ten": "NETTO® - Quần dài mã 154",
+    "giaCu": "",
+    "ma": "NT154",
+    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "size": ["S", "M", "L"],
+    "mau": [
+      {
+        "ten": "Mặc định",
+        "ma": "#cccccc"
+      }
+    ]
+  }
+]

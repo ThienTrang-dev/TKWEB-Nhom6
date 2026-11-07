@@ -1,4 +1,3 @@
-// Dải số ảnh của từng thư mục
 const DANH_MUC = [
   { loai: "ao-ngan-tay", tu: 4, den: 34, ten: "Áo ngắn tay" },
   { loai: "ao-dai-tay", tu: 35, den: 57, ten: "Áo dài tay" },
@@ -930,3 +929,4 @@ DANH_MUC.forEach(function (dm) {
     SAN_PHAM.push(Object.assign(mac_dinh, RIENG[i] || {}));
   }
 });
+console.log(JSON.stringify(SAN_PHAM, null, 2));

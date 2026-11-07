@@ -101,7 +101,19 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
+.sp-gia {
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #e2543f;
+}
+.sp-gia-cu {
+  margin-left: 8px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #999;
+  text-decoration: line-through;
+}
 /* Responsive */
 @media (max-width: 1000px) {
   .luoi-sanpham {
