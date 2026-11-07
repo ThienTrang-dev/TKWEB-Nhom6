@@ -1,82 +1,77 @@
 <!doctype html>
 <html lang="vi">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CHI TIẾT SẢN PHẨM</title>
     <link />
     <link rel="stylesheet" href="../assets/css/main.css/style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="ct-breadcrumb">
-      <a href="../index.html">Trang chủ</a> &rsaquo;
-      <a href="sanpham.html">Sản phẩm</a> &rsaquo;
-      <span id="ct-duongdan">Chi tiết</span>
+        <a href="../index.html">Trang chủ</a> &rsaquo;
+        <a href="sanpham.html">Sản phẩm</a> &rsaquo;
+        <span id="ct-duongdan">Chi tiết</span>
     </div>
 
     <main class="ct-wrap">
-      <section class="ct-anh">
-        <img id="ct-anh-lon" src="" alt="" />
-        <div class="ct-thumbs">
-          <img id="ct-thumb" src="" alt="" />
-        </div>
-      </section>
+        <section class="ct-anh">
+            <img id="ct-anh-lon" src="" alt="" />
+            <div class="ct-thumbs">
+                <img id="ct-thumb" src="" alt="" />
+            </div>
+        </section>
 
-      <section class="ct-info">
-        <h1 class="ct-ten" id="ct-ten"></h1>
-        <div class="ct-sao">☆☆☆☆☆</div>
-        <p class="ct-ma">Mã sp: <span id="ct-ma"></span></p>
+        <section class="ct-info">
+            <h1 class="ct-ten" id="ct-ten"></h1>
+            <div class="ct-sao">☆☆☆☆☆</div>
+            <p class="ct-ma">Mã sp: <span id="ct-ma"></span></p>
 
-        <p class="ct-gia">
-          <span id="ct-gia"></span>
-          <span class="ct-gia-cu" id="ct-gia-cu" hidden></span>
-          <span class="ct-sale" id="ct-sale" hidden>Sale</span>
-        </p>
+            <p class="ct-gia">
+                <span id="ct-gia"></span>
+                <span class="ct-gia-cu" id="ct-gia-cu" hidden></span>
+                <span class="ct-sale" id="ct-sale" hidden>Sale</span>
+            </p>
 
-        <p class="ct-nhan">Kích thước</p>
-        <div class="ct-size" id="ct-size">S</div>
+            <p class="ct-nhan">Kích thước</p>
+            <div class="ct-size" id="ct-size">S</div>
 
-        <p class="ct-nhan">Màu sắc</p>
-        <div class="ct-mau" id="ct-mau"></div>
+            <p class="ct-nhan">Màu sắc</p>
+            <div class="ct-mau" id="ct-mau"></div>
 
-        <div class="ct-goiy">
-          <p class="ct-goiy-tieude">GỢI Ý CHỌN SIZE NHANH:</p>
-          <div class="ct-goiy-input">
-            <input
-              type="number"
-              id="ct-cao"
-              placeholder="Chiều cao (m), VD: 1.53"
-              step="0.01"
-            />
-            <input
-              type="number"
-              id="ct-nang"
-              placeholder="Cân nặng (kg), VD: 50"
-            />
-          </div>
-          <button type="button" class="ct-btn-size" id="ct-tinh">
+            <div class="ct-goiy">
+                <p class="ct-goiy-tieude">GỢI Ý CHỌN SIZE NHANH:</p>
+                <div class="ct-goiy-input">
+                    <input type="number" id="ct-cao" placeholder="Chiều cao (m), VD: 1.53" step="0.01" />
+                    <input type="number" id="ct-nang" placeholder="Cân nặng (kg), VD: 50" />
+                </div>
+                <button type="button" class="ct-btn-size" id="ct-tinh">
             TÍNH TOÁN CHỌN SIZE
           </button>
-          <p class="ct-ketqua" id="ct-ketqua"></p>
-        </div>
+                <p class="ct-ketqua" id="ct-ketqua"></p>
+            </div>
 
-        <div class="ct-soluong">
-          <span>Số lượng:</span>
-          <button type="button" id="ct-giam">-</button>
-          <input type="text" id="ct-sl" value="1" readonly />
-          <button type="button" id="ct-tang">+</button>
-        </div>
+            <div class="ct-soluong">
+                <span>Số lượng:</span>
+                <button type="button" id="ct-giam">-</button>
+                <input type="text" id="ct-sl" value="1" readonly />
+                <button type="button" id="ct-tang">+</button>
+            </div>
 
-        <button type="button" class="ct-mua" id="ct-mua">Mua ngay</button>
+            <button type="button" class="ct-mua" id="ct-mua">Mua ngay</button>
 
-        <div class="ct-mota">
-          <h3>Thông tin chi tiết sản phẩm</h3>
-          <p id="ct-mota-text"></p>
-        </div>
-      </section>
+            <div class="ct-mota">
+                <h3>Thông tin chi tiết sản phẩm</h3>
+                <p id="ct-mota-text"></p>
+            </div>
+        </section>
     </main>
 
     <script src="../assets/js/products.js"></script>
+    <script src="../assets/js/cart.js"></script>
     <script src="../assets/js/chitietsanpham.js"></script>
-  </body>
+</body>
+
 </html>
