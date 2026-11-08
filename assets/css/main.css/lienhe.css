@@ -1,11 +1,12 @@
+/* Khai báo màu sắc chủ đạo tông hồng pastel */
 :root {
-  --pink-primary: #f28b9c;
-  --pink-light: #fce4e8;
-  --pink-border: #f8c8d2;
-  --text-dark: #4a4a4a;
-  --text-muted: #888888;
+  --pink-primary: #e06d82;    /* Màu hồng đậm, rõ nét cho tiêu đề */
+  --pink-light: #fce4e8;      /* Màu hồng nhạt cho nút bấm */
+  --pink-border: #f28b9c;     /* Màu viền khung nhập */
+  --text-dark: #333333;       /* Màu chữ chính đậm, dễ đọc */
 }
 
+/* Cài đặt chung */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,18 +14,19 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Be Vietnam Pro', sans-serif;
   background-color: #fff;
   color: var(--text-dark);
 }
 
+/* Khung căn giữa giao diện */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
 }
 
-/* Layout 2 cột chuẩn ảnh mẫu */
+/* Bố cục chia làm 2 cột (Trái: thông tin + form | Phải: bản đồ) */
 .contact-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -32,43 +34,48 @@ body {
   align-items: start;
 }
 
+/* Khi xem trên điện thoại hoặc màn hình nhỏ thì gom lại thành 1 cột */
 @media (max-width: 850px) {
   .contact-wrapper {
     grid-template-columns: 1fr;
   }
 }
 
+/* Cột bên trái */
 .contact-left {
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
 
-/* Tiêu đề mục */
+/* Tiêu đề mục (in đậm, căn trái, nổi bật) */
 .section-title {
-  color: #f28b9c;
-  font-size: 13px;
+  color: var(--pink-primary);
+  font-size: 16px;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
+  text-align: left;
   margin-bottom: 12px;
 }
 
+/* Danh sách thông tin liên hệ */
 .info-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  font-size: 14px;
+  gap: 12px;
+  font-size: 14.5px;
 }
 
 .info-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .info-item strong {
   font-weight: 700;
+  color: #111;
 }
 
 .info-item a {
@@ -80,7 +87,7 @@ body {
   color: var(--pink-primary);
 }
 
-/* Form liên hệ */
+/* Khung Form nhập liệu */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -92,44 +99,45 @@ body {
   width: 100%;
   padding: 12px 18px;
   border: 1px solid var(--pink-border);
-  border-radius: 12px;
-  font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  border-radius: 15px;
+  font-size: 14px;
+  font-family: 'Be Vietnam Pro', sans-serif;
   outline: none;
   color: var(--text-dark);
   background-color: #fff;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: all 0.2s;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: #b0b0b0;
+  color: #888;
 }
 
+/* Hiệu ứng khi bấm vào ô nhập */
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: var(--pink-primary);
-  box-shadow: 0 0 0 3px rgba(242, 139, 156, 0.2);
+  box-shadow: 0 0 0 3px rgba(224, 109, 130, 0.2);
 }
 
 .form-group textarea {
   resize: vertical;
-  min-height: 140px;
+  min-height: 130px;
 }
 
 /* Nút gửi thông tin */
 .btn-submit {
   align-self: flex-start;
-  padding: 10px 25px;
+  padding: 12px 30px;
   background-color: var(--pink-light);
-  color: #d88a9a;
+  color: var(--pink-primary);
   border: none;
   border-radius: 20px;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
-  font-family: 'Montserrat', sans-serif;
+  transition: all 0.2s;
+  font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 .btn-submit:hover {
@@ -137,11 +145,11 @@ body {
   color: #fff;
 }
 
-/* Bản đồ */
+/* Cột phải: Khung bản đồ */
 .map-container {
   width: 100%;
   height: 100%;
-  min-height: 500px;
+  min-height: 480px;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--pink-border);
@@ -150,6 +158,6 @@ body {
 .map-container iframe {
   width: 100%;
   height: 100%;
-  min-height: 500px;
+  min-height: 480px;
   border: 0;
 }
