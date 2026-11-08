@@ -1,145 +1,8 @@
-:root {
-  --pink-primary: #f28b9c;
-  --pink-light: #fce4e8;
-  --pink-border: #f8c8d2;
-  --pink-bg: #faebed;
-  --text-dark: #4a4a4a;
-  --text-muted: #888888;
-}
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #fff;
-  color: var(--text-dark);
-}
 
-/* ==================== HEADER & NAVBAR ==================== */
-.site-header {
-  background-color: var(--pink-bg);
-  padding: 15px 40px 0;
-}
+/* ==================== NỘI DUNG TRANG LIÊN HỆ ==================== */
 
-.header-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto 15px;
-}
-
-.logo a {
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  color: #2c2c2c;
-  text-decoration: none;
-}
-
-.search-bar {
-  display: flex;
-  background: #fff;
-  border-radius: 20px;
-  overflow: hidden;
-  width: 450px;
-  border: 1px solid #e5e5e5;
-}
-
-.search-category {
-  border: none;
-  padding: 8px 12px;
-  background: #f8f8f8;
-  border-right: 1px solid #eee;
-  font-size: 13px;
-  outline: none;
-}
-
-.search-bar input {
-  border: none;
-  padding: 8px 15px;
-  width: 100%;
-  font-size: 13px;
-  outline: none;
-}
-
-.btn-search {
-  background: #222;
-  color: #fff;
-  border: none;
-  padding: 8px 18px;
-  cursor: pointer;
-}
-
-.user-actions {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-size: 13px;
-}
-
-.user-link {
-  color: var(--text-dark);
-  text-decoration: none;
-}
-
-.cart-icon {
-  position: relative;
-  text-decoration: none;
-}
-
-.cart-badge {
-  background: #222;
-  color: #fff;
-  border-radius: 50%;
-  padding: 2px 6px;
-  font-size: 11px;
-  position: absolute;
-  top: -8px;
-  right: -8px;
-}
-
-/* Navbar Links */
-.main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-bottom: 10px;
-}
-
-.main-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
-
-.main-nav a {
-  text-decoration: none;
-  color: #333;
-  font-size: 13px;
-  font-weight: 500;
-  padding-bottom: 4px;
-  transition: color 0.2s;
-}
-
-.main-nav a:hover,
-.main-nav a.active {
-  color: #d88a9a;
-  border-bottom: 2px solid #d88a9a;
-}
-
-.hotline-nav {
-  font-size: 13px;
-  color: var(--text-dark);
-}
-
-/* ==================== NOI DUNG TRANG LIEN HE ==================== */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -200,6 +63,8 @@ body {
   color: var(--pink-primary);
 }
 
+/* FORM LIÊN HỆ */
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -257,6 +122,8 @@ body {
 .btn-submit:active {
   transform: scale(0.98);
 }
+
+/* GOOGLE MAPS */
 
 .map-container {
   width: 100%;
