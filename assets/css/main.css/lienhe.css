@@ -1,7 +1,22 @@
+:root {
+  --pink-primary: #f28b9c;
+  --pink-light: #fce4e8;
+  --pink-border: #f8c8d2;
+  --text-dark: #4a4a4a;
+  --text-muted: #888888;
+}
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-
-/* ==================== NỘI DUNG TRANG LIÊN HỆ ==================== */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+  color: var(--text-dark);
+}
 
 .container {
   max-width: 1200px;
@@ -9,6 +24,7 @@
   padding: 40px 20px;
 }
 
+/* Layout 2 cột chuẩn ảnh mẫu */
 .contact-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -28,6 +44,7 @@
   gap: 25px;
 }
 
+/* Tiêu đề mục */
 .section-title {
   color: #f28b9c;
   font-size: 13px;
@@ -63,8 +80,7 @@
   color: var(--pink-primary);
 }
 
-/* FORM LIÊN HỆ */
-
+/* Form liên hệ */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -76,11 +92,12 @@
   width: 100%;
   padding: 12px 18px;
   border: 1px solid var(--pink-border);
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 13px;
   font-family: 'Montserrat', sans-serif;
   outline: none;
   color: var(--text-dark);
+  background-color: #fff;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
@@ -100,6 +117,7 @@
   min-height: 140px;
 }
 
+/* Nút gửi thông tin */
 .btn-submit {
   align-self: flex-start;
   padding: 10px 25px;
@@ -110,21 +128,16 @@
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s, transform 0.1s;
+  transition: background-color 0.2s, color 0.2s;
   font-family: 'Montserrat', sans-serif;
 }
 
 .btn-submit:hover {
-  background-color: #f28b9c;
+  background-color: var(--pink-primary);
   color: #fff;
 }
 
-.btn-submit:active {
-  transform: scale(0.98);
-}
-
-/* GOOGLE MAPS */
-
+/* Bản đồ */
 .map-container {
   width: 100%;
   height: 100%;
