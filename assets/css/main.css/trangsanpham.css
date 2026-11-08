@@ -16,9 +16,13 @@
   margin: 0 auto;
   padding: 40px 24px;
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 32px;
+  grid-template-columns: 200px 1fr;
+  gap: 28px;
   align-items: start;
+}
+.trang-sanpham button,
+.trang-sanpham input {
+  font-family: inherit;
 }
 
 /* Bộ lọc bên trái */
@@ -29,21 +33,22 @@
 .bo-loc fieldset {
   border: none;
   border-right: 1px solid #eee;
-  padding-right: 20px;
+  padding-right: 14px;
   min-width: 0;
 }
 .bo-loc legend {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;
   color: var(--black);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 .bo-loc h4 {
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 600;
   color: var(--black);
-  margin: 18px 0 8px;
-  padding-top: 16px;
+  margin: 12px 0 6px;
+  padding-top: 12px;
   border-top: 1px solid #eee;
 }
 .bo-loc legend + h4 {
@@ -57,13 +62,40 @@
   cursor: pointer;
 }
 .bo-loc label {
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--text);
-  line-height: 2;
+  line-height: 1.9;
   cursor: pointer;
 }
 .bo-loc label:hover {
   color: #e2543f;
+}
+
+/* Nút sắp xếp giá (nằm dưới chữ BỘ LỌC) */
+.bo-loc .sap-xep {
+  margin: 0 0 12px;
+}
+.bo-loc .nut-sap-xep {
+  display: block;
+  width: 100%;
+  padding: 9px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--black);
+  background: var(--white);
+  border: 1px solid var(--black);
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-align: center;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.bo-loc .nut-sap-xep:hover,
+.bo-loc .nut-sap-xep.dang-chon {
+  background: var(--black);
+  color: var(--white);
 }
 
 /* Lưới sản phẩm bên phải */
@@ -72,7 +104,7 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
-.sp-card {
+.luoi-sanpham .sp-card {
   background: var(--white);
   border: 1px solid #f0e4de;
   border-radius: var(--radius);
@@ -81,16 +113,16 @@
     transform 0.3s,
     box-shadow 0.3s;
 }
-.sp-card:hover {
+.luoi-sanpham .sp-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
-.sp-card img {
+.luoi-sanpham .sp-card img {
   width: 100%;
   height: auto;
   border-radius: var(--radius);
 }
-.sp-ten {
+.luoi-sanpham .sp-card .sp-ten {
   margin-top: 10px;
   font-size: 13px;
   font-weight: 500;
@@ -98,22 +130,52 @@
   color: var(--black);
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.sp-gia {
+.trang-sanpham .luoi-sanpham .sp-card .sp-gia {
   margin-top: 6px;
+  font-family: inherit;
   font-size: 15px;
-  font-weight: 600;
-  color: #e2543f;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #b3123b;
+  letter-spacing: 0.2px;
 }
-.sp-gia-cu {
+.trang-sanpham .luoi-sanpham .sp-card .sp-gia .sp-gia-cu {
   margin-left: 8px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
   color: #999;
   text-decoration: line-through;
 }
+
+/* Nút Xem thêm: chiếm cả hàng cuối của lưới, căn giữa */
+.luoi-sanpham .nut-xem-them {
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin: 16px 0 32px;
+  padding: 11px 44px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+  background: var(--white);
+  border: 1px solid var(--black);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.luoi-sanpham .nut-xem-them:hover {
+  background: var(--black);
+  color: var(--white);
+}
+.luoi-sanpham .nut-xem-them[hidden] {
+  display: none;
+}
+
 /* Responsive */
 @media (max-width: 1000px) {
   .luoi-sanpham {
@@ -137,4 +199,89 @@
   .luoi-sanpham {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+/* ===== Chỉnh sửa trang sản phẩm ===== */
+.trang-sanpham {
+  grid-template-columns: 200px 1fr !important;
+  gap: 28px;
+}
+.bo-loc label {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Nút sắp xếp giá */
+.bo-loc .sap-xep {
+  margin: 4px 0 16px;
+  padding: 0;
+}
+.bo-loc .nut-sap-xep {
+  display: block;
+  width: 100%;
+  padding: 9px 12px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  color: var(--text);
+  background: var(--white);
+  border: 1px solid #e8d9d3;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    background 0.2s;
+}
+.bo-loc .nut-sap-xep:hover {
+  border-color: #e2543f;
+  color: #e2543f;
+}
+.bo-loc .nut-sap-xep.dang-chon {
+  background: #fdf0ec;
+  border-color: #e2543f;
+  color: #e2543f;
+  font-weight: 600;
+}
+
+/* Giá màu đỏ, đậm */
+.trang-sanpham .luoi-sanpham .sp-card .sp-gia {
+  margin-top: 6px;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #d0021b !important;
+}
+.trang-sanpham .luoi-sanpham .sp-card .sp-gia .sp-gia-cu {
+  margin-left: 8px;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  color: #999 !important;
+  text-decoration: line-through;
+}
+
+/* Nút Xem thêm nằm giữa lưới */
+.trang-sanpham .luoi-sanpham .nut-xem-them {
+  grid-column: 1 / -1 !important;
+  justify-self: center !important;
+  width: auto;
+  margin: 20px 0 36px;
+  padding: 11px 48px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+  background: var(--white);
+  border: 1px solid var(--black);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.trang-sanpham .luoi-sanpham .nut-xem-them:hover {
+  background: var(--black);
+  color: var(--white);
+}
+.trang-sanpham .luoi-sanpham .nut-xem-them[hidden] {
+  display: none !important;
 }

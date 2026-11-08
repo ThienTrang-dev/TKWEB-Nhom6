@@ -1,3 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #444;
+  background: linear-gradient(160deg, #f8d7dc 0%, #fdf0ec 100%);
+}
+
+/* Thẻ đăng nhập nằm giữa màn hình */
+.auth-box {
+  width: 100%;
+  max-width: 420px;
+  padding: 36px 32px 32px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
+}
+.auth-box h1 {
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 10px;
+  text-indent: 10px;
+  color: #111;
+  margin-bottom: 24px;
+}
+
+/* Đăng nhập / Đăng ký */
+.auth-tabs {
+  display: flex;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #eee;
+}
+.auth-tabs button {
+  flex: 1;
+  padding: 12px 0;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  color: #888;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+.auth-tabs button:hover {
+  color: #e2543f;
+}
+.auth-tabs button.active {
+  color: #e2543f;
+  font-weight: 600;
+  border-bottom-color: #e2543f;
+}
+
+/* Form */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.auth-form[hidden],
+.hidden {
+  display: none;
+}
+.auth-form br {
+  display: none;
+}
+.auth-form label {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+}
+.auth-form input[type="text"],
+.auth-form input[type="password"],
+.auth-form input[type="email"],
+.auth-form input[type="tel"] {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #222;
+  background: #fff;
+  border: 1px solid #e8d9d3;
+  border-radius: 8px;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.auth-form input::placeholder {
+  color: #aaa;
+}
+.auth-form input:focus {
+  border-color: #e2543f;
+  box-shadow: 0 0 0 3px rgba(226, 84, 63, 0.12);
+}
+
+/* Liên kết quên mật khẩu */
+.auth-form a {
+  align-self: flex-end;
+  margin-top: 4px;
+  font-size: 13px;
+  color: #e2543f;
+  text-decoration: none;
+}
+.auth-form a:hover {
+  text-decoration: underline;
+}
+
+/* Nút gửi */
+.auth-form button {
+  width: 100%;
+  margin-top: 18px;
+  padding: 13px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background: #111;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.auth-form button:hover {
+  background: #e2543f;
+}
+
+/* Ô tick đồng ý điều khoản */
 .auth-form .dong-y {
   display: flex;
   align-items: flex-start;
@@ -13,5 +160,13 @@
   margin-top: 3px;
 }
 .auth-form .dong-y a {
+  align-self: auto;
+  margin-top: 0;
   color: #e2543f;
+}
+
+@media (max-width: 480px) {
+  .auth-box {
+    padding: 28px 20px 24px;
+  }
 }

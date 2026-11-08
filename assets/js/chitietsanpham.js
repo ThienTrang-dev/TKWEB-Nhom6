@@ -1,3 +1,7 @@
+function dinhDangGia(g) {
+  const s = String(g || "").replace(/\D/g, "");
+  return s ? s.replace(/\B(?=(\d{3})+(?!\d))/g, ".") + "đ" : "";
+}
 fetch("../assets/data/products.json")
   .then(function (res) {
     return res.json();
@@ -17,22 +21,53 @@ fetch("../assets/data/products.json")
       document.getElementById("ct-ten").textContent = sp.ten;
       document.getElementById("ct-duongdan").textContent = sp.ten;
       document.getElementById("ct-ma").textContent = sp.ma;
-      document.getElementById("ct-gia").textContent = sp.gia;
+      document.getElementById("ct-gia").textContent = dinhDangGia(sp.gia);
       document.getElementById("ct-mota-text").textContent = sp.mota;
 
       if (sp.giaCu) {
         const cu = document.getElementById("ct-gia-cu");
-        cu.textContent = sp.giaCu;
+        cu.textContent = dinhDangGia(sp.giaCu);
         cu.hidden = false;
         document.getElementById("ct-sale").hidden = false;
       }
+      const thuMuc = "../assets/images/" + sp.loai + "/";
+      const anhLon = document.getElementById("ct-anh-lon");
+      const boxThumb = document.querySelector(".ct-thumbs");
+      anhLon.alt = sp.ten;
 
-      ["ct-anh-lon", "ct-thumb"].forEach(function (i) {
-        const el = document.getElementById(i);
-        el.src = anh;
-        el.alt = sp.ten;
+      function tenFile(a) {
+        return typeof a === "number" ? a + ".jpg" : a;
+      }
+
+      // Gom ảnh của tất cả các màu vào một danh sách
+      const tatCaAnh = [];
+      sp.mau.forEach(function (m, iMau) {
+        const ds = m.anh && m.anh.length ? m.anh : [sp.id];
+        ds.forEach(function (a) {
+          tatCaAnh.push({ file: tenFile(a), mau: iMau });
+        });
       });
 
+      function chonAnh(i) {
+        anhLon.src = thuMuc + tatCaAnh[i].file;
+        boxThumb.querySelectorAll("img").forEach(function (x, k) {
+          x.classList.toggle("active", k === i);
+        });
+        document.querySelectorAll("#ct-mau button").forEach(function (n, k) {
+          n.classList.toggle("active", k === tatCaAnh[i].mau);
+        });
+      }
+      boxThumb.innerHTML = "";
+
+      tatCaAnh.forEach(function (a, i) {
+        const img = document.createElement("img");
+        img.src = thuMuc + a.file;
+        img.alt = sp.ten;
+        img.addEventListener("click", function () {
+          chonAnh(i);
+        });
+        boxThumb.appendChild(img);
+      });
       // Tạo nút size và màu từ dữ liệu
       const boxSize = document.getElementById("ct-size");
       sp.size.forEach(function (s, i) {
@@ -49,9 +84,16 @@ fetch("../assets/data/products.json")
         b.title = m.ten;
         b.style.background = m.ma;
         if (i === 0) b.className = "active";
+        b.addEventListener("click", function () {
+          chonAnh(
+            tatCaAnh.findIndex(function (a) {
+              return a.mau === i;
+            }),
+          );
+        });
         boxMau.appendChild(b);
       });
-
+      chonAnh(0);
       // Chọn một nút trong nhóm
       ["ct-size", "ct-mau"].forEach(function (idNhom) {
         const nuts = document.querySelectorAll("#" + idNhom + " button");

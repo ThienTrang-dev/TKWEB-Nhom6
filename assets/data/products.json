@@ -3,7 +3,7 @@
     "id": 4,
     "loai": "ao-ngan-tay",
     "ten": "NETTO® - Áo len cổ bẻ dáng lửng vân in chìm baby BERRIES TOP",
-    "gia": "259000",
+    "gia": "259000đ",
     "ma": "NT004",
     "mota": "NETTO® - Áo len cổ bẻ dáng lửng vân in chìm baby BERRIES TOP",
     "size": ["S", "M", "L"],
@@ -467,92 +467,81 @@
   {
     "id": 35,
     "loai": "ao-dai-tay",
-    "ten": "Áo len cổ bẻ dáng lửng vân in chìm baby BERRIES TOP",
+    "ten": "NETTO® - Áo len cổ bẻ dáng lửng vân in chìm baby BERRIES TOP",
     "gia": "399.000đ",
     "giaCu": "",
     "ma": "NT035",
-    "mota": "Chất len mềm, dáng lửng, cổ bẻ trẻ trung.",
+    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
         "ten": "Xám",
-        "ma": "gray"
-      }
-    ]
-  },
-  {
-    "id": 36,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 36",
-    "giaCu": "",
-    "ma": "NT036",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 37,
-    "loai": "ao-dai-tay",
-    "ten": "Áo len mỏng hồng ngắn tay cổ tròn vân hoa FLOWER TOP/PK",
-    "gia": "349.000đ",
-    "giaCu": "420.000đ",
-    "ma": "NT037",
-    "mota": "Len mỏng thoáng, họa tiết hoa nhẹ nhàng.",
-    "size": ["S", "M"],
-    "mau": [
+        "ma": "gray",
+        "anh": ["35.jpg"]
+      },
       {
         "ten": "Hồng",
-        "ma": "#f4a6b8"
+        "ma": "pink",
+        "anh": ["36.jpg"]
+      },
+      {
+        "ten": "Đen",
+        "ma": "black",
+        "anh": ["37.jpg"]
       }
     ]
   },
   {
     "id": 38,
     "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 38",
+    "ten": "NETTO® - Áo khoác cardigan len xù hồng viền trắng RAINBOW BABY CARDIGAN/PK",
+    "gia": "319.000đ",
     "giaCu": "",
     "ma": "NT038",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Hồng",
+        "ma": "pink"
       }
     ]
   },
   {
     "id": 39,
     "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 39",
+    "ten": "NETTO® - Áo set len xù cardigan lửng tặng kèm áo 2 dây kẻ ngang nhỏ đen vai bồng CAPPUCCINO CARDIGAN/BL",
+    "gia": "339.000đ",
     "giaCu": "",
     "ma": "NT039",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Đen",
+        "ma": "black"
       }
     ]
   },
   {
     "id": 40,
     "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 40",
+    "ten": "NETTO® - Áo len xù cardigan 4 túi đen viền trắng JENNIFER CARDIGAN/BL",
+    "gia": "349.000đ",
     "giaCu": "",
     "ma": "NT040",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Đen",
+        "ma": "black",
+        "anh": ["40.jpg"]
+      },
+      {
+        "ten": "Trắng",
+        "ma": "white",
+        "anh": ["41.jpg"]
       }
     ]
   },
