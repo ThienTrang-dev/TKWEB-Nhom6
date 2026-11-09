@@ -246,3 +246,239 @@
     gap: 24px;
   }
 }
+/* ===== Cột trái: thông tin chi tiết nằm dưới ảnh ===== */
+.ct-anh .ct-mota {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+/* ===== Đánh giá sản phẩm (kiểu Shopee, dài hết trang) ===== */
+.ct-danhgia {
+  width: calc(100% - 48px);
+  max-width: calc(var(--max-width) - 48px);
+  margin: 0 auto 60px;
+  padding: 28px 30px 20px;
+  background: var(--white);
+  border: 1px solid #f0e4de;
+  border-radius: var(--radius);
+}
+.ct-danhgia h2 {
+  margin-bottom: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--black);
+}
+
+/* Ô tóm tắt: điểm to bên trái, nút lọc bên phải */
+.dg-tomtat {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px 48px;
+  padding: 28px 32px;
+  background: #fffbf8;
+  border: 1px solid #f9ede5;
+  border-radius: var(--radius);
+}
+.dg-trai {
+  min-width: 140px;
+  text-align: center;
+}
+.dg-diem-dong {
+  font-size: 18px;
+  color: #d0021b;
+}
+.dg-diem-dong span {
+  font-size: 32px;
+  font-weight: 600;
+}
+.dg-sao-tong {
+  margin-top: 4px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #e2543f;
+}
+.dg-loc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex: 1;
+}
+.dg-loc button {
+  min-width: 100px;
+  padding: 8px 18px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--white);
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.dg-loc button:hover,
+.dg-loc button.on {
+  color: #d0021b;
+  border-color: #d0021b;
+}
+
+/* Nút và form viết đánh giá */
+.dg-viet {
+  margin-top: 18px;
+}
+.dg-mo-form {
+  padding: 10px 28px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+  background: var(--white);
+  border: 1px solid var(--black);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.dg-mo-form:hover {
+  background: var(--black);
+  color: var(--white);
+}
+.dg-form {
+  margin-top: 14px;
+  padding: 20px;
+  background: #fdf5f2;
+  border-radius: var(--radius);
+}
+.dg-form[hidden] {
+  display: none;
+}
+.dg-nhan {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: var(--text-light);
+}
+.dg-chon-sao {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+.dg-chon-sao button {
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 28px;
+  line-height: 1;
+  color: #ddd;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.dg-chon-sao button.on {
+  color: #e2543f;
+}
+.dg-form input,
+.dg-form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  border: 1px solid #eee;
+  border-radius: var(--radius);
+  background: var(--white);
+  outline: none;
+  resize: vertical;
+}
+.dg-form input:focus,
+.dg-form textarea:focus {
+  border-color: #e2543f;
+}
+.dg-gui {
+  padding: 11px 32px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--black);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dg-gui:hover {
+  background: #e2543f;
+}
+
+/* Danh sách đánh giá */
+.dg-ds {
+  margin-top: 8px;
+}
+.dg-muc {
+  display: flex;
+  gap: 14px;
+  padding: 20px 4px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.dg-muc:last-child {
+  border-bottom: none;
+}
+.dg-avatar {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  background: #d8aaa3;
+  border-radius: 50%;
+}
+.dg-body {
+  flex: 1;
+  min-width: 0;
+}
+.dg-ten {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--black);
+}
+.dg-sao {
+  margin: 2px 0;
+  font-size: 13px;
+  color: #e2543f;
+  letter-spacing: 1px;
+}
+.dg-ngay {
+  font-size: 12px;
+  color: var(--text-light);
+}
+.dg-body p {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+  white-space: pre-line;
+}
+.dg-trong {
+  padding: 40px 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+@media (max-width: 900px) {
+  .ct-danhgia {
+    padding: 20px 16px 12px;
+  }
+  .dg-tomtat {
+    padding: 20px 16px;
+    gap: 20px;
+  }
+  .dg-loc button {
+    min-width: 0;
+    padding: 7px 12px;
+  }
+}

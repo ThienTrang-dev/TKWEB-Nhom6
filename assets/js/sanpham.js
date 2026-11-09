@@ -104,13 +104,20 @@ fetch("../assets/data/products.json")
         behavior: "smooth",
       });
     });
-
+    // Menu trên cùng chọn theo nhóm (một nhóm gồm nhiều loại)
+    const NHOM = {
+      quan: ["quan-dai", "quan-ngan"],
+      ao: ["ao-dai-tay", "ao-ngan-tay"],
+      vay: ["vay"],
+      phukien: [],
+    };
+    let nhomChon = null;
     // ===== Lọc loại + sắp xếp giá (dùng đồng thời) =====
     function locSanPham() {
-      const chon = document.querySelector(
-        '.bo-loc input[name="Clothes"]:checked',
-      ).value;
+      const r = document.querySelector('.bo-loc input[name="Clothes"]:checked');
+      const chon = r ? r.value : "tat-ca";
       khop = Array.from(cards).filter(function (c) {
+        if (nhomChon) return NHOM[nhomChon].indexOf(c.dataset.loai) >= 0;
         return chon === "tat-ca" || c.dataset.loai === chon;
       });
 
@@ -134,7 +141,10 @@ fetch("../assets/data/products.json")
     }
 
     radios.forEach(function (r) {
-      r.addEventListener("change", locSanPham);
+      r.addEventListener("change", function () {
+        nhomChon = null;
+        locSanPham();
+      });
     });
     nutSX.addEventListener("click", function () {
       kieuSX = (kieuSX + 1) % 3;
@@ -143,16 +153,23 @@ fetch("../assets/data/products.json")
       locSanPham();
     });
     locSanPham();
-
     // Vào từ menu có ?loai=... thì chọn sẵn bộ lọc tương ứng
     const loaiTuUrl = new URLSearchParams(location.search).get("loai");
     if (loaiTuUrl) {
-      const r = document.querySelector(
-        '.bo-loc input[value="' + loaiTuUrl + '"]',
-      );
-      if (r) {
-        r.checked = true;
+      if (NHOM[loaiTuUrl]) {
+        nhomChon = loaiTuUrl;
+        radios.forEach(function (r) {
+          r.checked = false;
+        });
         locSanPham();
+      } else {
+        const r = document.querySelector(
+          '.bo-loc input[value="' + loaiTuUrl + '"]',
+        );
+        if (r) {
+          r.checked = true;
+          locSanPham();
+        }
       }
     }
   });

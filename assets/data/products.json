@@ -5,462 +5,313 @@
     "ten": "NETTO® - Áo len cổ bẻ dáng lửng vân in chìm baby BERRIES TOP",
     "gia": "259000đ",
     "ma": "NT004",
-    "mota": "NETTO® - Áo len cổ bẻ dáng lửng vân in chìm baby BERRIES TOP",
+    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
         "ten": "Đen",
-        "ma": "#000"
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo len mỏng hồng có logo NETTO® ngắn tay cổ tròn vân hoa FLOWER TOP/PK",
-    "giaCu": "",
-    "ma": "NT005",
-    "mota": "NETTO® - Áo len mỏng hồng có logo NETTO® ngắn tay cổ tròn vân hoa FLOWER TOP/PK",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ma": "#000",
+        "anh": ["4.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Trắng",
+        "ma": "white",
+        "anh": ["5.jpg"]
       }
     ]
   },
+
   {
     "id": 6,
     "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 6",
-    "giaCu": "",
+    "ten": "NETTO® - Áo len mỏng hồng có logo NETTO® ngắn tay cổ tròn vân hoa FLOWER TOP/PK",
+    "gia": "305000",
+    "giaCu": "385000",
     "ma": "NT006",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 7,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 7",
-    "giaCu": "",
-    "ma": "NT007",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Xanh baby",
+        "ma": "#B5D0EC",
+        "anh": ["6.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 8,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 8",
-    "giaCu": "",
-    "ma": "NT008",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Xám",
+        "ma": "gray",
+        "anh": ["7.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Đen",
+        "ma": "black",
+        "anh": ["8.jpg"]
       }
     ]
   },
+
   {
     "id": 9,
     "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 9",
-    "giaCu": "",
+    "ten": "NETTO® - Áo len xù cổ tròn túi rúm ngực dáng lửng có 2 line viền áo đen MIMI TOP/BL",
+    "gia": "249000",
+    "giaCu": "299000",
     "ma": "NT009",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 10,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 10",
-    "giaCu": "",
-    "ma": "NT010",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Hồng",
+        "ma": "pink",
+        "anh": ["9.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 11,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 11",
-    "giaCu": "",
-    "ma": "NT011",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Đen",
+        "ma": "black",
+        "anh": ["10.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Xám",
+        "ma": "gray",
+        "anh": ["11.jpg"]
       }
     ]
   },
   {
     "id": 12,
     "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 12",
-    "giaCu": "",
+    "ten": "NETTO® - Áo len xù dáng lửng ngắn tay thêu hình gấu đen BABY BEAR TOP /BL",
+    "gia": "319000",
     "ma": "NT012",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 13,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 13",
-    "giaCu": "",
-    "ma": "NT013",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Xám",
+        "ma": "gray",
+        "anh": ["12.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Đen",
+        "ma": "black",
+        "anh": ["13.jpg"]
       }
     ]
   },
   {
     "id": 14,
     "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 14",
-    "giaCu": "",
+    "ten": "NETTO® - Áo Babydoll Cộc Tay Bèo Vàng Butter Caro Nhỏ",
+    "gia": "259000",
+    "giaCu": "339000",
     "ma": "NT014",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 15,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 15",
-    "giaCu": "",
-    "ma": "NT015",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Trắng",
+        "ma": "white",
+        "anh": ["14.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 16,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 16",
-    "giaCu": "",
-    "ma": "NT016",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Xám",
+        "ma": "gray",
+        "anh": ["15.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 17,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 17",
-    "giaCu": "",
-    "ma": "NT017",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Đen",
+        "ma": "#344B65",
+        "anh": ["16.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Hồng",
+        "ma": "pink",
+        "anh": ["17.jpg"]
       }
     ]
   },
   {
     "id": 18,
     "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 18",
-    "giaCu": "",
+    "ten": "NETTO® - Áo len đen cổ bẻ phối viền trắng EVIE TOP/BL",
+    "gia": "289000",
     "ma": "NT018",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 19,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 19",
-    "giaCu": "",
-    "ma": "NT019",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Đen",
+        "ma": "black",
+        "anh": ["18.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Trắng",
+        "ma": "white",
+        "anh": ["19.jpg"]
       }
     ]
   },
   {
     "id": 20,
     "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 20",
-    "giaCu": "",
+    "ten": "NETTO® - Áo len đen vân lỗ phối cổ bẻ dây nơ cổ YO YO TOP/BL",
+    "gia": "299000",
     "ma": "NT020",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 21,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 21",
-    "giaCu": "",
-    "ma": "NT021",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Đen",
+        "ma": "black",
+        "anh": ["20.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Be",
+        "ma": "beige",
+        "anh": ["21.jpg"]
       }
     ]
   },
   {
     "id": 22,
     "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 22",
-    "giaCu": "",
+    "ten": "NETTO® - Áo len xù crop lửng ngắn tay cổ vuông kẻ trắng BORA BORA TOP/PK",
+    "gia": "285000",
     "ma": "NT022",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 23,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 23",
-    "giaCu": "",
-    "ma": "NT023",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Hồng",
+        "ma": "pink",
+        "anh": ["22.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 24,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 24",
-    "giaCu": "",
-    "ma": "NT024",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Xám",
+        "ma": "gray",
+        "anh": ["23.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Đen",
+        "ma": "black",
+        "anh": ["24.jpg"]
       }
     ]
   },
   {
     "id": 25,
     "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 25",
-    "giaCu": "",
+    "ten": "NETTO® - Áo len xù trắng cổ tròn viền 2 line SHANGHAI TOP/WH",
+    "gia": "265000",
     "ma": "NT025",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 26,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 26",
-    "giaCu": "",
-    "ma": "NT026",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Trắng",
+        "ma": "white",
+        "anh": ["25.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Đen",
+        "ma": "black",
+        "anh": ["26.jpg"]
       }
     ]
   },
   {
     "id": 27,
     "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 27",
-    "giaCu": "",
+    "ten": "NETTO® - Áo len xù mỏng ngắn tay cổ lượn viền mint DATE MAKER TOP/MINT",
+    "gia": "300000",
+    "giaCu": "380000",
     "ma": "NT027",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 28,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 28",
-    "giaCu": "",
-    "ma": "NT028",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Đen",
+        "ma": "black",
+        "anh": ["27.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 29,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 29",
-    "giaCu": "",
-    "ma": "NT029",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Trắng",
+        "ma": "white",
+        "anh": ["28.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Xám",
+        "ma": "white",
+        "anh": ["29.jpg"]
       }
     ]
   },
   {
     "id": 30,
     "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 30",
-    "giaCu": "",
+    "ten": "NETTO® - Áo len xù ngắn tay dáng lửng khoét vai hồng BE MINE TOP/PK",
+    "gia": "350000",
+    "giaCu": "380000",
     "ma": "NT030",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Xanh baby",
+        "ma": "#B5D0EC",
+        "anh": ["30.jpg"]
       }
     ]
   },
   {
     "id": 31,
     "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 31",
-    "giaCu": "",
+    "ten": "NETTO® - Áo Babydoll Hoa Nhí Xinh Hồng Pastel Tim Nhỏ",
+    "gia": "289000",
     "ma": "NT031",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Hồng",
+        "ma": "pink"
       }
     ]
   },
   {
     "id": 32,
     "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 32",
-    "giaCu": "",
+    "ten": "NETTO® - Áo len ngắn tay chống nhăn trắng ALISSA TOP/WH",
+    "gia": "249000",
+    "giaCu": "380000",
     "ma": "NT032",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 33,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 33",
-    "giaCu": "",
-    "ma": "NT033",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Đen",
+        "ma": "black",
+        "anh": ["32.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Be",
+        "ma": "beige",
+        "anh": ["33.jpg"]
       }
     ]
   },
   {
     "id": 34,
     "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo ngắn tay mã 34",
-    "giaCu": "",
+    "ten": "NETTO® - Áo trơn xám trễ vai phối nơ MOLISA TOP/BL",
+    "gia": "199000",
+    "giaCu": "280000",
     "ma": "NT034",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Xám",
+        "ma": "gray"
       }
     ]
   },
@@ -469,7 +320,7 @@
     "loai": "ao-dai-tay",
     "ten": "NETTO® - Áo len cổ bẻ dáng lửng vân in chìm baby BERRIES TOP",
     "gia": "399.000đ",
-    "giaCu": "",
+    "giaCu": "399.000đ",
     "ma": "NT035",
     "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],

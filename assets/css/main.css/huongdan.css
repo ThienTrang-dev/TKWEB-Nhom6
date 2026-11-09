@@ -1,45 +1,139 @@
-/* Nội dung trang hướng dẫn */
+/* =====================================
+   TRANG HƯỚNG DẪN - NETTO CLOTHES
+   Cùng phông, màu, cỡ chữ với trang Giới thiệu
+===================================== */
+
+.trang-huongdan {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 15px;
+  line-height: 2;
+  color: #554943;
+}
+
+/* Tiêu đề chính */
+.trang-huongdan h1 {
+  margin: 40px auto 35px;
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #986d68;
+}
+
+/* Tiêu đề từng phần */
+.trang-huongdan h2 {
+  margin: 50px auto 24px;
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 34px;
+  font-weight: 600;
+  color: #986d68;
+}
+
+/* Đường trang trí dưới tiêu đề */
+.trang-huongdan h1::after,
+.trang-huongdan h2::after {
+  content: "";
+  display: block;
+  width: 55px;
+  height: 2px;
+  margin: 12px auto 0;
+  background-color: #d8aaa3;
+}
+
+/* Câu mở đầu */
+.trang-huongdan .mo-dau {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  text-align: center;
+  font-size: 16px;
+  color: #6b5a54;
+}
+
+/* Bảy lưu ý: lưới hai cột */
+.trang-huongdan .luu-y {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+.trang-huongdan .luu-y li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 22px;
+  background-color: #f8eeeb;
+  border-left: 3px solid #d8aaa3;
+  border-radius: 10px;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+.trang-huongdan .luu-y li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(152, 109, 104, 0.15);
+}
+
+/* Số thứ tự trong vòng tròn */
+.trang-huongdan .luu-y .so {
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff;
+  background-color: #986d68;
+  border-radius: 50%;
+}
+
+.trang-huongdan .luu-y p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.8;
+}
+.trang-huongdan b {
+  font-weight: 600;
+  color: #a8736d;
+}
+
+/* Bảng size */
+.trang-huongdan section img {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(152, 109, 104, 0.18);
+}
 
 /* Điện thoại */
 @media (max-width: 800px) {
-  .menu {
-    flex-direction: column;
-    gap: 10px;
+  .trang-huongdan {
+    padding: 16px 20px 40px;
+    font-size: 14px;
   }
-  .menu ul {
-    flex-wrap: wrap;
-    gap: 14px;
+  .trang-huongdan h1 {
+    margin-top: 28px;
+    font-size: 38px;
   }
-}
-.noidung {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 24px;
-  font-family: Arial, sans-serif;
-  color: #333;
-  line-height: 1.6;
-}
-
-.noidung h1 {
-  font-size: 36px;
-  font-weight: 500;
-  margin-bottom: 8px;
-}
-
-.noidung h2 {
-  font-size: 18px;
-  font-weight: 700;
-  margin: 16px 0 12px;
-}
-
-.noidung p {
-  font-size: 16px;
-  margin-bottom: 14px;
-}
-
-.noidung img {
-  display: block;
-  width: 100%;
-  max-width: 300px;
-  margin-top: 5px;
+  .trang-huongdan h2 {
+    margin-top: 40px;
+    font-size: 28px;
+  }
+  .trang-huongdan .luu-y {
+    grid-template-columns: 1fr;
+  }
+  .trang-huongdan .mo-dau {
+    font-size: 15px;
+  }
 }

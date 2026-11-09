@@ -244,18 +244,23 @@
   font-weight: 600;
 }
 
-/* Giá màu đỏ, đậm */
+/* Giá: giá bán to nổi bật, giá cũ nhỏ gạch ngang */
 .trang-sanpham .luoi-sanpham .sp-card .sp-gia {
+  display: flex !important;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2px 8px;
   margin-top: 6px;
-  font-size: 16px !important;
+  font-size: 17px !important;
   font-weight: 700 !important;
-  color: #d0021b !important;
+  line-height: 1.3;
+  color: #e8175d !important;
 }
 .trang-sanpham .luoi-sanpham .sp-card .sp-gia .sp-gia-cu {
-  margin-left: 8px;
+  margin-left: 0 !important;
   font-size: 12px !important;
   font-weight: 400 !important;
-  color: #999 !important;
+  color: #9a9a9a !important;
   text-decoration: line-through;
 }
 

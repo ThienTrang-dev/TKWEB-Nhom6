@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Đăng nhập / Đăng ký</title>
     <link rel="stylesheet" href="../assets/css/main.css/form.css" />
+    <script>
+      if (location.search.indexOf("modal=1") !== -1) {
+        document.documentElement.classList.add("in-modal");
+      }
+    </script>
   </head>
   <body>
     <div class="auth-box">
@@ -57,14 +62,26 @@
           <input type="checkbox" id="reg-dongy" required />
           <span
             >Tôi đồng ý với tất cả các
-            <a href="chinh-sach.html">chính sách và điều khoản</a></span
+            <a href="chinh-sach.html" target="_top"
+              >chính sách và điều khoản</a
+            ></span
           >
         </label>
         <br />
         <button type="submit" class="btn-submit">Đăng ký</button>
       </form>
     </div>
-
     <script src="../assets/js/form.js"></script>
+    <script>
+      if (window.parent !== window) {
+        const hop = document.querySelector(".auth-box");
+        new ResizeObserver(function () {
+          parent.postMessage(
+            { netto: "auth-height", h: hop.offsetHeight },
+            "*",
+          );
+        }).observe(hop);
+      }
+    </script>
   </body>
 </html>

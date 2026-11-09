@@ -1,9 +1,7 @@
-
 // Header + footer + chatbox dùng chung cho mọi trang.
 // Nhúng:
 // index.html: <script src="assets/js/layout.js"></script>
 // pages/*.html: <script src="../assets/js/layout.js"></script>
-
 (function () {
   // Tự xác định đường dẫn gốc từ vị trí file layout.js
   const self =
@@ -72,15 +70,16 @@
            data-page="sanpham.html">Sản phẩm ▾</a>
 
         <ul class="dropdown">
+        <li>
+        <a href ="${root}pages/sanpham.html?loai=quan">Quần</a>
+        </li>
           <li>
             <a href="${root}pages/sanpham.html?loai=ao">Áo</a>
           </li>
           <li>
             <a href="${root}pages/sanpham.html?loai=vay">Váy / Chân váy</a>
           </li>
-          <li>
-            <a href="${root}pages/sanpham.html?loai=phukien">Phụ kiện</a>
-          </li>
+          
         </ul>
       </li>
 
@@ -277,3 +276,55 @@
     render();
   }
 })();
+// ===== Khung đăng nhập nổi =====
+function dongKhungDangNhap() {
+  const nen = document.getElementById("auth-modal");
+  if (nen) nen.classList.remove("mo");
+  document.body.style.overflow = "";
+}
+
+function moKhungDangNhap(url) {
+  let nen = document.getElementById("auth-modal");
+  if (!nen) {
+    nen = document.createElement("div");
+    nen.id = "auth-modal";
+    nen.className = "auth-modal";
+    nen.innerHTML =
+      '<div class="auth-modal-hop">' +
+      '<button type="button" class="auth-modal-dong" aria-label="Đóng">&times;</button>' +
+      '<iframe class="auth-modal-khung" title="Đăng nhập / Đăng ký"></iframe>' +
+      "</div>";
+    document.body.appendChild(nen);
+
+    // Bấm nền tối hoặc nút X thì đóng
+    nen.addEventListener("click", function (e) {
+      if (e.target === nen || e.target.closest(".auth-modal-dong")) {
+        dongKhungDangNhap();
+      }
+    });
+    // Bấm Esc thì đóng
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") dongKhungDangNhap();
+    });
+    // Form báo chiều cao để khung tự co giãn
+    window.addEventListener("message", function (e) {
+      if (e.data && e.data.netto === "auth-height") {
+        nen.querySelector("iframe").style.height = e.data.h + "px";
+      }
+    });
+  }
+  const khung = nen.querySelector("iframe");
+  if (!khung.getAttribute("src")) {
+    khung.src = url + (url.indexOf("?") >= 0 ? "&" : "?") + "modal=1";
+  }
+  nen.classList.add("mo");
+  document.body.style.overflow = "hidden";
+}
+
+// Bấm vào bất kỳ link nào dẫn tới form.html thì mở khung nổi
+document.addEventListener("click", function (e) {
+  const link = e.target.closest('a[href*="form.html"]');
+  if (!link || location.pathname.endsWith("form.html")) return;
+  e.preventDefault();
+  moKhungDangNhap(link.href);
+});

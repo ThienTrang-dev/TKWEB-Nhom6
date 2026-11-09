@@ -138,3 +138,178 @@ fetch("../assets/data/products.json")
       });
     }
   });
+// ===== Đánh giá sản phẩm (lưu trong trình duyệt) =====
+(function () {
+  const id = new URLSearchParams(location.search).get("id");
+  const form = document.getElementById("dg-form");
+  if (!id || !form) return;
+
+  const KHOA = "netto-danhgia-" + id;
+  const ds = document.getElementById("dg-ds");
+  const boLoc = document.getElementById("dg-loc");
+  const saoTren = document.querySelector(".ct-sao");
+  const nutSao = document.querySelectorAll("#dg-chon-sao button");
+  const nutMo = document.getElementById("dg-mo-form");
+  let diem = 5; // số sao đang chọn khi viết
+  let loc = 0; // 0 = tất cả, 1..5 = lọc theo số sao
+
+  function doc() {
+    try {
+      return JSON.parse(localStorage.getItem(KHOA)) || [];
+    } catch (e) {
+      return [];
+    }
+  }
+  function ghi(arr) {
+    try {
+      localStorage.setItem(KHOA, JSON.stringify(arr));
+    } catch (e) {}
+  }
+  function chuoiSao(n) {
+    return "★".repeat(n) + "☆".repeat(5 - n);
+  }
+  function chonSao(n) {
+    diem = n;
+    nutSao.forEach(function (b) {
+      b.classList.toggle("on", Number(b.dataset.v) <= n);
+    });
+  }
+
+  // Hàng nút lọc: Tất cả, 5 Sao (n), 4 Sao (n)...
+  function veLoc(arr) {
+    boLoc.innerHTML = "";
+    [0, 5, 4, 3, 2, 1].forEach(function (n) {
+      const dem =
+        n === 0
+          ? arr.length
+          : arr.filter(function (d) {
+              return d.diem === n;
+            }).length;
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = n === 0 ? "Tất cả" : n + " Sao (" + dem + ")";
+      if (n === loc) b.className = "on";
+      b.addEventListener("click", function () {
+        loc = n;
+        ve();
+      });
+      boLoc.appendChild(b);
+    });
+  }
+
+  // Danh sách đánh giá: avatar chữ cái, tên, sao, ngày, nội dung
+  function veDS(arr) {
+    ds.innerHTML = "";
+    const hien =
+      loc === 0
+        ? arr
+        : arr.filter(function (d) {
+            return d.diem === loc;
+          });
+
+    if (!hien.length) {
+      const p = document.createElement("p");
+      p.className = "dg-trong";
+      p.textContent = arr.length
+        ? "Chưa có đánh giá nào cho mục này."
+        : "Chưa có đánh giá nào. Hãy là người đầu tiên!";
+      ds.appendChild(p);
+      return;
+    }
+
+    hien.forEach(function (d) {
+      const o = document.createElement("div");
+      o.className = "dg-muc";
+
+      const av = document.createElement("div");
+      av.className = "dg-avatar";
+      av.textContent = d.ten.charAt(0).toUpperCase();
+
+      const body = document.createElement("div");
+      body.className = "dg-body";
+
+      const ten = document.createElement("div");
+      ten.className = "dg-ten";
+      ten.textContent = d.ten;
+
+      const sao = document.createElement("div");
+      sao.className = "dg-sao";
+      sao.textContent = chuoiSao(d.diem);
+
+      const ngay = document.createElement("div");
+      ngay.className = "dg-ngay";
+      ngay.textContent = d.ngay;
+
+      const nd = document.createElement("p");
+      nd.textContent = d.nd;
+
+      body.appendChild(ten);
+      body.appendChild(sao);
+      body.appendChild(ngay);
+      body.appendChild(nd);
+      o.appendChild(av);
+      o.appendChild(body);
+      ds.appendChild(o);
+    });
+  }
+
+  function ve() {
+    const arr = doc();
+
+    // Điểm trung bình
+    let tb = 0;
+    if (arr.length) {
+      tb =
+        arr.reduce(function (t, d) {
+          return t + d.diem;
+        }, 0) / arr.length;
+    }
+    const lamTron = Math.round(tb);
+    document.getElementById("dg-diem").textContent = arr.length
+      ? tb.toFixed(1)
+      : "0";
+    document.getElementById("dg-sao-tong").textContent = chuoiSao(lamTron);
+    if (saoTren) {
+      saoTren.textContent =
+        chuoiSao(lamTron) + (arr.length ? "  (" + arr.length + ")" : "");
+    }
+
+    veLoc(arr);
+    veDS(arr);
+  }
+
+  nutSao.forEach(function (b) {
+    b.addEventListener("click", function () {
+      chonSao(Number(b.dataset.v));
+    });
+  });
+
+  nutMo.addEventListener("click", function () {
+    form.hidden = !form.hidden;
+    nutMo.textContent = form.hidden ? "Viết đánh giá" : "Đóng";
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const nd = document.getElementById("dg-nd").value.trim();
+    if (!nd) return;
+    const ten = document.getElementById("dg-ten").value.trim() || "Khách";
+    const arr = doc();
+    arr.unshift({
+      ten: ten,
+      diem: diem,
+      nd: nd,
+      ngay: new Date().toLocaleDateString("vi-VN"),
+    });
+    ghi(arr);
+    form.reset();
+    chonSao(5);
+    form.hidden = true;
+    nutMo.textContent = "Viết đánh giá";
+    loc = 0;
+    ve();
+  });
+
+  chonSao(5);
+  ve();
+})();

@@ -22,7 +22,7 @@ body {
   color: var(--text);
   line-height: 1.5;
   background: var(--white);
-   padding-top: 120px;   /*sửa khoảng cách header với nội dung bên dưới */
+  padding-top: 120px; /*sửa khoảng cách header với nội dung bên dưới */
 }
 
 a {
@@ -90,17 +90,17 @@ input {
 /* ===================== HEADER ===================== */
 /* HEADER DÙNG CHUNG */
 #site-header {
-    position: relative;
-    z-index: 99999;
+  position: relative;
+  z-index: 99999;
 }
 
 .site-header {
-    position: fixed !important;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 99999;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 99999;
 }
 
 .topbar {
@@ -242,14 +242,13 @@ input {
   position: relative;
   max-width: var(--max-width);
   margin: 24px auto;
-  overflow: hidden; 
+  overflow: hidden;
 }
 .hero-track {
   display: flex;
   height: 560px;
   transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
   will-change: transform;
-  
 }
 .hero-slide {
   flex: 0 0 100%;
@@ -777,19 +776,25 @@ input {
   }
 }
 /* ===================== TRANG CHI TIET SAN PHAM ===================== */
-.sp-card{ cursor: pointer; }
+.sp-card {
+  cursor: pointer;
+}
 
-.ct-breadcrumb{
+.ct-breadcrumb {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 24px 24px 0;
   font-size: 13px;
   color: var(--text-light);
 }
-.ct-breadcrumb a:hover{ color: var(--black); }
-.ct-breadcrumb span{ color: #e2543f; }
+.ct-breadcrumb a:hover {
+  color: var(--black);
+}
+.ct-breadcrumb span {
+  color: #e2543f;
+}
 
-.ct-wrap{
+.ct-wrap {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 32px 24px 60px;
@@ -800,45 +805,62 @@ input {
 }
 
 /* Ảnh */
-.ct-anh img#ct-anh-lon{
+.ct-anh img#ct-anh-lon {
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
   border-radius: var(--radius);
 }
-.ct-thumbs{
+.ct-thumbs {
   display: flex;
   gap: 10px;
   justify-content: center;
   margin-top: 14px;
 }
-.ct-thumbs img{
-  width: 64px; height: 64px;
+.ct-thumbs img {
+  width: 64px;
+  height: 64px;
   object-fit: cover;
   border: 2px solid #e2543f;
   border-radius: var(--radius);
 }
 
 /* Thông tin */
-.ct-ten{
+.ct-ten {
   font-size: 20px;
   font-weight: 600;
   line-height: 1.4;
   color: var(--black);
 }
-.ct-sao{ color: #e2543f; margin-top: 8px; letter-spacing: 2px; }
-.ct-ma{ font-size: 13px; color: var(--text-light); margin-top: 4px; }
+.ct-sao {
+  color: #e2543f;
+  margin-top: 8px;
+  letter-spacing: 2px;
+}
+.ct-ma {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-top: 4px;
+}
 
-.ct-gia{
+.ct-gia {
   margin-top: 16px;
   display: flex;
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
 }
-#ct-gia{ font-size: 26px; font-weight: 600; color: #d0021b; }
-.ct-gia-cu{ font-size: 14px; color: var(--text-light); text-decoration: line-through; }
-.ct-sale{
+#ct-gia {
+  font-size: 26px;
+  font-weight: 600;
+  color: #d0021b;
+}
+.ct-gia-cu {
+  font-size: 14px;
+  color: var(--text-light);
+  text-decoration: line-through;
+}
+.ct-sale {
   background: #d0021b;
   color: var(--white);
   font-size: 11px;
@@ -846,49 +868,76 @@ input {
   border-radius: 3px;
 }
 
-.ct-nhan{ margin-top: 20px; margin-bottom: 8px; font-size: 14px; color: var(--text-light); }
+.ct-nhan {
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--text-light);
+}
 
-.ct-size{ display: flex; gap: 10px; }
-.ct-size button{
-  min-width: 40px; height: 36px;
+.ct-size {
+  display: flex;
+  gap: 10px;
+}
+.ct-size button {
+  min-width: 40px;
+  height: 36px;
   padding: 0 12px;
   border: 1px solid #ddd;
   border-radius: var(--radius);
   background: var(--white);
   cursor: pointer;
 }
-.ct-size button:hover{ border-color: var(--pink-dark); }
-.ct-size button.active{
+.ct-size button:hover {
+  border-color: var(--pink-dark);
+}
+.ct-size button.active {
   border-color: #e2543f;
   color: #e2543f;
   font-weight: 600;
 }
 
-.ct-mau{ display: flex; gap: 10px; }
-.ct-mau button{
-  width: 24px; height: 24px;
+.ct-mau {
+  display: flex;
+  gap: 10px;
+}
+.ct-mau button {
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   border: 1px solid #ddd;
   cursor: pointer;
 }
-.ct-mau button.active{ outline: 2px solid #e2543f; outline-offset: 2px; }
+.ct-mau button.active {
+  outline: 2px solid #e2543f;
+  outline-offset: 2px;
+}
 
 /* Gợi ý size */
-.ct-goiy{
+.ct-goiy {
   margin-top: 24px;
   padding: 16px;
   border: 1px dashed var(--pink-dark);
   border-radius: var(--radius);
 }
-.ct-goiy-tieude{ font-size: 13px; font-weight: 600; color: #d0021b; margin-bottom: 10px; }
-.ct-goiy-input{ display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.ct-goiy-input input{
+.ct-goiy-tieude {
+  font-size: 13px;
+  font-weight: 600;
+  color: #d0021b;
+  margin-bottom: 10px;
+}
+.ct-goiy-input {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.ct-goiy-input input {
   padding: 10px;
   border: 1px solid #eee;
   border-radius: var(--radius);
   font-size: 13px;
 }
-.ct-btn-size{
+.ct-btn-size {
   width: 100%;
   margin-top: 10px;
   padding: 10px;
@@ -899,32 +948,44 @@ input {
   font-weight: 600;
   cursor: pointer;
 }
-.ct-btn-size:hover{ background: var(--pink-dark); }
-.ct-ketqua{ margin-top: 8px; font-size: 13px; color: var(--black); font-weight: 500; }
+.ct-btn-size:hover {
+  background: var(--pink-dark);
+}
+.ct-ketqua {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--black);
+  font-weight: 500;
+}
 
 /* Số lượng + nút mua */
-.ct-soluong{
+.ct-soluong {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-top: 24px;
   font-size: 14px;
 }
-.ct-soluong span{ margin-right: 8px; color: var(--text-light); }
-.ct-soluong button{
-  width: 32px; height: 32px;
+.ct-soluong span {
+  margin-right: 8px;
+  color: var(--text-light);
+}
+.ct-soluong button {
+  width: 32px;
+  height: 32px;
   border: 1px solid #ddd;
   background: var(--white);
   cursor: pointer;
   font-size: 16px;
 }
-.ct-soluong input{
-  width: 48px; height: 32px;
+.ct-soluong input {
+  width: 48px;
+  height: 32px;
   text-align: center;
   border: 1px solid #ddd;
 }
 
-.ct-mua{
+.ct-mua {
   width: 100%;
   margin-top: 20px;
   padding: 14px;
@@ -935,22 +996,87 @@ input {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: background .2s;
+  transition: background 0.2s;
 }
-.ct-mua:hover{ background: #e2543f; }
+.ct-mua:hover {
+  background: #e2543f;
+}
 
-.ct-mota{ margin-top: 32px; border-top: 1px solid #eee; padding-top: 16px; }
-.ct-mota h3{ font-size: 15px; margin-bottom: 8px; color: var(--black); }
-.ct-mota p{ font-size: 14px; color: var(--text); }
+.ct-mota {
+  margin-top: 32px;
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+}
+.ct-mota h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: var(--black);
+}
+.ct-mota p {
+  font-size: 14px;
+  color: var(--text);
+}
 
-@media (max-width: 900px){
-  .ct-wrap{ grid-template-columns: 1fr; gap: 24px; }
+@media (max-width: 900px) {
+  .ct-wrap {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }
 .page-hero {
-  background: linear-gradient(135deg, #FDE8EC 0%, #FFF7F8 100%);
-  border: 1px solid #F0E4E6;
+  background: linear-gradient(135deg, #fde8ec 0%, #fff7f8 100%);
+  border: 1px solid #f0e4e6;
   border-radius: 16px;
   padding: 36px 28px;
   text-align: center;
   margin-bottom: 40px;
+}
+/* Khung đăng nhập nổi */
+.auth-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.55);
+}
+.auth-modal.mo {
+  display: flex;
+}
+.auth-modal-hop {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  max-height: 92vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+}
+.auth-modal-khung {
+  display: block;
+  width: 100%;
+  height: 520px;
+  border: 0;
+  background: transparent;
+}
+.auth-modal-dong {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: #111;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+.auth-modal-dong:hover {
+  background: #e2543f;
 }
