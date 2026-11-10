@@ -379,7 +379,7 @@
     "loai": "ao-dai-tay",
     "ten": "NETTO® - Áo len xù cardigan 4 túi đen viền trắng JENNIFER CARDIGAN/BL",
     "gia": "349.000đ",
-    "giaCu": "",
+    "giaCu": "499.000đ",
     "ma": "NT040",
     "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
@@ -397,263 +397,155 @@
       }
     ]
   },
-  {
-    "id": 41,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 41",
-    "giaCu": "",
-    "ma": "NT041",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
+ 
   {
     "id": 42,
     "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 42",
-    "giaCu": "",
+    "ten": "NETTO® - Áo len xù đỏ dáng lửng phối cổ bẻ dây nơ đen HELLEN TOP/DR",
+    "gia": "289.000đ",
+    "giaCu": "399.000đ",
     "ma": "NT042",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 43,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 43",
-    "giaCu": "",
-    "ma": "NT043",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Đỏ",
+        "ma": "red",
+        "anh": ["42.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 44,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 44",
-    "giaCu": "",
-    "ma": "NT044",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Đen",
+        "ma": "black",
+        "anh": ["43.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Hồng",
+        "ma": "pink",
+        "anh": ["44.jpg"]
       }
     ]
   },
+  
   {
     "id": 45,
     "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 45",
-    "giaCu": "",
+    "ten": "NETTO® - Áo len lông bông hồng/xanh nhạt dáng lửng phối cúc kim loại LISA LOVE TOP/PK",
+    "gia": "329.000đ",
+    "giaCu": "449.000đ",
     "ma": "NT045",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 46,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 46",
-    "giaCu": "",
-    "ma": "NT046",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Hồng baby",
+        "ma": "#ff99cc",
+        "anh": ["45.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Xanh baby",
+        "ma": "#99ccff",
+        "anh": ["46.jpg"]
       }
     ]
   },
+  
   {
     "id": 47,
     "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 47",
-    "giaCu": "",
+    "ten": "NETTO® - Áo len xù hồng cardigan cổ tròn vân quả trám nổi dài tay RACHEL TOP/PK",
+    "giaCu": "329000",
     "ma": "NT047",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 48,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 48",
-    "giaCu": "",
-    "ma": "NT048",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Hồng phấn",
+        "ma": "#F8C8DC",
+        "anh": ["47.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 49,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 49",
-    "giaCu": "",
-    "ma": "NT049",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Xanh băng",
+        "ma": "#D0E0E3",
+        "anh": ["48.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Xanh navy đậm",
+        "ma": "#1B263B",
+        "anh": ["49.jpg"]
       }
     ]
   },
+  
   {
     "id": 50,
     "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 50",
+    "ten": "NETTO® - Áo len lông bóng xù hồng phối viền trắng dáng lửng phối cúc kim loại ISABELLA TOP/PK",
+    "gia": "399000",
     "giaCu": "",
     "ma": "NT050",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Hồng phấn",
+        "ma": "#F8C8DC"
       }
     ]
   },
   {
     "id": 51,
     "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 51",
+    "ten": "NETTO® - Áo khoác cổ tròn dáng dài vân caro MACCARONI JACKET/PK PHIÊN BẢN MỚI NHẤT T11.2026",
     "giaCu": "",
     "ma": "NT051",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 52,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 52",
-    "giaCu": "",
-    "ma": "NT052",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Hồng phấn",
+        "ma": "#F4C2C2",
+        "anh": ["51.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Xám nhạt",
+        "ma": "#D3D3D3",
+        "anh": ["52.jpg"]
       }
     ]
   },
+  
   {
     "id": 53,
     "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 53",
+    "ten": "NETTO® - Áo len xù cardigan cổ bẻ dáng lửng phối đường viền LILY ROSE JACKET",
     "giaCu": "",
     "ma": "NT053",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
     "size": ["S", "M", "L"],
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 54,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 54",
-    "giaCu": "",
-    "ma": "NT054",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Hồng phấn",
+        "ma": "#FBE4E8",
+        "anh": ["53.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 55,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay xink đẹp",
-    "giaCu": "499000",
-    "gia": "399000",
-    "ma": "NT055",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+        "ten": "Trắng kem",
+        "ma": "#F9F8F3",
+        "anh": ["54.jpg"]
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc",
+        "ten": "Ghi",
+        "ma": "#A0A0A0",
         "anh": ["55.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 56,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 56",
-    "giaCu": "",
-    "ma": "NT056",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
+      },
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Đen",
+        "ma": "black",
+        "anh": ["56.jpg"]
       }
     ]
   },
-  {
-    "id": 57,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 57",
-    "giaCu": "",
-    "ma": "NT057",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
+  
   {
     "id": 58,
     "loai": "vay",
