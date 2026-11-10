@@ -17,9 +17,17 @@ fetch("../assets/data/products.json")
       if (n === null) return "";
       return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ".") + "đ";
     }
+    // Phần trăm giảm: (giá cũ - giá bán) / giá cũ
+    function phanTramGiam(gia, giaCu) {
+      const g = soGia(gia);
+      const c = soGia(giaCu);
+      if (g === null || c === null || c <= g) return 0;
+      return Math.round(((c - g) / c) * 100);
+    }
 
     SAN_PHAM.forEach(function (sp, stt) {
       const giaCu = dinhDangGia(sp.giaCu);
+      const giam = phanTramGiam(sp.gia, sp.giaCu);
       const a = document.createElement("a");
       a.className = "sp-card";
       a.dataset.loai = sp.loai;
@@ -27,6 +35,7 @@ fetch("../assets/data/products.json")
       a.dataset.gia = soGia(sp.gia) === null ? "" : soGia(sp.gia);
       a.href = "chitietsanpham.html?id=" + sp.id;
       a.innerHTML =
+        '<div class="sp-anh">' +
         '<img src="../assets/images/' +
         sp.loai +
         "/" +
@@ -34,11 +43,14 @@ fetch("../assets/data/products.json")
         '.jpg" alt="' +
         sp.ten +
         '" loading="lazy" />' +
+        (giam ? '<span class="sp-giam">-' + giam + "%</span>" : "") +
+        "</div>" +
         '<p class="sp-ten">' +
         sp.ten +
         "</p>" +
-        '<p class="sp-gia">' +
+        '<p class="sp-gia"><span class="sp-gia-ban">' +
         dinhDangGia(sp.gia) +
+        "</span>" +
         (giaCu ? ' <span class="sp-gia-cu">' + giaCu + "</span>" : "") +
         "</p>";
       luoi.appendChild(a);
@@ -46,7 +58,7 @@ fetch("../assets/data/products.json")
 
     // ===== Nút sắp xếp giá, đặt ngay dưới chữ "BỘ LỌC" =====
     const NHAN_SX = [
-      "Sắp xếp theo giá",
+      "Sắp xếp theo giá ⇅",
       "Giá: thấp đến cao ↑",
       "Giá: cao đến thấp ↓",
     ];
@@ -67,19 +79,94 @@ fetch("../assets/data/products.json")
     const radios = document.querySelectorAll('.bo-loc input[name="Clothes"]');
     const cards = document.querySelectorAll(".sp-card");
 
-    // ===== Chia trang: mỗi trang 4 hàng x 4 cột =====
+    // ===== Phân trang: mỗi trang 4 hàng x 4 cột =====
     const MOI_TRANG = 16;
     let trang = 1;
     let khop = [];
 
-    const nutXemThem = document.createElement("button");
-    nutXemThem.type = "button";
-    nutXemThem.className = "nut-xem-them";
-    nutXemThem.textContent = "Xem thêm";
-    luoi.appendChild(nutXemThem);
+    const phanTrang = document.createElement("nav");
+    phanTrang.className = "phan-trang";
+    phanTrang.setAttribute("aria-label", "Phân trang");
+    luoi.appendChild(phanTrang);
 
     function soTrang() {
       return Math.max(1, Math.ceil(khop.length / MOI_TRANG));
+    }
+
+    // Dãy số trang: 1 2 3 4 5 ... 10
+    function danhSachTrang(tong, hienTai) {
+      if (tong <= 7) {
+        return Array.from({ length: tong }, function (_, i) {
+          return i + 1;
+        });
+      }
+      let tu = Math.max(2, hienTai - 1);
+      let den = Math.min(tong - 1, hienTai + 1);
+      if (hienTai <= 3) {
+        tu = 2;
+        den = 4;
+      }
+      if (hienTai >= tong - 2) {
+        tu = tong - 3;
+        den = tong - 1;
+      }
+      const ds = [1];
+      if (tu > 2) ds.push("...");
+      for (let i = tu; i <= den; i++) ds.push(i);
+      if (den < tong - 1) ds.push("...");
+      ds.push(tong);
+      return ds;
+    }
+
+    function taoNut(nhan, tat, bat, onClick) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = nhan;
+      b.disabled = tat;
+      if (bat) b.className = "on";
+      if (!tat) b.addEventListener("click", onClick);
+      return b;
+    }
+
+    function chuyenTrang(n) {
+      trang = n;
+      hienSanPham();
+      window.scrollTo({
+        top: luoi.getBoundingClientRect().top + window.scrollY - 140,
+        behavior: "smooth",
+      });
+    }
+
+    function veTrang() {
+      const tong = soTrang();
+      phanTrang.innerHTML = "";
+      phanTrang.hidden = tong <= 1;
+      if (tong <= 1) return;
+
+      phanTrang.appendChild(
+        taoNut("‹", trang === 1, false, function () {
+          chuyenTrang(trang - 1);
+        }),
+      );
+      danhSachTrang(tong, trang).forEach(function (p) {
+        if (p === "...") {
+          const s = document.createElement("span");
+          s.className = "cham";
+          s.textContent = "...";
+          phanTrang.appendChild(s);
+        } else {
+          phanTrang.appendChild(
+            taoNut(p, false, p === trang, function () {
+              chuyenTrang(p);
+            }),
+          );
+        }
+      });
+      phanTrang.appendChild(
+        taoNut("›", trang === tong, false, function () {
+          chuyenTrang(trang + 1);
+        }),
+      );
     }
 
     function hienSanPham() {
@@ -91,20 +178,10 @@ fetch("../assets/data/products.json")
         .forEach(function (c) {
           c.hidden = false;
         });
-      const tong = soTrang();
-      nutXemThem.hidden = tong <= 1;
-      nutXemThem.textContent = trang < tong ? "Xem thêm" : "Về trang đầu";
+      veTrang();
     }
 
-    nutXemThem.addEventListener("click", function () {
-      trang = trang < soTrang() ? trang + 1 : 1;
-      hienSanPham();
-      window.scrollTo({
-        top: luoi.getBoundingClientRect().top + window.scrollY - 140,
-        behavior: "smooth",
-      });
-    });
-    // Menu trên cùng chọn theo nhóm (một nhóm gồm nhiều loại)
+    // ===== Menu trên cùng chọn theo nhóm (một nhóm gồm nhiều loại) =====
     const NHOM = {
       quan: ["quan-dai", "quan-ngan"],
       ao: ["ao-dai-tay", "ao-ngan-tay"],
@@ -112,10 +189,12 @@ fetch("../assets/data/products.json")
       phukien: [],
     };
     let nhomChon = null;
+
     // ===== Lọc loại + sắp xếp giá (dùng đồng thời) =====
     function locSanPham() {
       const r = document.querySelector('.bo-loc input[name="Clothes"]:checked');
       const chon = r ? r.value : "tat-ca";
+
       khop = Array.from(cards).filter(function (c) {
         if (nhomChon) return NHOM[nhomChon].indexOf(c.dataset.loai) >= 0;
         return chon === "tat-ca" || c.dataset.loai === chon;
@@ -132,7 +211,7 @@ fetch("../assets/data/products.json")
         return kieuSX === 1 ? ga - gb : gb - ga;
       });
       khop.forEach(function (c) {
-        luoi.insertBefore(c, nutXemThem);
+        luoi.insertBefore(c, phanTrang);
       });
 
       thongBao.hidden = khop.length !== 0;
@@ -153,6 +232,7 @@ fetch("../assets/data/products.json")
       locSanPham();
     });
     locSanPham();
+
     // Vào từ menu có ?loai=... thì chọn sẵn bộ lọc tương ứng
     const loaiTuUrl = new URLSearchParams(location.search).get("loai");
     if (loaiTuUrl) {

@@ -313,3 +313,140 @@ fetch("../assets/data/products.json")
   chonSao(5);
   ve();
 })();
+// ===== % giảm giá + Sản phẩm gợi ý (4 sản phẩm cố định theo nhóm) =====
+(function () {
+  const id = Number(new URLSearchParams(location.search).get("id"));
+  if (!id) return;
+
+  // Ghi id sản phẩm muốn cố định; để [] thì lấy 4 sản phẩm đầu của nhóm
+  const GOI_Y = {
+    ao: [],
+    quan: [],
+    vay: [],
+  };
+  const NHOM_CUA = {
+    "ao-ngan-tay": "ao",
+    "ao-dai-tay": "ao",
+    "quan-dai": "quan",
+    "quan-ngan": "quan",
+    vay: "vay",
+  };
+
+  function soGia(g) {
+    const s = String(g || "").replace(/\D/g, "");
+    return s ? Number(s) : null;
+  }
+  function dinhDangGia(g) {
+    const n = soGia(g);
+    if (n === null) return "";
+    return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ".") + "đ";
+  }
+  function phanTram(gia, giaCu) {
+    const g = soGia(gia);
+    const c = soGia(giaCu);
+    if (g === null || c === null || c <= g) return 0;
+    return Math.round(((c - g) / c) * 100);
+  }
+
+  fetch("../assets/data/products.json")
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (DS) {
+      const sp = DS.find(function (x) {
+        return x.id === id;
+      });
+      if (!sp) return;
+
+      // ----- Nhãn phần trăm giảm giá cạnh giá -----
+      const sale = document.getElementById("ct-sale");
+      if (sale) {
+        const p = phanTram(sp.gia, sp.giaCu);
+        sale.textContent = "-" + p + "%";
+        sale.hidden = !p;
+      }
+
+      // ----- Chọn 4 sản phẩm gợi ý -----
+      const nhom = NHOM_CUA[sp.loai];
+      if (!nhom) return;
+
+      let chon = GOI_Y[nhom]
+        .map(function (i) {
+          return DS.find(function (x) {
+            return x.id === i;
+          });
+        })
+        .filter(function (x) {
+          return x && x.id !== id;
+        });
+      DS.forEach(function (x) {
+        if (
+          chon.length < 4 &&
+          NHOM_CUA[x.loai] === nhom &&
+          x.id !== id &&
+          chon.indexOf(x) < 0
+        ) {
+          chon.push(x);
+        }
+      });
+      chon = chon.slice(0, 4);
+      if (!chon.length) return;
+
+      // ----- Dựng khối gợi ý, đặt dưới khung đánh giá -----
+      const sec = document.createElement("section");
+      sec.className = "ct-lienquan";
+      const h = document.createElement("h2");
+      h.textContent = "Có thể bạn cũng thích";
+      const luoi = document.createElement("div");
+      luoi.className = "lq-luoi";
+
+      chon.forEach(function (x) {
+        const a = document.createElement("a");
+        a.className = "lq-card";
+        a.href = "chitietsanpham.html?id=" + x.id;
+
+        const khungAnh = document.createElement("div");
+        khungAnh.className = "lq-anh";
+        const img = document.createElement("img");
+        img.src = "../assets/images/" + x.loai + "/" + x.id + ".jpg";
+        img.alt = x.ten;
+        img.loading = "lazy";
+        khungAnh.appendChild(img);
+
+        const giam = phanTram(x.gia, x.giaCu);
+        if (giam) {
+          const nhan = document.createElement("span");
+          nhan.className = "lq-giam";
+          nhan.textContent = "-" + giam + "%";
+          khungAnh.appendChild(nhan);
+        }
+
+        const ten = document.createElement("p");
+        ten.className = "lq-ten";
+        ten.textContent = x.ten;
+
+        const gia = document.createElement("p");
+        gia.className = "lq-gia";
+        const giaBan = document.createElement("span");
+        giaBan.textContent = dinhDangGia(x.gia);
+        gia.appendChild(giaBan);
+        if (x.giaCu) {
+          const cu = document.createElement("span");
+          cu.className = "lq-gia-cu";
+          cu.textContent = dinhDangGia(x.giaCu);
+          gia.appendChild(cu);
+        }
+
+        a.appendChild(khungAnh);
+        a.appendChild(ten);
+        a.appendChild(gia);
+        luoi.appendChild(a);
+      });
+
+      sec.appendChild(h);
+      sec.appendChild(luoi);
+      const dg = document.getElementById("ct-danhgia");
+      if (dg) dg.after(sec);
+      else document.getElementById("site-footer").before(sec);
+    });
+})();

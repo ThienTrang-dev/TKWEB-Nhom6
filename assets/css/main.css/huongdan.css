@@ -54,53 +54,6 @@
   color: #6b5a54;
 }
 
-/* Bảy lưu ý: lưới hai cột */
-.trang-huongdan .luu-y {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-}
-.trang-huongdan .luu-y li {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  padding: 20px 22px;
-  background-color: #f8eeeb;
-  border-left: 3px solid #d8aaa3;
-  border-radius: 10px;
-  transition:
-    transform 0.25s,
-    box-shadow 0.25s;
-}
-.trang-huongdan .luu-y li:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(152, 109, 104, 0.15);
-}
-
-/* Số thứ tự trong vòng tròn */
-.trang-huongdan .luu-y .so {
-  flex: 0 0 34px;
-  width: 34px;
-  height: 34px;
-  display: grid;
-  place-items: center;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1;
-  color: #fff;
-  background-color: #986d68;
-  border-radius: 50%;
-}
-
-.trang-huongdan .luu-y p {
-  margin: 0;
-  font-size: 14.5px;
-  line-height: 1.8;
-}
 .trang-huongdan b {
   font-weight: 600;
   color: #a8736d;
@@ -130,10 +83,32 @@
     margin-top: 40px;
     font-size: 28px;
   }
-  .trang-huongdan .luu-y {
-    grid-template-columns: 1fr;
-  }
   .trang-huongdan .mo-dau {
     font-size: 15px;
+  }
+}
+/* Các lưu ý: một khối chữ liệt kê */
+.trang-huongdan .luu-y-van {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 8px 20px;
+}
+.trang-huongdan .luu-y-van p {
+  margin: 0 0 14px;
+  font-size: 15px;
+  line-height: 2;
+  text-align: justify;
+}
+.trang-huongdan .luu-y-van b:first-child {
+  color: #986d68;
+}
+
+@media (max-width: 800px) {
+  .trang-huongdan .luu-y-van {
+    padding: 4px 8px;
+  }
+  .trang-huongdan .luu-y-van p {
+    font-size: 14px;
+    line-height: 1.9;
   }
 }
