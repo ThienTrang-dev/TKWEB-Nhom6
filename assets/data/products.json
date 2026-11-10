@@ -610,15 +610,17 @@
   {
     "id": 55,
     "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo dài tay mã 55",
-    "giaCu": "",
+    "ten": "NETTO® - Áo dài tay xink đẹp",
+    "giaCu": "499000",
+    "gia": "399000",
     "ma": "NT055",
     "mota": "Thông tin chi tiết đang được cập nhật.",
     "size": ["S", "M", "L"],
     "mau": [
       {
         "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ma": "#cccccc",
+        "anh": ["55.jpg"]
       }
     ]
   },
