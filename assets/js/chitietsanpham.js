@@ -450,3 +450,73 @@ fetch("../assets/data/products.json")
       else document.getElementById("site-footer").before(sec);
     });
 })();
+// ===== Tồn kho: nằm cùng hàng với nút chọn màu =====
+(function () {
+  const id = Number(new URLSearchParams(location.search).get("id"));
+  const boxMau = document.getElementById("ct-mau");
+  const nutMua = document.getElementById("ct-mua");
+  if (!id || !boxMau) return;
+
+  // Bọc nút màu và dòng tồn kho vào cùng một hàng
+  const hang = document.createElement("div");
+  hang.className = "ct-mau-hang";
+  boxMau.parentNode.insertBefore(hang, boxMau);
+  hang.appendChild(boxMau);
+  const ton = document.createElement("span");
+  ton.className = "ct-ton";
+  ton.hidden = true;
+  hang.appendChild(ton);
+
+  fetch("../assets/data/products.json")
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (DS) {
+      const sp = DS.find(function (x) {
+        return x.id === id;
+      });
+      if (!sp) return;
+
+      function hien(i) {
+        const m = sp.mau && sp.mau[i];
+        // Ưu tiên số tồn của màu, không có thì dùng số tồn chung của sản phẩm
+        let n = m && m.ton !== undefined ? m.ton : sp.ton;
+        ton.classList.remove("it", "het");
+        if (n === undefined || n === null || n === "") {
+          ton.hidden = true;
+          if (nutMua) nutMua.disabled = false;
+          return;
+        }
+        n = Number(n);
+        ton.hidden = false;
+        if (n <= 0) {
+          ton.textContent = "Hết hàng";
+          ton.classList.add("het");
+          if (nutMua) nutMua.disabled = true;
+        } else {
+          ton.textContent =
+            n <= 5 ? "Chỉ còn " + n + " sản phẩm" : "Còn " + n + " sản phẩm";
+          if (n <= 5) ton.classList.add("it");
+          if (nutMua) nutMua.disabled = false;
+        }
+      }
+
+      function mauDangChon() {
+        const nuts = Array.from(boxMau.children);
+        const i = nuts.findIndex(function (b) {
+          return b.classList.contains("active");
+        });
+        return i < 0 ? 0 : i;
+      }
+
+      // Đổi màu (bấm nút màu hoặc bấm ảnh nhỏ) thì tồn kho đổi theo
+      new MutationObserver(function () {
+        hien(mauDangChon());
+      }).observe(boxMau, {
+        attributes: true,
+        attributeFilter: ["class"],
+        subtree: true,
+      });
+      hien(0);
+    });
+})();

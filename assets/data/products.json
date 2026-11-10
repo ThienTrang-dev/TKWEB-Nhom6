@@ -387,7 +387,8 @@
       {
         "ten": "Đen",
         "ma": "black",
-        "anh": ["40.jpg"]
+        "anh": ["40.jpg"],
+        "ton": "10"
       },
       {
         "ten": "Trắng",

@@ -571,3 +571,26 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+/* ===== Tồn kho cạnh màu sắc ===== */
+.ct-mau-hang {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+.ct-ton {
+  font-size: 13px;
+  color: var(--text-light);
+}
+.ct-ton[hidden] {
+  display: none;
+}
+.ct-ton.it,
+.ct-ton.het {
+  font-weight: 600;
+  color: #d0021b;
+}
+.ct-mua:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
