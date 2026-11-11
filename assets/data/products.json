@@ -370,7 +370,9 @@
     "mau": [
       {
         "ten": "Đen",
-        "ma": "black"
+        "ma": "black",
+        "anh": ["39.jpg"],
+        "ton": "20"
       }
     ]
   },
@@ -393,7 +395,8 @@
       {
         "ten": "Trắng",
         "ma": "white",
-        "anh": ["41.jpg"]
+        "anh": ["41.jpg"],
+        "ton": "15"
       }
     ]
   },
