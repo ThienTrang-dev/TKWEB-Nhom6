@@ -1,116 +1,126 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NETTO - Thời trang nữ</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/main.css/style.css">
-<link rel="icon" href="assets/images/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NETTO - Thời trang nữ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css/style.css">
+    <link rel="icon" href="assets/images/favicon.png">
 </head>
+
 <body>
 
-<!-- ============ HEADER ============ -->
-<div id="site-header"></div>
-<!-- ============ HERO BANNER (slider) ============ -->
-<section class="hero-banner">
-  <button class="hero-arrow hero-arrow-left" aria-label="Ảnh trước">&#10094;</button>
+    <!-- ============ HEADER ============ -->
+    <div id="site-header"></div>
+    <!-- ============ HERO BANNER (slider) ============ -->
+    <section class="hero-banner">
+        <button class="hero-arrow hero-arrow-left" aria-label="Ảnh trước">&#10094;</button>
 
-  <div class="hero-track">
-    <!-- NOTE: mỗi .hero-slide là 1 ảnh banner. Xem cuối file để biết cách thay ảnh -->
-    <div class="hero-slide active">
-      <img src="assets/images/banner-1.png" alt="NETTO look mới 1">
-    </div>
-    <div class="hero-slide">
-      <img src="assets/images/banner-2.png" alt="NETTO look mới 2">
-    </div>
-    <div class="hero-slide">
-      <img src="assets/images/banner-3.png" alt="NETTO look mới 3">
-    </div>
-  </div>
+        <div class="hero-track">
+            <!-- NOTE: mỗi .hero-slide là 1 ảnh banner. Xem cuối file để biết cách thay ảnh -->
+            <div class="hero-slide active">
+                <img src="assets/images/banner-1.png" alt="NETTO look mới 1">
+            </div>
+            <div class="hero-slide">
+                <img src="assets/images/banner-2.png" alt="NETTO look mới 2">
+            </div>
+            <div class="hero-slide">
+                <img src="assets/images/banner-3.png" alt="NETTO look mới 3">
+            </div>
+        </div>
 
-  <button class="hero-arrow hero-arrow-right" aria-label="Ảnh sau">&#10095;</button>
+        <button class="hero-arrow hero-arrow-right" aria-label="Ảnh sau">&#10095;</button>
 
-  <div class="hero-dots">
-    <button class="dot active" data-slide="0" aria-label="Xem slide 1"></button>
-    <button class="dot" data-slide="1" aria-label="Xem slide 2"></button>
-    <button class="dot" data-slide="2" aria-label="Xem slide 3"></button>
-  </div>
-</section>
+        <div class="hero-dots">
+            <button class="dot active" data-slide="0" aria-label="Xem slide 1"></button>
+            <button class="dot" data-slide="1" aria-label="Xem slide 2"></button>
+            <button class="dot" data-slide="2" aria-label="Xem slide 3"></button>
+        </div>
+    </section>
 
-<!-- Nút nổi bên trái -->
-<a href="pages/khuyen-mai.html" class="float-badge">Hè rực rỡ - Đồng giá sốc</a>
-<button class="float-member" type="button">🎁 Thành viên thân thiết</button>
 
-<!-- ============ SẢN PHẨM NỔI BẬT ============ -->
-<section class="section featured-products">
-  <h2 class="section-title">Sản phẩm nổi bật</h2>
-  <p class="section-sub">Những mẫu đang được giảm giá</p>
+    <!-- Nút nổi bên trái -->
+    <a href="pages/khuyen-mai.html" class="float-badge">Hè rực rỡ - Đồng giá sốc</a>
+    <button class="float-member" type="button">🎁 Thành viên thân thiết</button>
 
-  <div class="product-grid" id="product-grid-home">
-    <!-- JavaScript chọn ngẫu nhiên 4 sản phẩm đang giảm giá và tạo tại đây -->
-  </div>
+    <!-- ============ SẢN PHẨM NỔI BẬT ============ -->
+    <section class="section featured-products">
+        <h2 class="section-title">Sản phẩm nổi bật</h2>
+        <p class="section-sub">Những mẫu đang được giảm giá</p>
 
-  <a href="pages/sanpham.html?loai=noi-bat" class="btn-outline">
-    Xem thêm sản phẩm nổi bật
-  </a>
-</section>
+        <div class="product-grid" id="product-grid-home">
+            <!-- JavaScript chọn ngẫu nhiên 4 sản phẩm đang giảm giá và tạo tại đây -->
+        </div>
 
-<!-- ============ ĐÁNH GIÁ SẢN PHẨM ============ -->
-<section class="section reviews">
-  <h2 class="section-title">Khách hàng nói gì về NETTO</h2>
+        <a href="pages/sanpham.html?loai=noi-bat" class="btn-outline">
+        Xem thêm sản phẩm nổi bật
+    </a>
+    </section>
 
-  <div class="review-grid" id="review-grid-home">
-    <!-- 3 đánh giá mẫu này chỉ hiện khi chưa có đánh giá 5 sao nào; main.js sẽ thay bằng đánh giá thật từ trang chi tiết sản phẩm -->
-    <article class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">Vải mềm, form chuẩn, giao hàng nhanh. Mình sẽ ủng hộ shop dài dài.</p>
-      <div class="review-author">
-        <img src="images/avatar-1.jpg" alt="Khách hàng 1" loading="lazy">
-        <span>Minh Anh</span>
-      </div>
-    </article>
 
-    <article class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <p class="review-text">Đóng gói cẩn thận, chất lượng đúng như hình, giá hợp lý.</p>
-      <div class="review-author">
-        <img src="images/avatar-2.jpg" alt="Khách hàng 2" loading="lazy">
-        <span>Thu Trang</span>
-      </div>
-    </article>
+    <!-- ============ ĐÁNH GIÁ SẢN PHẨM ============ -->
+    <section class="section reviews">
+        <h2 class="section-title">Khách hàng nói gì về NETTO</h2>
 
-    <article class="review-card">
-      <div class="review-stars">★★★★☆</div>
-      <p class="review-text">Áo lên form đẹp, tư vấn size nhiệt tình, sẽ quay lại mua thêm.</p>
-      <div class="review-author">
-        <img src="images/avatar-3.jpg" alt="Khách hàng 3" loading="lazy">
-        <span>Bảo Ngọc</span>
-      </div>
-    </article>
-  </div>
+        <div class="review-grid" id="review-grid-home">
+            <!-- 3 đánh giá mẫu này chỉ hiện khi chưa có đánh giá 5 sao nào -->
+            <article class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Vải mềm, form chuẩn, giao hàng nhanh. Mình sẽ ủng hộ shop dài dài.</p>
+                <div class="review-author">
+                    <img src="images/avatar-1.jpg" alt="Khách hàng 1" loading="lazy">
+                    <span>Minh Anh</span>
+                </div>
+            </article>
 
-  <button type="button" class="btn-outline" id="review-more" hidden>Xem thêm nhận xét</button>
-</section>
 
-<!-- ============ FOOTER ============ -->
-<div id="site-footer"></div>
+            <article class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Đóng gói cẩn thận, chất lượng đúng như hình, giá hợp lý.</p>
+                <div class="review-author">
+                    <img src="images/avatar-2.jpg" alt="Khách hàng 2" loading="lazy">
+                    <span>Thu Trang</span>
+                </div>
+            </article>
 
-<!-- ============ CHATBOX ============ -->
-<div class="chatbox-widget">
-  <div class="chatbox-popup" id="chatboxPopup">
-    <button class="chatbox-close" id="chatboxClose">&times;</button>
-    <p>Chào mừng bạn đến với NETTO ♡</p>
-    <a href="#" class="chatbox-btn">Chat Now</a>
-  </div>
-  <button class="chatbox-icon" id="chatboxToggle" aria-label="Mở chat">
+
+            <article class="review-card">
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-text">Áo lên form đẹp, tư vấn size nhiệt tình, sẽ quay lại mua thêm.</p>
+                <div class="review-author">
+                    <img src="images/avatar-3.jpg" alt="Khách hàng 3" loading="lazy">
+                    <span>Bảo Ngọc</span>
+                </div>
+            </article>
+        </div>
+
+        <button type="button" class="btn-outline" id="review-more" hidden>
+    Xem thêm nhận xét
+</button>
+    </section>
+
+
+    <!-- ============ FOOTER ============ -->
+    <div id="site-footer"></div>
+
+    <!-- ============ CHATBOX ============ -->
+    <div class="chatbox-widget">
+        <div class="chatbox-popup" id="chatboxPopup">
+            <button class="chatbox-close" id="chatboxClose">&times;</button>
+            <p>Chào mừng bạn đến với NETTO ♡</p>
+            <a href="#" class="chatbox-btn">Chat Now</a>
+        </div>
+        <button class="chatbox-icon" id="chatboxToggle" aria-label="Mở chat">
     <svg viewBox="0 0 24 24" width="26" height="26"><path fill="#fff" d="M12 2C6.48 2 2 6.02 2 11c0 2.61 1.24 4.94 3.24 6.6-.11.98-.4 2.38-1.24 3.9 0 0 2.24-.4 4.24-1.93.87.22 1.8.33 2.76.33 5.52 0 10-4.02 10-9S17.52 2 12 2"/></svg>
   </button>
-</div>
+    </div>
 
-
-<script src="assets/js/layout.js"></script>
-<script src="assets/js/main.js"></script>
+    <script src="assets/js/products.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
+
 </html>
