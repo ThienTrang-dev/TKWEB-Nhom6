@@ -40,20 +40,20 @@
 </section>
 
 <!-- Nút nổi bên trái -->
-<a href="pages/khuyenmai.html" class="float-badge">Hè rực rỡ - Đồng giá sốc</a>
+<a href="pages/khuyen-mai.html" class="float-badge">Hè rực rỡ - Đồng giá sốc</a>
 <button class="float-member" type="button">🎁 Thành viên thân thiết</button>
 
 <!-- ============ SẢN PHẨM NỔI BẬT ============ -->
 <section class="section featured-products">
   <h2 class="section-title">Sản phẩm nổi bật</h2>
-  <p class="section-sub">Những mẫu được yêu thích nhất tuần này</p>
+  <p class="section-sub">Những mẫu đang được giảm giá</p>
 
   <div class="product-grid" id="product-grid-home">
-    <!-- JavaScript tự động tạo 4 sản phẩm tại đây -->
+    <!-- JavaScript chọn ngẫu nhiên 4 sản phẩm đang giảm giá và tạo tại đây -->
   </div>
 
-  <a href="pages/sanpham.html" class="btn-outline">
-    Xem tất cả sản phẩm
+  <a href="pages/sanpham.html?loai=noi-bat" class="btn-outline">
+    Xem thêm sản phẩm nổi bật
   </a>
 </section>
 
@@ -61,8 +61,8 @@
 <section class="section reviews">
   <h2 class="section-title">Khách hàng nói gì về NETTO</h2>
 
-  <div class="review-grid">
-    <!-- Lặp lại khối .review-card này cho mỗi đánh giá -->
+  <div class="review-grid" id="review-grid-home">
+    <!-- 3 đánh giá mẫu này chỉ hiện khi chưa có đánh giá 5 sao nào; main.js sẽ thay bằng đánh giá thật từ trang chi tiết sản phẩm -->
     <article class="review-card">
       <div class="review-stars">★★★★★</div>
       <p class="review-text">Vải mềm, form chuẩn, giao hàng nhanh. Mình sẽ ủng hộ shop dài dài.</p>
@@ -90,6 +90,8 @@
       </div>
     </article>
   </div>
+
+  <button type="button" class="btn-outline" id="review-more" hidden>Xem thêm nhận xét</button>
 </section>
 
 <!-- ============ FOOTER ============ -->
@@ -107,7 +109,7 @@
   </button>
 </div>
 
-<script src="assets/js/products.js"></script>
+
 <script src="assets/js/layout.js"></script>
 <script src="assets/js/main.js"></script>
 </body>

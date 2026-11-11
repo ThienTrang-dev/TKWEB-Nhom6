@@ -15,6 +15,10 @@
 
   const root = new URL("../../", self.src).href;
 
+  const SOCIAL = {
+  youtube: "https://www.youtube.com/@TEDEd",
+  facebook: "https://www.facebook.com/aeonmallhalong.14quangninh",
+};
   const header = `
 <header class="site-header">
   <div class="topbar">
@@ -22,10 +26,10 @@
 
     <div class="search-box">
       <select class="search-select">
-        <option>Tất cả</option>
-        <option>Áo</option>
-        <option>Váy / Chân váy</option>
-        <option>Phụ kiện</option>
+        <option value="">Tất cả</option>
+        <option value="ao">Áo</option>
+        <option value="quan">Quần</option>
+        <option value="vay">Váy / Chân váy</option>
       </select>
 
       <input type="text" placeholder="Tìm sản phẩm bạn mong muốn">
@@ -157,21 +161,15 @@
         </li>
       </ul>
 
-      <div class="social-icons">
-        <a href="#" aria-label="Youtube">
-          <svg viewBox="0 0 24 24" width="16" height="16">
+            <div class="social-icons">
+        <a href="${SOCIAL.youtube}" class="social-yt" target="_blank" rel="noopener noreferrer" aria-label="Youtube">
+          <svg viewBox="0 0 24 24" width="20" height="20">
             <path fill="#fff" d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 5 12 5 12 5s-6 0-7.7.3a2.7 2.7 0 0 0-1.9 1.9A28 28 0 0 0 2 12a28 28 0 0 0 .4 4.8 2.7 2.7 0 0 0 1.9 1.9C6 19 12 19 12 19s6 0 7.7-.3a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22 12a28 28 0 0 0-.4-4.8M10 15V9l5.2 3z"/>
           </svg>
         </a>
 
-        <a href="#" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" width="16" height="16">
-            <path fill="#fff" d="M12 2c2.7 0 3.06 0 4.12.06 1.06.05 1.79.22 2.43.47a4.9 4.9 0 0 1 1.78 1.15 4.9 4.9 0 0 1 1.15 1.78c.25.64.42 1.37.47 2.43.06 1.06.06 1.42.06 4.12s0 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.78 4.9 4.9 0 0 1-1.78 1.15c-.64.25-1.37.42-2.43.47-1.06.06-1.42.06-4.12.06s-3.06 0-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.78-1.15 4.9 4.9 0 0 1-1.15-1.78c-.25-.64-.42-1.37-.47-2.43C2 15.06 2 14.7 2 12s0-3.06.06-4.12c.05-1.06.22-1.79.47-2.43a4.9 4.9 0 0 1 1.15-1.78A4.9 4.9 0 0 1 5.46.52c.64-.25 1.37-.42 2.43-.47C8.94 0 9.3 0 12 0zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10m0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4M17.4 5.7a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0"/>
-          </svg>
-        </a>
-
-        <a href="#" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" width="16" height="16">
+        <a href="${SOCIAL.facebook}" class="social-fb" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="20" height="20">
             <path fill="#fff" d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12"/>
           </svg>
         </a>
@@ -221,12 +219,6 @@
 
   const chatbox = `
 <div class="chatbox-widget">
-  <div class="chatbox-popup" id="chatboxPopup">
-    <button class="chatbox-close" id="chatboxClose">&times;</button>
-    <p>Chào mừng bạn đến với NETTO ♡</p>
-    <a href="#" class="chatbox-btn">Chat Now</a>
-  </div>
-
   <button class="chatbox-icon" id="chatboxToggle" aria-label="Mở chat">
     <svg viewBox="0 0 24 24" width="26" height="26">
       <path fill="#fff" d="M12 2C6.48 2 2 6.02 2 11c0 2.61 1.24 4.94 3.24 6.6-.11.98-.4 2.38-1.24 3.9 0 0 2.24-.4 4.24-1.93.87.22 1.8.33 2.76.33 5.52 0 10-4.02 10-9S17.52 2 12 2"/>
@@ -266,6 +258,15 @@
       if (a.dataset.page === trang) {
         a.classList.add("active");
       }
+    });
+
+    // Nạp tìm kiếm + chatbox sau khi header/chatbox đã có trên trang.
+    // async = false để search.js chạy xong rồi mới tới chatbox.js.
+    ["search.js", "chatbox.js"].forEach(function (ten) {
+      const sc = document.createElement("script");
+      sc.src = root + "assets/js/" + ten;
+      sc.async = false;
+      document.head.appendChild(sc);
     });
   }
 

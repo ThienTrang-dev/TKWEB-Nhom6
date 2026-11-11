@@ -437,6 +437,40 @@ input {
   object-fit: cover;
 }
 
+button.btn-outline {
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+.review-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.review-author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.review-product {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-light);
+  text-decoration: none;
+}
+.review-product:hover {
+  text-decoration: underline;
+}
+
 /* ===================== TẢI APP ===================== */
 .download-app {
   display: flex;

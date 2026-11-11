@@ -33,6 +33,9 @@ fetch("../assets/data/products.json")
       a.dataset.loai = sp.loai;
       a.dataset.stt = stt;
       a.dataset.gia = soGia(sp.gia) === null ? "" : soGia(sp.gia);
+      // Nổi bật = đang giảm giá (cùng tiêu chí với trang chủ, xem main.js)
+      a.dataset.giam = giam;
+      if (giam) a.dataset.noibat = "1";
       a.href = "chitietsanpham.html?id=" + sp.id;
       a.innerHTML =
         '<div class="sp-anh">' +
@@ -189,21 +192,76 @@ fetch("../assets/data/products.json")
       phukien: [],
     };
     let nhomChon = null;
+    let chonNoiBat = false; // ?loai=noi-bat: chỉ hiện sản phẩm nổi bật
+    const tieuDeTrang = document.querySelector(".sp-banner h1");
 
-    // ===== Lọc loại + sắp xếp giá (dùng đồng thời) =====
+    // Bỏ dấu để tìm "quan" ra "quần", "vay" ra "váy", "ao" ra "áo"
+    function boDau(s) {
+      return String(s || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/đ/g, "d")
+        .trim();
+    }
+
+    // Từ khóa tìm kiếm từ URL (?q=...)
+    const tuKhoaTuUrl = new URLSearchParams(location.search).get("q") || "";
+    const tokensTim = boDau(tuKhoaTuUrl).split(/\s+/).filter(Boolean);
+
+    // ===== Lọc loại + từ khóa tìm kiếm + sắp xếp giá =====
     function locSanPham() {
       const r = document.querySelector('.bo-loc input[name="Clothes"]:checked');
       const chon = r ? r.value : "tat-ca";
 
+      if (tieuDeTrang) {
+        if (tuKhoaTuUrl) {
+          tieuDeTrang.textContent = 'KẾT QUẢ TÌM KIẾM: "' + tuKhoaTuUrl + '"';
+        } else {
+          tieuDeTrang.textContent = chonNoiBat ? "SẢN PHẨM NỔI BẬT" : "SẢN PHẨM";
+        }
+      }
+
       khop = Array.from(cards).filter(function (c) {
-        if (nhomChon) return NHOM[nhomChon].indexOf(c.dataset.loai) >= 0;
-        return chon === "tat-ca" || c.dataset.loai === chon;
+        // Lọc theo nhóm / loại / nổi bật
+        if (chonNoiBat) {
+          if (c.dataset.noibat !== "1") return false;
+        } else if (nhomChon) {
+          if (NHOM[nhomChon].indexOf(c.dataset.loai) < 0) return false;
+        } else if (chon !== "tat-ca" && c.dataset.loai !== chon) {
+          return false;
+        }
+
+        // Lọc theo từ khóa tìm kiếm (?q=)
+        if (tokensTim.length) {
+          const ten = (c.querySelector(".sp-ten") || {}).textContent || "";
+          const loai = c.dataset.loai || "";
+          const hay =
+            " " +
+            boDau(ten) +
+            " " +
+            boDau(loai.replace(/-/g, " ")) +
+            " " +
+            c.dataset.stt +
+            " ";
+          return tokensTim.every(function (t) {
+            // số phải khớp nguyên từ (tránh "4" khớp 40, 41...)
+            if (/^\d+$/.test(t)) return hay.indexOf(" " + t + " ") > -1;
+            // chữ khớp đầu từ
+            return hay.indexOf(" " + t) > -1;
+          });
+        }
+        return true;
       });
 
       khop.sort(function (a, b) {
         const ga = a.dataset.gia === "" ? null : Number(a.dataset.gia);
         const gb = b.dataset.gia === "" ? null : Number(b.dataset.gia);
         if (kieuSX === 0 || (ga === null && gb === null)) {
+          // Nổi bật: giảm sâu nhất lên trước
+          if (chonNoiBat && a.dataset.giam !== b.dataset.giam) {
+            return b.dataset.giam - a.dataset.giam;
+          }
           return a.dataset.stt - b.dataset.stt;
         }
         if (ga === null) return 1; // chưa có giá thì xuống cuối
@@ -222,6 +280,7 @@ fetch("../assets/data/products.json")
     radios.forEach(function (r) {
       r.addEventListener("change", function () {
         nhomChon = null;
+        chonNoiBat = false;
         locSanPham();
       });
     });
@@ -231,25 +290,33 @@ fetch("../assets/data/products.json")
       nutSX.classList.toggle("dang-chon", kieuSX !== 0);
       locSanPham();
     });
-    locSanPham();
 
+    
     // Vào từ menu có ?loai=... thì chọn sẵn bộ lọc tương ứng
     const loaiTuUrl = new URLSearchParams(location.search).get("loai");
     if (loaiTuUrl) {
-      if (NHOM[loaiTuUrl]) {
+      if (loaiTuUrl === "noi-bat") {
+        chonNoiBat = true;
+        radios.forEach(function (r) {
+          r.checked = false;
+        });
+      } else if (NHOM[loaiTuUrl]) {
         nhomChon = loaiTuUrl;
         radios.forEach(function (r) {
           r.checked = false;
         });
-        locSanPham();
+
       } else {
         const r = document.querySelector(
           '.bo-loc input[value="' + loaiTuUrl + '"]',
         );
         if (r) {
           r.checked = true;
-          locSanPham();
+
         }
       }
     }
+
+    // Áp dụng lọc (loại + từ khóa tìm kiếm)
+    locSanPham();
   });
