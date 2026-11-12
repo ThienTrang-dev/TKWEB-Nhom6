@@ -170,6 +170,58 @@ body {
     padding: 28px 20px 24px;
   }
 }
+/* Hàng phụ dưới nút Đăng nhập */
+.auth-form .auth-phu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  font-size: 13px;
+  color: #666;
+}
+.auth-form .auth-phu a {
+  align-self: auto;
+  margin-top: 0;
+  font-weight: 600;
+  color: #e2543f;
+}
+.auth-form .auth-phu .quen-mk {
+  font-weight: 400;
+} /* Màn hình quên mật khẩu */
+.auth-tabs[hidden] {
+  display: none;
+}
+.auth-form .auth-tieude {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  color: #111;
+}
+.auth-form .auth-mota {
+  margin-bottom: 6px;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+  color: #666;
+}
+.auth-form .auth-thongbao {
+  margin-top: 10px;
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #2e7d32;
+  background: #eaf6ec;
+  border-radius: 8px;
+}
+.auth-form .auth-thongbao[hidden] {
+  display: none;
+}
+.auth-form #forgot-back {
+  align-self: auto;
+  margin: 0 auto;
+}
 /* Khi form nằm trong khung nổi */
 html.in-modal body {
   display: block;

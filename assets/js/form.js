@@ -2,14 +2,30 @@ const tabLogin = document.getElementById("tab-login");
 const tabRegister = document.getElementById("tab-register");
 const formLogin = document.getElementById("form-login");
 const formRegister = document.getElementById("form-register");
+const formForgot = document.getElementById("form-forgot");
+const tabs = document.querySelector(".auth-tabs");
+const forgotMsg = document.getElementById("forgot-msg");
 
 // Chuyển qua lại giữa đăng nhập và đăng ký
 function hienForm(dangNhap) {
   formLogin.hidden = !dangNhap;
   formRegister.hidden = dangNhap;
+  formForgot.hidden = true;
+  tabs.hidden = false;
   tabLogin.classList.toggle("active", dangNhap);
   tabRegister.classList.toggle("active", !dangNhap);
 }
+
+// Màn hình quên mật khẩu
+function hienQuenMK() {
+  formLogin.hidden = true;
+  formRegister.hidden = true;
+  formForgot.hidden = false;
+  tabs.hidden = true;
+  forgotMsg.hidden = true;
+  formForgot.reset();
+}
+
 tabLogin.addEventListener("click", function () {
   hienForm(true);
 });
@@ -47,13 +63,30 @@ formRegister.addEventListener("submit", function (e) {
   hienForm(true);
 });
 
-// Quên mật khẩu
+// Quên mật khẩu: mở màn hình riêng
 document.getElementById("quen-mk").addEventListener("click", function (e) {
   e.preventDefault();
-  const email = prompt(
-    "Nhập email đã đăng ký để nhận hướng dẫn đặt lại mật khẩu:",
-  );
-  if (email) {
-    alert("Đã gửi hướng dẫn tới " + email + " (demo).");
-  }
+  hienQuenMK();
 });
+formForgot.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const email = document.getElementById("forgot-email").value.trim();
+  forgotMsg.textContent =
+    "Đã gửi hướng dẫn đặt lại mật khẩu tới " +
+    email +
+    ". Vui lòng kiểm tra hộp thư của bạn (demo).";
+  forgotMsg.hidden = false;
+});
+document.getElementById("forgot-back").addEventListener("click", function (e) {
+  e.preventDefault();
+  hienForm(true);
+});
+
+// Chưa có tài khoản? Đăng ký
+const denDangKy = document.getElementById("den-dang-ky");
+if (denDangKy) {
+  denDangKy.addEventListener("click", function (e) {
+    e.preventDefault();
+    hienForm(false);
+  });
+}

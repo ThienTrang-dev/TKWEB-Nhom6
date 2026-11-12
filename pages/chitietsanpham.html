@@ -1,119 +1,149 @@
 <!doctype html>
 <html lang="vi">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CHI TIẾT SẢN PHẨM</title>
     <link rel="stylesheet" href="../assets/css/main.css/style.css" />
     <link rel="stylesheet" href="../assets/css/main.css/chitietsanpham.css" />
-    <link rel="stylesheet" href="../assets/css/main.css/giohang.css" />
-</head>
-
-<body>
+  </head>
+  <body>
     <div id="site-header"></div>
 
     <div class="ct-breadcrumb">
-        <a href="../index.html">Trang chủ</a> &rsaquo;
-        <a href="sanpham.html">Sản phẩm</a> &rsaquo;
-        <span id="ct-duongdan">Chi tiết</span>
+      <a href="../index.html">Trang chủ</a> &rsaquo;
+      <a href="sanpham.html">Sản phẩm</a> &rsaquo;
+      <span id="ct-duongdan">Chi tiết</span>
     </div>
 
     <main class="ct-wrap">
-        <!-- Cột trái: ảnh + thông tin chi tiết -->
-        <section class="ct-anh">
-            <img id="ct-anh-lon" src="" alt="" />
-            <div class="ct-thumbs">
-                <img id="ct-thumb" src="" alt="" />
-            </div>
+      <!-- Cột trái: ảnh + thông tin chi tiết -->
+      <section class="ct-anh">
+        <img id="ct-anh-lon" src="" alt="" />
+        <div class="ct-thumbs">
+          <img id="ct-thumb" src="" alt="" />
+        </div>
 
-            <div class="ct-mota">
-                <h3>Thông tin chi tiết sản phẩm</h3>
-                <p id="ct-mota-text"></p>
-            </div>
-        </section>
+        <div class="ct-mota">
+          <h3>Thông tin chi tiết sản phẩm</h3>
+          <p id="ct-mota-text"></p>
+        </div>
+      </section>
 
-        <!-- Cột phải: thông tin mua hàng -->
-        <section class="ct-info">
-            <h1 class="ct-ten" id="ct-ten"></h1>
-            <div class="ct-sao">☆☆☆☆☆</div>
-            <p class="ct-ma">Mã sp: <span id="ct-ma"></span></p>
+      <!-- Cột phải: thông tin mua hàng -->
+      <section class="ct-info">
+        <h1 class="ct-ten" id="ct-ten"></h1>
+        <div class="ct-sao">☆☆☆☆☆</div>
+        <p class="ct-ma">Mã sp: <span id="ct-ma"></span></p>
 
-            <p class="ct-gia">
-                <span id="ct-gia"></span>
-                <span class="ct-gia-cu" id="ct-gia-cu" hidden></span>
-                <span class="ct-sale" id="ct-sale" hidden>Sale</span>
-            </p>
+        <p class="ct-gia">
+          <span id="ct-gia"></span>
+          <span class="ct-gia-cu" id="ct-gia-cu" hidden></span>
+          <span class="ct-sale" id="ct-sale" hidden>Sale</span>
+        </p>
 
-            <p class="ct-nhan">Kích thước</p>
-            <div class="ct-size" id="ct-size"></div>
+        <p class="ct-nhan">Kích thước</p>
+        <div class="ct-size" id="ct-size"></div>
 
-            <p class="ct-nhan">Màu sắc</p>
-            <div class="ct-mau" id="ct-mau"></div>
+        <p class="ct-nhan">Màu sắc</p>
+        <div class="ct-mau" id="ct-mau"></div>
 
-            <div class="ct-goiy">
-                <p class="ct-goiy-tieude">GỢI Ý CHỌN SIZE NHANH:</p>
-                <div class="ct-goiy-input">
-                    <input type="number" id="ct-cao" placeholder="Chiều cao (m), VD: 1.53" step="0.01" />
-                    <input type="number" id="ct-nang" placeholder="Cân nặng (kg), VD: 50" />
-                </div>
-                <button type="button" class="ct-btn-size" id="ct-tinh">
+        <div class="ct-goiy">
+          <p class="ct-goiy-tieude">GỢI Ý CHỌN SIZE NHANH:</p>
+          <div class="ct-goiy-input">
+            <input
+              type="number"
+              id="ct-cao"
+              placeholder="Chiều cao (m), VD: 1.53"
+              step="0.01"
+            />
+            <input
+              type="number"
+              id="ct-nang"
+              placeholder="Cân nặng (kg), VD: 50"
+            />
+          </div>
+          <button type="button" class="ct-btn-size" id="ct-tinh">
             TÍNH TOÁN CHỌN SIZE
           </button>
-                <p class="ct-ketqua" id="ct-ketqua"></p>
-            </div>
+          <p class="ct-ketqua" id="ct-ketqua"></p>
+        </div>
 
-            <div class="ct-soluong">
-                <span>Số lượng:</span>
-                <button type="button" id="ct-giam">-</button>
-                <input type="text" id="ct-sl" value="1" readonly />
-                <button type="button" id="ct-tang">+</button>
-            </div>
+        <div class="ct-soluong">
+          <span>Số lượng:</span>
+          <button type="button" id="ct-giam">-</button>
+          <input type="text" id="ct-sl" value="1" readonly />
+          <button type="button" id="ct-tang">+</button>
+        </div>
 
-            <button type="button" class="ct-mua" id="ct-mua">Mua ngay</button>
-        </section>
+        <button type="button" class="ct-them" id="ct-them">
+          Thêm vào giỏ hàng
+        </button>
+        <button type="button" class="ct-mua" id="ct-mua">Mua ngay</button>
+      </section>
     </main>
 
     <!-- Đánh giá: khung dài hết trang, nằm cuối -->
     <section class="ct-danhgia" id="ct-danhgia">
-        <h2>ĐÁNH GIÁ SẢN PHẨM</h2>
+      <h2>ĐÁNH GIÁ SẢN PHẨM</h2>
 
-        <div class="dg-tomtat">
-            <div class="dg-trai">
-                <p class="dg-diem-dong"><span id="dg-diem">0</span> trên 5</p>
-                <div class="dg-sao-tong" id="dg-sao-tong">☆☆☆☆☆</div>
-            </div>
-            <div class="dg-loc" id="dg-loc"></div>
+      <div class="dg-tomtat">
+        <div class="dg-trai">
+          <p class="dg-diem-dong"><span id="dg-diem">0</span> trên 5</p>
+          <div class="dg-sao-tong" id="dg-sao-tong">☆☆☆☆☆</div>
         </div>
+        <div class="dg-loc" id="dg-loc"></div>
+      </div>
 
-        <div class="dg-viet">
-            <button type="button" class="dg-mo-form" id="dg-mo-form">
+      <div class="dg-viet">
+        <button type="button" class="dg-mo-form" id="dg-mo-form">
           Viết đánh giá
         </button>
-            <form class="dg-form" id="dg-form" hidden>
-                <p class="dg-nhan">Bạn chấm mấy sao?</p>
-                <div class="dg-chon-sao" id="dg-chon-sao">
-                    <button type="button" data-v="1">★</button>
-                    <button type="button" data-v="2">★</button>
-                    <button type="button" data-v="3">★</button>
-                    <button type="button" data-v="4">★</button>
-                    <button type="button" data-v="5">★</button>
-                </div>
-                <input type="text" id="dg-ten" placeholder="Tên của bạn" maxlength="40" />
-                <textarea id="dg-nd" placeholder="Chia sẻ cảm nhận của bạn về sản phẩm" maxlength="500" rows="4" required></textarea>
-                <button type="submit" class="dg-gui">Gửi đánh giá</button>
-            </form>
-        </div>
+        <form class="dg-form" id="dg-form" hidden>
+          <p class="dg-nhan">Bạn chấm mấy sao?</p>
+          <div class="dg-chon-sao" id="dg-chon-sao">
+            <button type="button" data-v="1">★</button>
+            <button type="button" data-v="2">★</button>
+            <button type="button" data-v="3">★</button>
+            <button type="button" data-v="4">★</button>
+            <button type="button" data-v="5">★</button>
+          </div>
+          <input
+            type="text"
+            id="dg-ten"
+            placeholder="Tên của bạn"
+            maxlength="40"
+          />
+          <textarea
+            id="dg-nd"
+            placeholder="Chia sẻ cảm nhận của bạn về sản phẩm"
+            maxlength="500"
+            rows="4"
+            required
+          ></textarea>
+          <label class="dg-anh-nut">
+            📷 Thêm ảnh (tối đa 3)
+            <input type="file" id="dg-anh" accept="image/*" multiple hidden />
+          </label>
+          <div class="dg-anh-xem" id="dg-anh-xem"></div>
+          <button type="submit" class="dg-gui">Gửi đánh giá</button>
+        </form>
+      </div>
 
-        <div class="dg-ds" id="dg-ds"></div>
+      <div class="dg-ds" id="dg-ds"></div>
     </section>
 
     <div id="site-footer"></div>
 
     <script src="../assets/js/layout.js"></script>
-    <script src="../assets/js/giohang.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script>
+      // Làm sáng mục "Sản phẩm" trên menu
+      document.addEventListener("DOMContentLoaded", function () {
+        var a = document.querySelector('.main-nav a[data-page="sanpham.html"]');
+        if (a) a.classList.add("active");
+      });
+    </script>
     <script src="../assets/js/chitietsanpham.js"></script>
-</body>
-
+  </body>
 </html>

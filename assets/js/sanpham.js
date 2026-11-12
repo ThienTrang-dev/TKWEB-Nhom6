@@ -30,6 +30,8 @@ fetch("../assets/data/products.json")
       const giam = phanTramGiam(sp.gia, sp.giaCu);
       const a = document.createElement("a");
       a.className = "sp-card";
+      a.dataset.id = sp.id;
+
       a.dataset.loai = sp.loai;
       a.dataset.stt = stt;
       a.dataset.gia = soGia(sp.gia) === null ? "" : soGia(sp.gia);
@@ -218,7 +220,9 @@ fetch("../assets/data/products.json")
         if (tuKhoaTuUrl) {
           tieuDeTrang.textContent = 'KẾT QUẢ TÌM KIẾM: "' + tuKhoaTuUrl + '"';
         } else {
-          tieuDeTrang.textContent = chonNoiBat ? "SẢN PHẨM NỔI BẬT" : "SẢN PHẨM";
+          tieuDeTrang.textContent = chonNoiBat
+            ? "SẢN PHẨM NỔI BẬT"
+            : "SẢN PHẨM";
         }
       }
 
@@ -291,7 +295,6 @@ fetch("../assets/data/products.json")
       locSanPham();
     });
 
-    
     // Vào từ menu có ?loai=... thì chọn sẵn bộ lọc tương ứng
     const loaiTuUrl = new URLSearchParams(location.search).get("loai");
     if (loaiTuUrl) {
@@ -305,18 +308,65 @@ fetch("../assets/data/products.json")
         radios.forEach(function (r) {
           r.checked = false;
         });
-
       } else {
         const r = document.querySelector(
           '.bo-loc input[value="' + loaiTuUrl + '"]',
         );
         if (r) {
           r.checked = true;
-
         }
       }
     }
 
     // Áp dụng lọc (loại + từ khóa tìm kiếm)
     locSanPham();
+
+    // ===== Quay lại đúng sản phẩm vừa xem =====
+    const idCanVe = new URLSearchParams(location.search).get("sp");
+
+    if (idCanVe) {
+      // Tìm sản phẩm theo ID
+      const theCanVe = Array.from(cards).find(function (c) {
+        return c.dataset.id === idCanVe;
+      });
+
+      if (theCanVe) {
+        // Tự động chọn lại bộ lọc của sản phẩm
+        nhomChon = null;
+        chonNoiBat = false;
+
+        radios.forEach(function (r) {
+          r.checked = false;
+        });
+
+        const radioCanChon = Array.from(radios).find(function (r) {
+          return r.value === theCanVe.dataset.loai;
+        });
+
+        if (radioCanChon) {
+          radioCanChon.checked = true;
+        }
+
+        // Lọc lại sản phẩm
+        locSanPham();
+
+        // Xác định sản phẩm nằm ở trang bao nhiêu
+        const viTri = khop.indexOf(theCanVe);
+
+        if (viTri !== -1) {
+          trang = Math.floor(viTri / MOI_TRANG) + 1;
+
+          // Hiển thị đúng trang
+          hienSanPham();
+
+          // Cuộn đến sản phẩm
+          requestAnimationFrame(function () {
+            theCanVe.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+          });
+        }
+      }
+    }
   });

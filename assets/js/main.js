@@ -227,7 +227,12 @@ document.addEventListener('DOMContentLoaded', function () {
             arr = JSON.parse(localStorage.getItem(khoa)) || [];
           } catch (e) {}
           arr.forEach(function (d) {
-            if (d && d.diem === 5 && d.nd) ds.push({ idSp: idSp, ten: d.ten || 'Khách', nd: d.nd, ngay: d.ngay });
+            if (d && d.diem === 5 && d.nd) {
+              const anh = Array.isArray(d.anh)
+                ? d.anh.filter(function (a) { return /^data:image\//.test(a); })
+                : [];
+              ds.push({ idSp: idSp, ten: d.ten || 'Khách', nd: d.nd, ngay: d.ngay, anh: anh });
+            }
           });
         }
       } catch (e) {}
@@ -251,6 +256,23 @@ document.addEventListener('DOMContentLoaded', function () {
       const text = document.createElement('p');
       text.className = 'review-text';
       text.textContent = d.nd;
+
+      // Ảnh khách đính kèm (nếu có), bấm để phóng to
+      let photos = null;
+      if (d.anh && d.anh.length) {
+        photos = document.createElement('div');
+        photos.className = 'review-photos';
+        d.anh.forEach(function (src) {
+          const im = document.createElement('img');
+          im.src = src;
+          im.alt = 'Ảnh đánh giá của ' + d.ten;
+          im.loading = 'lazy';
+          im.addEventListener('click', function () {
+            if (window.nettoMoAnh) window.nettoMoAnh(src);
+          });
+          photos.appendChild(im);
+        });
+      }
 
       const author = document.createElement('div');
       author.className = 'review-author';
@@ -277,6 +299,7 @@ document.addEventListener('DOMContentLoaded', function () {
       author.appendChild(info);
       card.appendChild(stars);
       card.appendChild(text);
+      if (photos) card.appendChild(photos);
       card.appendChild(author);
       return card;
     };

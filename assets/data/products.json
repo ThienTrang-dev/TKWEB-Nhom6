@@ -852,618 +852,253 @@
   {
     "id": 78,
     "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 78",
-    "giaCu": "",
+    "ten": "NETTO® - Quần shorts cạp cao chiết ly eo hồng BUBBLE SHORTS/PK",
+    "gia": "199000",
+    "giaCu": "269000",
     "ma": "NT078",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Thiết kế cạp cao chiết ly eo tinh tế giúp tôn vòng 2 thon gọn và tạo hiệu ứng kéo dài đôi chân. Sắc hồng ngọt ngào, trẻ trung mang lại vẻ ngoài nữ tính và năng động.",
     "size": ["S", "M", "L"],
+    "ton": "10",
     "mau": [
       {
         "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ma": "#cccccc",
+        "anh": ["78.jpg"]
       }
     ]
   },
   {
-    "id": 79,
+    "id": 79, 
     "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 79",
-    "giaCu": "",
+    "ten": "NETTO® - Quần shorts cạp cao tafta lượn viền hoa vàng LOVE LINER SHORTS/YL",
+    "gia": "249000",
+    "giaCu": "279000",
     "ma": "NT079",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Sự kết hợp độc đáo giữa chất liệu tafta đứng phom sang trọng và chi tiết lượn viền hoa cách điệu đầy nữ tính. Gam màu vàng tươi tắn giúp nàng luôn nổi bật và rạng rỡ.",
     "size": ["S", "M", "L"],
+    "ton": "15",
     "mau": [
       {
         "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ma": "#cccccc",
+        "anh": ["79.jpg", "80.jpg"]
       }
     ]
   },
   {
     "id": 80,
     "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 80",
-    "giaCu": "",
+    "ten": "NETTO® - Quần short cạp chun cao len trắng cạp chun viền túi đen NAOMI SHORT(FREESIZE)/WH",
+    "giaCu": "275000",
     "ma": "NT080",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Mẫu quần short len dệt mềm mại mang phong cách tiểu thư thanh lịch với sự tương phản trắng - đen kinh điển. Thiết kế cạp chun co giãn linh hoạt mang lại sự thoải mái tuyệt đối.",
     "size": ["S", "M", "L"],
+    "ton": "17",
     "mau": [
       {
         "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ma": "#cccccc",
+        "anh": ["81.jpg", "82.jpg", "83.jpg"]
       }
     ]
   },
   {
     "id": 81,
     "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 81",
-    "giaCu": "",
+    "ten": "NETTO® - Quần shorts bò cắt cạp lệch màu xanh MASCARA JEANS SHORTS/BLUE",
+    "giaCu": "329000",
     "ma": "NT081",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Phá cách và cá tính với thiết kế cạp lệch bất đối xứng thời thượng trên nền chất liệu denim xanh cổ điển. Lựa chọn hoàn hảo cho những cô nàng yêu thích phong cách streetwear năng động.",
     "size": ["S", "M", "L"],
+    "ton": "20",
     "mau": [
       {
         "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ma": "#cccccc",
+        "anh": ["84.jpg", "85.jpg"]
       }
     ]
   },
   {
     "id": 82,
     "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 82",
-    "giaCu": "",
+    "ten": "NETTO® - Quần shorts trắng cạp cao chiết ly eo JOCIE SHORTS/WH",
+    "giaCu": "275000",
     "ma": "NT082",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Item must have trong tủ đồ với thiết kế quần shorts trắng cạp cao thanh lịch. Đường chiết ly tinh tế mang lại diện mạo chỉn chu, hiện đại và cực kỳ dễ phối đồ.",
     "size": ["S", "M", "L"],
+    "ton": "45",
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Trắng",
+        "ma": "white",
+        "anh": ["86.jpg", "87.jpg"]
+      },
+      {
+        "ten": "Vàng",
+        "ma": "yellow",
+        "anh": ["88.jpg", "89.jpg"]
+      },
+      {
+        "ten": "Đen",
+        "ma": "black",
+        "anh": ["90.jpg"]
+      },
+      {
+        "ten": "Hồng",
+        "ma": "pink",
+        "anh": ["91.jpg", "92.jpg"]
       }
     ]
   },
   {
     "id": 83,
     "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 83",
-    "giaCu": "",
+    "ten": "NETTO® - Quần short tafta nude túi hộp 2 bên BECKY SHORTS/ND",
+    "giaCu": "265000",
     "ma": "NT083",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Sự giao thoa giữa nét sang trọng của chất liệu tafta và phong cách cargo năng động với thiết kế túi hộp 2 bên. Tông màu nude trang nhã giúp tôn da và mang lại vẻ ngoài thời thượng.",
     "size": ["S", "M", "L"],
+    "ton": "30",
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Trắng",
+        "ma": "white",
+        "anh": ["93.jpg", "94.jpg"]
+      },
+      {
+        "ten": "Xám",
+        "ma": "grey",
+        "anh": ["95.jpg"]
       }
     ]
   },
   {
     "id": 84,
     "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 84",
-    "giaCu": "",
+    "ten": "NETTO® - Quần shorts ngắn đen cạp cao nẹp ruy băng đính kèm cúc ANTI MONEY SHORTS/BL",
+    "gia": "199000",
+    "giaCu": "289000",
     "ma": "NT084",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Thiết kế tinh xảo với phần cạp cao phối nẹp ruy băng và cúc trang trí đầy cuốn hút. Sắc đen huyền bí giúp che khuyết điểm hoàn hảo và tôn lên đôi chân thon dài.",
     "size": ["S", "M", "L"],
+    "ton": "30",
     "mau": [
       {
         "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ma": "#cccccc",
+        "anh": ["98.jpg", "99.jpg", "100.jpg"]
       }
     ]
   },
   {
     "id": 85,
     "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 85",
-    "giaCu": "",
+    "ten": "NETTO® - Quần shorts bò cắt gấu lượn viền màu lông chuột XOXO JEANS SHORTS/LC",
+    "giaCu": "269000",
     "ma": "NT085",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Mang đến làn gió mới cho dòng quần jeans với tông màu lông chuột (xám khói) thời thượng cùng phần gấu cắt lượn viền mềm mại, giúp cân bằng giữa nét bụi bặm và sự nữ tính.",
     "size": ["S", "M", "L"],
+    "ton": "37",
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Trắng",
+        "ma": "white",
+        "anh": ["101.jpg", "102.jpg"]
+      },
+      {
+        "ten": "Đen",
+        "ma": "black",
+        "anh": ["103.jpg"]
       }
     ]
   },
   {
     "id": 86,
     "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 86",
-    "giaCu": "",
+    "ten": "NETTO® - Quần shorts cạp cao tafta đính cúc gấu trắng NO PHOTO SHORTS/WH",
+    "gia": "189000",
+    "giaCu": "269000",
     "ma": "NT086",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Thiết kế tối giản nhưng không đơn điệu nhờ chất liệu tafta đứng phom cùng chi tiết đính cúc tinh tế ở phần gấu quần. Một item thanh lịch, trẻ trung dành cho mọi cô gái.",
     "size": ["S", "M", "L"],
+    "ton": "25",
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Trắng",
+        "ma": "white",
+        "anh": ["104.jpg"]
+      },
+      {
+        "ten": "Vàng",
+        "ma": "yellow",
+        "anh": ["105.jpg", "106.jpg"]
+      },
+      {
+        "ten": "Hồng",
+        "ma": "pink",
+        "anh": ["107.jpg", "108.jpg"]
       }
     ]
   },
   {
     "id": 87,
     "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 87",
-    "giaCu": "",
+    "ten": "NETTO® - Quần shorts bò cạp rời gấu cắt tua rua đen MAMIII JEANS SHORTS/LC",
+    "gia": "290000",
+    "giaCu": "590000",
     "ma": "NT087",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Thiết kế đậm chất cá tính với phần cạp rời độc đáo và gấu cắt tua rua phóng khoáng. Phiên bản màu đen bụi bặm giúp nàng khẳng định gu thời trang ấn tượng và sành điệu.",
     "size": ["S", "M", "L"],
+    "ton": "20",
     "mau": [
       {
         "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ma": "#cccccc",
+        "anh": ["109.jpg", "110.jpg", "111.jpg"]
       }
     ]
   },
   {
     "id": 88,
     "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 88",
-    "giaCu": "",
+    "ten": "NETTO® - Quần short cạp cao sẻ hai vạt phối logo tingoan COCO SHORT/WH",
+    "giaCu": "490000",
     "ma": "NT088",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Thiết kế hiện đại với phần xẻ hai vạt cách điệu kết hợp cùng chi tiết phối logo thương hiệu tinh tế. Mẫu quần mang lại sự thoải mái khi di chuyển mà vẫn giữ được nét thanh lịch.",
     "size": ["S", "M", "L"],
+    "ton": "25",
     "mau": [
       {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ten": "Đen",
+        "ma": "black",
+        "anh": ["112.jpg", "113.jpg", "114.jpg"]
+      },
+      {
+        "ten": "Xanh",
+        "ma": "blue",
+        "anh": ["115.jpg"]
       }
     ]
   },
   {
     "id": 89,
     "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 89",
-    "giaCu": "",
+    "ten": "NETTO® - Quần shorts ngắn trắng cạp cao nẹp ruy băng đính kèm cúc ANTI MONEY SHORTS/WH",
+    "giaCu": "319000",
     "ma": "NT089",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
+    "mota": "Phiên bản màu trắng thanh thuần của dòng thiết kế Anti Money Shorts, nổi bật với chi tiết nẹp ruy băng và cúc trang trí sang trọng, mang lại vẻ ngoài tiểu thư đài các.",
     "size": ["S", "M", "L"],
+    "ton": "45",
     "mau": [
       {
         "ten": "Mặc định",
-        "ma": "#cccccc"
+        "ma": "#cccccc",
+        "anh": ["116.jpg", "117.jpg", "118.jpg"]
       }
     ]
   },
-  {
-    "id": 90,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 90",
-    "giaCu": "",
-    "ma": "NT090",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 91,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 91",
-    "giaCu": "",
-    "ma": "NT091",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 92,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 92",
-    "giaCu": "",
-    "ma": "NT092",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 93,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 93",
-    "giaCu": "",
-    "ma": "NT093",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 94,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 94",
-    "giaCu": "",
-    "ma": "NT094",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 95,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 95",
-    "giaCu": "",
-    "ma": "NT095",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 96,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 96",
-    "giaCu": "",
-    "ma": "NT096",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 97,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 97",
-    "giaCu": "",
-    "ma": "NT097",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 98,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 98",
-    "giaCu": "",
-    "ma": "NT098",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 99,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 99",
-    "giaCu": "",
-    "ma": "NT099",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 100,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 100",
-    "giaCu": "",
-    "ma": "NT100",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 101,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 101",
-    "giaCu": "",
-    "ma": "NT101",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 102,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 102",
-    "giaCu": "",
-    "ma": "NT102",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 103,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 103",
-    "giaCu": "",
-    "ma": "NT103",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 104,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 104",
-    "giaCu": "",
-    "ma": "NT104",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 105,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 105",
-    "giaCu": "",
-    "ma": "NT105",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 106,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 106",
-    "giaCu": "",
-    "ma": "NT106",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 107,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 107",
-    "giaCu": "",
-    "ma": "NT107",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 108,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 108",
-    "giaCu": "",
-    "ma": "NT108",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 109,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 109",
-    "giaCu": "",
-    "ma": "NT109",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 110,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 110",
-    "giaCu": "",
-    "ma": "NT110",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 111,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 111",
-    "giaCu": "",
-    "ma": "NT111",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 112,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 112",
-    "giaCu": "",
-    "ma": "NT112",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 113,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 113",
-    "giaCu": "",
-    "ma": "NT113",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 114,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 114",
-    "giaCu": "",
-    "ma": "NT114",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 115,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 115",
-    "giaCu": "",
-    "ma": "NT115",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 116,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 116",
-    "giaCu": "",
-    "ma": "NT116",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 117,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 117",
-    "giaCu": "",
-    "ma": "NT117",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 118,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần ngắn mã 118",
-    "giaCu": "",
-    "ma": "NT118",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
+ 
   {
     "id": 119,
     "loai": "quan-dai",

@@ -470,6 +470,39 @@ button.btn-outline {
 .review-product:hover {
   text-decoration: underline;
 }
+.review-photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.review-photos img,
+.dg-anh-ds img {
+  width: 76px;
+  height: 76px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: zoom-in;
+  border: 1px solid #eee;
+}
+.anh-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  cursor: zoom-out;
+}
+.anh-lightbox.open {
+  display: flex;
+}
+.anh-lightbox img {
+  max-width: 92vw;
+  max-height: 90vh;
+  border-radius: 8px;
+}
 
 /* ===================== TẢI APP ===================== */
 .download-app {
@@ -568,22 +601,39 @@ button.btn-outline {
 }
 
 .social-icons {
-  display: flex;
-  gap: 10px;
-  margin-top: 8px;
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
 }
+
 .social-icons a {
-  width: 32px;
-  height: 32px;
-  border-radius: 6px;
-  background: #e8823c;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.2s;
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
 }
+
+.social-icons .social-tiktok {
+    background: #000;
+}
+
+.social-icons .social-fb {
+    background: #1877F2;
+}
+
+.social-icons img {
+    width: 18px;
+    height: 18px;
+    max-width: none;
+    display: block;
+}
+
 .social-icons a:hover {
-  opacity: 0.85;
+    opacity: 0.85;
 }
 
 .footer-bottom {
