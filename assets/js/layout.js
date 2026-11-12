@@ -2,25 +2,24 @@
 // Nhúng:
 // index.html: <script src="assets/js/layout.js"></script>
 // pages/*.html: <script src="../assets/js/layout.js"></script>
-(function() {
-    // Tự xác định đường dẫn gốc từ vị trí file layout.js
-    const self =
-        document.currentScript ||
-        document.querySelector('script[src$="layout.js"]');
+(function () {
+  // Tự xác định đường dẫn gốc từ vị trí file layout.js
+  const self =
+    document.currentScript ||
+    document.querySelector('script[src$="layout.js"]');
 
-    if (!self || !self.src) {
-        console.error("Không tìm thấy file layout.js");
-        return;
-    }
+  if (!self || !self.src) {
+    console.error("Không tìm thấy file layout.js");
+    return;
+  }
 
-    const root = new URL("../../", self.src).href;
+  const root = new URL("../../", self.src).href;
 
-    const SOCIAL = {
-        youtube: "https://www.youtube.com/@TEDEd",
-        facebook: "https://www.facebook.com/aeonmallhalong.14quangninh",
-    };
-
-    const header = `
+  const SOCIAL = {
+  tiktok: "https://www.tiktok.com/@nettoclothings",
+  facebook: "https://www.facebook.com/aeonmallhalong.14quangninh",
+};
+  const header = `
 <header class="site-header">
   <div class="topbar">
     <a href="${root}index.html" class="logo">NETTO</a>
@@ -50,12 +49,12 @@
         <span>Đăng nhập / Đăng ký</span>
       </a>
 
-      <button type="button" class="cart-link" id="header-cart-toggle" aria-label="Giỏ hàng">
-  <svg viewBox="0 0 24 24" width="22" height="22">
-    <path fill="currentColor" d="M7 4h-2l-1 2H2v2h2l3.6 7.59-1.35 2.44A2 2 0 0 0 8 21h12v-2H8l1.1-2h7.45a2 2 0 0 0 1.75-1.03L21.7 8H6.21l-.94-2H7z"/>
-  </svg>
-  <span class="cart-count">0</span>
-</button>
+      <a href="${root}pages/giohang.html" class="cart-link" aria-label="Giỏ hàng">
+        <svg viewBox="0 0 24 24" width="22" height="22">
+          <path fill="currentColor" d="M7 4h-2l-1 2H2v2h2l3.6 7.59-1.35 2.44A2 2 0 0 0 8 21h12v-2H8l1.1-2h7.45a2 2 0 0 0 1.75-1.03L21.7 8H6.21l-.94-2H7z"/>
+        </svg>
+        <span class="cart-count">0</span>
+      </a>
     </div>
   </div>
 
@@ -126,7 +125,7 @@
   </nav>
 </header>`;
 
-    const footer = `
+  const footer = `
 <footer class="site-footer">
   <div class="footer-grid">
 
@@ -163,11 +162,10 @@
       </ul>
 
             <div class="social-icons">
-        <a href="${SOCIAL.youtube}" class="social-yt" target="_blank" rel="noopener noreferrer" aria-label="Youtube">
-          <svg viewBox="0 0 24 24" width="20" height="20">
-            <path fill="#fff" d="M21.6 7.2a2.7 2.7 0 0 0-1.9-1.9C18 5 12 5 12 5s-6 0-7.7.3a2.7 2.7 0 0 0-1.9 1.9A28 28 0 0 0 2 12a28 28 0 0 0 .4 4.8 2.7 2.7 0 0 0 1.9 1.9C6 19 12 19 12 19s6 0 7.7-.3a2.7 2.7 0 0 0 1.9-1.9A28 28 0 0 0 22 12a28 28 0 0 0-.4-4.8M10 15V9l5.2 3z"/>
-          </svg>
-        </a>
+        <a href="${SOCIAL.tiktok}" class="social-tiktok"
+       target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <img src="https://cdn.simpleicons.org/tiktok/FFFFFF" alt="TikTok">
+    </a>
 
         <a href="${SOCIAL.facebook}" class="social-fb" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <svg viewBox="0 0 24 24" width="20" height="20">
@@ -207,9 +205,7 @@
         <li><a href="${root}pages/sanpham.html">Tìm kiếm</a></li>
         <li><a href="${root}pages/form.html">Đăng nhập</a></li>
         <li><a href="${root}pages/form.html">Đăng ký</a></li>
-        <li>
-  <a href="#" class="footer-cart-link">Giỏ hàng</a>
-</li>
+        <li><a href="${root}pages/giohang.html">Giỏ hàng</a></li>
       </ul>
     </div>
 
@@ -220,7 +216,7 @@
   </div>
 </footer>`;
 
-    const chatbox = `
+  const chatbox = `
 <div class="chatbox-widget">
   <button class="chatbox-icon" id="chatboxToggle" aria-label="Mở chat">
     <svg viewBox="0 0 24 24" width="26" height="26">
@@ -229,107 +225,128 @@
   </button>
 </div>`;
 
-    function render() {
-        let h = document.getElementById("site-header");
+  function render() {
+    let h = document.getElementById("site-header");
 
-        if (!h) {
-            h = document.createElement("div");
-            h.id = "site-header";
-            document.body.prepend(h);
-        }
-
-        let f = document.getElementById("site-footer");
-
-        if (!f) {
-            f = document.createElement("div");
-            f.id = "site-footer";
-            document.body.append(f);
-        }
-
-        // Hiển thị Header và Footer
-        h.innerHTML = header;
-        f.innerHTML = footer;
-
-        // Không tạo chatbox trùng lặp
-        if (!document.querySelector(".chatbox-widget")) {
-            document.body.insertAdjacentHTML("beforeend", chatbox);
-        }
-
-        // Đánh dấu menu của trang hiện tại
-        const trang = location.pathname.split("/").pop() || "index.html";
-
-        document.querySelectorAll(".main-nav a[data-page]").forEach(function(a) {
-            if (a.dataset.page === trang) {
-                a.classList.add("active");
-            }
-        });
-
-        // Nạp tìm kiếm và chatbox
-        ["search.js", "chatbox.js"].forEach(function(ten) {
-            const sc = document.createElement("script");
-            sc.src = root + "assets/js/" + ten;
-            sc.async = false;
-            document.head.appendChild(sc);
-        });
+    if (!h) {
+      h = document.createElement("div");
+      h.id = "site-header";
+      document.body.prepend(h);
     }
 
-    // Chạy sau khi DOM sẵn sàng
-    if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", render);
-    } else {
-        render();
+    let f = document.getElementById("site-footer");
+
+    if (!f) {
+      f = document.createElement("div");
+      f.id = "site-footer";
+      document.body.append(f);
     }
 
+    h.innerHTML = header;
+    f.innerHTML = footer;
+
+    // Không tạo chatbox trùng lặp
+    if (!document.querySelector(".chatbox-widget")) {
+      document.body.insertAdjacentHTML("beforeend", chatbox);
+    }
+
+    // Đánh dấu menu của trang hiện tại
+    const trang = location.pathname.split("/").pop() || "index.html";
+
+    document.querySelectorAll(".main-nav a[data-page]").forEach(function (a) {
+      if (a.dataset.page === trang) {
+        a.classList.add("active");
+      }
+    });
+
+    // Nạp tìm kiếm + chatbox sau khi header/chatbox đã có trên trang.
+    // async = false để search.js chạy xong rồi mới tới chatbox.js.
+    ["search.js", "chatbox.js"].forEach(function (ten) {
+      const sc = document.createElement("script");
+      sc.src = root + "assets/js/" + ten;
+      sc.async = false;
+      document.head.appendChild(sc);
+    });
+  }
+
+  // Chạy sau khi DOM sẵn sàng
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", render);
+  } else {
+    render();
+  }
 })();
 // ===== Khung đăng nhập nổi =====
 function dongKhungDangNhap() {
-    const nen = document.getElementById("auth-modal");
-    if (nen) nen.classList.remove("mo");
-    document.body.style.overflow = "";
+  const nen = document.getElementById("auth-modal");
+  if (nen) nen.classList.remove("mo");
+  document.body.style.overflow = "";
 }
 
 function moKhungDangNhap(url) {
-    let nen = document.getElementById("auth-modal");
-    if (!nen) {
-        nen = document.createElement("div");
-        nen.id = "auth-modal";
-        nen.className = "auth-modal";
-        nen.innerHTML =
-            '<div class="auth-modal-hop">' +
-            '<button type="button" class="auth-modal-dong" aria-label="Đóng">&times;</button>' +
-            '<iframe class="auth-modal-khung" title="Đăng nhập / Đăng ký"></iframe>' +
-            "</div>";
-        document.body.appendChild(nen);
+  let nen = document.getElementById("auth-modal");
+  if (!nen) {
+    nen = document.createElement("div");
+    nen.id = "auth-modal";
+    nen.className = "auth-modal";
+    nen.innerHTML =
+      '<div class="auth-modal-hop">' +
+      '<button type="button" class="auth-modal-dong" aria-label="Đóng">&times;</button>' +
+      '<iframe class="auth-modal-khung" title="Đăng nhập / Đăng ký"></iframe>' +
+      "</div>";
+    document.body.appendChild(nen);
 
-        // Bấm nền tối hoặc nút X thì đóng
-        nen.addEventListener("click", function(e) {
-            if (e.target === nen || e.target.closest(".auth-modal-dong")) {
-                dongKhungDangNhap();
-            }
-        });
-        // Bấm Esc thì đóng
-        document.addEventListener("keydown", function(e) {
-            if (e.key === "Escape") dongKhungDangNhap();
-        });
-        // Form báo chiều cao để khung tự co giãn
-        window.addEventListener("message", function(e) {
-            if (e.data && e.data.netto === "auth-height") {
-                nen.querySelector("iframe").style.height = e.data.h + "px";
-            }
-        });
-    }
-    const khung = nen.querySelector("iframe");
-    if (!khung.getAttribute("src")) {
-        khung.src = url + (url.indexOf("?") >= 0 ? "&" : "?") + "modal=1";
-    }
-    nen.classList.add("mo");
-    document.body.style.overflow = "hidden";
+    // Bấm nền tối hoặc nút X thì đóng
+    nen.addEventListener("click", function (e) {
+      if (e.target === nen || e.target.closest(".auth-modal-dong")) {
+        dongKhungDangNhap();
+      }
+    });
+    // Bấm Esc thì đóng
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") dongKhungDangNhap();
+    });
+    // Form báo chiều cao để khung tự co giãn
+    window.addEventListener("message", function (e) {
+      if (e.data && e.data.netto === "auth-height") {
+        nen.querySelector("iframe").style.height = e.data.h + "px";
+      }
+    });
+  }
+  const khung = nen.querySelector("iframe");
+  if (!khung.getAttribute("src")) {
+    khung.src = url + (url.indexOf("?") >= 0 ? "&" : "?") + "modal=1";
+  }
+  nen.classList.add("mo");
+  document.body.style.overflow = "hidden";
 }
 
 // Bấm vào bất kỳ link nào dẫn tới form.html thì mở khung nổi
-document.addEventListener("click", function(e) {
-    const link = e.target.closest('a[href*="form.html"]');
-    if (!link || location.pathname.endsWith("form.html")) return;
-    e.preventDefault();
-    moKhungDangNhap(link.href);
+document.addEventListener("click", function (e) {
+  const link = e.target.closest('a[href*="form.html"]');
+  if (!link || location.pathname.endsWith("form.html")) return;
+  e.preventDefault();
+  moKhungDangNhap(link.href);
 });
+
+// Phóng to ảnh đánh giá (dùng chung trang chủ và trang chi tiết sản phẩm)
+(function () {
+  let lop = null;
+  window.nettoMoAnh = function (src) {
+    if (!/^data:image\//.test(src)) return;
+    if (!lop) {
+      lop = document.createElement("div");
+      lop.className = "anh-lightbox";
+      lop.innerHTML = '<img alt="Ảnh đánh giá" />';
+      lop.addEventListener("click", function () {
+        lop.classList.remove("open");
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") lop.classList.remove("open");
+      });
+      document.body.appendChild(lop);
+    }
+    lop.querySelector("img").src = src;
+    lop.classList.add("open");
+  };
+})();
