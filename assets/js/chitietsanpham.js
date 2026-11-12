@@ -20,6 +20,11 @@ fetch("../assets/data/products.json")
       document.title = sp.ten;
       document.getElementById("ct-ten").textContent = sp.ten;
       document.getElementById("ct-duongdan").textContent = sp.ten;
+      // Link "Sản phẩm" trên đường dẫn: kèm id để trang danh sách cuộn về đúng sản phẩm
+      const linkSP = document.querySelector(
+        '.ct-breadcrumb a[href="sanpham.html"]',
+      );
+      if (linkSP) linkSP.href = "sanpham.html?sp=" + sp.id;
       document.getElementById("ct-ma").textContent = sp.ma;
       document.getElementById("ct-gia").textContent = dinhDangGia(sp.gia);
       document.getElementById("ct-mota-text").textContent = sp.mota;
@@ -130,11 +135,55 @@ fetch("../assets/data/products.json")
           "Size gợi ý cho bạn: " + (bmi < 19 ? "S" : bmi > 23.5 ? "L" : "M");
       });
 
-      document.getElementById("ct-mua").addEventListener("click", function () {
+      // Lấy thông tin sản phẩm đang chọn
+      function laySanPhamDangChon() {
         const size = document.querySelector("#ct-size .active").textContent;
-        alert(
-          "Đã thêm " + sl.value + " sản phẩm (size " + size + ") vào giỏ hàng!",
-        );
+        const nutMau = document.querySelector("#ct-mau .active");
+        return {
+          id: sp.id,
+          ten: sp.ten,
+          gia: sp.gia,
+          size: size,
+          mau: nutMau ? nutMau.title : "",
+          soLuong: Number(sl.value),
+          anh: anhLon.getAttribute("src"),
+        };
+      }
+
+      // Thêm vào giỏ hàng (lưu trong localStorage)
+      function themVaoGio() {
+        const moi = laySanPhamDangChon();
+        let gio = [];
+        try {
+          gio = JSON.parse(localStorage.getItem("gioHang")) || [];
+        } catch (e) {}
+
+        // Cùng sản phẩm + size + màu thì cộng dồn số lượng
+        const co = gio.find(function (x) {
+          return x.id === moi.id && x.size === moi.size && x.mau === moi.mau;
+        });
+        if (co) co.soLuong += moi.soLuong;
+        else gio.push(moi);
+
+        try {
+          localStorage.setItem("gioHang", JSON.stringify(gio));
+        } catch (e) {}
+      }
+
+      document.getElementById("ct-them").addEventListener("click", function () {
+        themVaoGio();
+        alert("Đã thêm " + sl.value + " sản phẩm vào giỏ hàng!");
+      });
+
+      // Mua ngay: chỉ lưu sản phẩm này rồi nhảy thẳng sang trang thanh toán
+      document.getElementById("ct-mua").addEventListener("click", function () {
+        try {
+          localStorage.setItem(
+            "muaNgay",
+            JSON.stringify([laySanPhamDangChon()]),
+          );
+        } catch (e) {}
+        window.location.href = "thanhtoan.html"; // đổi đúng tên trang thanh toán của nhóm
       });
     }
   });
@@ -395,7 +444,9 @@ fetch("../assets/data/products.json")
     if (anhChon.length) moi.anh = anhChon.slice();
     arr.unshift(moi);
     if (!ghi(arr)) {
-      alert("Không lưu được đánh giá: bộ nhớ trình duyệt đã đầy. Bạn thử bớt ảnh nhé.");
+      alert(
+        "Không lưu được đánh giá: bộ nhớ trình duyệt đã đầy. Bạn thử bớt ảnh nhé.",
+      );
       return;
     }
     form.reset();
@@ -552,7 +603,14 @@ fetch("../assets/data/products.json")
 (function () {
   const id = Number(new URLSearchParams(location.search).get("id"));
   const boxMau = document.getElementById("ct-mau");
-  const nutMua = document.getElementById("ct-mua");
+  const cacNut = document.querySelectorAll("#ct-them, #ct-mua");
+  const nutMua = {
+    set disabled(v) {
+      cacNut.forEach(function (n) {
+        n.disabled = v;
+      });
+    },
+  };
   if (!id || !boxMau) return;
 
   // Bọc nút màu và dòng tồn kho vào cùng một hàng

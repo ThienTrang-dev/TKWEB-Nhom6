@@ -36,9 +36,13 @@
           required
         />
         <br />
-        <a href="#" class="quen-mk" id="quen-mk">Quên mật khẩu?</a>
-        <br />
         <button type="submit" class="btn-submit">Đăng nhập</button>
+        <div class="auth-phu">
+          <span
+            >Chưa có tài khoản? <a href="#" id="den-dang-ky">Đăng ký</a></span
+          >
+          <a href="#" class="quen-mk" id="quen-mk">Quên mật khẩu?</a>
+        </div>
       </form>
       <form id="form-register" class="auth-form" hidden>
         <label for="reg-user">Tên đăng nhập</label>
@@ -69,6 +73,25 @@
         </label>
         <br />
         <button type="submit" class="btn-submit">Đăng ký</button>
+      </form>
+      <form id="form-forgot" class="auth-form" hidden>
+        <p class="auth-tieude">Quên mật khẩu</p>
+        <p class="auth-mota">
+          Nhập email đã đăng ký, NETTO sẽ gửi hướng dẫn đặt lại mật khẩu cho
+          bạn.
+        </p>
+        <label for="forgot-email">Email</label>
+        <input
+          type="email"
+          id="forgot-email"
+          placeholder="Nhập email của bạn"
+          required
+        />
+        <p class="auth-thongbao" id="forgot-msg" hidden></p>
+        <button type="submit" class="btn-submit">Gửi hướng dẫn</button>
+        <div class="auth-phu">
+          <a href="#" id="forgot-back">&larr; Quay lại đăng nhập</a>
+        </div>
       </form>
     </div>
     <script src="../assets/js/form.js"></script>
