@@ -1,1642 +1,1360 @@
-[
-  {
-    "id": 4,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo len cổ bẻ dáng lửng vân in chìm baby BERRIES TOP",
-    "gia": "259000đ",
-    "ma": "NT004",
-    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Đen",
-        "ma": "#000",
-        "anh": ["4.jpg"]
-      },
-      {
-        "ten": "Trắng",
-        "ma": "white",
-        "anh": ["5.jpg"]
-      }
-    ]
-  },
+[{
+        "id": 4,
+        "loai": "ao-ngan-tay",
+        "ten": "NETTO® - Áo len cổ bẻ dáng lửng vân in chìm baby BERRIES TOP",
+        "gia": "259000đ",
+        "ma": "NT004",
+        "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Đen",
+                "ma": "#000",
+                "anh": ["4.jpg"]
+            },
+            {
+                "ten": "Trắng",
+                "ma": "white",
+                "anh": ["5.jpg"]
+            }
+        ]
+    },
 
-  {
-    "id": 6,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo len mỏng hồng có logo NETTO® ngắn tay cổ tròn vân hoa FLOWER TOP/PK",
-    "gia": "305000",
-    "giaCu": "385000",
-    "ma": "NT006",
-    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Xanh baby",
-        "ma": "#B5D0EC",
-        "anh": ["6.jpg"]
-      },
-      {
-        "ten": "Xám",
-        "ma": "gray",
-        "anh": ["7.jpg"]
-      },
-      {
-        "ten": "Đen",
-        "ma": "black",
-        "anh": ["8.jpg"]
-      }
-    ]
-  },
+    {
+        "id": 6,
+        "loai": "ao-ngan-tay",
+        "ten": "NETTO® - Áo len mỏng hồng có logo NETTO® ngắn tay cổ tròn vân hoa FLOWER TOP/PK",
+        "gia": "305000",
+        "giaCu": "385000",
+        "ma": "NT006",
+        "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Xanh baby",
+                "ma": "#B5D0EC",
+                "anh": ["6.jpg"]
+            },
+            {
+                "ten": "Xám",
+                "ma": "gray",
+                "anh": ["7.jpg"]
+            },
+            {
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["8.jpg"]
+            }
+        ]
+    },
 
-  {
-    "id": 9,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo len xù cổ tròn túi rúm ngực dáng lửng có 2 line viền áo đen MIMI TOP/BL",
-    "gia": "249000",
-    "giaCu": "299000",
-    "ma": "NT009",
-    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Hồng",
-        "ma": "pink",
-        "anh": ["9.jpg"]
-      },
-      {
-        "ten": "Đen",
-        "ma": "black",
-        "anh": ["10.jpg"]
-      },
-      {
-        "ten": "Xám",
-        "ma": "gray",
-        "anh": ["11.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 12,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo len xù dáng lửng ngắn tay thêu hình gấu đen BABY BEAR TOP /BL",
-    "gia": "319000",
-    "ma": "NT012",
-    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Xám",
-        "ma": "gray",
-        "anh": ["12.jpg"]
-      },
-      {
-        "ten": "Đen",
-        "ma": "black",
-        "anh": ["13.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 14,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo Babydoll Cộc Tay Bèo Vàng Butter Caro Nhỏ",
-    "gia": "259000",
-    "giaCu": "339000",
-    "ma": "NT014",
-    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Trắng",
-        "ma": "white",
-        "anh": ["14.jpg"]
-      },
-      {
-        "ten": "Xám",
-        "ma": "gray",
-        "anh": ["15.jpg"]
-      },
-      {
-        "ten": "Đen",
-        "ma": "#344B65",
-        "anh": ["16.jpg"]
-      },
-      {
-        "ten": "Hồng",
-        "ma": "pink",
-        "anh": ["17.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 18,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo len đen cổ bẻ phối viền trắng EVIE TOP/BL",
-    "gia": "289000",
-    "ma": "NT018",
-    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Đen",
-        "ma": "black",
-        "anh": ["18.jpg"]
-      },
-      {
-        "ten": "Trắng",
-        "ma": "white",
-        "anh": ["19.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 20,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo len đen vân lỗ phối cổ bẻ dây nơ cổ YO YO TOP/BL",
-    "gia": "299000",
-    "ma": "NT020",
-    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Đen",
-        "ma": "black",
-        "anh": ["20.jpg"]
-      },
-      {
-        "ten": "Be",
-        "ma": "beige",
-        "anh": ["21.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 22,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo len xù crop lửng ngắn tay cổ vuông kẻ trắng BORA BORA TOP/PK",
-    "gia": "285000",
-    "ma": "NT022",
-    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Hồng",
-        "ma": "pink",
-        "anh": ["22.jpg"]
-      },
-      {
-        "ten": "Xám",
-        "ma": "gray",
-        "anh": ["23.jpg"]
-      },
-      {
-        "ten": "Đen",
-        "ma": "black",
-        "anh": ["24.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 25,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo len xù trắng cổ tròn viền 2 line SHANGHAI TOP/WH",
-    "gia": "265000",
-    "ma": "NT025",
-    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Trắng",
-        "ma": "white",
-        "anh": ["25.jpg"]
-      },
-      {
-        "ten": "Đen",
-        "ma": "black",
-        "anh": ["26.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 27,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo len xù mỏng ngắn tay cổ lượn viền mint DATE MAKER TOP/MINT",
-    "gia": "300000",
-    "giaCu": "380000",
-    "ma": "NT027",
-    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Đen",
-        "ma": "black",
-        "anh": ["27.jpg"]
-      },
-      {
-        "ten": "Trắng",
-        "ma": "white",
-        "anh": ["28.jpg"]
-      },
-      {
-        "ten": "Xám",
-        "ma": "white",
-        "anh": ["29.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 30,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo len xù ngắn tay dáng lửng khoét vai hồng BE MINE TOP/PK",
-    "gia": "350000",
-    "giaCu": "380000",
-    "ma": "NT030",
-    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Xanh baby",
-        "ma": "#B5D0EC",
-        "anh": ["30.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 31,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo Babydoll Hoa Nhí Xinh Hồng Pastel Tim Nhỏ",
-    "gia": "289000",
-    "ma": "NT031",
-    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Hồng",
-        "ma": "pink"
-      }
-    ]
-  },
-  {
-    "id": 32,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo len ngắn tay chống nhăn trắng ALISSA TOP/WH",
-    "gia": "249000",
-    "giaCu": "380000",
-    "ma": "NT032",
-    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Đen",
-        "ma": "black",
-        "anh": ["32.jpg"]
-      },
-      {
-        "ten": "Be",
-        "ma": "beige",
-        "anh": ["33.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 34,
-    "loai": "ao-ngan-tay",
-    "ten": "NETTO® - Áo trơn xám trễ vai phối nơ MOLISA TOP/BL",
-    "gia": "199000",
-    "giaCu": "280000",
-    "ma": "NT034",
-    "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Xám",
-        "ma": "gray"
-      }
-    ]
-  },
-  {
-    "id": 35,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo len cổ bẻ dáng lửng vân in chìm baby BERRIES TOP",
-    "gia": "399.000đ",
-    "giaCu": "399.000đ",
-    "ma": "NT035",
-    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Xám",
-        "ma": "gray",
-        "anh": ["35.jpg"]
-      },
-      {
-        "ten": "Hồng",
-        "ma": "pink",
-        "anh": ["36.jpg"]
-      },
-      {
-        "ten": "Đen",
-        "ma": "black",
-        "anh": ["37.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 38,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo khoác cardigan len xù hồng viền trắng RAINBOW BABY CARDIGAN/PK",
-    "gia": "319.000đ",
-    "giaCu": "",
-    "ma": "NT038",
-    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Hồng",
-        "ma": "pink"
-      }
-    ]
-  },
-  {
-    "id": 39,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo set len xù cardigan lửng tặng kèm áo 2 dây kẻ ngang nhỏ đen vai bồng CAPPUCCINO CARDIGAN/BL",
-    "gia": "339.000đ",
-    "giaCu": "",
-    "ma": "NT039",
-    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Đen",
-        "ma": "black",
-        "anh": ["39.jpg"],
-        "ton": "20"
-      }
-    ]
-  },
-  {
-    "id": 40,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo len xù cardigan 4 túi đen viền trắng JENNIFER CARDIGAN/BL",
-    "gia": "349.000đ",
-    "giaCu": "499.000đ",
-    "ma": "NT040",
-    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Đen",
-        "ma": "black",
-        "anh": ["40.jpg"],
-        "ton": "10"
-      },
-      {
-        "ten": "Trắng",
-        "ma": "white",
-        "anh": ["41.jpg"],
-        "ton": "15"
-      }
-    ]
-  },
- 
-  {
-    "id": 42,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo len xù đỏ dáng lửng phối cổ bẻ dây nơ đen HELLEN TOP/DR",
-    "gia": "289.000đ",
-    "giaCu": "399.000đ",
-    "ma": "NT042",
-    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Đỏ",
-        "ma": "red",
-        "anh": ["42.jpg"]
-      },
-      {
-        "ten": "Đen",
-        "ma": "black",
-        "anh": ["43.jpg"]
-      },
-      {
-        "ten": "Hồng",
-        "ma": "pink",
-        "anh": ["44.jpg"]
-      }
-    ]
-  },
-  
-  {
-    "id": 45,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo len lông bông hồng/xanh nhạt dáng lửng phối cúc kim loại LISA LOVE TOP/PK",
-    "gia": "329.000đ",
-    "giaCu": "449.000đ",
-    "ma": "NT045",
-    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Hồng baby",
-        "ma": "#ff99cc",
-        "anh": ["45.jpg"]
-      },
-      {
-        "ten": "Xanh baby",
-        "ma": "#99ccff",
-        "anh": ["46.jpg"]
-      }
-    ]
-  },
-  
-  {
-    "id": 47,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo len xù hồng cardigan cổ tròn vân quả trám nổi dài tay RACHEL TOP/PK",
-    "giaCu": "329000",
-    "ma": "NT047",
-    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Hồng phấn",
-        "ma": "#F8C8DC",
-        "anh": ["47.jpg"]
-      },
-      {
-        "ten": "Xanh băng",
-        "ma": "#D0E0E3",
-        "anh": ["48.jpg"]
-      },
-      {
-        "ten": "Xanh navy đậm",
-        "ma": "#1B263B",
-        "anh": ["49.jpg"]
-      }
-    ]
-  },
-  
-  {
-    "id": 50,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo len lông bóng xù hồng phối viền trắng dáng lửng phối cúc kim loại ISABELLA TOP/PK",
-    "gia": "399000",
-    "giaCu": "",
-    "ma": "NT050",
-    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Hồng phấn",
-        "ma": "#F8C8DC"
-      }
-    ]
-  },
-  {
-    "id": 51,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo khoác cổ tròn dáng dài vân caro MACCARONI JACKET/PK PHIÊN BẢN MỚI NHẤT T11.2026",
-    "giaCu": "",
-    "ma": "NT051",
-    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Hồng phấn",
-        "ma": "#F4C2C2",
-        "anh": ["51.jpg"]
-      },
-      {
-        "ten": "Xám nhạt",
-        "ma": "#D3D3D3",
-        "anh": ["52.jpg"]
-      }
-    ]
-  },
-  
-  {
-    "id": 53,
-    "loai": "ao-dai-tay",
-    "ten": "NETTO® - Áo len xù cardigan cổ bẻ dáng lửng phối đường viền LILY ROSE JACKET",
-    "giaCu": "",
-    "ma": "NT053",
-    "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Hồng phấn",
-        "ma": "#FBE4E8",
-        "anh": ["53.jpg"]
-      },
-      {
-        "ten": "Trắng kem",
-        "ma": "#F9F8F3",
-        "anh": ["54.jpg"]
-      },
-      {
-        "ten": "Ghi",
-        "ma": "#A0A0A0",
-        "anh": ["55.jpg"]
-      },
-      {
-        "ten": "Đen",
-        "ma": "black",
-        "anh": ["56.jpg"]
-      }
-    ]
-  },
-  
-  {
-    "id": 58,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 58",
-    "giaCu": "",
-    "ma": "NT058",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 59,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 59",
-    "giaCu": "",
-    "ma": "NT059",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 60,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 60",
-    "giaCu": "",
-    "ma": "NT060",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 61,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 61",
-    "giaCu": "",
-    "ma": "NT061",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 62,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 62",
-    "giaCu": "",
-    "ma": "NT062",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 63,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 63",
-    "giaCu": "",
-    "ma": "NT063",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 64,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 64",
-    "giaCu": "",
-    "ma": "NT064",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 65,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 65",
-    "giaCu": "",
-    "ma": "NT065",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 66,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 66",
-    "giaCu": "",
-    "ma": "NT066",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 67,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 67",
-    "giaCu": "",
-    "ma": "NT067",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 68,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 68",
-    "giaCu": "",
-    "ma": "NT068",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 69,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 69",
-    "giaCu": "",
-    "ma": "NT069",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 70,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 70",
-    "giaCu": "",
-    "ma": "NT070",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 71,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 71",
-    "giaCu": "",
-    "ma": "NT071",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 72,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 72",
-    "giaCu": "",
-    "ma": "NT072",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 73,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 73",
-    "giaCu": "",
-    "ma": "NT073",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 74,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 74",
-    "giaCu": "",
-    "ma": "NT074",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 75,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 75",
-    "giaCu": "",
-    "ma": "NT075",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 76,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 76",
-    "giaCu": "",
-    "ma": "NT076",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 77,
-    "loai": "vay",
-    "ten": "NETTO® - Váy mã 77",
-    "giaCu": "",
-    "ma": "NT077",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 78,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần shorts cạp cao chiết ly eo hồng BUBBLE SHORTS/PK",
-    "gia": "199000",
-    "giaCu": "269000",
-    "ma": "NT078",
-    "mota": "Thiết kế cạp cao chiết ly eo tinh tế giúp tôn vòng 2 thon gọn và tạo hiệu ứng kéo dài đôi chân. Sắc hồng ngọt ngào, trẻ trung mang lại vẻ ngoài nữ tính và năng động.",
-    "size": ["S", "M", "L"],
-    "ton": "10",
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc",
-        "anh": ["78.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 79, 
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần shorts cạp cao tafta lượn viền hoa vàng LOVE LINER SHORTS/YL",
-    "gia": "249000",
-    "giaCu": "279000",
-    "ma": "NT079",
-    "mota": "Sự kết hợp độc đáo giữa chất liệu tafta đứng phom sang trọng và chi tiết lượn viền hoa cách điệu đầy nữ tính. Gam màu vàng tươi tắn giúp nàng luôn nổi bật và rạng rỡ.",
-    "size": ["S", "M", "L"],
-    "ton": "15",
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc",
-        "anh": ["79.jpg", "80.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 80,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần short cạp chun cao len trắng cạp chun viền túi đen NAOMI SHORT(FREESIZE)/WH",
-    "giaCu": "275000",
-    "ma": "NT080",
-    "mota": "Mẫu quần short len dệt mềm mại mang phong cách tiểu thư thanh lịch với sự tương phản trắng - đen kinh điển. Thiết kế cạp chun co giãn linh hoạt mang lại sự thoải mái tuyệt đối.",
-    "size": ["S", "M", "L"],
-    "ton": "17",
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc",
-        "anh": ["81.jpg", "82.jpg", "83.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 81,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần shorts bò cắt cạp lệch màu xanh MASCARA JEANS SHORTS/BLUE",
-    "giaCu": "329000",
-    "ma": "NT081",
-    "mota": "Phá cách và cá tính với thiết kế cạp lệch bất đối xứng thời thượng trên nền chất liệu denim xanh cổ điển. Lựa chọn hoàn hảo cho những cô nàng yêu thích phong cách streetwear năng động.",
-    "size": ["S", "M", "L"],
-    "ton": "20",
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc",
-        "anh": ["84.jpg", "85.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 82,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần shorts trắng cạp cao chiết ly eo JOCIE SHORTS/WH",
-    "giaCu": "275000",
-    "ma": "NT082",
-    "mota": "Item must have trong tủ đồ với thiết kế quần shorts trắng cạp cao thanh lịch. Đường chiết ly tinh tế mang lại diện mạo chỉn chu, hiện đại và cực kỳ dễ phối đồ.",
-    "size": ["S", "M", "L"],
-    "ton": "45",
-    "mau": [
-      {
-        "ten": "Trắng",
-        "ma": "white",
-        "anh": ["86.jpg", "87.jpg"]
-      },
-      {
-        "ten": "Vàng",
-        "ma": "yellow",
-        "anh": ["88.jpg", "89.jpg"]
-      },
-      {
-        "ten": "Đen",
-        "ma": "black",
-        "anh": ["90.jpg"]
-      },
-      {
-        "ten": "Hồng",
-        "ma": "pink",
-        "anh": ["91.jpg", "92.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 83,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần short tafta nude túi hộp 2 bên BECKY SHORTS/ND",
-    "giaCu": "265000",
-    "ma": "NT083",
-    "mota": "Sự giao thoa giữa nét sang trọng của chất liệu tafta và phong cách cargo năng động với thiết kế túi hộp 2 bên. Tông màu nude trang nhã giúp tôn da và mang lại vẻ ngoài thời thượng.",
-    "size": ["S", "M", "L"],
-    "ton": "30",
-    "mau": [
-      {
-        "ten": "Trắng",
-        "ma": "white",
-        "anh": ["93.jpg", "94.jpg"]
-      },
-      {
-        "ten": "Xám",
-        "ma": "grey",
-        "anh": ["95.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 84,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần shorts ngắn đen cạp cao nẹp ruy băng đính kèm cúc ANTI MONEY SHORTS/BL",
-    "gia": "199000",
-    "giaCu": "289000",
-    "ma": "NT084",
-    "mota": "Thiết kế tinh xảo với phần cạp cao phối nẹp ruy băng và cúc trang trí đầy cuốn hút. Sắc đen huyền bí giúp che khuyết điểm hoàn hảo và tôn lên đôi chân thon dài.",
-    "size": ["S", "M", "L"],
-    "ton": "30",
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc",
-        "anh": ["98.jpg", "99.jpg", "100.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 85,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần shorts bò cắt gấu lượn viền màu lông chuột XOXO JEANS SHORTS/LC",
-    "giaCu": "269000",
-    "ma": "NT085",
-    "mota": "Mang đến làn gió mới cho dòng quần jeans với tông màu lông chuột (xám khói) thời thượng cùng phần gấu cắt lượn viền mềm mại, giúp cân bằng giữa nét bụi bặm và sự nữ tính.",
-    "size": ["S", "M", "L"],
-    "ton": "37",
-    "mau": [
-      {
-        "ten": "Trắng",
-        "ma": "white",
-        "anh": ["101.jpg", "102.jpg"]
-      },
-      {
-        "ten": "Đen",
-        "ma": "black",
-        "anh": ["103.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 86,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần shorts cạp cao tafta đính cúc gấu trắng NO PHOTO SHORTS/WH",
-    "gia": "189000",
-    "giaCu": "269000",
-    "ma": "NT086",
-    "mota": "Thiết kế tối giản nhưng không đơn điệu nhờ chất liệu tafta đứng phom cùng chi tiết đính cúc tinh tế ở phần gấu quần. Một item thanh lịch, trẻ trung dành cho mọi cô gái.",
-    "size": ["S", "M", "L"],
-    "ton": "25",
-    "mau": [
-      {
-        "ten": "Trắng",
-        "ma": "white",
-        "anh": ["104.jpg"]
-      },
-      {
-        "ten": "Vàng",
-        "ma": "yellow",
-        "anh": ["105.jpg", "106.jpg"]
-      },
-      {
-        "ten": "Hồng",
-        "ma": "pink",
-        "anh": ["107.jpg", "108.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 87,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần shorts bò cạp rời gấu cắt tua rua đen MAMIII JEANS SHORTS/LC",
-    "gia": "290000",
-    "giaCu": "590000",
-    "ma": "NT087",
-    "mota": "Thiết kế đậm chất cá tính với phần cạp rời độc đáo và gấu cắt tua rua phóng khoáng. Phiên bản màu đen bụi bặm giúp nàng khẳng định gu thời trang ấn tượng và sành điệu.",
-    "size": ["S", "M", "L"],
-    "ton": "20",
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc",
-        "anh": ["109.jpg", "110.jpg", "111.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 88,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần short cạp cao sẻ hai vạt phối logo tingoan COCO SHORT/WH",
-    "giaCu": "490000",
-    "ma": "NT088",
-    "mota": "Thiết kế hiện đại với phần xẻ hai vạt cách điệu kết hợp cùng chi tiết phối logo thương hiệu tinh tế. Mẫu quần mang lại sự thoải mái khi di chuyển mà vẫn giữ được nét thanh lịch.",
-    "size": ["S", "M", "L"],
-    "ton": "25",
-    "mau": [
-      {
-        "ten": "Đen",
-        "ma": "black",
-        "anh": ["112.jpg", "113.jpg", "114.jpg"]
-      },
-      {
-        "ten": "Xanh",
-        "ma": "blue",
-        "anh": ["115.jpg"]
-      }
-    ]
-  },
-  {
-    "id": 89,
-    "loai": "quan-ngan",
-    "ten": "NETTO® - Quần shorts ngắn trắng cạp cao nẹp ruy băng đính kèm cúc ANTI MONEY SHORTS/WH",
-    "giaCu": "319000",
-    "ma": "NT089",
-    "mota": "Phiên bản màu trắng thanh thuần của dòng thiết kế Anti Money Shorts, nổi bật với chi tiết nẹp ruy băng và cúc trang trí sang trọng, mang lại vẻ ngoài tiểu thư đài các.",
-    "size": ["S", "M", "L"],
-    "ton": "45",
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc",
-        "anh": ["116.jpg", "117.jpg", "118.jpg"]
-      }
-    ]
-  },
- 
-  {
-    "id": 119,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 119",
-    "giaCu": "",
-    "ma": "NT119",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 120,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 120",
-    "giaCu": "",
-    "ma": "NT120",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 121,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 121",
-    "giaCu": "",
-    "ma": "NT121",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 122,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 122",
-    "giaCu": "",
-    "ma": "NT122",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 123,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 123",
-    "giaCu": "",
-    "ma": "NT123",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 124,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 124",
-    "giaCu": "",
-    "ma": "NT124",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 125,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 125",
-    "giaCu": "",
-    "ma": "NT125",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 126,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 126",
-    "giaCu": "",
-    "ma": "NT126",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 127,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 127",
-    "giaCu": "",
-    "ma": "NT127",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 128,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 128",
-    "giaCu": "",
-    "ma": "NT128",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 129,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 129",
-    "giaCu": "",
-    "ma": "NT129",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 130,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 130",
-    "giaCu": "",
-    "ma": "NT130",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 131,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 131",
-    "giaCu": "",
-    "ma": "NT131",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 132,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 132",
-    "giaCu": "",
-    "ma": "NT132",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 133,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 133",
-    "giaCu": "",
-    "ma": "NT133",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 134,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 134",
-    "giaCu": "",
-    "ma": "NT134",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 135,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 135",
-    "giaCu": "",
-    "ma": "NT135",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 136,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 136",
-    "giaCu": "",
-    "ma": "NT136",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 137,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 137",
-    "giaCu": "",
-    "ma": "NT137",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 138,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 138",
-    "giaCu": "",
-    "ma": "NT138",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 139,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 139",
-    "giaCu": "",
-    "ma": "NT139",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 140,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 140",
-    "giaCu": "",
-    "ma": "NT140",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 141,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 141",
-    "giaCu": "",
-    "ma": "NT141",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 142,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 142",
-    "giaCu": "",
-    "ma": "NT142",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 143,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 143",
-    "giaCu": "",
-    "ma": "NT143",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 144,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 144",
-    "giaCu": "",
-    "ma": "NT144",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 145,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 145",
-    "giaCu": "",
-    "ma": "NT145",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 146,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 146",
-    "giaCu": "",
-    "ma": "NT146",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 147,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 147",
-    "giaCu": "",
-    "ma": "NT147",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 148,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 148",
-    "giaCu": "",
-    "ma": "NT148",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 149,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 149",
-    "giaCu": "",
-    "ma": "NT149",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 150,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 150",
-    "giaCu": "",
-    "ma": "NT150",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 151,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 151",
-    "giaCu": "",
-    "ma": "NT151",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 152,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 152",
-    "giaCu": "",
-    "ma": "NT152",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 153,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 153",
-    "giaCu": "",
-    "ma": "NT153",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  },
-  {
-    "id": 154,
-    "loai": "quan-dai",
-    "ten": "NETTO® - Quần dài mã 154",
-    "giaCu": "",
-    "ma": "NT154",
-    "mota": "Thông tin chi tiết đang được cập nhật.",
-    "size": ["S", "M", "L"],
-    "mau": [
-      {
-        "ten": "Mặc định",
-        "ma": "#cccccc"
-      }
-    ]
-  }
+    {
+        "id": 9,
+        "loai": "ao-ngan-tay",
+        "ten": "NETTO® - Áo len xù cổ tròn túi rúm ngực dáng lửng có 2 line viền áo đen MIMI TOP/BL",
+        "gia": "249000",
+        "giaCu": "299000",
+        "ma": "NT009",
+        "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Hồng",
+                "ma": "pink",
+                "anh": ["9.jpg"]
+            },
+            {
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["10.jpg"]
+            },
+            {
+                "ten": "Xám",
+                "ma": "gray",
+                "anh": ["11.jpg"]
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "loai": "ao-ngan-tay",
+        "ten": "NETTO® - Áo len xù dáng lửng ngắn tay thêu hình gấu đen BABY BEAR TOP /BL",
+        "gia": "319000",
+        "ma": "NT012",
+        "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Xám",
+                "ma": "gray",
+                "anh": ["12.jpg"]
+            },
+            {
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["13.jpg"]
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "loai": "ao-ngan-tay",
+        "ten": "NETTO® - Áo Babydoll Cộc Tay Bèo Vàng Butter Caro Nhỏ",
+        "gia": "259000",
+        "giaCu": "339000",
+        "ma": "NT014",
+        "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Trắng",
+                "ma": "white",
+                "anh": ["14.jpg"]
+            },
+            {
+                "ten": "Xám",
+                "ma": "gray",
+                "anh": ["15.jpg"]
+            },
+            {
+                "ten": "Đen",
+                "ma": "#344B65",
+                "anh": ["16.jpg"]
+            },
+            {
+                "ten": "Hồng",
+                "ma": "pink",
+                "anh": ["17.jpg"]
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "loai": "ao-ngan-tay",
+        "ten": "NETTO® - Áo len đen cổ bẻ phối viền trắng EVIE TOP/BL",
+        "gia": "289000",
+        "ma": "NT018",
+        "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["18.jpg"]
+            },
+            {
+                "ten": "Trắng",
+                "ma": "white",
+                "anh": ["19.jpg"]
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "loai": "ao-ngan-tay",
+        "ten": "NETTO® - Áo len đen vân lỗ phối cổ bẻ dây nơ cổ YO YO TOP/BL",
+        "gia": "299000",
+        "ma": "NT020",
+        "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["20.jpg"]
+            },
+            {
+                "ten": "Be",
+                "ma": "beige",
+                "anh": ["21.jpg"]
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "loai": "ao-ngan-tay",
+        "ten": "NETTO® - Áo len xù crop lửng ngắn tay cổ vuông kẻ trắng BORA BORA TOP/PK",
+        "gia": "285000",
+        "ma": "NT022",
+        "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Hồng",
+                "ma": "pink",
+                "anh": ["22.jpg"]
+            },
+            {
+                "ten": "Xám",
+                "ma": "gray",
+                "anh": ["23.jpg"]
+            },
+            {
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["24.jpg"]
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "loai": "ao-ngan-tay",
+        "ten": "NETTO® - Áo len xù trắng cổ tròn viền 2 line SHANGHAI TOP/WH",
+        "gia": "265000",
+        "ma": "NT025",
+        "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Trắng",
+                "ma": "white",
+                "anh": ["25.jpg"]
+            },
+            {
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["26.jpg"]
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "loai": "ao-ngan-tay",
+        "ten": "NETTO® - Áo len xù mỏng ngắn tay cổ lượn viền mint DATE MAKER TOP/MINT",
+        "gia": "300000",
+        "giaCu": "380000",
+        "ma": "NT027",
+        "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["27.jpg"]
+            },
+            {
+                "ten": "Trắng",
+                "ma": "white",
+                "anh": ["28.jpg"]
+            },
+            {
+                "ten": "Xám",
+                "ma": "white",
+                "anh": ["29.jpg"]
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "loai": "ao-ngan-tay",
+        "ten": "NETTO® - Áo len xù ngắn tay dáng lửng khoét vai hồng BE MINE TOP/PK",
+        "gia": "350000",
+        "giaCu": "380000",
+        "ma": "NT030",
+        "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Xanh baby",
+            "ma": "#B5D0EC",
+            "anh": ["30.jpg"]
+        }]
+    },
+    {
+        "id": 31,
+        "loai": "ao-ngan-tay",
+        "ten": "NETTO® - Áo Babydoll Hoa Nhí Xinh Hồng Pastel Tim Nhỏ",
+        "gia": "289000",
+        "ma": "NT031",
+        "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Hồng",
+            "ma": "pink"
+        }]
+    },
+    {
+        "id": 32,
+        "loai": "ao-ngan-tay",
+        "ten": "NETTO® - Áo len ngắn tay chống nhăn trắng ALISSA TOP/WH",
+        "gia": "249000",
+        "giaCu": "380000",
+        "ma": "NT032",
+        "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["32.jpg"]
+            },
+            {
+                "ten": "Be",
+                "ma": "beige",
+                "anh": ["33.jpg"]
+            }
+        ]
+    },
+    {
+        "id": 34,
+        "loai": "ao-ngan-tay",
+        "ten": "NETTO® - Áo trơn xám trễ vai phối nơ MOLISA TOP/BL",
+        "gia": "199000",
+        "giaCu": "280000",
+        "ma": "NT034",
+        "mota": "✨ Áo ngắn tay thiết kế nữ tính, trẻ trung, dễ phối cùng chân váy, quần short hoặc quần jeans.\nChất vải mềm, thoáng, ít nhăn, mặc thoải mái cả ngày.\nForm vừa vặn, tôn dáng. Bạn tham khảo bảng size để chọn đúng size nhé.\n🧺 Giặt nhẹ nhàng, lộn trái khi giặt, không dùng chất tẩy mạnh, ủi ở nhiệt độ thấp.\nGiao hàng từ 4 đến 7 ngày, hỗ trợ đổi trả theo chính sách của NETTO.\n💗 Màu sắc thực tế có thể chênh lệch nhẹ so với hình do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Xám",
+            "ma": "gray"
+        }]
+    },
+    {
+        "id": 35,
+        "loai": "ao-dai-tay",
+        "ten": "NETTO® - Áo len cổ bẻ dáng lửng vân in chìm baby BERRIES TOP",
+        "gia": "399.000đ",
+        "giaCu": "399.000đ",
+        "ma": "NT035",
+        "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Xám",
+                "ma": "gray",
+                "anh": ["35.jpg"]
+            },
+            {
+                "ten": "Hồng",
+                "ma": "pink",
+                "anh": ["36.jpg"]
+            },
+            {
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["37.jpg"]
+            }
+        ]
+    },
+    {
+        "id": 38,
+        "loai": "ao-dai-tay",
+        "ten": "NETTO® - Áo khoác cardigan len xù hồng viền trắng RAINBOW BABY CARDIGAN/PK",
+        "gia": "319.000đ",
+        "giaCu": "",
+        "ma": "NT038",
+        "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Hồng",
+            "ma": "pink"
+        }]
+    },
+    {
+        "id": 39,
+        "loai": "ao-dai-tay",
+        "ten": "NETTO® - Áo set len xù cardigan lửng tặng kèm áo 2 dây kẻ ngang nhỏ đen vai bồng CAPPUCCINO CARDIGAN/BL",
+        "gia": "339.000đ",
+        "giaCu": "",
+        "ma": "NT039",
+        "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Đen",
+            "ma": "black",
+            "anh": ["39.jpg"],
+            "ton": "20"
+        }]
+    },
+    {
+        "id": 40,
+        "loai": "ao-dai-tay",
+        "ten": "NETTO® - Áo len xù cardigan 4 túi đen viền trắng JENNIFER CARDIGAN/BL",
+        "gia": "349.000đ",
+        "giaCu": "499.000đ",
+        "ma": "NT040",
+        "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["40.jpg"],
+                "ton": "10"
+            },
+            {
+                "ten": "Trắng",
+                "ma": "white",
+                "anh": ["41.jpg"],
+                "ton": "15"
+            }
+        ]
+    },
+
+    {
+        "id": 42,
+        "loai": "ao-dai-tay",
+        "ten": "NETTO® - Áo len xù đỏ dáng lửng phối cổ bẻ dây nơ đen HELLEN TOP/DR",
+        "gia": "289.000đ",
+        "giaCu": "399.000đ",
+        "ma": "NT042",
+        "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Đỏ",
+                "ma": "red",
+                "anh": ["42.jpg"]
+            },
+            {
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["43.jpg"]
+            },
+            {
+                "ten": "Hồng",
+                "ma": "pink",
+                "anh": ["44.jpg"]
+            }
+        ]
+    },
+
+    {
+        "id": 45,
+        "loai": "ao-dai-tay",
+        "ten": "NETTO® - Áo len lông bông hồng/xanh nhạt dáng lửng phối cúc kim loại LISA LOVE TOP/PK",
+        "gia": "329.000đ",
+        "giaCu": "449.000đ",
+        "ma": "NT045",
+        "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Hồng baby",
+                "ma": "#ff99cc",
+                "anh": ["45.jpg"]
+            },
+            {
+                "ten": "Xanh baby",
+                "ma": "#99ccff",
+                "anh": ["46.jpg"]
+            }
+        ]
+    },
+
+    {
+        "id": 47,
+        "loai": "ao-dai-tay",
+        "ten": "NETTO® - Áo len xù hồng cardigan cổ tròn vân quả trám nổi dài tay RACHEL TOP/PK",
+        "giaCu": "329000",
+        "ma": "NT047",
+        "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Hồng phấn",
+                "ma": "#F8C8DC",
+                "anh": ["47.jpg"]
+            },
+            {
+                "ten": "Xanh băng",
+                "ma": "#D0E0E3",
+                "anh": ["48.jpg"]
+            },
+            {
+                "ten": "Xanh navy đậm",
+                "ma": "#1B263B",
+                "anh": ["49.jpg"]
+            }
+        ]
+    },
+
+    {
+        "id": 50,
+        "loai": "ao-dai-tay",
+        "ten": "NETTO® - Áo len lông bóng xù hồng phối viền trắng dáng lửng phối cúc kim loại ISABELLA TOP/PK",
+        "gia": "399000",
+        "giaCu": "",
+        "ma": "NT050",
+        "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Hồng phấn",
+            "ma": "#F8C8DC"
+        }]
+    },
+    {
+        "id": 51,
+        "loai": "ao-dai-tay",
+        "ten": "NETTO® - Áo khoác cổ tròn dáng dài vân caro MACCARONI JACKET/PK PHIÊN BẢN MỚI NHẤT T11.2026",
+        "giaCu": "",
+        "ma": "NT051",
+        "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Hồng phấn",
+                "ma": "#F4C2C2",
+                "anh": ["51.jpg"]
+            },
+            {
+                "ten": "Xám nhạt",
+                "ma": "#D3D3D3",
+                "anh": ["52.jpg"]
+            }
+        ]
+    },
+
+    {
+        "id": 53,
+        "loai": "ao-dai-tay",
+        "ten": "NETTO® - Áo len xù cardigan cổ bẻ dáng lửng phối đường viền LILY ROSE JACKET",
+        "giaCu": "",
+        "ma": "NT053",
+        "mota": "Áo dài tay thiết kế trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form áo vừa vặn, tôn dáng, tay áo dài thoải mái khi vận động. Chất liệu mềm, thoáng, ít nhăn, giữ form tốt sau nhiều lần giặt. Có thể phối cùng quần jeans, chân váy hoặc quần tây tùy phong cách.Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái áo khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp.Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Hồng phấn",
+                "ma": "#FBE4E8",
+                "anh": ["53.jpg"]
+            },
+            {
+                "ten": "Trắng kem",
+                "ma": "#F9F8F3",
+                "anh": ["54.jpg"]
+            },
+            {
+                "ten": "Ghi",
+                "ma": "#A0A0A0",
+                "anh": ["55.jpg"]
+            },
+            {
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["56.jpg"]
+            }
+        ]
+    },
+
+    {
+        "id": 58,
+        "loai": "vay",
+        "ten": "NETTO® - Chân váy cạp lửng nơ eo đen rũm bồng dưới (có quần váy trong) CHIQUITA SKIRT/BL",
+        "gia": "239.000đ",
+        "giaCu": "319.000đ",
+        "ma": "NT058",
+        "mota": "Chân váy thiết kế nữ tính, trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form váy tôn dáng, tạo cảm giác thoải mái khi vận động. Chất liệu mềm mại, giữ form tốt sau nhiều lần giặt. Có thể phối cùng áo thun, áo kiểu hoặc áo len tùy phong cách. Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái váy khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp. Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["58.jpg"]
+            },
+            {
+                "ten": "Trắng",
+                "ma": "white",
+                "anh": ["59.jpg"]
+            }
+        ]
+    },
+    {
+        "id": 60,
+        "loai": "vay",
+        "ten": "NETTO® - Chân váy xám cạp lưng xòe phối nơ xếp nếp ren gấu MOONIE SKIRT/GR",
+        "gia": "259.000đ",
+        "giaCu": "339.000đ",
+        "ma": "NT060",
+        "mota": "Chân váy thiết kế nữ tính, trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form váy xòe nhẹ, tôn dáng, tạo cảm giác thoải mái khi vận động. Chất liệu mềm mại, giữ form tốt sau nhiều lần giặt. Có thể phối cùng áo thun, áo kiểu hoặc áo len tùy phong cách. Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái váy khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp. Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Ghi",
+                "ma": "gray",
+                "anh": ["60.jpg"]
+            },
+            {
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["61.jpg"]
+            },
+            {
+                "ten": "Trắng",
+                "ma": "white",
+                "anh": ["62.jpg"]
+            }
+        ]
+    },
+    {
+        "id": 63,
+        "loai": "vay",
+        "ten": "NETTO® - Chân váy cạp thấp phối xếp ly nhí PRETTY BOO SKIRT/BL",
+        "gia": "239.000đ",
+        "giaCu": "319.000đ",
+        "ma": "NT063",
+        "mota": "Chân váy thiết kế nữ tính, trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form váy xếp ly nhí trẻ trung, tôn dáng, tạo cảm giác thoải mái khi vận động. Chất liệu mềm mại, giữ form tốt sau nhiều lần giặt. Có thể phối cùng áo thun, áo kiểu hoặc áo len tùy phong cách. Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái váy khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp. Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["63.jpg"]
+            },
+            {
+                "ten": "Trắng",
+                "ma": "white",
+                "anh": ["64.jpg"]
+            },
+            {
+                "ten": "Ghi",
+                "ma": "gray",
+                "anh": ["65.jpg"]
+            }
+        ]
+    },
+    {
+        "id": 69,
+        "loai": "vay",
+        "ten": "NETTO® - Chân váy cạp thấp trắng phối dây nơ eo xếp ly NINA SKIRT/WH PHIÊN BẢN MỚI T1.2026",
+        "gia": "259.000đ",
+        "giaCu": "339.000đ",
+        "ma": "NT069",
+        "mota": "Chân váy thiết kế nữ tính, trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form váy xếp ly nhẹ, phối dây nơ tạo điểm nhấn, tôn dáng và mang lại cảm giác thoải mái khi vận động. Chất liệu mềm mại, giữ form tốt sau nhiều lần giặt. Có thể phối cùng áo thun, áo kiểu hoặc áo len tùy phong cách. Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái váy khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp. Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Trắng",
+            "ma": "white",
+            "anh": ["69.jpg"]
+        }]
+    },
+    {
+        "id": 68,
+        "loai": "vay",
+        "ten": "NETTO® - Chân váy lưng trắng phối xếp ly 2 tầng nhí KIMBERLLY SKIRT/WH",
+        "gia": "249.000đ",
+        "giaCu": "329.000đ",
+        "ma": "NT068",
+        "mota": "Chân váy thiết kế nữ tính, trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form váy xếp ly hai tầng tạo điểm nhấn duyên dáng, tôn dáng và mang lại cảm giác thoải mái khi vận động. Chất liệu mềm mại, giữ form tốt sau nhiều lần giặt. Có thể phối cùng áo thun, áo kiểu hoặc áo len tùy phong cách. Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái váy khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp. Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+                "ten": "Trắng",
+                "ma": "white",
+                "anh": ["68.jpg"]
+            },
+            {
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["70.jpg"]
+            }
+        ]
+    },
+    {
+        "id": 76,
+        "loai": "vay",
+        "ten": "NETTO® - Chân váy cạp cao đen xếp ly nhí phối nơ lệch thêu TN YUNA SKIRT/BL",
+        "gia": "269.000đ",
+        "giaCu": "349.000đ",
+        "ma": "NT076",
+        "mota": "Chân váy thiết kế nữ tính, trẻ trung, dễ phối đồ, phù hợp đi học, đi làm và đi chơi. Form váy cạp cao kết hợp xếp ly nhí và chi tiết nơ lệch tạo điểm nhấn, giúp tôn dáng và mang lại cảm giác thoải mái khi vận động. Chất liệu mềm mại, giữ form tốt sau nhiều lần giặt. Có thể phối cùng áo thun, áo kiểu hoặc áo len tùy phong cách. Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái váy khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp. Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Đen",
+            "ma": "black",
+            "anh": ["76.jpg", "77.jpg"]
+        }]
+    },
+    {
+        "id": 75,
+        "loai": "vay",
+        "ten": "NETTO® - Chân váy tweed đen cạp lửng xẻ V cạp SUPER STAR TWEED SKIRT/WH",
+        "gia": "299.000đ",
+        "giaCu": "379.000đ",
+        "ma": "NT075",
+        "mota": "Chân váy tweed thiết kế nữ tính, thanh lịch và trẻ trung, phù hợp đi học, đi làm và đi chơi. Form váy cạp lửng kết hợp chi tiết xẻ V tạo điểm nhấn duyên dáng, giúp tôn dáng và dễ dàng phối đồ. Chất liệu tweed giữ form tốt, mang lại vẻ ngoài chỉn chu. Có thể phối cùng áo thun, áo kiểu hoặc áo len tùy phong cách. Hướng dẫn bảo quản: giặt nhẹ nhàng, nên lộn trái váy khi giặt, không dùng chất tẩy mạnh, phơi nơi thoáng mát, tránh ánh nắng trực tiếp. Ủi ở nhiệt độ thấp. Lưu ý: màu sắc thực tế có thể chênh lệch nhẹ so với hình ảnh do ánh sáng khi chụp.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Trắng",
+            "ma": "black",
+            "anh": ["75.jpg"]
+        }]
+    },
+    {
+        "id": 78,
+        "loai": "quan-ngan",
+        "ten": "NETTO® - Quần shorts cạp cao chiết ly eo hồng BUBBLE SHORTS/PK",
+        "gia": "199000",
+        "giaCu": "269000",
+        "ma": "NT078",
+        "mota": "Thiết kế cạp cao chiết ly eo tinh tế giúp tôn vòng 2 thon gọn và tạo hiệu ứng kéo dài đôi chân. Sắc hồng ngọt ngào, trẻ trung mang lại vẻ ngoài nữ tính và năng động.",
+        "size": ["S", "M", "L"],
+        "ton": "10",
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc",
+            "anh": ["78.jpg"]
+        }]
+    },
+    {
+        "id": 79,
+        "loai": "quan-ngan",
+        "ten": "NETTO® - Quần shorts cạp cao tafta lượn viền hoa vàng LOVE LINER SHORTS/YL",
+        "gia": "249000",
+        "giaCu": "279000",
+        "ma": "NT079",
+        "mota": "Sự kết hợp độc đáo giữa chất liệu tafta đứng phom sang trọng và chi tiết lượn viền hoa cách điệu đầy nữ tính. Gam màu vàng tươi tắn giúp nàng luôn nổi bật và rạng rỡ.",
+        "size": ["S", "M", "L"],
+        "ton": "15",
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc",
+            "anh": ["79.jpg", "80.jpg"]
+        }]
+    },
+    {
+        "id": 80,
+        "loai": "quan-ngan",
+        "ten": "NETTO® - Quần short cạp chun cao len trắng cạp chun viền túi đen NAOMI SHORT(FREESIZE)/WH",
+        "giaCu": "275000",
+        "ma": "NT080",
+        "mota": "Mẫu quần short len dệt mềm mại mang phong cách tiểu thư thanh lịch với sự tương phản trắng - đen kinh điển. Thiết kế cạp chun co giãn linh hoạt mang lại sự thoải mái tuyệt đối.",
+        "size": ["S", "M", "L"],
+        "ton": "17",
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc",
+            "anh": ["81.jpg", "82.jpg", "83.jpg"]
+        }]
+    },
+    {
+        "id": 81,
+        "loai": "quan-ngan",
+        "ten": "NETTO® - Quần shorts bò cắt cạp lệch màu xanh MASCARA JEANS SHORTS/BLUE",
+        "giaCu": "329000",
+        "ma": "NT081",
+        "mota": "Phá cách và cá tính với thiết kế cạp lệch bất đối xứng thời thượng trên nền chất liệu denim xanh cổ điển. Lựa chọn hoàn hảo cho những cô nàng yêu thích phong cách streetwear năng động.",
+        "size": ["S", "M", "L"],
+        "ton": "20",
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc",
+            "anh": ["84.jpg", "85.jpg"]
+        }]
+    },
+    {
+        "id": 82,
+        "loai": "quan-ngan",
+        "ten": "NETTO® - Quần shorts trắng cạp cao chiết ly eo JOCIE SHORTS/WH",
+        "giaCu": "275000",
+        "ma": "NT082",
+        "mota": "Item must have trong tủ đồ với thiết kế quần shorts trắng cạp cao thanh lịch. Đường chiết ly tinh tế mang lại diện mạo chỉn chu, hiện đại và cực kỳ dễ phối đồ.",
+        "size": ["S", "M", "L"],
+        "ton": "45",
+        "mau": [{
+                "ten": "Trắng",
+                "ma": "white",
+                "anh": ["86.jpg", "87.jpg"]
+            },
+            {
+                "ten": "Vàng",
+                "ma": "yellow",
+                "anh": ["88.jpg", "89.jpg"]
+            },
+            {
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["90.jpg"]
+            },
+            {
+                "ten": "Hồng",
+                "ma": "pink",
+                "anh": ["91.jpg", "92.jpg"]
+            }
+        ]
+    },
+    {
+        "id": 83,
+        "loai": "quan-ngan",
+        "ten": "NETTO® - Quần short tafta nude túi hộp 2 bên BECKY SHORTS/ND",
+        "giaCu": "265000",
+        "ma": "NT083",
+        "mota": "Sự giao thoa giữa nét sang trọng của chất liệu tafta và phong cách cargo năng động với thiết kế túi hộp 2 bên. Tông màu nude trang nhã giúp tôn da và mang lại vẻ ngoài thời thượng.",
+        "size": ["S", "M", "L"],
+        "ton": "30",
+        "mau": [{
+                "ten": "Trắng",
+                "ma": "white",
+                "anh": ["93.jpg", "94.jpg"]
+            },
+            {
+                "ten": "Xám",
+                "ma": "grey",
+                "anh": ["95.jpg"]
+            }
+        ]
+    },
+    {
+        "id": 84,
+        "loai": "quan-ngan",
+        "ten": "NETTO® - Quần shorts ngắn đen cạp cao nẹp ruy băng đính kèm cúc ANTI MONEY SHORTS/BL",
+        "gia": "199000",
+        "giaCu": "289000",
+        "ma": "NT084",
+        "mota": "Thiết kế tinh xảo với phần cạp cao phối nẹp ruy băng và cúc trang trí đầy cuốn hút. Sắc đen huyền bí giúp che khuyết điểm hoàn hảo và tôn lên đôi chân thon dài.",
+        "size": ["S", "M", "L"],
+        "ton": "30",
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc",
+            "anh": ["98.jpg", "99.jpg", "100.jpg"]
+        }]
+    },
+    {
+        "id": 85,
+        "loai": "quan-ngan",
+        "ten": "NETTO® - Quần shorts bò cắt gấu lượn viền màu lông chuột XOXO JEANS SHORTS/LC",
+        "giaCu": "269000",
+        "ma": "NT085",
+        "mota": "Mang đến làn gió mới cho dòng quần jeans với tông màu lông chuột (xám khói) thời thượng cùng phần gấu cắt lượn viền mềm mại, giúp cân bằng giữa nét bụi bặm và sự nữ tính.",
+        "size": ["S", "M", "L"],
+        "ton": "37",
+        "mau": [{
+                "ten": "Trắng",
+                "ma": "white",
+                "anh": ["101.jpg", "102.jpg"]
+            },
+            {
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["103.jpg"]
+            }
+        ]
+    },
+    {
+        "id": 86,
+        "loai": "quan-ngan",
+        "ten": "NETTO® - Quần shorts cạp cao tafta đính cúc gấu trắng NO PHOTO SHORTS/WH",
+        "gia": "189000",
+        "giaCu": "269000",
+        "ma": "NT086",
+        "mota": "Thiết kế tối giản nhưng không đơn điệu nhờ chất liệu tafta đứng phom cùng chi tiết đính cúc tinh tế ở phần gấu quần. Một item thanh lịch, trẻ trung dành cho mọi cô gái.",
+        "size": ["S", "M", "L"],
+        "ton": "25",
+        "mau": [{
+                "ten": "Trắng",
+                "ma": "white",
+                "anh": ["104.jpg"]
+            },
+            {
+                "ten": "Vàng",
+                "ma": "yellow",
+                "anh": ["105.jpg", "106.jpg"]
+            },
+            {
+                "ten": "Hồng",
+                "ma": "pink",
+                "anh": ["107.jpg", "108.jpg"]
+            }
+        ]
+    },
+    {
+        "id": 87,
+        "loai": "quan-ngan",
+        "ten": "NETTO® - Quần shorts bò cạp rời gấu cắt tua rua đen MAMIII JEANS SHORTS/LC",
+        "gia": "290000",
+        "giaCu": "590000",
+        "ma": "NT087",
+        "mota": "Thiết kế đậm chất cá tính với phần cạp rời độc đáo và gấu cắt tua rua phóng khoáng. Phiên bản màu đen bụi bặm giúp nàng khẳng định gu thời trang ấn tượng và sành điệu.",
+        "size": ["S", "M", "L"],
+        "ton": "20",
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc",
+            "anh": ["109.jpg", "110.jpg", "111.jpg"]
+        }]
+    },
+    {
+        "id": 88,
+        "loai": "quan-ngan",
+        "ten": "NETTO® - Quần short cạp cao sẻ hai vạt phối logo tingoan COCO SHORT/WH",
+        "giaCu": "490000",
+        "ma": "NT088",
+        "mota": "Thiết kế hiện đại với phần xẻ hai vạt cách điệu kết hợp cùng chi tiết phối logo thương hiệu tinh tế. Mẫu quần mang lại sự thoải mái khi di chuyển mà vẫn giữ được nét thanh lịch.",
+        "size": ["S", "M", "L"],
+        "ton": "25",
+        "mau": [{
+                "ten": "Đen",
+                "ma": "black",
+                "anh": ["112.jpg", "113.jpg", "114.jpg"]
+            },
+            {
+                "ten": "Xanh",
+                "ma": "blue",
+                "anh": ["115.jpg"]
+            }
+        ]
+    },
+    {
+        "id": 89,
+        "loai": "quan-ngan",
+        "ten": "NETTO® - Quần shorts ngắn trắng cạp cao nẹp ruy băng đính kèm cúc ANTI MONEY SHORTS/WH",
+        "giaCu": "319000",
+        "ma": "NT089",
+        "mota": "Phiên bản màu trắng thanh thuần của dòng thiết kế Anti Money Shorts, nổi bật với chi tiết nẹp ruy băng và cúc trang trí sang trọng, mang lại vẻ ngoài tiểu thư đài các.",
+        "size": ["S", "M", "L"],
+        "ton": "45",
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc",
+            "anh": ["116.jpg", "117.jpg", "118.jpg"]
+        }]
+    },
+
+    {
+        "id": 119,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 119",
+        "giaCu": "",
+        "ma": "NT119",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 120,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 120",
+        "giaCu": "",
+        "ma": "NT120",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 121,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 121",
+        "giaCu": "",
+        "ma": "NT121",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 122,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 122",
+        "giaCu": "",
+        "ma": "NT122",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 123,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 123",
+        "giaCu": "",
+        "ma": "NT123",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 124,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 124",
+        "giaCu": "",
+        "ma": "NT124",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 125,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 125",
+        "giaCu": "",
+        "ma": "NT125",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 126,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 126",
+        "giaCu": "",
+        "ma": "NT126",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 127,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 127",
+        "giaCu": "",
+        "ma": "NT127",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 128,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 128",
+        "giaCu": "",
+        "ma": "NT128",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 129,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 129",
+        "giaCu": "",
+        "ma": "NT129",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 130,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 130",
+        "giaCu": "",
+        "ma": "NT130",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 131,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 131",
+        "giaCu": "",
+        "ma": "NT131",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 132,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 132",
+        "giaCu": "",
+        "ma": "NT132",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 133,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 133",
+        "giaCu": "",
+        "ma": "NT133",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 134,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 134",
+        "giaCu": "",
+        "ma": "NT134",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 135,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 135",
+        "giaCu": "",
+        "ma": "NT135",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 136,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 136",
+        "giaCu": "",
+        "ma": "NT136",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 137,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 137",
+        "giaCu": "",
+        "ma": "NT137",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 138,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 138",
+        "giaCu": "",
+        "ma": "NT138",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 139,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 139",
+        "giaCu": "",
+        "ma": "NT139",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 140,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 140",
+        "giaCu": "",
+        "ma": "NT140",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 141,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 141",
+        "giaCu": "",
+        "ma": "NT141",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 142,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 142",
+        "giaCu": "",
+        "ma": "NT142",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 143,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 143",
+        "giaCu": "",
+        "ma": "NT143",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 144,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 144",
+        "giaCu": "",
+        "ma": "NT144",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 145,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 145",
+        "giaCu": "",
+        "ma": "NT145",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 146,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 146",
+        "giaCu": "",
+        "ma": "NT146",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 147,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 147",
+        "giaCu": "",
+        "ma": "NT147",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 148,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 148",
+        "giaCu": "",
+        "ma": "NT148",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 149,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 149",
+        "giaCu": "",
+        "ma": "NT149",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 150,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 150",
+        "giaCu": "",
+        "ma": "NT150",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 151,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 151",
+        "giaCu": "",
+        "ma": "NT151",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 152,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 152",
+        "giaCu": "",
+        "ma": "NT152",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 153,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 153",
+        "giaCu": "",
+        "ma": "NT153",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    },
+    {
+        "id": 154,
+        "loai": "quan-dai",
+        "ten": "NETTO® - Quần dài mã 154",
+        "giaCu": "",
+        "ma": "NT154",
+        "mota": "Thông tin chi tiết đang được cập nhật.",
+        "size": ["S", "M", "L"],
+        "mau": [{
+            "ten": "Mặc định",
+            "ma": "#cccccc"
+        }]
+    }
+
 ]
