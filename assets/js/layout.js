@@ -50,12 +50,12 @@
         <span id="account-text">Đăng nhập / Đăng ký</span>
       </a>
 
-      <a href="${root}pages/giohang.html" class="cart-link" aria-label="Giỏ hàng">
+      <button type="button" class="cart-link" id="header-cart-toggle" aria-label="Giỏ hàng">
         <svg viewBox="0 0 24 24" width="22" height="22">
           <path fill="currentColor" d="M7 4h-2l-1 2H2v2h2l3.6 7.59-1.35 2.44A2 2 0 0 0 8 21h12v-2H8l1.1-2h7.45a2 2 0 0 0 1.75-1.03L21.7 8H6.21l-.94-2H7z"/>
         </svg>
         <span class="cart-count">0</span>
-      </a>
+      </button>
     </div>
   </div>
 
@@ -206,7 +206,7 @@
         <li><a href="${root}pages/sanpham.html">Tìm kiếm</a></li>
         <li><a href="${root}pages/form.html">Đăng nhập</a></li>
         <li><a href="${root}pages/form.html">Đăng ký</a></li>
-        <li><a href="${root}pages/giohang.html">Giỏ hàng</a></li>
+        <li><a href="#" class="footer-cart-link">Giỏ hàng</a></li>
       </ul>
     </div>
 
