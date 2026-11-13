@@ -891,167 +891,74 @@
     {
         "id": 119,
         "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 119",
-        "giaCu": "",
+        "ten": "NETTO® - Quần culottes dài cạp cao đen phối dây nơ trắng kéo khóa lưng /BL",
+        "gia":"299000",
+        "giaCu": "379000",
         "ma": "NT119",
         "mota": "Thông tin chi tiết đang được cập nhật.",
         "size": ["S", "M", "L"],
+        "ton": "66",
         "mau": [{
             "ten": "Mặc định",
             "ma": "#cccccc"
         }]
     },
     {
-        "id": 120,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 120",
-        "giaCu": "",
-        "ma": "NT120",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
+  "id": 123,
+  "loai": "quan-dai",
+  "ten": "NETTO® - Quần dài ống suông rộng chiết ly eo dây nơ chống nhăn JANE CULOTTES v2/BL",
+  "gia":"279000",
+  "giaCu": "359000",
+  "ma": "NT123",
+  "mota": "Thông tin chi tiết đang được cập nhật.",
+  "size": ["S", "M", "L"],
+  "ton":"70",
+  "mau": [
+    {
+      "ten": "Đen",
+      "ma": "#000000",
+      "anh": ["123.jpg"]
     },
     {
-        "id": 121,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 121",
-        "giaCu": "",
-        "ma": "NT121",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
+      "ten": "Trắng",
+      "ma": "#FFFFFF",
+      "anh": ["124.jpg"]
+    }
+  ]
     },
     {
-        "id": 122,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 122",
-        "giaCu": "",
-        "ma": "NT122",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
+  "id": 127,
+  "loai": "quan-dai",
+  "ten": "NETTO® - Quần culottes trắng dài cạp cao phối 3 cúc đính lệch cạp khóa lưng /WH",
+  "gia":"275000",
+  "giaCu": "355000",
+  "ma": "NT127",
+  "mota": "Thông tin chi tiết đang được cập nhật.",
+  "ton":"84",
+  "size": ["S", "M", "L"],
+  "mau": [
+    {
+      "ten": "White",
+      "ma": "white",
+      "anh": ["127.jpg"]
     },
     {
-        "id": 123,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 123",
-        "giaCu": "",
-        "ma": "NT123",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 124,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 124",
-        "giaCu": "",
-        "ma": "NT124",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 125,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 125",
-        "giaCu": "",
-        "ma": "NT125",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 126,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 126",
-        "giaCu": "",
-        "ma": "NT126",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 127,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 127",
-        "giaCu": "",
-        "ma": "NT127",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 128,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 128",
-        "giaCu": "",
-        "ma": "NT128",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 129,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 129",
-        "giaCu": "",
-        "ma": "NT129",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 130,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 130",
-        "giaCu": "",
-        "ma": "NT130",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
+      "ten": "Black",
+      "ma": "black",
+      "anh": ["130.jpg"]
+    }
+  ]
+},
     {
         "id": 131,
         "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 131",
-        "giaCu": "",
+        "ten": "NETTO® - Quần cạp cao bản cạp 2 cúc dáng ống suông rộng trắng PEONY",
+        "gia":"289000",
+        "giaCu": "369000",
         "ma": "NT131",
         "mota": "Thông tin chi tiết đang được cập nhật.",
         "size": ["S", "M", "L"],
+        "ton":"63",
         "mau": [{
             "ten": "Mặc định",
             "ma": "#cccccc"
@@ -1060,89 +967,51 @@
     {
         "id": 132,
         "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 132",
-        "giaCu": "",
+        "ten": "NETTO® - Quần dài kaki trắng cạp cao dáng ống suông rộng phối 2 túi ốp",
+        "gia":"269000",
+        "giaCu": "349000",
         "ma": "NT132",
         "mota": "Thông tin chi tiết đang được cập nhật.",
         "size": ["S", "M", "L"],
+        "ton":"92",
         "mau": [{
             "ten": "Mặc định",
             "ma": "#cccccc"
         }]
     },
     {
-        "id": 133,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 133",
-        "giaCu": "",
-        "ma": "NT133",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
+  "id": 134,
+  "loai": "quan-dai",
+  "ten": "NETTO® - Quần dài kaki 1 cúc cạp thường ống suông túi hộp hai bên LOVE REMOVER PANTS/WHg",
+  "gia":"279000",
+  "giaCu": "359000",
+  "ma": "NT134",
+  "mota": "Thông tin chi tiết đang được cập nhật.",
+  "size": ["S", "M", "L"],
+  "ton":"83",
+  "mau": [
+    {
+      "ten": "White",
+      "ma": "white",
+      "anh": ["134.jpg"]
     },
     {
-        "id": 134,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 134",
-        "giaCu": "",
-        "ma": "NT134",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
+      "ten": "Pink",
+      "ma": "#E83A78",
+      "anh": ["138.jpg"]
+    }
+  ]
+},
     {
         "id": 135,
         "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 135",
-        "giaCu": "",
+        "ten": "NETTO® - Quần dài kaki trắng cạp thường ống suông túi hộp hai bên LOVE REMOVER PANTS/WH",
+        "gia":"239000",
+        "giaCu": "319000",
         "ma": "NT135",
         "mota": "Thông tin chi tiết đang được cập nhật.",
         "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 136,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 136",
-        "giaCu": "",
-        "ma": "NT136",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 137,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 137",
-        "giaCu": "",
-        "ma": "NT137",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 138,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 138",
-        "giaCu": "",
-        "ma": "NT138",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
+        "ton":"92",
         "mau": [{
             "ten": "Mặc định",
             "ma": "#cccccc"
@@ -1151,37 +1020,13 @@
     {
         "id": 139,
         "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 139",
-        "giaCu": "",
+        "ten": "NETTO® - Quần dài cạp chun đính 2 nơ hồng KIMMIE PANTS/PK",
+        "gia":"299000",
+        "giaCu": "379000",
         "ma": "NT139",
         "mota": "Thông tin chi tiết đang được cập nhật.",
         "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 140,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 140",
-        "giaCu": "",
-        "ma": "NT140",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 141,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 141",
-        "giaCu": "",
-        "ma": "NT141",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
+        "ton":"54",
         "mau": [{
             "ten": "Mặc định",
             "ma": "#cccccc"
@@ -1190,11 +1035,13 @@
     {
         "id": 142,
         "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 142",
-        "giaCu": "",
+        "ten": "NETTO® - Quần dài kaki đen túi hộp viền túi hai bên đai gấu YEY PANTS/BL",
+        "gia":"359000",
+        "giaCu": "439000",
         "ma": "NT142",
         "mota": "Thông tin chi tiết đang được cập nhật.",
         "size": ["S", "M", "L"],
+        "ton":"31",
         "mau": [{
             "ten": "Mặc định",
             "ma": "#cccccc"
@@ -1203,37 +1050,13 @@
     {
         "id": 143,
         "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 143",
-        "giaCu": "",
+        "ten": "NETTO® - Quần chun co giãn rút dây eo bo gấu xám DANI PANTS",
+        "gia":"299000",
+        "giaCu": "379000",
         "ma": "NT143",
         "mota": "Thông tin chi tiết đang được cập nhật.",
         "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 144,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 144",
-        "giaCu": "",
-        "ma": "NT144",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 145,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 145",
-        "giaCu": "",
-        "ma": "NT145",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
+        "ton":"60",
         "mau": [{
             "ten": "Mặc định",
             "ma": "#cccccc"
@@ -1242,37 +1065,13 @@
     {
         "id": 146,
         "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 146",
-        "giaCu": "",
+        "ten": "NETTO® - Quần dài xám cạp cao đính logo TINGOAN® CHEN CHEN PANTS/GR PHIÊN BẢN MỚI NHẤT T2.2026",
+        "gia":"299000",
+        "giaCu":"379000",
         "ma": "NT146",
         "mota": "Thông tin chi tiết đang được cập nhật.",
         "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 147,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 147",
-        "giaCu": "",
-        "ma": "NT147",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 148,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 148",
-        "giaCu": "",
-        "ma": "NT148",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
+        "ton":"54",
         "mau": [{
             "ten": "Mặc định",
             "ma": "#cccccc"
@@ -1281,37 +1080,13 @@
     {
         "id": 149,
         "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 149",
-        "giaCu": "",
+        "ten": "NETTO® - Quần cáp thường nhún túi rút dây gấu đen NIKKI PANTS/BL",
+        "gia":"379000",
+        "giaCu": "459000",
         "ma": "NT149",
         "mota": "Thông tin chi tiết đang được cập nhật.",
         "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 150,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 150",
-        "giaCu": "",
-        "ma": "NT150",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 151,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 151",
-        "giaCu": "",
-        "ma": "NT151",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
+        "ton":"25",
         "mau": [{
             "ten": "Mặc định",
             "ma": "#cccccc"
@@ -1320,41 +1095,16 @@
     {
         "id": 152,
         "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 152",
-        "giaCu": "",
+        "ten": "NETTO® - Quần cạp cao chiết ly eo dáng ống suông trắng rộng trắng THUNDERCLOUD PANTS/WH",
+        "gia":"345000",
+        "giaCu": "425000",
         "ma": "NT152",
         "mota": "Thông tin chi tiết đang được cập nhật.",
         "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 153,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 153",
-        "giaCu": "",
-        "ma": "NT153",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
-        "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
-        }]
-    },
-    {
-        "id": 154,
-        "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài mã 154",
-        "giaCu": "",
-        "ma": "NT154",
-        "mota": "Thông tin chi tiết đang được cập nhật.",
-        "size": ["S", "M", "L"],
+        "ton":"19",
         "mau": [{
             "ten": "Mặc định",
             "ma": "#cccccc"
         }]
     }
-
 ]
