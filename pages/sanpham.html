@@ -1,65 +1,56 @@
 <!doctype html>
 <html lang="vi">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SẢN PHẨM</title>
     <link rel="stylesheet" href="../assets/css/main.css/trangsanpham.css" />
+    <link rel="stylesheet" href="../assets/css/main.css/giohang.css">
     <link rel="stylesheet" href="../assets/css/main.css/style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="site-header"></div>
-    <div class="sp-banner"><h1>SẢN PHẨM</h1></div>
+    <div class="sp-banner">
+        <h1>SẢN PHẨM</h1>
+    </div>
 
     <main class="trang-sanpham">
-      <aside class="bo-loc">
-        <fieldset>
-          <legend>BỘ LỌC</legend>
-          <input
-            type="radio"
-            id="tat-ca"
-            name="Clothes"
-            value="tat-ca"
-            checked
-          />
-          <label for="tat-ca">Tất cả sản phẩm</label><br />
-          <h4>QUẦN</h4>
-          <input type="radio" id="quan-dai" name="Clothes" value="quan-dai" />
-          <label for="quan-dai">Quần dài</label><br />
-          <input type="radio" id="quan-ngan" name="Clothes" value="quan-ngan" />
-          <label for="quan-ngan">Quần ngắn</label><br />
-          <h4>ÁO</h4>
-          <input
-            type="radio"
-            id="ao-dai-tay"
-            name="Clothes"
-            value="ao-dai-tay"
-          />
-          <label for="ao-dai-tay">Áo dài tay</label><br />
-          <input
-            type="radio"
-            id="ao-ngan-tay"
-            name="Clothes"
-            value="ao-ngan-tay"
-          />
-          <label for="ao-ngan-tay">Áo ngắn tay</label><br />
-          <h4>VÁY</h4>
-          <input type="radio" id="vay" name="Clothes" value="vay" />
-          <label for="vay">Váy</label>
-        </fieldset>
-      </aside>
+        <aside class="bo-loc">
+            <fieldset>
+                <legend>BỘ LỌC</legend>
+                <input type="radio" id="tat-ca" name="Clothes" value="tat-ca" checked />
+                <label for="tat-ca">Tất cả sản phẩm</label><br />
+                <h4>QUẦN</h4>
+                <input type="radio" id="quan-dai" name="Clothes" value="quan-dai" />
+                <label for="quan-dai">Quần dài</label><br />
+                <input type="radio" id="quan-ngan" name="Clothes" value="quan-ngan" />
+                <label for="quan-ngan">Quần ngắn</label><br />
+                <h4>ÁO</h4>
+                <input type="radio" id="ao-dai-tay" name="Clothes" value="ao-dai-tay" />
+                <label for="ao-dai-tay">Áo dài tay</label><br />
+                <input type="radio" id="ao-ngan-tay" name="Clothes" value="ao-ngan-tay" />
+                <label for="ao-ngan-tay">Áo ngắn tay</label><br />
+                <h4>VÁY</h4>
+                <input type="radio" id="vay" name="Clothes" value="vay" />
+                <label for="vay">Váy</label>
+            </fieldset>
+        </aside>
 
-      <section class="luoi-sanpham" id="luoi-sanpham">
-        <p class="sp-trong" id="sp-trong" hidden>
-          Chưa có sản phẩm thuộc loại này.
-        </p>
-      </section>
-      <script src="../assets/js/products.js"></script>
+        <section class="luoi-sanpham" id="luoi-sanpham">
+            <p class="sp-trong" id="sp-trong" hidden>
+                Chưa có sản phẩm thuộc loại này.
+            </p>
+        </section>
+        <script src="../assets/js/products.js"></script>
 
-      <script src="../assets/js/sanpham.js"></script>
+        <script src="../assets/js/sanpham.js"></script>
     </main>
     <div id="site-footer"></div>
     <script src="../assets/js/layout.js"></script>
+    <script src="../assets/js/giohang.js"></script>
     <script src="../assets/js/main.js"></script>
-  </body>
+</body>
+
 </html>

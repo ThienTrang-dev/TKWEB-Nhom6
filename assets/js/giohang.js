@@ -98,6 +98,7 @@ function dongGioHang() {
 }
 
 // Hiển thị danh sách sản phẩm
+
 function hienThiGioHang() {
     const gioHang = layGioHang();
     const danhSach = document.getElementById("mini-cart-list");
@@ -117,16 +118,34 @@ function hienThiGioHang() {
         return;
     }
 
-    let tong = 0;
+    // Kiểm tra tất cả sản phẩm có được chọn hay không
+    const tatCaDuocChon = gioHang.every(function(sp) {
+        return sp.duocChon !== false;
+    });
 
-    danhSach.innerHTML = gioHang.map(function(sp, index) {
+    // Hiển thị danh sách sản phẩm
+    danhSach.innerHTML = `
+        <div class="mini-cart-select-all">
+            <label>
+                <input type="checkbox" id="cart-select-all"
+                    ${tatCaDuocChon ? "checked" : ""}>
+                Chọn tất cả
+            </label>
+        </div>
+    ` + gioHang.map(function(sp, index) {
         const gia = chuyenGiaThanhSo(sp.gia);
         const soLuong = Number(sp.soLuong) || 1;
-
-        tong += gia * soLuong;
+        const duocChon = sp.duocChon !== false;
 
         return `
             <div class="mini-cart-item">
+                <input
+                    type="checkbox"
+                    class="cart-item-checkbox"
+                    data-select-index="${index}"
+                    ${duocChon ? "checked" : ""}
+                >
+
                 <img
                     src="${sp.anh || ""}"
                     alt="${sp.ten || "Sản phẩm"}"
@@ -143,9 +162,15 @@ function hienThiGioHang() {
 
                     <div class="mini-cart-actions">
                         <div class="mini-cart-quantity">
-                            <button type="button" data-action="giam" data-index="${index}">−</button>
+                            <button type="button"
+                                data-action="giam"
+                                data-index="${index}">−</button>
+
                             <span>${soLuong}</span>
-                            <button type="button" data-action="tang" data-index="${index}">+</button>
+
+                            <button type="button"
+                                data-action="tang"
+                                data-index="${index}">+</button>
                         </div>
 
                         <button
@@ -162,86 +187,112 @@ function hienThiGioHang() {
         `;
     }).join("");
 
-    tongTien.textContent = dinhDangTien(tong);
+    // Tính lại tổng tiền theo những sản phẩm được chọn
+    tongTien.textContent = dinhDangTien(
+        tinhTongTienGioHang(gioHang)
+    );
 }
 
-// Xử lý các nút trong giỏ hàng
+function tinhTongTienGioHang(gioHang) {
+    return gioHang.reduce(function(tong, sp) {
+        if (sp.duocChon === false) return tong;
+
+        const gia = chuyenGiaThanhSo(sp.gia);
+        const soLuong = Number(sp.soLuong) || 1;
+
+        return tong + gia * soLuong;
+    }, 0);
+}
+// Xử lý sự kiện click giỏ hàng
 document.addEventListener("click", function(e) {
-    // Mở giỏ hàng từ Header hoặc Footer
+
+    // Nhấn icon giỏ hàng trên header hoặc footer
     if (e.target.closest("#header-cart-toggle, .footer-cart-link")) {
         e.preventDefault();
         moGioHang();
         return;
     }
 
-    // Đóng bằng nút X
+    // Nhấn nút đóng
     if (e.target.closest(".mini-cart-close")) {
         dongGioHang();
         return;
     }
 
-    // Đóng khi bấm ra ngoài popup
+    // Nhấn ra ngoài khung giỏ hàng
     if (e.target.id === "cart-overlay") {
         dongGioHang();
-        return;
-    }
-
-    // Tăng, giảm hoặc xóa sản phẩm
-    const nut = e.target.closest("[data-action]");
-    if (nut) {
-        const hanhDong = nut.dataset.action;
-        const viTri = Number(nut.dataset.index);
-        const gioHang = layGioHang();
-
-        if (!gioHang[viTri]) return;
-
-        if (hanhDong === "tang") {
-            gioHang[viTri].soLuong++;
-        }
-
-        if (hanhDong === "giam") {
-            gioHang[viTri].soLuong--;
-
-            if (gioHang[viTri].soLuong <= 0) {
-                gioHang.splice(viTri, 1);
-            }
-        }
-
-        if (hanhDong === "xoa") {
-            gioHang.splice(viTri, 1);
-        }
-
-        luuGioHang(gioHang);
-        hienThiGioHang();
-        return;
-    }
-
-    // Chuyển đến trang thanh toán
-    if (e.target.closest(".mini-cart-checkout")) {
-        const gioHang = layGioHang();
-
-        if (gioHang.length === 0) {
-            alert("Giỏ hàng của bạn đang trống!");
-            return;
-        }
-
-        const self = document.querySelector('script[src$="giohang.js"]');
-        const root = new URL("../../", self.src).href;
-
-        window.location.href = root + "pages/thanhtoan.html";
     }
 });
 
-// Đóng bằng phím Escape
+// Nhấn ESC để đóng giỏ hàng
 document.addEventListener("keydown", function(e) {
     if (e.key === "Escape") {
         dongGioHang();
     }
 });
 
-// Khởi tạo giỏ hàng sau khi DOM sẵn sàng
-if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", capNhatSoLuongGioHang);
-} else {
+// Cập nhật số lượng khi tải trang
+document.addEventListener("DOMContentLoaded", function() {
     capNhatSoLuongGioHang();
-}
+});
+// Xử lý chọn/bỏ chọn sản phẩm
+document.addEventListener("change", function(e) {
+    const gioHang = layGioHang();
+
+    // Chọn tất cả
+    if (e.target.id === "cart-select-all") {
+        gioHang.forEach(function(sp) {
+            sp.duocChon = e.target.checked;
+        });
+    }
+
+    // Chọn từng sản phẩm
+    if (e.target.classList.contains("cart-item-checkbox")) {
+        const index = Number(e.target.dataset.selectIndex);
+
+        gioHang[index].duocChon = e.target.checked;
+    }
+
+    luuGioHang(gioHang);
+    hienThiGioHang();
+});
+// Xử lý nút tiến hành thanh toán
+document.addEventListener("click", function(e) {
+    const nutThanhToan = e.target.closest(".mini-cart-checkout");
+
+    if (!nutThanhToan) return;
+
+    const gioHang = layGioHang();
+
+    // Lấy những sản phẩm được chọn
+    const sanPhamDuocChon = gioHang.filter(function(sp) {
+        return sp.duocChon !== false;
+    });
+
+    if (sanPhamDuocChon.length === 0) {
+        alert("Vui lòng chọn ít nhất một sản phẩm!");
+        return;
+    }
+
+    // Lưu sản phẩm được chọn để trang thanh toán sử dụng
+    localStorage.setItem(
+        "nettoCheckout",
+        JSON.stringify(sanPhamDuocChon)
+    );
+
+    // Chuyển đến trang thanh toán
+    const script = document.querySelector('script[src*="giohang.js"]');
+
+    if (!script) {
+        alert("Không tìm thấy đường dẫn giỏ hàng!");
+        return;
+    }
+
+    const thuMucGoc = script.src.replace(
+        /assets\/js\/giohang\.js(?:\?.*)?$/,
+        ""
+    );
+
+    window.location.href = thuMucGoc + "pages/thanhtoan.html";
+});

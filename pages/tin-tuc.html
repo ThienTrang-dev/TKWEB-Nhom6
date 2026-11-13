@@ -1,212 +1,359 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tin Tức Thời Trang & Cộng Đồng - NETTO Clothes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/main.css/style.css">
-  <style>
-    :root {
-      --netto-pink: #FAD2D8;
-      --netto-pink-light: #FFF5F7;
-      --netto-accent: #E86C8D;
-      --netto-cream: #FFFDF9;
-      --netto-black: #111111;
-      --text-primary: #232837;
-      --text-secondary: #666666;
-      --border-soft: #F0E4E6;
-      --shadow-card: 0 6px 20px rgba(232, 108, 141, 0.08);
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Plus Jakarta Sans', Arial, sans-serif;
-      background-color: var(--netto-cream);
-      color: var(--text-primary);
-      line-height: 1.6;
-    }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    a { text-decoration: none; color: inherit; transition: 0.25s ease; }
-    ul { list-style: none; }
-
-   
-    /* 2. BREADCRUMB & BỘ LỌC DANH MỤC TIN TỨC */
-    .breadcrumb { padding: 18px 0; font-size: 13px; color: var(--text-secondary); }
-    .breadcrumb .current { color: var(--netto-accent); font-weight: 600; }
-    .news-hero {
-      background: linear-gradient(135deg, #FDE8EC 0%, #FFF7F8 100%);
-      border: 1px solid var(--border-soft); border-radius: 16px;
-      padding: 36px 28px; text-align: center; margin-bottom: 40px;
-    }
-    .news-hero h1 { font-family: 'Playfair Display', serif; font-size: 34px; color: var(--netto-black); margin-bottom: 8px; text-transform: uppercase; }
-    .news-hero p { color: var(--text-secondary); max-width: 580px; margin: 0 auto 24px; }
-    .news-filter-bar { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
-    .filter-btn {
-      background: #ffffff; border: 1px solid var(--border-soft); padding: 8px 18px;
-      border-radius: 99px; font-size: 13px; font-weight: 600; color: var(--text-primary); cursor: pointer; transition: 0.2s;
-    }
-    .filter-btn:hover { border-color: var(--netto-accent); }
-    .filter-btn.active { background: var(--netto-black); color: #ffffff; border-color: var(--netto-black); }
-
-    /* 3. DANH SÁCH BÀI VIẾT */
-    .news-section { margin-bottom: 60px; }
-    .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .news-card {
-      background: #ffffff; border: 1px solid var(--border-soft); border-radius: 12px;
-      overflow: hidden; box-shadow: var(--shadow-card); display: flex;
-      flex-direction: column; justify-content: space-between; transition: 0.25s ease;
-    }
-    .news-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08); }
-    .news-thumb { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid var(--border-soft); }
-    .news-content { padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
-    .news-meta { display: flex; gap: 16px; font-size: 12px; color: var(--text-secondary); margin-bottom: 10px; }
-    .news-card h3 { font-size: 17px; color: var(--netto-black); line-height: 1.4; margin-bottom: 10px; }
-    .news-card h3 a:hover { color: var(--netto-accent); }
-    .news-excerpt {
-      font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;
-      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
-    }
-    .read-more { font-size: 13px; font-weight: 700; color: var(--netto-accent); }
-    .read-more:hover { color: var(--netto-black); }
-
-
-    @media (max-width: 992px) {
-      .news-grid, .footer-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 768px) {
-      .header-top-inner, .nav-inner { flex-direction: column; align-items: flex-start; }
-      .search-bar { width: 100%; max-width: 100%; }
-      .main-menu { flex-wrap: wrap; gap: 14px; }
-      .news-grid, .footer-grid { grid-template-columns: 1fr; }
-    }
-    
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin Tức Thời Trang & Cộng Đồng - NETTO Clothes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/main.css/style.css">
+    <link rel="stylesheet" href="../assets/css/main.css/giohang.css">
+    <style>
+         :root {
+            --netto-pink: #FAD2D8;
+            --netto-pink-light: #FFF5F7;
+            --netto-accent: #E86C8D;
+            --netto-cream: #FFFDF9;
+            --netto-black: #111111;
+            --text-primary: #232837;
+            --text-secondary: #666666;
+            --border-soft: #F0E4E6;
+            --shadow-card: 0 6px 20px rgba(232, 108, 141, 0.08);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+            background-color: var(--netto-cream);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.25s ease;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        /* 2. BREADCRUMB & BỘ LỌC DANH MỤC TIN TỨC */
+        
+        .breadcrumb {
+            padding: 18px 0;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        
+        .breadcrumb .current {
+            color: var(--netto-accent);
+            font-weight: 600;
+        }
+        
+        .news-hero {
+            background: linear-gradient(135deg, #FDE8EC 0%, #FFF7F8 100%);
+            border: 1px solid var(--border-soft);
+            border-radius: 16px;
+            padding: 36px 28px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .news-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 34px;
+            color: var(--netto-black);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        
+        .news-hero p {
+            color: var(--text-secondary);
+            max-width: 580px;
+            margin: 0 auto 24px;
+        }
+        
+        .news-filter-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .filter-btn {
+            background: #ffffff;
+            border: 1px solid var(--border-soft);
+            padding: 8px 18px;
+            border-radius: 99px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        
+        .filter-btn:hover {
+            border-color: var(--netto-accent);
+        }
+        
+        .filter-btn.active {
+            background: var(--netto-black);
+            color: #ffffff;
+            border-color: var(--netto-black);
+        }
+        /* 3. DANH SÁCH BÀI VIẾT */
+        
+        .news-section {
+            margin-bottom: 60px;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        
+        .news-card {
+            background: #ffffff;
+            border: 1px solid var(--border-soft);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: 0.25s ease;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .news-thumb {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border-soft);
+        }
+        
+        .news-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .news-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+        
+        .news-card h3 {
+            font-size: 17px;
+            color: var(--netto-black);
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+        
+        .news-card h3 a:hover {
+            color: var(--netto-accent);
+        }
+        
+        .news-excerpt {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .read-more {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--netto-accent);
+        }
+        
+        .read-more:hover {
+            color: var(--netto-black);
+        }
+        
+        @media (max-width: 992px) {
+            .news-grid,
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-top-inner,
+            .nav-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .search-bar {
+                width: 100%;
+                max-width: 100%;
+            }
+            .main-menu {
+                flex-wrap: wrap;
+                gap: 14px;
+            }
+            .news-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <!-- LAYER 1: HEADER & THANH MENU LỰA CHỌN DANH MỤC (GIỮ NGUYÊN) -->
+    <!-- LAYER 1: HEADER & THANH MENU LỰA CHỌN DANH MỤC (GIỮ NGUYÊN) -->
 
-  <!-- LAYER 2: NỘI DUNG CHÍNH TRANG TIN TỨC -->
-  <main class="container">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="index.html">Trang chủ</a> &nbsp;›&nbsp; <span class="current">Tin tức thời trang</span>
-    </nav>
+    <!-- LAYER 2: NỘI DUNG CHÍNH TRANG TIN TỨC -->
+    <main class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Trang chủ</a> &nbsp;›&nbsp; <span class="current">Tin tức thời trang</span>
+        </nav>
 
-    <section class="news-hero">
-      <h1>Tin Tức & Thông Báo</h1>
-      <p>Cập nhật nhanh nhất các bộ sưu tập mới, xu hướng thời trang hiện đại và những hoạt động cộng đồng ý nghĩa từ NETTO.</p>
-      
-      <!-- BỘ LỌC LỰA CHỌN DANH MỤC BÀI VIẾT (GIỮ NGUYÊN) -->
-      <div class="news-filter-bar">
-        <button type="button" class="filter-btn active" data-category="all">Tất cả bài viết</button>
-        <button type="button" class="filter-btn" data-category="community">Sự kiện cửa hàng</button>
-        <button type="button" class="filter-btn" data-category="promo">Mẹo hay & Phối đồ</button>
-        <button type="button" class="filter-btn" data-category="arrival">Các hoạt động thiện nguyện </button>
-      </div>
-    </section>
+        <section class="news-hero">
+            <h1>Tin Tức & Thông Báo</h1>
+            <p>Cập nhật nhanh nhất các bộ sưu tập mới, xu hướng thời trang hiện đại và những hoạt động cộng đồng ý nghĩa từ NETTO.</p>
 
-    <section class="news-hero page-hero">
-      <div class="news-grid">
-        
-        <!-- Bài viết 1 -->
-        <article class="news-card" data-category="community">
-          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=600&auto=format&fit=crop" alt="Mẹo chọn size quần áo" class="news-thumb">
-          <div class="news-content">
-            <div>
-              <div class="news-meta"><span>👤 Thu Trang</span><span>📅 25/05/2026</span></div>
-              <h3><a href="#"> BÍ QUYẾT CHỌN SIZE QUẦN ÁO CHUẨN XÁC TẠI NHÀ KHÔNG SỢ CHẬT RỘNG</a></h3>
-              <p class="news-excerpt">Mua sắm online nhưng vẫn muốn vừa vặn như đo thợ may? Khám phá ngay bảng quy đổi kích cỡ S - M - L chi tiết cùng mẹo tự đo vòng eo, ngực cực chuẩn tại nhà...</p>
+            <!-- BỘ LỌC LỰA CHỌN DANH MỤC BÀI VIẾT (GIỮ NGUYÊN) -->
+            <div class="news-filter-bar">
+                <button type="button" class="filter-btn active" data-category="all">Tất cả bài viết</button>
+                <button type="button" class="filter-btn" data-category="community">Sự kiện cửa hàng</button>
+                <button type="button" class="filter-btn" data-category="promo">Mẹo hay & Phối đồ</button>
+                <button type="button" class="filter-btn" data-category="arrival">Các hoạt động thiện nguyện </button>
             </div>
-            <a href="#" class="read-more">Xem thêm →</a>
-          </div>
-        </article>
+        </section>
 
-        <!-- Bài viết 2 -->
-        <article class="news-card" data-category="promo">
-          <img src="https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?q=80&w=600&auto=format&fit=crop" alt="Bảo quản đồ tweed" class="news-thumb">
-          <div class="news-content">
-            <div>
-              <div class="news-meta"><span>👤 Bảo Ngọc</span><span>📅 23/05/2026</span></div>
-              <h3><a href="#">[BẢO QUẢN] CÁCH GIẶT VÀ BẢO QUẢN CÁC THIẾT KẾ VẢI TWEED LUÔN BỀN ĐẸP NHƯ MỚI</a></h3>
-              <p class="news-excerpt">Chất liệu tweed mang lại vẻ ngoài sang trọng nhưng đòi hỏi sự chăm sóc tỉ mỉ. Tìm hiểu ngay bí quyết giặt khô, cách treo móc và bảo quản để giữ form dáng áo luôn đứng form...</p>
-            </div>
-            <a href="#" class="read-more">Xem thêm →</a>
-          </div>
-        </article>
+        <section class="news-hero page-hero">
+            <div class="news-grid">
 
-        <!-- Bài viết 3 -->
-        <article class="news-card" data-category="promo">
-          <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=600&auto=format&fit=crop" alt="Thời trang công sở" class="news-thumb">
-          <div class="news-content">
-            <div>
-              <div class="news-meta"><span>👤 Thiên Trang</span><span>📅 18/05/2026</span></div>
-              <h3><a href="#">[OUTFIT IDEA] TỪ VĂN PHÒNG ĐẾN BUỔI HẸN HÒ: 4 CÁCH MIX ĐỒ VỚI QUẦN CULOTTES</a></h3>
-              <p class="news-excerpt">Không còn nhàm chán với những bộ âu phục cứng nhắc. Cùng Netto biến hóa chiếc quần dài culottes ống suông trở nên cực kỳ phóng khoáng, thanh lịch và cuốn hút...</p>
-            </div>
-            <a href="#" class="read-more">Xem thêm →</a>
-          </div>
-        </article>
+                <!-- Bài viết 1 -->
+                <article class="news-card" data-category="community">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=600&auto=format&fit=crop" alt="Mẹo chọn size quần áo" class="news-thumb">
+                    <div class="news-content">
+                        <div>
+                            <div class="news-meta"><span>👤 Thu Trang</span><span>📅 25/05/2026</span></div>
+                            <h3><a href="#"> BÍ QUYẾT CHỌN SIZE QUẦN ÁO CHUẨN XÁC TẠI NHÀ KHÔNG SỢ CHẬT RỘNG</a></h3>
+                            <p class="news-excerpt">Mua sắm online nhưng vẫn muốn vừa vặn như đo thợ may? Khám phá ngay bảng quy đổi kích cỡ S - M - L chi tiết cùng mẹo tự đo vòng eo, ngực cực chuẩn tại nhà...</p>
+                        </div>
+                        <a href="#" class="read-more">Xem thêm →</a>
+                    </div>
+                </article>
 
-        <!-- Bài viết 4 -->
-        <article class="news-card" data-category="promo">
-          <img src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?q=80&w=600&auto=format&fit=crop" alt="Cửa hàng Netto" class="news-thumb">
-          <div class="news-content">
-            <div>
-              <div class="news-meta"><span>👤 Đình Thịnh</span><span>📅 12/05/2026</span></div>
-              <h3><a href="#">[KHAI TRƯƠNG] GHÉ THĂM SHOWROOM NETTO TẠI 12 CHÙA BỘC: TRẢI NGHIỆM THỬ ĐỒ MIỄN PHÍ</a></h3>
-              <p class="news-excerpt">Không gian mua sắm mang tông màu hồng pastel ngọt ngào đã sẵn sàng đón các nàng thơ ghé thăm. Thử đồ trực tiếp, nhận quà tặng độc quyền và check-in không gian cực xịn...</p>
+                <!-- Bài viết 2 -->
+                <article class="news-card" data-category="promo">
+                    <img src="https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?q=80&w=600&auto=format&fit=crop" alt="Bảo quản đồ tweed" class="news-thumb">
+                    <div class="news-content">
+                        <div>
+                            <div class="news-meta"><span>👤 Bảo Ngọc</span><span>📅 23/05/2026</span></div>
+                            <h3><a href="#">[BẢO QUẢN] CÁCH GIẶT VÀ BẢO QUẢN CÁC THIẾT KẾ VẢI TWEED LUÔN BỀN ĐẸP NHƯ MỚI</a></h3>
+                            <p class="news-excerpt">Chất liệu tweed mang lại vẻ ngoài sang trọng nhưng đòi hỏi sự chăm sóc tỉ mỉ. Tìm hiểu ngay bí quyết giặt khô, cách treo móc và bảo quản để giữ form dáng áo luôn đứng form...</p>
+                        </div>
+                        <a href="#" class="read-more">Xem thêm →</a>
+                    </div>
+                </article>
+
+                <!-- Bài viết 3 -->
+                <article class="news-card" data-category="promo">
+                    <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=600&auto=format&fit=crop" alt="Thời trang công sở" class="news-thumb">
+                    <div class="news-content">
+                        <div>
+                            <div class="news-meta"><span>👤 Thiên Trang</span><span>📅 18/05/2026</span></div>
+                            <h3><a href="#">[OUTFIT IDEA] TỪ VĂN PHÒNG ĐẾN BUỔI HẸN HÒ: 4 CÁCH MIX ĐỒ VỚI QUẦN CULOTTES</a></h3>
+                            <p class="news-excerpt">Không còn nhàm chán với những bộ âu phục cứng nhắc. Cùng Netto biến hóa chiếc quần dài culottes ống suông trở nên cực kỳ phóng khoáng, thanh lịch và cuốn hút...</p>
+                        </div>
+                        <a href="#" class="read-more">Xem thêm →</a>
+                    </div>
+                </article>
+
+                <!-- Bài viết 4 -->
+                <article class="news-card" data-category="promo">
+                    <img src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?q=80&w=600&auto=format&fit=crop" alt="Cửa hàng Netto" class="news-thumb">
+                    <div class="news-content">
+                        <div>
+                            <div class="news-meta"><span>👤 Đình Thịnh</span><span>📅 12/05/2026</span></div>
+                            <h3><a href="#">[KHAI TRƯƠNG] GHÉ THĂM SHOWROOM NETTO TẠI 12 CHÙA BỘC: TRẢI NGHIỆM THỬ ĐỒ MIỄN PHÍ</a></h3>
+                            <p class="news-excerpt">Không gian mua sắm mang tông màu hồng pastel ngọt ngào đã sẵn sàng đón các nàng thơ ghé thăm. Thử đồ trực tiếp, nhận quà tặng độc quyền và check-in không gian cực xịn...</p>
+                        </div>
+                        <a href="#" class="read-more">Xem thêm →</a>
+                    </div>
+                </article>
+                <!-- Bài viết 5: Các hoạt động thiện nguyện -->
+                <article class="news-card" data-category="arrival">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=600&auto=format&fit=crop" alt="Hành trình Vòng Tay Ấm" class="news-thumb">
+                    <div class="news-content">
+                        <div>
+                            <div class="news-meta"><span>👤 Bảo Ngọc</span><span>📅 22/05/2026</span></div>
+                            <h3><a href="#">[THÁNG 12] HÀNH TRÌNH "VÒNG TAY ẤM": KHI THỜI TRANG KẾT NỐI NHỮNG NHỊP ĐẬP TỬ TẾ</a></h3>
+                            <p class="news-excerpt">Vào tháng 12 với mỗi đơn hàng đặt mua thành công trên website, Netto cam kết trích 10.000 VNĐ vào quỹ phúc lợi và gửi tặng các sản phẩm áo ấm cho trẻ em vùng cao...</p>
+                        </div>
+                        <a href="#" class="read-more">Xem thêm →</a>
+                    </div>
+                </article>
+                <!-- Bài viết 6 (MỚI): Các hoạt động thiện nguyện (data-category="arrival") -->
+                <article class="news-card" data-category="arrival">
+                    <img src="https://media.istockphoto.com/id/1494981853/vi/vec-to/kh%C3%A1i-ni%E1%BB%87m-t%C3%A1i-ch%E1%BA%BF-%C4%91i-xe-%C4%91%E1%BA%A1p-t%C3%A1i-s%E1%BB%AD-d%E1%BB%A5ng-l%C3%A0m-b%E1%BA%B1ng-tay-th%E1%BB%9Di-trang-ch%E1%BA%ADm-th%C6%B0%C6%A1ng-m%E1%BA%A1i-c%C3%B4ng-b%E1%BA%B1ng.jpg?s=612x612&w=0&k=20&c=XTV58hvIy8ac9HSujAYjS0Y3HTTFUvxj-gXpCgZoFV0=">
+                    <div class="news-content">
+                        <div>
+                            <div class="news-meta"><span>👤 Mai Ngọc</span><span>📅 15/05/2026</span></div>
+                            <h3><a href="#"> TRẠM SẺ CHIA NETTO: CHÀO MỪNG ĐẦU NĂM MỚI NETTO THU HỒI VÀ LÀM MỚI TRANG PHỤC CŨ GỬI TẶNG VÙNG CAO</a></h3>
+                            <p class="news-excerpt">Đồng hành cùng khách hàng lan tỏa lối sống xanh và nhân văn. Netto tổ chức thu gom, phân loại và giặt ủi sạch sẽ các trang phục cũ để trao gửi yêu thương đến những hoàn cảnh khó khăn...</p>
+                        </div>
+                        <a href="#" class="read-more">Xem thêm →</a>
+                    </div>
+                </article>
             </div>
-            <a href="#" class="read-more">Xem thêm →</a>
-          </div>
-        </article>
-        <!-- Bài viết 5: Các hoạt động thiện nguyện -->
-        <article class="news-card" data-category="arrival">
-          <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=600&auto=format&fit=crop" alt="Hành trình Vòng Tay Ấm" class="news-thumb">
-          <div class="news-content">
-            <div>
-              <div class="news-meta"><span>👤 Bảo Ngọc</span><span>📅 22/05/2026</span></div>
-              <h3><a href="#">[THÁNG 12] HÀNH TRÌNH "VÒNG TAY ẤM": KHI THỜI TRANG KẾT NỐI NHỮNG NHỊP ĐẬP TỬ TẾ</a></h3>
-              <p class="news-excerpt">Vào tháng 12 với mỗi đơn hàng đặt mua thành công trên website, Netto cam kết trích 10.000 VNĐ vào quỹ phúc lợi và gửi tặng các sản phẩm áo ấm cho trẻ em vùng cao...</p>
-            </div>
-            <a href="#" class="read-more">Xem thêm →</a>
-          </div>
-        </article>
-          <!-- Bài viết 6 (MỚI): Các hoạt động thiện nguyện (data-category="arrival") -->
-        <article class="news-card" data-category="arrival">
-          <img src="https://media.istockphoto.com/id/1494981853/vi/vec-to/kh%C3%A1i-ni%E1%BB%87m-t%C3%A1i-ch%E1%BA%BF-%C4%91i-xe-%C4%91%E1%BA%A1p-t%C3%A1i-s%E1%BB%AD-d%E1%BB%A5ng-l%C3%A0m-b%E1%BA%B1ng-tay-th%E1%BB%9Di-trang-ch%E1%BA%ADm-th%C6%B0%C6%A1ng-m%E1%BA%A1i-c%C3%B4ng-b%E1%BA%B1ng.jpg?s=612x612&w=0&k=20&c=XTV58hvIy8ac9HSujAYjS0Y3HTTFUvxj-gXpCgZoFV0=">
-          <div class="news-content">
-            <div>
-              <div class="news-meta"><span>👤 Mai Ngọc</span><span>📅 15/05/2026</span></div>
-              <h3><a href="#"> TRẠM SẺ CHIA NETTO: CHÀO MỪNG ĐẦU NĂM MỚI NETTO THU HỒI VÀ LÀM MỚI TRANG PHỤC CŨ GỬI TẶNG VÙNG CAO</a></h3>
-              <p class="news-excerpt">Đồng hành cùng khách hàng lan tỏa lối sống xanh và nhân văn. Netto tổ chức thu gom, phân loại và giặt ủi sạch sẽ các trang phục cũ để trao gửi yêu thương đến những hoàn cảnh khó khăn...</p>
-            </div>
-            <a href="#" class="read-more">Xem thêm →</a>
-          </div>
-        </article>
+        </section>
         </div>
-    </section>
-      </div> <!-- Đóng .news-grid -->
-    </section> <!-- Đóng .news-section -->
-  </main> <!-- Đóng <main> để tách biệt hoàn toàn với Footer -->
-      <script src="../assets/js/layout.js"></script>
-  <!-- JAVASCRIPT LỌC TIN TỨC -->
-  <script>
-    const filterButtons = document.querySelectorAll('.news-filter-bar .filter-btn');
-    const newsCards = document.querySelectorAll('.news-grid .news-card');
+        <!-- Đóng .news-grid -->
+        </section>
+        <!-- Đóng .news-section -->
+    </main>
+    <!-- Đóng <main> để tách biệt hoàn toàn với Footer -->
+    <script src="../assets/js/layout.js"></script>
+    <script src="../assets/js/giohang.js"></script>
+    <!-- JAVASCRIPT LỌC TIN TỨC -->
+    <script>
+        const filterButtons = document.querySelectorAll('.news-filter-bar .filter-btn');
+        const newsCards = document.querySelectorAll('.news-grid .news-card');
 
-    filterButtons.forEach(button => {
-      button.addEventListener('click', function () {
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
-        const selectedCategory = this.getAttribute('data-category');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                const selectedCategory = this.getAttribute('data-category');
 
-        newsCards.forEach(card => {
-          const cardCategory = card.getAttribute('data-category');
-          card.style.display = (selectedCategory === 'all' || cardCategory === selectedCategory) ? 'flex' : 'none';
+                newsCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    card.style.display = (selectedCategory === 'all' || cardCategory === selectedCategory) ? 'flex' : 'none';
+                });
+            });
         });
-      });
-    });
-  </script>
+    </script>
 </body>
+
 </html>
