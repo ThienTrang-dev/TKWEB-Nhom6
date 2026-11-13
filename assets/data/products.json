@@ -888,7 +888,7 @@
         }]
     },
 
-    {
+   {
         "id": 119,
         "loai": "quan-dai",
         "ten": "NETTO® - Quần culottes dài cạp cao đen phối dây nơ trắng kéo khóa lưng /BL",
@@ -899,8 +899,8 @@
         "size": ["S", "M", "L"],
         "ton": "66",
         "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
+            "ten": "Trắng",
+            "ma": "white"
         }]
     },
     {
@@ -916,12 +916,12 @@
   "mau": [
     {
       "ten": "Đen",
-      "ma": "#000000",
+      "ma": "black",
       "anh": ["123.jpg"]
     },
     {
       "ten": "Trắng",
-      "ma": "#FFFFFF",
+      "ma": "white",
       "anh": ["124.jpg"]
     }
   ]
@@ -929,7 +929,7 @@
     {
   "id": 127,
   "loai": "quan-dai",
-  "ten": "NETTO® - Quần culottes trắng dài cạp cao phối 3 cúc đính lệch cạp khóa lưng /WH",
+  "ten": "NETTO® - Quần culottes dài cạp cao phối 3 cúc đính lệch cạp khóa lưng /WH",
   "gia":"275000",
   "giaCu": "355000",
   "ma": "NT127",
@@ -938,12 +938,12 @@
   "size": ["S", "M", "L"],
   "mau": [
     {
-      "ten": "White",
+      "ten": "Trắng",
       "ma": "white",
       "anh": ["127.jpg"]
     },
     {
-      "ten": "Black",
+      "ten": "Đen",
       "ma": "black",
       "anh": ["130.jpg"]
     }
@@ -960,8 +960,8 @@
         "size": ["S", "M", "L"],
         "ton":"63",
         "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
+            "ten": "Trắng",
+            "ma": "white"
         }]
     },
     {
@@ -975,8 +975,8 @@
         "size": ["S", "M", "L"],
         "ton":"92",
         "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
+            "ten": "Trắng",
+            "ma": "white"
         }]
     },
     {
@@ -991,13 +991,13 @@
   "ton":"83",
   "mau": [
     {
-      "ten": "White",
+      "ten": "Trắng",
       "ma": "white",
       "anh": ["134.jpg"]
     },
     {
-      "ten": "Pink",
-      "ma": "#E83A78",
+      "ten": "Hồng",
+      "ma": "pink",
       "anh": ["138.jpg"]
     }
   ]
@@ -1013,8 +1013,8 @@
         "size": ["S", "M", "L"],
         "ton":"92",
         "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
+            "ten": "Trắng",
+            "ma": "white"
         }]
     },
     {
@@ -1028,8 +1028,8 @@
         "size": ["S", "M", "L"],
         "ton":"54",
         "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
+            "ten": "Hồng",
+            "ma": "pink"
         }]
     },
     {
@@ -1043,8 +1043,8 @@
         "size": ["S", "M", "L"],
         "ton":"31",
         "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
+            "ten": "Đen",
+            "ma": "black"
         }]
     },
     {
@@ -1058,14 +1058,14 @@
         "size": ["S", "M", "L"],
         "ton":"60",
         "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
+            "ten": "Nâu",
+            "ma": "brown"
         }]
     },
     {
         "id": 146,
         "loai": "quan-dai",
-        "ten": "NETTO® - Quần dài xám cạp cao đính logo TINGOAN® CHEN CHEN PANTS/GR PHIÊN BẢN MỚI NHẤT T2.2026",
+        "ten": "NETTO® - Quần dài xám cạp cao đính logo TINGOAN CHEN CHEN PANTS/GR PHIÊN BẢN MỚI NHẤT T2.2026",
         "gia":"299000",
         "giaCu":"379000",
         "ma": "NT146",
@@ -1073,8 +1073,8 @@
         "size": ["S", "M", "L"],
         "ton":"54",
         "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
+            "ten": "Nâu",
+            "ma": "brown"
         }]
     },
     {
@@ -1088,8 +1088,8 @@
         "size": ["S", "M", "L"],
         "ton":"25",
         "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
+            "ten": "Đen",
+            "ma": "black"
         }]
     },
     {
@@ -1103,8 +1103,9 @@
         "size": ["S", "M", "L"],
         "ton":"19",
         "mau": [{
-            "ten": "Mặc định",
-            "ma": "#cccccc"
+            "ten": "Trắng",
+            "ma": "white"
         }]
     }
 ]
+
