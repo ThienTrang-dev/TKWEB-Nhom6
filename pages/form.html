@@ -27,15 +27,20 @@
           placeholder="Nhập tên đăng nhập"
           required
         />
-        <br />
+        <p class="loi" id="login-user-err" hidden></p>
+
         <label for="login-pass">Mật khẩu</label>
-        <input
-          type="password"
-          id="login-pass"
-          placeholder="Nhập mật khẩu"
-          required
-        />
-        <br />
+        <div class="o-mk">
+          <input
+            type="password"
+            id="login-pass"
+            placeholder="Nhập mật khẩu"
+            required
+          />
+          <button type="button" class="eye" data-target="login-pass">👁</button>
+        </div>
+        <p class="loi" id="login-pass-err" hidden></p>
+
         <button type="submit" class="btn-submit">Đăng nhập</button>
         <div class="auth-phu">
           <span
@@ -44,6 +49,7 @@
           <a href="#" class="quen-mk" id="quen-mk">Quên mật khẩu?</a>
         </div>
       </form>
+
       <form id="form-register" class="auth-form" hidden>
         <label for="reg-user">Tên đăng nhập</label>
         <input
@@ -52,16 +58,39 @@
           placeholder="Nhập tên đăng nhập"
           required
         />
+        <p class="loi" id="reg-user-err" hidden></p>
+
         <label for="reg-pass">Mật khẩu</label>
+        <div class="o-mk">
+          <input
+            type="password"
+            id="reg-pass"
+            placeholder="Ít nhất 6 ký tự"
+            required
+          />
+          <button type="button" class="eye" data-target="reg-pass">👁</button>
+        </div>
+        <p class="loi" id="reg-pass-err" hidden></p>
+
+        <label for="reg-q1">Câu hỏi bảo mật 1</label>
         <input
-          type="password"
-          id="reg-pass"
-          placeholder="Ít nhất 6 ký tự"
-          minlength="6"
+          type="text"
+          id="reg-q1"
+          placeholder="Tự nhập, VD: Tên thú cưng của bạn?"
           required
         />
-        <label for="reg-email">Email</label>
-        <input type="email" id="reg-email" placeholder="Nhập email" required />
+        <input type="text" id="reg-a1" placeholder="Đáp án" required />
+
+        <label for="reg-q2">Câu hỏi bảo mật 2</label>
+        <input
+          type="text"
+          id="reg-q2"
+          placeholder="Tự nhập, VD: Trường cấp 1 của bạn?"
+          required
+        />
+        <input type="text" id="reg-a2" placeholder="Đáp án" required />
+        <p class="loi" id="reg-q-err" hidden></p>
+
         <label class="dong-y">
           <input type="checkbox" id="reg-dongy" required />
           <span
@@ -71,24 +100,47 @@
             ></span
           >
         </label>
-        <br />
         <button type="submit" class="btn-submit">Đăng ký</button>
       </form>
+
       <form id="form-forgot" class="auth-form" hidden>
         <p class="auth-tieude">Quên mật khẩu</p>
-        <p class="auth-mota">
-          Nhập email đã đăng ký, NETTO sẽ gửi hướng dẫn đặt lại mật khẩu cho
-          bạn.
+        <p class="auth-mota" id="forgot-mota">
+          Nhập tên đăng nhập để lấy lại câu hỏi bảo mật.
         </p>
-        <label for="forgot-email">Email</label>
-        <input
-          type="email"
-          id="forgot-email"
-          placeholder="Nhập email của bạn"
-          required
-        />
+
+        <div class="khoi" id="forgot-b1">
+          <label for="forgot-user">Tên đăng nhập</label>
+          <input
+            type="text"
+            id="forgot-user"
+            placeholder="Nhập tên đăng nhập của bạn"
+          />
+        </div>
+
+        <div class="khoi" id="forgot-b2" hidden>
+          <label id="forgot-q1"></label>
+          <input type="text" id="forgot-a1" placeholder="Đáp án" />
+          <label id="forgot-q2"></label>
+          <input type="text" id="forgot-a2" placeholder="Đáp án" />
+          <label for="forgot-newpass">Mật khẩu mới</label>
+          <div class="o-mk">
+            <input
+              type="password"
+              id="forgot-newpass"
+              placeholder="Ít nhất 6 ký tự"
+            />
+            <button type="button" class="eye" data-target="forgot-newpass">
+              👁
+            </button>
+          </div>
+        </div>
+
+        <p class="loi" id="forgot-err" hidden></p>
         <p class="auth-thongbao" id="forgot-msg" hidden></p>
-        <button type="submit" class="btn-submit">Gửi hướng dẫn</button>
+        <button type="submit" class="btn-submit" id="forgot-btn">
+          Tiếp tục
+        </button>
         <div class="auth-phu">
           <a href="#" id="forgot-back">&larr; Quay lại đăng nhập</a>
         </div>

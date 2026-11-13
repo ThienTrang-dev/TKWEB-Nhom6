@@ -234,3 +234,48 @@ html.in-modal .auth-box {
   border-radius: 0;
   box-shadow: none;
 }
+/* Thông báo lỗi đỏ */
+.auth-form .loi {
+  margin-top: 2px;
+  font-size: 13px;
+  color: #e53935;
+}
+.auth-form .loi[hidden] {
+  display: none;
+}
+
+/* Ô mật khẩu + con mắt */
+.auth-form .o-mk {
+  position: relative;
+}
+.auth-form .o-mk input {
+  padding-right: 44px;
+}
+.auth-form .eye {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  margin: 0;
+  padding: 6px 8px;
+  font-size: 16px;
+  letter-spacing: 0;
+  color: #888;
+  background: none;
+}
+.auth-form .eye:hover,
+.auth-form .eye.on {
+  color: #e2543f;
+  background: none;
+}
+
+/* Khối trong form quên mật khẩu */
+.auth-form .khoi {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.auth-form .khoi[hidden] {
+  display: none;
+}

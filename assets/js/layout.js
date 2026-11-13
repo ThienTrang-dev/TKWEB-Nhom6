@@ -14,11 +14,12 @@
   }
 
   const root = new URL("../../", self.src).href;
+  window.nettoRoot = root;
 
   const SOCIAL = {
-  tiktok: "https://www.tiktok.com/@nettoclothings",
-  facebook: "https://www.facebook.com/aeonmallhalong.14quangninh",
-};
+    tiktok: "https://www.tiktok.com/@nettoclothings",
+    facebook: "https://www.facebook.com/aeonmallhalong.14quangninh",
+  };
   const header = `
 <header class="site-header">
   <div class="topbar">
@@ -42,11 +43,11 @@
     </div>
 
     <div class="topbar-right">
-      <a href="${root}pages/form.html" class="account-link">
+      <a href="${root}pages/form.html" class="account-link" id="account-link">
         <svg viewBox="0 0 24 24" width="20" height="20">
           <path fill="currentColor" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5m0 2c-4.4 0-8 2.2-8 5v2h16v-2c0-2.8-3.6-5-8-5"/>
         </svg>
-        <span>Đăng nhập / Đăng ký</span>
+        <span id="account-text">Đăng nhập / Đăng ký</span>
       </a>
 
       <a href="${root}pages/giohang.html" class="cart-link" aria-label="Giỏ hàng">
@@ -224,7 +225,32 @@
     </svg>
   </button>
 </div>`;
+  function capNhatTaiKhoan() {
+    const users = JSON.parse(localStorage.getItem("netto_users") || "{}");
+    let user = localStorage.getItem("netto_current");
+    if (user && !users[user]) {
+      localStorage.removeItem("netto_current");
+      user = null;
+    }
+    if (!user) return;
 
+    const link = document.getElementById("account-link");
+    const chu = document.getElementById("account-text");
+    if (link && chu) {
+      link.href = root + "pages/taikhoan.html";
+      chu.textContent = "Tài khoản";
+    }
+    document
+      .querySelectorAll('.site-footer a[href*="form.html"]')
+      .forEach(function (a, i) {
+        if (i === 0) {
+          a.href = root + "pages/taikhoan.html";
+          a.textContent = "Tài khoản";
+        } else {
+          a.parentElement.style.display = "none";
+        }
+      });
+  }
   function render() {
     let h = document.getElementById("site-header");
 
@@ -244,7 +270,7 @@
 
     h.innerHTML = header;
     f.innerHTML = footer;
-
+    capNhatTaiKhoan();
     // Không tạo chatbox trùng lặp
     if (!document.querySelector(".chatbox-widget")) {
       document.body.insertAdjacentHTML("beforeend", chatbox);
@@ -350,3 +376,62 @@ document.addEventListener("click", function (e) {
     lop.classList.add("open");
   };
 })();
+// ===== Nhận tin từ form: đăng nhập / đăng ký thành công =====
+window.addEventListener("message", function (e) {
+  const khung = document.querySelector("#auth-modal iframe");
+  if (!khung || e.source !== khung.contentWindow) return;
+  if (!e.data || e.data.netto !== "auth-success") return;
+
+  dongKhungDangNhap();
+  if (e.data.dangKy) {
+    hienPopupDangKy();
+  } else {
+    window.location.href = window.nettoRoot + "index.html";
+  }
+});
+
+function hienPopupDangKy() {
+  const nen = document.createElement("div");
+  nen.className = "popup-thanhcong";
+  nen.innerHTML =
+    '<div class="popup-thanhcong-hop">' +
+    '<div class="popup-thanhcong-icon">✓</div>' +
+    "<h3>Đăng ký thành công!</h3>" +
+    "<p>Chào mừng bạn đến với NETTO. Bạn đã được tặng 1 voucher chào mừng.</p>" +
+    '<button type="button">Về trang chủ</button>' +
+    "</div>";
+  document.body.appendChild(nen);
+  nen.querySelector("button").addEventListener("click", function () {
+    window.location.href = window.nettoRoot + "index.html";
+  });
+}
+
+// ===== Ghi 1 đơn hàng cho tài khoản đang đăng nhập =====
+window.nettoGhiDon = function (tong, soSP) {
+  const user = localStorage.getItem("netto_current");
+  const users = JSON.parse(localStorage.getItem("netto_users") || "{}");
+  if (!user || !users[user]) return false;
+
+  if (tong == null) {
+    const gio = JSON.parse(localStorage.getItem("nettoCart") || "[]");
+    tong = gio.reduce(function (t, sp) {
+      return (
+        t +
+        (Number(String(sp.gia).replace(/\D/g, "")) || 0) *
+          (Number(sp.soLuong) || 0)
+      );
+    }, 0);
+    soSP = gio.reduce(function (t, sp) {
+      return t + (Number(sp.soLuong) || 0);
+    }, 0);
+  }
+  users[user].donHang = users[user].donHang || [];
+  users[user].donHang.push({
+    ma: "DH" + Date.now(),
+    ngay: new Date().toISOString(),
+    tong: tong,
+    soSP: soSP || 0,
+  });
+  localStorage.setItem("netto_users", JSON.stringify(users));
+  return true;
+};
