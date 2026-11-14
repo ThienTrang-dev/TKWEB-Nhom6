@@ -102,10 +102,12 @@
            data-page="chinh-sach.html">Chính sách ▾</a>
 
         <ul class="dropdown">
+          <li><a href="${root}pages/chinh-sach.html#dang-ky">Đăng ký & Sử dụng </a></li>
           <li><a href="${root}pages/chinh-sach.html#thanh-vien">Thành viên</a></li>
           <li><a href="${root}pages/chinh-sach.html#doi-tra">Đổi trả & Hoàn tiền</a></li>
           <li><a href="${root}pages/chinh-sach.html#bao-mat">Bảo mật</a></li>
           <li><a href="${root}pages/chinh-sach.html#thanh-toan">Thanh toán</a></li>
+          <li><a href="${root}pages/chinh-sach.html#van-chuyen">Vận chuyển</a></li>
         </ul>
       </li>
 
