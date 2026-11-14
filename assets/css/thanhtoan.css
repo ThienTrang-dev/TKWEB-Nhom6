@@ -8,7 +8,7 @@
 body {
     background-color: #f7f8fa;
     color: #222;
-    padding-bottom: 90px; /* Chừa khoảng trống cho thanh đặt hàng cố định */
+    padding-bottom: 90px;
 }
 
 .checkout-wrapper {
@@ -17,7 +17,6 @@ body {
     padding: 0 16px;
 }
 
-/* Layout 2 cột giống phong cách Coolmate */
 .checkout-container {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -25,7 +24,6 @@ body {
     align-items: start;
 }
 
-/* Khung bọc trắng bo góc */
 .checkout-box {
     background: #ffffff;
     padding: 24px;
@@ -55,7 +53,7 @@ body {
 
 .form-row-2 {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 12px;
 }
 
@@ -67,31 +65,47 @@ body {
 }
 
 .form-group {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
+}
+
+.form-row-2 .form-group {
+    margin-bottom: 0;
 }
 
 .flex-grow {
-    flex: 1.5;
+    flex: 1;
 }
 
 .form-control-select,
 .form-group input,
-.form-row-3 input {
+.form-row-3 select {
     width: 100%;
     padding: 12px 14px;
     border: 1px solid #ddd;
     border-radius: 10px;
     font-size: 14px;
+    color: #222;
     outline: none;
-    background: #fff;
+    background-color: #fff;
     transition: 0.2s;
+}
+
+.form-control-select {
+    cursor: pointer;
 }
 
 .form-control-select:focus,
 .form-group input:focus,
-.form-row-3 input:focus {
+.form-row-3 select:focus {
     border-color: #e06d82;
     box-shadow: 0 0 0 3px rgba(224, 109, 130, 0.1);
+}
+
+.field-error-text {
+    font-size: 12px;
+    color: #d9534f;
+    margin-top: 4px;
+    display: none;
 }
 
 .checkbox-group label {
@@ -109,7 +123,7 @@ body {
     height: 16px;
 }
 
-/* Danh sách phương thức thanh toán dạng card */
+/* Phương thức thanh toán */
 .payment-methods-list {
     display: flex;
     flex-direction: column;
@@ -158,11 +172,13 @@ body {
 
 .bank-info-box {
     margin-top: 12px;
-    padding: 14px;
-    background-color: #fce4e8;
+    padding: 14px 16px;
+    background-color: #fff5f7;
+    border: 1px dashed #e06d82;
     border-radius: 10px;
     font-size: 13.5px;
     color: #444;
+    line-height: 1.6;
 }
 
 .bank-note {
@@ -170,7 +186,7 @@ body {
     margin-top: 4px;
 }
 
-/* Phần mã giảm giá */
+/* Mã giảm giá */
 .voucher-input-group {
     display: flex;
     gap: 10px;
@@ -183,6 +199,11 @@ body {
     border-radius: 10px;
     font-size: 14px;
     outline: none;
+    transition: 0.2s;
+}
+
+.voucher-input-group input:focus {
+    border-color: #e06d82;
 }
 
 .voucher-input-group button {
@@ -201,7 +222,6 @@ body {
     background-color: #e06d82;
 }
 
-/* Style cho dòng thông báo mã giảm giá */
 .voucher-message {
     font-size: 13px;
     margin-top: 8px;
@@ -217,12 +237,12 @@ body {
     margin-bottom: 14px;
 }
 
-/* Danh sách sản phẩm trong giỏ ở cột phải */
+/* Giỏ hàng dạng danh sách tĩnh gọn gàng */
 .checkout-items-list {
     display: flex;
     flex-direction: column;
     gap: 14px;
-    max-height: 260px;
+    max-height: 280px;
     overflow-y: auto;
 }
 
@@ -295,7 +315,7 @@ body {
     font-size: 18px;
 }
 
-/* Thanh cố định ở đáy màn hình */
+/* Thanh cố định ở đáy */
 .checkout-bottom-bar {
     position: fixed;
     bottom: 0;
@@ -408,7 +428,9 @@ body {
     .checkout-container {
         grid-template-columns: 1fr;
     }
+    .form-row-2,
     .form-row-3 {
+        flex-direction: column;
         grid-template-columns: 1fr;
     }
     .bottom-bar-content {

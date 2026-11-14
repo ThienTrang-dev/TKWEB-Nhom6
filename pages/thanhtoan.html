@@ -7,56 +7,60 @@
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/thanhtoan.css">
     <link rel="stylesheet" href="../assets/css/main.css/style.css">
+
 </head>
 <body>
 
-   <!-- Header dùng chung của nhóm -->
-    <div id="site-header"></div>
-    <!-- PHẦN NỘI DUNG CHÍNH (LAYOUT 2 CỘT GIỐNG COOLMATE) -->
     <main class="checkout-wrapper">
         <div class="checkout-container">
             
-            <!-- CỘT TRÁI: THÔNG TIN CỦA BẠN & PHƯƠNG THỨC THANH TOÁN -->
+            <!-- CỘT TRÁI: THÔNG TIN & THANH TOÁN -->
             <div class="checkout-left">
                 
-                <!-- Box 1: Thông tin của bạn -->
                 <div class="checkout-box">
                     <h2 class="checkout-heading">Thông tin của bạn</h2>
                     <form id="checkoutForm" class="checkout-form">
                         
                         <div class="form-row-title">
-                            <span>Đã có tài khoản? <a href="#" class="text-pink">Đăng nhập</a></span>
+                            <span>Đã có tài khoản? <a href="form.html" class="text-pink">Đăng nhập</a></span>
                         </div>
 
                         <div class="form-row-2">
-                            <div class="form-group">
-                                <select id="titleName" class="form-control-select">
-                                    <option value="Anh/Chị">Anh/Chị</option>
-                                    <option value="Bạn">Bạn</option>
-                                    <option value="Anh">Anh</option>
-                                    <option value="Chị">Chị</option>
-                                </select>
+                            <div class="form-group flex-grow">
+                                <input type="text" id="fullname" placeholder="Họ và tên của bạn" required>
+                                <div id="fullnameError" class="field-error-text"></div>
                             </div>
                             <div class="form-group flex-grow">
-                                <input type="text" id="fullname" placeholder="Nhập họ tên của bạn" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="tel" id="phone" placeholder="Nhập số điện thoại" required>
+                                <input type="tel" id="phone" placeholder="Số điện thoại" required>
+                                <div id="phoneError" class="field-error-text"></div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Nhập email của bạn (để nhận hóa đơn)">
+                            <input type="email" id="email" placeholder="Email của bạn (để nhận hóa đơn)">
+                            <div id="emailError" class="field-error-text"></div>
                         </div>
 
-                        <div class="form-group">
-                            <input type="text" id="address" placeholder="Nhập địa chỉ nhận hàng chi tiết" required>
+                        <!-- Dòng thông báo chọn địa chỉ cũ (khi chưa sáp nhập) -->
+                        <div class="form-row-title" style="margin-bottom: 6px; color: #777; font-size: 13px;">
+                            <span><em>* Chọn địa chỉ cũ (khi chưa sáp nhập)</em></span>
                         </div>
 
+                        <!-- 3 danh sách Tỉnh/Thành, Quận/Huyện, Phường/Xã tự động 63 tỉnh -->
                         <div class="form-row-3">
-                            <input type="text" placeholder="Chọn tỉnh/thành phố">
-                            <input type="text" placeholder="Chọn quận/huyện">
-                            <input type="text" placeholder="Chọn phường/xã">
+                            <select id="citySelect" class="form-control-select" required>
+                                <option value="">Chọn tỉnh/thành phố</option>
+                            </select>
+                            <select id="districtSelect" class="form-control-select" required>
+                                <option value="">Chọn quận/huyện</option>
+                            </select>
+                            <select id="wardSelect" class="form-control-select" required>
+                                <option value="">Chọn phường/xã</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" id="address" placeholder="Địa chỉ nhận hàng chi tiết (Số nhà, tên đường...)" required>
                         </div>
 
                         <div class="form-group checkbox-group" style="margin-top: 15px;">
@@ -67,7 +71,7 @@
                     </form>
                 </div>
 
-                <!-- Box 2: Phương thức thanh toán -->
+                <!-- Phương thức thanh toán -->
                 <div class="checkout-box" style="margin-top: 24px;">
                     <h2 class="checkout-heading">Phương thức thanh toán</h2>
                     
@@ -75,43 +79,20 @@
                         <label class="payment-item">
                             <input type="radio" name="payment" value="cod" checked>
                             <div class="payment-content">
-                                <span class="payment-name">Thanh toán khi nhận hàng</span>
+                                <span class="payment-name">Thanh toán khi nhận hàng (COD)</span>
+                                <span class="payment-sub">Thanh toán bằng tiền mặt khi nhận hàng</span>
                             </div>
                         </label>
 
                         <label class="payment-item">
-                            <input type="radio" name="payment" value="momo">
+                            <input type="radio" name="payment" value="qr">
                             <div class="payment-content">
-                                <span class="payment-name">Ví MoMo</span>
-                            </div>
-                        </label>
-
-                        <label class="payment-item">
-                            <input type="radio" name="payment" value="zalopay">
-                            <div class="payment-content">
-                                <span class="payment-name">Thanh toán qua Zalopay</span>
-                                <span class="payment-sub">Hỗ trợ mọi hình thức thanh toán (Visa, Napas, Mastercard...)</span>
-                            </div>
-                        </label>
-
-                        <label class="payment-item">
-                            <input type="radio" name="payment" value="shopeepay">
-                            <div class="payment-content">
-                                <span class="payment-name">Ví ShopeePay / SPayLater</span>
-                                <span class="payment-sub">Giảm ngay cho đơn hàng từ các đối tác</span>
-                            </div>
-                        </label>
-
-                        <label class="payment-item">
-                            <input type="radio" name="payment" value="vnpay">
-                            <div class="payment-content">
-                                <span class="payment-name">Ví điện tử VNPAY</span>
-                                <span class="payment-sub">Quét mã QR để thanh toán an toàn</span>
+                                <span class="payment-name">Thanh toán qua mã QR chuyển khoản</span>
+                                <span class="payment-sub">Quét mã QR qua ứng dụng ngân hàng</span>
                             </div>
                         </label>
                     </div>
 
-                    <!-- Box thông tin chuyển khoản ngân hàng nếu cần -->
                     <div id="bankInfoBox" class="bank-info-box" style="display: none;">
                         <p><strong>Ngân hàng:</strong> MB Bank (Quân Đội)</p>
                         <p><strong>Số tài khoản:</strong> 0817923001</p>
@@ -122,34 +103,27 @@
 
             </div>
 
-            <!-- CỘT PHẢI: MÃ GIẢM GIÁ, GIỎ HÀNG & TÓM TẮT ĐƠN HÀNG -->
+            <!-- CỘT PHẢI: MÃ GIẢM GIÁ, GIỎ HÀNG & TÓM TẮT -->
             <div class="checkout-right">
                 
-                <!-- Box Mã giảm giá -->
                 <div class="checkout-box" style="margin-bottom: 24px;">
                     <h2 class="checkout-heading">Mã giảm giá</h2>
                     <div class="voucher-input-group">
-                        <input type="text" id="voucherInput" placeholder="Nhập mã giảm giá (VD: NETTO10)">
+                        <input type="text" id="voucherInput" placeholder="Nhập mã (GIAM20%, FREESHIP, CHAOBANMOI)">
                         <button type="button" id="applyVoucherBtn">ÁP DỤNG</button>
                     </div>
-                    <!-- Thêm dòng này để hiện thông báo -->
-                      <div id="voucherMessage" class="voucher-message"></div>
+                    <div id="voucherMessage" class="voucher-message"></div>
                 </div>
 
-                <!-- Box Giỏ hàng của bạn -->
                 <div class="checkout-box" style="margin-bottom: 24px;">
                     <h2 class="checkout-heading">Giỏ hàng</h2>
                     <div class="promo-alert">
                         <span>⚡ Yên tâm 60 ngày đổi trả - Freeship đơn từ 200k</span>
                     </div>
                     
-                    <!-- Sản phẩm render động từ nettoCart -->
-                    <div id="checkoutItemsList" class="checkout-items-list">
-                        <!-- Dữ liệu JS sẽ điền vào đây -->
-                    </div>
+                    <div id="checkoutItemsList" class="checkout-items-list"></div>
                 </div>
 
-                <!-- Box Tóm tắt đơn hàng -->
                 <div class="checkout-box">
                     <h2 class="checkout-heading">Tóm tắt đơn hàng</h2>
                     
@@ -178,15 +152,13 @@
 
         </div>
     </main>
-    
-    
 
-    <!-- THANH CỐ ĐỊNH Ở DƯỚI CÙNG (GIỐNG COOLMATE) -->
+    <!-- THANH CỐ ĐỊNH Ở DƯỚI -->
     <div class="checkout-bottom-bar">
         <div class="bottom-bar-content">
             <div class="bottom-price-info">
                 <span id="barTotalPrice" class="final-highlight-price">30.000đ</span>
-                <span class="saving-text">Tiết kiệm 0đ</span>
+                <span id="barSavingText" class="saving-text">Tiết kiệm 0đ</span>
             </div>
             <button type="submit" form="checkoutForm" class="btn-place-order-coolmate">ĐẶT HÀNG</button>
         </div>
@@ -201,11 +173,12 @@
             <button id="finishOrderBtn" class="btn-finish">Về trang chủ</button>
         </div>
     </div>
- <!-- Footer dùng chung của nhóm -->
+    <!-- Header dùng chung của nhóm -->
+    <div id="site-header"></div>
+    <!-- Footer dùng chung của nhóm -->
     <div id="site-footer"></div>
 
     <script src="../assets/js/thanhtoan.js"></script>
-
      <!-- JavaScript điều hướng chung -->
     <script src="../assets/js/layout.js"></script>
     <script src="../assets/js/main.js"></script>
