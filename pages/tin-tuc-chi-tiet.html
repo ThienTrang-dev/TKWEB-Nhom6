@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiết bài viết - NETTO Clothes</title>
 
+  <link rel="stylesheet" href="../assets/css/main.css/style.css">
+  <link rel="stylesheet" href="../assets/css/main.css/giohang.css">
+
+  <style>
+    .article-page {
+      max-width: 900px;
+      margin: 32px auto 60px;
+      padding: 0 20px;
+    }
+
+    .article-back {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #e86c8d;
+      font-weight: 600;
+    }
+
+    .article-card {
+      padding: 32px;
+      background: #fff;
+      border: 1px solid #f0e4e6;
+      border-radius: 14px;
+    }
+
+    .article-meta {
+      margin: 12px 0 20px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .article-image {
+      display: block;
+      width: 100%;
+      max-height: 480px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 24px;
+    }
+
+    .article-body p {
+      margin: 0 0 16px;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    @media (max-width: 600px) {
+      .article-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="article-page">
+    <a class="article-back" href="tin-tuc.html">← Quay lại tin tức</a>
+
+    <article class="article-card">
+      <h1 id="article-title">Đang tải bài viết...</h1>
+      <p class="article-meta" id="article-meta"></p>
+      <img class="article-image" id="article-image" src="" alt="">
+      <div class="article-body" id="article-body"></div>
+    </article>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../assets/js/layout.js"></script>
+  <script src="../assets/js/giohang.js"></script>
+  <script src="../assets/js/tin-tuc-chi-tiet.js"></script>
+</body>
+</html>
