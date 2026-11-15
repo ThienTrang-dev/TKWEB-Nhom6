@@ -77,6 +77,7 @@
     .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
     .close:hover, .close:focus { color: black; text-decoration: none; }
     .modal-body p { margin-bottom: 10px; font-size: 15px; }
+    .modal-vip-image { display: block; width: 100%; max-width: 360px; height: 150px; object-fit: contain; margin: 0 auto 14px; border-radius: 8px; }
 
     /* ==================== 5. MÃ KHUYẾN MÃI (VOUCHER TICKET - ÉP GIẢM CHIỀU CAO TỐI ĐA) ==================== */
     /* Giữ nguyên grid 3 cột để bề rộng không bị thu nhỏ */
@@ -145,7 +146,7 @@
               <li><strong>Hình thức:</strong> Giảm giá <strong> trực tiếp.</strong>.</li>
               <li><strong>Trạng thái:</strong> <span class="text-success">Đang áp dụng</span></li>
             </ul>
-            <button class="btn-explore" onclick="openModal('modal-combo')">Xem danh mục Combo →</button>
+           <button type="button" class="btn-explore" onclick="openModal('modal-combo')">Xem danh mục Combo →</button>
           </div>
         </article>
 
@@ -164,7 +165,7 @@
               <li><strong>Hình thức:</strong> Tự động giảm giá khi đăng nhập tài khoản.</li>
               <li><strong>Trạng thái:</strong> <span class="text-success">Đang áp dụng</span></li>
             </ul>
-            <button class="btn-explore" onclick="openModal('modal-vip')">Xem chi tiết hạng thẻ →</button>
+           <button type="button" class="btn-explore" onclick="openModal('modal-vip')">Xem chi tiết hạng thẻ →</button>
           </div>
         </article>
         <article class="campaign-card"><img src="https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mme6amwa1vk2b7" alt="Quà tặng sản phẩm hot" class="campaign-image">
@@ -180,17 +181,34 @@
               <li><strong>Lưu ý:</strong> Chỉ <strong> sản phẩm hot</strong>.</li>
               <li><strong>Trạng thái:</strong> <span class="text-success">Đang áp dụng</span></li>
             </ul>
-            <button class="btn-explore" onclick="openModal('modal-gift')">Khám phá Sản phẩm Hot →</button>
+            <button type="button" class="btn-explore" onclick="openModal('modal-gift')">Khám phá Sản phẩm Hot →</button>
           </div>
         </article>
       </div>
     </section>
 
     <!-- MODAL -->
-    <div id="modal-combo" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal-combo')">×</span><h2 style="margin-bottom: 15px; color: var(--netto-accent)">Thông tin COMBO BẠN THÂN</h2><div class="modal-body"><p>Khám phá bộ sưu tập đồ đôi lý tưởng dành cho bạn và cô bạn thân.</p><p><strong>Điều kiện áp dụng:</strong> Mua từ 2 sản phẩm trở lên.</p><div style="text-align: center; margin-top: 20px;"><a href="#" style="display: inline-block; padding: 10px 20px; background: var(--netto-black); color: white; border-radius: 5px;">Đi tới trang mua sắm</a></div></div></div></div>
+    <div id="modal-combo" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal-combo')">×</span><alt="Combo Bạn Thân" class="campaign-image"><h2 style="margin-bottom: 15px; color: var(--netto-accent)">Thông tin COMBO BẠN THÂN</h2><div class="modal-body"><p>Khám phá bộ sưu tập đồ đôi lý tưởng dành cho bạn và cô bạn thân.</p><p><strong>Điều kiện áp dụng:</strong> Mua từ 2 sản phẩm trở lên.</p><div style="text-align: center; margin-top: 20px;"><a href="sanpham.html?loai=quan-dai&q=kaki" style="display: inline-block; padding: 10px 20px; background: var(--netto-black); color: white; border-radius: 5px;">Đi tới trang mua sắm</a></div></div></div></div>
     <div id="modal-winter" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal-winter')">×</span><h2 style="margin-bottom: 15px; color: var(--netto-accent)">Thông tin HÈ RỰC RỠ - ĐÔNG GIÁ SỐC</h2><div class="modal-body"><p>Sở hữu các thiết kế Thu - Đông với mức giá không tưởng.</p><p><strong>Sản phẩm:</strong> Áo khoác cardigan, áo len cổ lọ.</p><div style="text-align: center; margin-top: 20px;"><a href="#" style="display: inline-block; padding: 10px 20px; background: var(--netto-black); color: white; border-radius: 5px;">Mua ngay</a></div></div></div></div>
-    <div id="modal-gift" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal-gift')">×</span><h2 style="margin-bottom: 15px; color: var(--netto-accent)">Thông tin QUÀ TẶNG SẢN PHẨM HOT</h2><div class="modal-body"><p>Quà tặng độc quyền cho khách hàng nhanh tay.</p><p><strong>Quà tặng:</strong> Kẹp tóc đính đá.</p><div style="text-align: center; margin-top: 20px;"><a href="#" style="display: inline-block; padding: 10px 20px; background: var(--netto-black); color: white; border-radius: 5px;">Xem sản phẩm Hot</a></div></div></div></div>
-
+    <div id="modal-gift" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal-gift')">×</span><h2 style="margin-bottom: 15px; color: var(--netto-accent)">Thông tin QUÀ TẶNG SẢN PHẨM HOT</h2><div class="modal-body"><p>Quà tặng độc quyền cho khách hàng nhanh tay.</p><p><strong>Quà tặng:</strong> Kẹp tóc đính đá.</p><div style="text-align: center; margin-top: 20px;"><a href="../index.html#san-pham-noi-bat" style="display: inline-block; padding: 10px 20px; background: var(--netto-black); color: white; border-radius: 5px;">Đi tới sản phẩm Hot</a></div></div></div></div>
+<div id="modal-vip" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-vip')">×</span>
+    <img class="modal-vip-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXVQXfFEf5DjERPMy84yCRnrnwQCeIY3mu2gEQvB-Qc0e9WA1pzxLaT2c&s=10" alt="Đặc quyền thành viên">
+    <h2>
+      CHI TIẾT HẠNG THẺ</h2>
+    <div class="modal-body">
+      <p><strong>Hạng Đồng:</strong> Giảm 3% cho đơn hàng.</p>
+      <p><strong>Hạng Bạc:</strong> Giảm 5% cho đơn hàng.</p>
+      <p>Ưu đãi được áp dụng tự động khi đăng nhập.</p>
+      <div style="text-align: center; margin-top: 20px;">
+  <a href="sanpham.html" style="display: inline-block; padding: 10px 20px; background: var(--netto-black); color: white; border-radius: 5px;">
+    Đi tới trang mua sắm
+  </a>
+</div>
+    </div>
+  </div>
+</div>
     <!-- MÃ KHUYẾN MÃI (ÉP DẸT CHIỀU CAO) -->
     <section id="section-voucher" class="promo-section" data-category="voucher">
       <div class="section-header"><div><h2>2. Mã Khuyến Mãi (Voucher / Coupon)</h2><p class="section-desc">Sao chép mã bên dưới và dán vào ô "Mã giảm giá" tại bước Thanh toán.</p></div><span class="status-pill">● Có thể cộng dồn Freeship</span></div>
@@ -215,6 +233,7 @@
         <article class="voucher-ticket">
           <div class="voucher-stub newfriend"><span class="stub-type">BẠN MỚI</span><strong class="stub-value">50K</strong><span class="stub-max">Mọi đơn</span></div>
           <div class="voucher-body">
+
             <div class="voucher-info"><h3>FREESHIP BẠN MỚI</h3><p>Trợ ship 50K cho đơn hàng đầu tiên.</p><ul class="voucher-meta"><li>• Áp dụng cùng ưu đãi khác</li><li>• Đang áp dụng</li></ul></div>
             <div class="voucher-action"><div class="code-wrapper"><span>Mã:</span> <strong class="voucher-code">CHAOBANMOI</strong></div><button type="button" class="btn-copy" data-code="CHAOBANMOI">Copy mã</button></div>
           </div>
