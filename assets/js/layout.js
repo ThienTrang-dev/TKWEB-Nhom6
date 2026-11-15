@@ -18,7 +18,7 @@
 
   const SOCIAL = {
     tiktok: "https://www.tiktok.com/@nettoclothings",
-    facebook: "https://www.facebook.com/aeonmallhalong.14quangninh",
+    facebook: "https://www.facebook.com/share/19o8LaZC9B/?mibextid=wwXIfr",
   };
   const header = `
 <header class="site-header">
@@ -102,9 +102,12 @@
            data-page="chinh-sach.html">Chính sách ▾</a>
 
         <ul class="dropdown">
-          <li><a href="${root}pages/chinh-sach.html#doi-tra">Đổi trả</a></li>
-          <li><a href="${root}pages/chinh-sach.html#van-chuyen">Vận chuyển</a></li>
+          <li><a href="${root}pages/chinh-sach.html#dang-ky">Đăng ký & Sử dụng </a></li>
+          <li><a href="${root}pages/chinh-sach.html#thanh-vien">Thành viên</a></li>
+          <li><a href="${root}pages/chinh-sach.html#doi-tra">Đổi trả & Hoàn tiền</a></li>
           <li><a href="${root}pages/chinh-sach.html#bao-mat">Bảo mật</a></li>
+          <li><a href="${root}pages/chinh-sach.html#thanh-toan">Thanh toán</a></li>
+          <li><a href="${root}pages/chinh-sach.html#van-chuyen">Vận chuyển</a></li>
         </ul>
       </li>
 
@@ -146,7 +149,7 @@
         <li>
           <span class="contact-icon">
             <svg viewBox="0 0 24 24" width="14" height="14">
-              <path fill="#fff" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m1 10.59V6h-2v8l6.11 3.65 1-1.63z"/>
+              <path fill="#fff" fill-rule="evenodd" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m1 10.59V6h-2v8l6.11 3.65 1-1.63z"/>
             </svg>
           </span>
           <span>Giờ làm việc: Từ 9:00 đến 22:00 các ngày trong tuần từ Thứ 2 đến Chủ nhật</span>
@@ -165,7 +168,7 @@
             <div class="social-icons">
         <a href="${SOCIAL.tiktok}" class="social-tiktok"
        target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-        <img src="https://cdn.simpleicons.org/tiktok/FFFFFF" alt="TikTok">
+        <svg viewBox="0 0 24 24" width="18" height="18" role="img" aria-label="TikTok"><path fill="#fff" d="M19.6 6.7a5 5 0 0 1-3-1 5 5 0 0 1-1.9-3.3h-3.3v12.9a2.7 2.7 0 1 1-1.9-2.6V9.4a6 6 0 1 0 5.2 6V9a8.3 8.3 0 0 0 4.9 1.6z"/></svg>
     </a>
 
         <a href="${SOCIAL.facebook}" class="social-fb" target="_blank" rel="noopener noreferrer" aria-label="Facebook">

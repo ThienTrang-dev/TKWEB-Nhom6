@@ -25,10 +25,17 @@
         &#10094;
       </button>
 
-      <div class="hero-track">
-        <!-- NOTE: mỗi .hero-slide là 1 ảnh banner. Xem cuối file để biết cách thay ảnh -->
-        <div class="hero-slide active">
-          <img src="assets/images/banner-1.png" alt="NETTO look mới 1" />
+        <div class="hero-track">
+            <!-- Mỗi .hero-slide là 1 ảnh banner -->
+            <div class="hero-slide active">
+                <img src="assets/images/banner-1.png" alt="NETTO look mới 1">
+            </div>
+            <div class="hero-slide">
+                <img src="assets/images/banner-2.png" alt="NETTO look mới 2" loading="lazy">
+            </div>
+            <div class="hero-slide">
+                <img src="assets/images/banner-3.png" alt="NETTO look mới 3" loading="lazy">
+            </div>
         </div>
         <div class="hero-slide">
           <img src="assets/images/banner-2.png" alt="NETTO look mới 2" />
@@ -53,62 +60,245 @@
       </div>
     </section>
 
+    <!-- ============ DẢI ƯU ĐIỂM ============ -->
+    <section class="usp-strip reveal">
+        <div class="usp-item">
+            <span class="usp-icon" aria-hidden="true">🚚</span>
+            <div><strong>Giao hàng toàn quốc</strong><span>Nhận hàng trong 4 – 7 ngày</span></div>
+        </div>
+        <div class="usp-item">
+            <span class="usp-icon" aria-hidden="true">↺</span>
+            <div><strong>Đổi trả trong 7 ngày</strong><span>Kể từ ngày nhận hàng</span></div>
+        </div>
+        <div class="usp-item">
+            <span class="usp-icon" aria-hidden="true">🎁</span>
+            <div><strong>Ưu đãi thành viên</strong><span>Giảm đến 5% mỗi đơn hàng</span></div>
+        </div>
+        <div class="usp-item">
+            <span class="usp-icon" aria-hidden="true">♡</span>
+            <div><strong>Vòng Tay Ấm</strong><span>10.000đ mỗi đơn gửi trẻ em vùng cao</span></div>
+        </div>
+    </section>
+
+    <!-- ============ BỘ SƯU TẬP ============ -->
+    <section class="bst reveal" data-k="0" aria-label="Bộ sưu tập">
+        <div class="bst-head">
+            <span class="bst-label">Lookbook</span>
+            <h2 class="bst-title">Bộ sưu tập</h2>
+            <p class="bst-sub">Gợi ý phối đồ theo mood – chọn nhanh set yêu thích</p>
+        </div>
+        <div class="bst-in">
+            <div class="bst-stage"></div>
+            <div class="bst-side">
+                <div class="bst-tabs" role="tablist" aria-label="Chọn bộ sưu tập"></div>
+                <div class="bst-side-body"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ MUA SẮM THEO DANH MỤC ============ -->
+    <section class="dm reveal" aria-label="Mua sắm theo danh mục">
+        <div class="dm-head">
+            <span class="dm-label">Danh mục</span>
+            <h2 class="dm-title">Mua sắm theo danh mục</h2>
+            <p class="dm-sub">Chọn nhanh món bạn đang tìm, từ áo len mềm đến chân váy xếp ly</p>
+        </div>
+        <div class="dm-strip">
+            <a class="dm-p" data-loai="ao-ngan-tay" href="pages/sanpham.html?loai=ao-ngan-tay">
+                <img class="dm-img" src="assets/images/ao-ngan-tay/6.jpg" alt="Áo ngắn tay" loading="lazy">
+                <span class="dm-body">
+                    <span class="cat-count"></span>
+                    <span class="dm-name">Áo ngắn tay</span>
+                    <span class="dm-line">Áo len, babydoll, crop nhẹ nhàng</span>
+                    <span class="dm-go">Xem tất cả</span>
+                </span>
+            </a>
+            <a class="dm-p" data-loai="ao-dai-tay" href="pages/sanpham.html?loai=ao-dai-tay">
+                <img class="dm-img" src="assets/images/ao-dai-tay/45.jpg" alt="Áo dài tay" loading="lazy">
+                <span class="dm-body">
+                    <span class="cat-count"></span>
+                    <span class="dm-name">Áo dài tay</span>
+                    <span class="dm-line">Cardigan và áo khoác len mềm</span>
+                    <span class="dm-go">Xem tất cả</span>
+                </span>
+            </a>
+            <a class="dm-p" data-loai="vay" href="pages/sanpham.html?loai=vay">
+                <img class="dm-img" src="assets/images/vay/68.jpg" alt="Váy" loading="lazy">
+                <span class="dm-body">
+                    <span class="cat-count"></span>
+                    <span class="dm-name">Váy</span>
+                    <span class="dm-line">Chân váy xếp ly, tweed, cạp thấp</span>
+                    <span class="dm-go">Xem tất cả</span>
+                </span>
+            </a>
+            <a class="dm-p" data-loai="quan-ngan" href="pages/sanpham.html?loai=quan-ngan">
+                <img class="dm-img" src="assets/images/quan-ngan/84.jpg" alt="Quần ngắn" loading="lazy">
+                <span class="dm-body">
+                    <span class="cat-count"></span>
+                    <span class="dm-name">Quần ngắn</span>
+                    <span class="dm-line">Short cạp cao, dáng xếp ly</span>
+                    <span class="dm-go">Xem tất cả</span>
+                </span>
+            </a>
+            <a class="dm-p" data-loai="quan-dai" href="pages/sanpham.html?loai=quan-dai">
+                <img class="dm-img" src="assets/images/quan-dai/139.jpg" alt="Quần dài" loading="lazy">
+                <span class="dm-body">
+                    <span class="cat-count"></span>
+                    <span class="dm-name">Quần dài</span>
+                    <span class="dm-line">Ống suông, cạp chun thoải mái</span>
+                    <span class="dm-go">Xem tất cả</span>
+                </span>
+            </a>
+        </div>
+    </section>
+
     <!-- Nút nổi bên trái -->
     <button class="float-member" type="button">🎁 Thành viên thân thiết</button>
 
     <!-- ============ SẢN PHẨM NỔI BẬT ============ -->
-    <section class="section featured-products">
-      <h2 class="section-title">Sản phẩm nổi bật</h2>
-      <p class="section-sub">Những mẫu đang được giảm giá</p>
+ <section id="san-pham-noi-bat" class="section featured-products reveal">
+        <h2 class="section-title">Sản phẩm nổi bật</h2>
+        <p class="section-sub">Những mẫu đang được giảm giá</p>
 
-      <div class="product-grid" id="product-grid-home">
-        <!-- JavaScript chọn ngẫu nhiên 4 sản phẩm đang giảm giá và tạo tại đây -->
-      </div>
+        <div class="feat-tabs" id="feat-tabs" role="tablist">
+            <button type="button" class="feat-tab active" data-nhom="tat-ca">Tất cả</button>
+            <button type="button" class="feat-tab" data-nhom="ao">Áo</button>
+            <button type="button" class="feat-tab" data-nhom="vay">Váy</button>
+            <button type="button" class="feat-tab" data-nhom="quan">Quần</button>
+        </div>
+
+        <div class="product-grid" id="product-grid-home">
+            <!-- JavaScript chọn ngẫu nhiên 4 sản phẩm đang giảm giá và tạo tại đây -->
+        </div>
 
       <a href="pages/sanpham.html?loai=noi-bat" class="btn-outline">
         Xem thêm sản phẩm nổi bật
       </a>
     </section>
 
+    <!-- ============ BANNER ƯU ĐÃI THÀNH VIÊN ============ -->
+    <section class="promo-band reveal">
+        <div class="promo-band-inner">
+            <div>
+                <p class="brand-eyebrow">Thành viên thân thiết</p>
+                <h2>Mua càng nhiều, ưu đãi càng lớn</h2>
+                <p>Đăng ký tài khoản để nhận giảm giá theo hạng thành viên: đến 3% cho hạng đầu và đến 5% cho hạng cao hơn trên mỗi đơn hàng.</p>
+            </div>
+            <div class="promo-band-cta">
+                <a href="pages/form.html" class="btn-solid btn-light">Đăng ký ngay</a>
+                <a href="pages/chinh-sach.html#thanh-vien" class="btn-ghost btn-ghost-light">Xem chính sách</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CÂU CHUYỆN THƯƠNG HIỆU ============ -->
+<section class="brand-story reveal">
+    <div class="brand-inner">
+        <div class="brand-text">
+            <p class="brand-eyebrow">Câu chuyện thương hiệu</p>
+            <h2>Nữ tính, dễ thương, hiện đại và dễ mặc mỗi ngày</h2>
+            <p>NETTO là thương hiệu thời trang nữ local brand Việt Nam, được thành lập bởi nhóm 5 thành viên: Quang Phong, Thiên Trang, Thu Trang, Bảo Ngọc và Đình Thịnh.</p>
+            <p>Câu chuyện bắt đầu từ một nhận xét chung: nhiều bạn gái khó chọn quần áo, món đẹp thì cầu kỳ khó phối, món dễ mặc thì lại đơn điệu. NETTO muốn tạo ra những thiết kế vừa nữ tính vừa thực tế, với form tôn dáng, chất liệu thoải mái, màu sắc dễ phối, để đi học, đi làm hay đi chơi đều tự tin.</p>
+            <a href="pages/gioithieu.html" class="btn-outline brand-link">Tìm hiểu thêm về NETTO</a>
+        </div>
+
+        <div class="brand-stats" id="brand-stats">
+            <div class="stat-card">
+                <strong data-stat="members">0</strong>
+                <span>thành viên sáng lập</span>
+            </div>
+            <div class="stat-card">
+                <strong data-stat="products">0</strong>
+                <span>mẫu sản phẩm</span>
+            </div>
+            <div class="stat-card">
+                <strong data-stat="categories">0</strong>
+                <span>nhóm danh mục</span>
+            </div>
+            <div class="stat-card">
+                <strong data-stat="sale">0</strong>
+                <span>mẫu đang giảm giá</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ TIN TỨC ============ -->
+<section class="section home-news reveal">
+    <h2 class="section-title">Tin tức từ NETTO</h2>
+    <p class="section-sub">Mẹo hay, hoạt động cộng đồng và sự kiện cửa hàng</p>
+
+    <div class="home-news-grid">
+        <a href="pages/tin-tuc.html" class="home-news-card">
+            <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=600&auto=format&fit=crop" alt="Mẹo chọn size quần áo" class="home-news-thumb" loading="lazy">
+            <div class="home-news-body">
+                <span class="home-news-tag">Mẹo hay &amp; Phối đồ</span>
+                <time>25/05/2026</time>
+                <h3>Bí quyết chọn size quần áo chuẩn xác tại nhà, không sợ chật rộng</h3>
+                <p>Mua sắm online nhưng vẫn muốn vừa vặn như đo thợ may? Khám phá bảng quy đổi S - M - L và mẹo tự đo vòng eo, ngực ngay tại nhà.</p>
+                <span class="home-news-more">Xem thêm →</span>
+            </div>
+        </a>
+
+        <a href="pages/tin-tuc.html" class="home-news-card">
+            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=600&auto=format&fit=crop" alt="Hành trình Vòng Tay Ấm" class="home-news-thumb" loading="lazy">
+            <div class="home-news-body">
+                <span class="home-news-tag">Hoạt động thiện nguyện</span>
+                <time>22/05/2026</time>
+                <h3>Hành trình "Vòng Tay Ấm": khi thời trang kết nối những nhịp đập tử tế</h3>
+                <p>Mỗi đơn hàng đặt thành công trên website, NETTO trích 10.000 VNĐ vào quỹ phúc lợi và gửi tặng áo ấm cho trẻ em vùng cao.</p>
+                <span class="home-news-more">Xem thêm →</span>
+            </div>
+        </a>
+
+        <a href="pages/tin-tuc.html" class="home-news-card">
+            <img src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?q=80&w=600&auto=format&fit=crop" alt="Showroom NETTO" class="home-news-thumb" loading="lazy">
+            <div class="home-news-body">
+                <span class="home-news-tag">Sự kiện cửa hàng</span>
+                <time>12/05/2026</time>
+                <h3>Ghé thăm showroom NETTO tại 12 Chùa Bộc: trải nghiệm thử đồ miễn phí</h3>
+                <p>Không gian tông hồng pastel ngọt ngào đã sẵn sàng đón bạn: thử đồ trực tiếp, nhận quà tặng độc quyền và check-in cực xịn.</p>
+                <span class="home-news-more">Xem thêm →</span>
+            </div>
+        </a>
+    </div>
+
+    <a href="pages/tin-tuc.html" class="btn-outline">Xem tất cả tin tức</a>
+</section>
+
     <!-- ============ ĐÁNH GIÁ SẢN PHẨM ============ -->
-    <section class="section reviews">
-      <h2 class="section-title">Khách hàng nói gì về NETTO</h2>
+    <section class="section reviews reveal">
+        <h2 class="section-title">Khách hàng nói gì về NETTO</h2>
 
-      <div class="review-grid" id="review-grid-home">
-        <!-- 3 đánh giá mẫu này chỉ hiện khi chưa có đánh giá 5 sao nào; main.js sẽ thay bằng đánh giá thật từ trang chi tiết sản phẩm -->
-        <article class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Vải mềm, form chuẩn, giao hàng nhanh. Mình sẽ ủng hộ shop dài dài.
-          </p>
-          <div class="review-author">
-            <img src="images/avatar-1.jpg" alt="Khách hàng 1" loading="lazy" />
-            <span>Minh Anh</span>
-          </div>
-        </article>
+        <div class="review-grid" id="review-grid-home">
+            <!-- 3 đánh giá mẫu này chỉ hiện khi chưa có đánh giá 5 sao nào; main.js sẽ thay bằng đánh giá thật từ trang chi tiết sản phẩm -->
+            <article class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Vải mềm, form chuẩn, giao hàng nhanh. Mình sẽ ủng hộ shop dài dài.</p>
+                <div class="review-author">
+                    <div class="review-avatar">M</div>
+                    <span>Minh Anh</span>
+                </div>
+            </article>
 
-        <article class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Đóng gói cẩn thận, chất lượng đúng như hình, giá hợp lý.
-          </p>
-          <div class="review-author">
-            <img src="images/avatar-2.jpg" alt="Khách hàng 2" loading="lazy" />
-            <span>Thu Trang</span>
-          </div>
-        </article>
+            <article class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">Đóng gói cẩn thận, chất lượng đúng như hình, giá hợp lý.</p>
+                <div class="review-author">
+                    <div class="review-avatar">T</div>
+                    <span>Thu Trang</span>
+                </div>
+            </article>
 
-        <article class="review-card">
-          <div class="review-stars">★★★★☆</div>
-          <p class="review-text">
-            Áo lên form đẹp, tư vấn size nhiệt tình, sẽ quay lại mua thêm.
-          </p>
-          <div class="review-author">
-            <img src="images/avatar-3.jpg" alt="Khách hàng 3" loading="lazy" />
-            <span>Bảo Ngọc</span>
-          </div>
-        </article>
-      </div>
+            <article class="review-card">
+                <div class="review-stars">★★★★☆</div>
+                <p class="review-text">Áo lên form đẹp, tư vấn size nhiệt tình, sẽ quay lại mua thêm.</p>
+                <div class="review-author">
+                    <div class="review-avatar">B</div>
+                    <span>Bảo Ngọc</span>
+                </div>
+            </article>
+        </div>
 
       <button type="button" class="btn-outline" id="review-more" hidden>
         Xem thêm nhận xét

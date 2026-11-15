@@ -147,7 +147,18 @@ document.addEventListener('DOMContentLoaded', function () {
           noiBat[j] = tam;
         }
 
-        noiBat.slice(0, 4).forEach(function (sp) {
+        // Nhóm cho các tab lọc (khớp với sanpham.js)
+        const NHOM_TC = {
+          ao: ['ao-dai-tay', 'ao-ngan-tay'],
+          quan: ['quan-dai', 'quan-ngan'],
+          vay: ['vay']
+        };
+
+        const veLuoi = function (nhom) {
+          productGridHome.innerHTML = '';
+          noiBat.filter(function (sp) {
+            return nhom === 'tat-ca' || NHOM_TC[nhom].indexOf(sp.loai) >= 0;
+          }).slice(0, 8).forEach(function (sp) {
           const card = document.createElement('article');
           card.className = 'product-card';
 
@@ -190,6 +201,18 @@ document.addEventListener('DOMContentLoaded', function () {
           link.appendChild(price);
           card.appendChild(link);
           productGridHome.appendChild(card);
+          });
+        };
+
+        veLuoi('tat-ca');
+
+        const tabs = document.querySelectorAll('#feat-tabs .feat-tab');
+        tabs.forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            tabs.forEach(function (t) { t.classList.remove('active'); });
+            tab.classList.add('active');
+            veLuoi(tab.getAttribute('data-nhom'));
+          });
         });
       })
       .catch(function (e) {
@@ -339,5 +362,192 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
   }
+  /* ============ SỐ LIỆU THƯƠNG HIỆU ============ */
+  // Lấy số thật từ products.json: tổng mẫu, số danh mục, số mẫu đang giảm giá
+  const thongKe = document.getElementById('brand-stats');
 
+  if (thongKe) {
+    const soGiaTK = function (g) {
+      const n = String(g || '').replace(/\D/g, '');
+      return n ? Number(n) : null;
+    };
+
+    const demLen = function (el, dich) {
+      const batDau = performance.now();
+      const thoiGian = 1200;
+      const buoc = function (bay) {
+        const t = Math.min((bay - batDau) / thoiGian, 1);
+        el.textContent = Math.round(dich * (1 - Math.pow(1 - t, 3)));
+        if (t < 1) requestAnimationFrame(buoc);
+      };
+      requestAnimationFrame(buoc);
+    };
+
+    fetch('assets/data/products.json')
+      .then(function (res) { return res.ok ? res.json() : []; })
+      .catch(function () { return []; })
+      .then(function (ds) {
+        if (!ds.length) {
+          thongKe.hidden = true;
+          return;
+        }
+
+        const giaTri = {
+          members: 5,
+          products: ds.length,
+          categories: new Set(ds.map(function (sp) { return sp.loai; })).size,
+          sale: ds.filter(function (sp) {
+            const g = soGiaTK(sp.gia);
+            const c = soGiaTK(sp.giaCu);
+            return g !== null && c !== null && c > g;
+          }).length
+        };
+
+        const chay = function () {
+          thongKe.querySelectorAll('[data-stat]').forEach(function (el) {
+            demLen(el, giaTri[el.getAttribute('data-stat')] || 0);
+          });
+        };
+
+        // Chỉ đếm khi người dùng cuộn tới khối này
+        if ('IntersectionObserver' in window) {
+          const quanSat = new IntersectionObserver(function (mucTieu) {
+            if (mucTieu[0].isIntersecting) {
+              chay();
+              quanSat.disconnect();
+            }
+          }, { threshold: 0.4 });
+          quanSat.observe(thongKe);
+        } else {
+          chay();
+        }
+      });
+  }
 });
+
+/* ============ TRANG CHỦ: hiện dần khi cuộn + căn lề header ============ */
+/* Hiệu ứng hiện dần khi cuộn tới từng khối ở trang chủ */
+(function () {
+  var cacKhoi = document.querySelectorAll('.reveal');
+  if (!cacKhoi.length) return;
+
+  var giamChuyenDong = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!('IntersectionObserver' in window) || giamChuyenDong) {
+    cacKhoi.forEach(function (k) { k.classList.add('in'); });
+    return;
+  }
+
+  document.documentElement.classList.add('js-reveal');
+  var quanSat = new IntersectionObserver(function (ds) {
+    ds.forEach(function (d) {
+      if (d.isIntersecting) {
+        d.target.classList.add('in');
+        quanSat.unobserve(d.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  cacKhoi.forEach(function (k) { quanSat.observe(k); });
+})();
+
+/* Header là position:fixed và cao hơn 120px trên điện thoại/máy tính bảng
+   (menu xuống dòng) nên đè lên banner. Cho body chừa đúng chiều cao header. */
+(function () {
+  function canhLe() {
+    var h = document.querySelector('.site-header');
+    if (h && document.querySelector('.hero-s1')) document.body.style.paddingTop = Math.ceil(h.getBoundingClientRect().height) + 'px';
+  }
+  window.addEventListener('load', canhLe);
+  window.addEventListener('resize', canhLe);
+  document.addEventListener('DOMContentLoaded', canhLe);
+  if ('ResizeObserver' in window) {
+    var xem = new ResizeObserver(canhLe);
+    var timHeader = setInterval(function () {
+      var h = document.querySelector('.site-header');
+      if (h) { xem.observe(h); canhLe(); clearInterval(timHeader); }
+    }, 100);
+    setTimeout(function () { clearInterval(timHeader); }, 3000);
+  }
+})();
+
+/* ============ TRANG CHỦ: số mẫu trên từng ô danh mục ============ */
+(function () {
+  var cacO = document.querySelectorAll('.dm-p[data-loai]');
+  if (!cacO.length) return;
+  fetch('assets/data/products.json')
+    .then(function (r) { return r.ok ? r.json() : []; })
+    .then(function (ds) {
+      cacO.forEach(function (o) {
+        var n = ds.filter(function (sp) { return sp.loai === o.getAttribute('data-loai'); }).length;
+        if (n) o.querySelector('.cat-count').textContent = n + ' mẫu';
+      });
+    })
+    .catch(function () {});
+})();
+
+/* ===== Bộ sưu tập + danh mục (trang chủ) ===== */
+// Bộ sưu tập (lookbook layout mới) + danh mục (overlay card)
+(function () {
+  var BST = [
+    { tab: "Dịu dàng", ten: "Dịu dàng trong từng nếp áo", loai: "ao-ngan-tay",
+      mota: "Áo, váy, quần form tôn dáng, chất vải mềm thoáng, dễ phối để đi học, đi làm hay đi chơi.",
+      sp: [[30, "Áo ngắn tay cổ sen xanh mint"], [69, "Chân váy xếp ly trắng"], [6, "Áo len ngắn tay xanh nhạt"]] },
+    { tab: "Sắc hồng pastel", ten: "Sắc hồng pastel cho ngày mới", loai: "ao-dai-tay",
+      mota: "Áo khoác len, quần short xếp ly và những gam màu nhẹ nhàng dành riêng cho bạn.",
+      sp: [[45, "Áo khoác len hồng"], [84, "Quần short hồng xếp ly"], [139, "Quần dài hồng rút nhún"]] },
+    { tab: "Tủ đồ đen", ten: "Một tủ đồ đen luôn đúng gu", loai: "ao-dai-tay",
+      mota: "Cardigan viền trắng kết hợp chân váy xếp ly: gọn gàng, nữ tính, mặc là đẹp.",
+      sp: [[40, "Cardigan đen viền trắng"], [75, "Chân váy tweed đen"], [18, "Áo len đen cổ bẻ"]] }
+  ];
+  function gia(g) { var n = String(g || "").replace(/\D/g, ""); return n ? n.replace(/\B(?=(\d{3})+(?!\d))/g, ".") + "đ" : ""; }
+
+  // ----- bộ sưu tập -----
+  var root = document.querySelector(".bst");
+  if (!root) return;
+  var stage = root.querySelector(".bst-stage"), body = root.querySelector(".bst-side-body"), tabs = root.querySelector(".bst-tabs");
+  var DATA = {}, cur = 0;
+  tabs.innerHTML = BST.map(function (b, i) {
+    return '<button type="button" class="bst-tab" role="tab" data-i="' + i + '">' + b.tab + "</button>";
+  }).join("");
+
+  var LOAI = { 30: "ao-ngan-tay", 69: "vay", 6: "ao-ngan-tay", 45: "ao-dai-tay", 84: "quan-ngan", 139: "quan-dai", 40: "ao-dai-tay", 75: "vay", 18: "ao-ngan-tay" };
+  function thongTin(id) { return DATA[id] || {}; }
+  function img(id) { return "assets/images/" + LOAI[id] + "/" + id + ".jpg"; }
+  function cu(id) { var t = thongTin(id); return gia(t.giaCu) && gia(t.giaCu) !== gia(t.gia) ? "<s>" + gia(t.giaCu) + "</s>" : ""; }
+
+  function ve(i) {
+    var b = BST[i];
+    root.dataset.k = i;
+    tabs.querySelectorAll(".bst-tab").forEach(function (t, k) { t.setAttribute("aria-selected", k === i); });
+    stage.innerHTML = b.sp.map(function (s, k) {
+      return '<a class="bst-plate p' + k + '" href="pages/chitietsanpham.html?id=' + s[0] + '"><span class="bst-ph"><img src="' + img(s[0]) +
+        '" alt="' + s[1] + '"></span><span class="bst-tag"><b>' + s[1] + "</b>" + gia(thongTin(s[0]).gia) + cu(s[0]) + "</span></a>";
+    }).join("");
+    body.innerHTML = "<h3>" + b.ten + '</h3><p class="bst-desc">' + b.mota + '</p><div class="bst-list">' +
+      b.sp.map(function (s) {
+        return '<a class="bst-row" href="pages/chitietsanpham.html?id=' + s[0] + '"><span class="bst-th"><img src="' + img(s[0]) +
+          '" alt=""></span><span class="bst-nm">' + s[1] + '</span><span class="bst-pr">' + gia(thongTin(s[0]).gia) + cu(s[0]) + "</span></a>";
+      }).join("") + "</div>";
+    var plates = stage.querySelectorAll(".bst-plate");
+    body.querySelectorAll(".bst-row").forEach(function (r, k) {
+      function dim(on) { plates.forEach(function (p, j) { p.classList.toggle("dim", on && j !== k); }); }
+      r.addEventListener("mouseenter", function () { dim(true); });
+      r.addEventListener("focus", function () { dim(true); });
+      r.addEventListener("mouseleave", function () { dim(false); });
+      r.addEventListener("blur", function () { dim(false); });
+    });
+  }
+  tabs.addEventListener("click", function (e) {
+    var t = e.target.closest(".bst-tab");
+    if (!t || +t.dataset.i === cur) return;
+    cur = +t.dataset.i;
+    root.classList.add("swap");
+    setTimeout(function () { ve(cur); root.classList.remove("swap"); }, 300);
+  });
+  fetch("assets/data/products.json").then(function (r) { return r.json(); })
+    .then(function (ds) { ds.forEach(function (p) { DATA[p.id] = p; }); })
+    .catch(function () {})
+    .then(function () { ve(0); });
+})();

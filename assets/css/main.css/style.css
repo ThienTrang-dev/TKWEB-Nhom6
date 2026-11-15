@@ -43,7 +43,7 @@ input {
 }
 
 .logo {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Times New Roman", serif;
   font-size: 28px;
   font-weight: 600;
   letter-spacing: 6px;
@@ -549,22 +549,45 @@ button.btn-outline {
   margin: 0 auto;
   padding: 56px 24px 40px;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 32px;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  column-gap: 40px;
+  row-gap: 32px;
+  align-items: start;
+}
+.footer-col {
+  min-width: 0;
 }
 .site-footer .logo {
   color: var(--white);
 }
 
+/* Logo và tiêu đề các cột cùng một hàng, cùng chiều cao -> danh sách bên dưới thẳng hàng */
+.footer-brand .logo,
+.footer-col h4 {
+  display: block;
+  height: 28px;
+  line-height: 28px;
+  margin: 0 0 20px;
+}
+.footer-brand .logo {
+  font-size: 28px;
+}
 .footer-col h4 {
   color: var(--white);
   font-size: 15px;
   font-weight: 600;
-  margin-bottom: 18px;
 }
-.footer-col li {
-  margin-bottom: 10px;
+
+/* Mọi dòng trong footer cùng cỡ chữ, cùng khoảng cách */
+.footer-col ul li,
+.contact-list li {
   font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 14px;
+}
+.footer-col ul li:last-child,
+.contact-list li:last-child {
+  margin-bottom: 0;
 }
 .footer-col a {
   color: #a8a29e;
@@ -575,21 +598,19 @@ button.btn-outline {
 
 /* Cột thương hiệu + liên hệ */
 .contact-list {
-  margin-top: 20px;
+  margin-top: 0;
 }
 .contact-list li {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  font-size: 13px;
-  line-height: 1.6;
-  margin-bottom: 16px;
   color: #a8a29e;
 }
 .contact-icon {
   flex: 0 0 26px;
   width: 26px;
   height: 26px;
+  margin-top: -2px;
   border-radius: 6px;
   background: #e8823c;
   display: flex;
@@ -603,7 +624,7 @@ button.btn-outline {
 .social-icons {
   display: flex;
   gap: 10px;
-  margin-top: 8px;
+  margin-top: 20px;
 }
 
 .social-icons a {
@@ -625,7 +646,8 @@ button.btn-outline {
   background: #1877f2;
 }
 
-.social-icons img {
+.social-icons img,
+.social-icons svg {
   width: 18px;
   height: 18px;
   max-width: none;
@@ -725,6 +747,7 @@ button.btn-outline {
   }
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
   }
   .footer-brand {
     grid-column: 1 / -1;
@@ -740,7 +763,7 @@ button.btn-outline {
   font-family: "Cormorant Garamond", serif;
   font-size: 56px;
   font-weight: 600;
-  letter-spacing: 14px;
+  letter-spacing: 3px;
   color: var(--black);
 }
 
@@ -1224,4 +1247,1407 @@ button.btn-outline {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+/* ===================== TIN TỨC TRANG CHỦ ===================== */
+.home-news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.home-news-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid #f0e4de;
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+.home-news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+.home-news-thumb {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.home-news-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px;
+}
+.home-news-tag {
+  align-self: flex-start;
+  background: var(--pink);
+  color: var(--black);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+.home-news-body time {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--text-light);
+}
+.home-news-body h3 {
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--black);
+}
+.home-news-body p {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-light);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.home-news-more {
+  margin-top: auto;
+  padding-top: 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #c0392b;
+}
+
+@media (max-width: 900px) {
+  .home-news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   TRANG CHỦ NETTO — chỉ nạp ở index.html
+   Giữ nguyên bảng màu / font của style.css
+   ===================================================== */
+
+/* ---------- nút ---------- */
+.btn-solid,
+.btn-ghost {
+  display: inline-block;
+  padding: 13px 30px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.2s,
+    border-color 0.2s;
+}
+.btn-solid {
+  background: var(--black);
+  color: var(--white);
+  border: 1px solid var(--black);
+}
+.btn-solid:hover {
+  background: #3a3634;
+  transform: translateY(-2px);
+}
+.btn-ghost {
+  border: 1px solid var(--black);
+  color: var(--black);
+}
+.btn-ghost:hover {
+  background: var(--black);
+  color: var(--white);
+}
+.btn-solid.btn-light {
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+.btn-solid.btn-light:hover {
+  background: var(--pink);
+  border-color: var(--pink);
+}
+.btn-ghost.btn-ghost-light {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: var(--white);
+}
+.btn-ghost.btn-ghost-light:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+/* ---------- hiện dần khi cuộn ---------- */
+.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+.js-reveal .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- tiêu đề mục (chỉ các khối trang chủ) ---------- */
+.home-cats .section-title,
+.home-collection .section-title,
+.featured-products .section-title,
+.home-news .section-title,
+.reviews .section-title {
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.home-cats .section-title::after,
+.featured-products .section-title::after,
+.home-news .section-title::after,
+.reviews .section-title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin: 14px auto 0;
+  background: var(--pink-dark);
+}
+
+/* =====================================================
+   HERO (slider banner logo)
+   ===================================================== */
+.hero-banner {
+  margin: 24px auto 0;
+}
+.hero-arrow {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  transition: background 0.2s;
+}
+.hero-arrow:hover {
+  background: var(--white);
+}
+.hero-arrow-left {
+  left: 20px;
+}
+.hero-arrow-right {
+  right: 20px;
+}
+.dot {
+  width: 9px;
+  height: 9px;
+  transition:
+    width 0.3s,
+    background 0.3s;
+}
+.dot.active {
+  width: 28px;
+  border-radius: 9px;
+}
+
+/* =====================================================
+   DẢI ƯU ĐIỂM
+   ===================================================== */
+.usp-strip {
+  max-width: var(--max-width);
+  margin: 28px auto 0;
+  position: relative;
+  z-index: 6;
+  padding: 26px 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(60, 30, 30, 0.1);
+  width: calc(100% - 48px);
+}
+.usp-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.usp-icon {
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--pink-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #b0606f;
+}
+.usp-item strong {
+  display: block;
+  font-size: 14px;
+  color: var(--black);
+}
+.usp-item span:not(.usp-icon) {
+  display: block;
+  font-size: 12.5px;
+  color: var(--text-light);
+  margin-top: 2px;
+}
+
+/* =====================================================
+   BỘ SƯU TẬP
+   ===================================================== */
+.home-collection {
+  padding-top: 80px;
+}
+.coll-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.coll-card {
+  --bg: #fbe9ed;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  border-radius: 24px;
+  padding: 20px 20px 28px;
+  transition:
+    transform 0.4s,
+    box-shadow 0.4s;
+}
+.coll-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(60, 30, 30, 0.1);
+}
+.coll-2 {
+  --bg: #fdeadf;
+}
+.coll-3 {
+  --bg: #ebe6f3;
+}
+.coll-photos {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 12px;
+  align-items: start;
+}
+.coll-photo {
+  aspect-ratio: 4 / 5;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #efe6dc;
+}
+.coll-sub {
+  margin-top: 36px;
+}
+.coll-sub img {
+  transform: scale(1.05);
+}
+.coll-card:hover .coll-sub img {
+  transform: scale(1.12);
+}
+.coll-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.25);
+  transition: transform 0.6s;
+}
+.coll-card:hover .coll-photo img {
+  transform: scale(1.33);
+}
+.coll-body {
+  padding: 26px 8px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+.coll-eyebrow {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #b0606f;
+  margin-bottom: 10px;
+}
+.coll-body h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--black);
+}
+.coll-desc {
+  margin: 12px 0 22px;
+  font-size: 14px;
+  color: var(--text-light);
+}
+.coll-body .btn-solid {
+  margin-top: auto;
+}
+
+/* =====================================================
+   DANH MỤC
+   ===================================================== */
+.home-cats {
+  padding-top: 40px;
+}
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+.cat-tile {
+  --c1: #f7d9de;
+  --c2: #fbeff1;
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  border-radius: 22px;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--c1), var(--c2));
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.4s;
+}
+.cat-tile:nth-child(1) {
+  --c1: #e3eefb;
+  --c2: #f4f8fd;
+}
+.cat-tile:nth-child(2) {
+  --c1: #fbe3e8;
+  --c2: #fef5f6;
+}
+.cat-tile:nth-child(3) {
+  --c1: #efe8f8;
+  --c2: #f9f6fd;
+}
+.cat-tile:nth-child(4) {
+  --c1: #fdeadf;
+  --c2: #fff7f2;
+}
+.cat-tile:nth-child(5) {
+  --c1: #e4f3ea;
+  --c2: #f6fbf8;
+}
+.cat-tile:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(60, 30, 30, 0.12);
+}
+.cat-photo {
+  position: absolute;
+  inset: 0;
+}
+.cat-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  transform: scale(1.06);
+  mix-blend-mode: multiply;
+  filter: brightness(1.1) saturate(1.05);
+  transition: transform 0.6s;
+}
+.cat-tile:hover .cat-photo img {
+  transform: scale(1.14);
+}
+.cat-count {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--black);
+  opacity: 0;
+}
+.cat-count:not(:empty) {
+  opacity: 1;
+}
+.cat-info {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 8px 8px 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.92);
+}
+.cat-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--black);
+}
+.cat-arrow {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  transition:
+    background 0.3s,
+    transform 0.3s;
+}
+.cat-tile:hover .cat-arrow {
+  background: #b0606f;
+  transform: translateX(3px);
+}
+
+/* =====================================================
+   SẢN PHẨM NỔI BẬT
+   ===================================================== */
+.feat-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: -12px 0 34px;
+  flex-wrap: wrap;
+}
+.feat-tab {
+  padding: 9px 24px;
+  border-radius: 999px;
+  border: 1px solid #e6d9d3;
+  background: var(--white);
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.feat-tab:hover {
+  border-color: var(--black);
+}
+.feat-tab.active {
+  background: var(--black);
+  border-color: var(--black);
+  color: var(--white);
+}
+
+.featured-products .product-grid {
+  gap: 28px 24px;
+}
+.featured-products .product-thumb {
+  border-radius: 12px;
+  background: #efe6dc;
+}
+.featured-products .product-thumb img {
+  transform: scale(1.4);
+  transition: transform 0.5s;
+}
+.featured-products .product-card:hover .product-thumb img {
+  transform: scale(1.48);
+}
+.featured-products .badge {
+  border-radius: 999px;
+  padding: 4px 11px;
+  font-weight: 500;
+}
+.featured-products .product-name {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* =====================================================
+   BANNER ƯU ĐÃI
+   ===================================================== */
+.promo-band {
+  background: var(--black);
+  color: var(--white);
+  margin: 20px 0 0;
+}
+.promo-band-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 64px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.promo-band h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+.promo-band p:not(.brand-eyebrow) {
+  margin-top: 12px;
+  max-width: 560px;
+  color: #c9c1bc;
+  font-size: 15px;
+}
+.promo-band .brand-eyebrow {
+  color: var(--pink-dark);
+}
+.promo-band-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+/* =====================================================
+   CÂU CHUYỆN THƯƠNG HIỆU (trước đây chưa có CSS)
+   ===================================================== */
+.brand-story {
+  background: var(--pink-light);
+}
+.brand-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 90px 24px;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+.brand-eyebrow {
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #b0606f;
+  margin-bottom: 14px;
+}
+.brand-text h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--black);
+  margin-bottom: 22px;
+}
+.brand-text p {
+  color: var(--text-light);
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+.brand-text .brand-link {
+  margin: 26px 0 0;
+  display: inline-block;
+}
+.brand-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.stat-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 34px 24px;
+  text-align: center;
+  box-shadow: 0 8px 26px rgba(60, 30, 30, 0.06);
+  transition: transform 0.3s;
+}
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+.stat-card strong {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--black);
+}
+.stat-card span {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--text-light);
+}
+.brand-stats {
+  padding-bottom: 26px;
+}
+.stat-card:nth-child(even) {
+  transform: translateY(26px);
+}
+.stat-card:nth-child(even):hover {
+  transform: translateY(22px);
+}
+
+/* =====================================================
+   TIN TỨC + ĐÁNH GIÁ (làm đẹp thêm)
+   ===================================================== */
+.home-news {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+.home-news-card {
+  border-radius: 14px;
+}
+.home-news-thumb {
+  background: var(--pink-light);
+}
+.home-news-body h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+.reviews {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+.review-card {
+  position: relative;
+  border-radius: 14px;
+  padding: 34px 28px 26px;
+  box-shadow: 0 8px 26px rgba(60, 30, 30, 0.05);
+}
+.review-card::before {
+  content: "\201C";
+  position: absolute;
+  top: 6px;
+  right: 22px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 84px;
+  line-height: 1;
+  color: var(--pink);
+}
+.review-text {
+  font-size: 15px;
+  line-height: 1.7;
+}
+.review-avatar {
+  background: var(--pink-dark);
+  color: var(--black);
+}
+.reviews .section-title {
+  margin-bottom: 40px;
+}
+
+/* nút nổi không đè lên nội dung trên màn nhỏ */
+.float-member {
+  bottom: 24px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 1100px) {
+  .coll-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .coll-3 {
+    grid-column: 1 / -1;
+  }
+  .coll-3 .coll-photos {
+    max-width: 560px;
+  }
+  .cat-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .home-cats .section-title,
+  .featured-products .section-title,
+  .home-news .section-title,
+  .reviews .section-title,
+  .home-collection .section-title {
+    font-size: 32px;
+  }
+  .hero-arrow {
+    display: none;
+  }
+  .usp-strip {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
+    padding: 22px 20px;
+  }
+  .home-collection {
+    padding-top: 56px;
+  }
+  .coll-grid {
+    grid-template-columns: 1fr;
+  }
+  .coll-3 .coll-photos {
+    max-width: none;
+  }
+  .coll-body h3 {
+    font-size: 26px;
+  }
+  .home-cats {
+    padding-top: 20px;
+  }
+  .cat-grid {
+    gap: 14px;
+  }
+  .promo-band-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 48px 24px;
+  }
+  .promo-band h2 {
+    font-size: 32px;
+  }
+  .brand-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 60px 24px;
+  }
+  .brand-text h2 {
+    font-size: 32px;
+  }
+  .home-news,
+  .reviews {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+}
+@media (max-width: 520px) {
+  .usp-strip {
+    grid-template-columns: 1fr;
+  }
+  .cat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cat-name {
+    font-size: 18px;
+  }
+  .stat-card strong {
+    font-size: 40px;
+  }
+  .float-member {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* =====================================================
+   BỘ SƯU TẬP + MUA SẮM THEO DANH MỤC
+   Ảnh sản phẩm là ảnh ngang 940x788, sản phẩm nằm giữa, chữ NETTO dọc ở mép trái:
+   dùng object-position ~60-75% để giữ trọn sản phẩm và bỏ chữ ở mép.
+   ===================================================== */
+.bst,
+.dm {
+  --accent: #b0606f;
+  --photo: #d9ccb9;
+}
+
+/* ---------- tiêu đề chung ---------- */
+.bst-head,
+.dm-head {
+  max-width: 640px;
+  margin: 0 auto 52px;
+  padding: 0 24px;
+  text-align: center;
+  display: block;
+}
+.bst-label,
+.dm-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.bst-label::before,
+.bst-label::after,
+.dm-label::before,
+.dm-label::after {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
+.bst-title,
+.dm-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 46px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: var(--black);
+}
+.bst-sub,
+.dm-sub {
+  max-width: none;
+  margin-top: 12px;
+  padding: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-light);
+  text-align: center;
+}
+
+/* ---------- BỘ SƯU TẬP ---------- */
+.bst {
+  --tint: #f4efe8;
+  background: linear-gradient(180deg, var(--tint) 0%, #fff 130%);
+  transition: background 0.8s ease;
+  padding: 96px 0 104px;
+  margin-top: 32px;
+}
+.bst[data-k="1"] {
+  --tint: #f9e9ec;
+}
+.bst[data-k="2"] {
+  --tint: #ebe7f1;
+}
+
+.bst-in {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.bst-stage {
+  display: grid;
+  grid-template-columns: 1.9fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px;
+  aspect-ratio: 7 / 5;
+  height: auto;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+.bst-plate {
+  position: relative;
+  display: block;
+  min-height: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--photo);
+  box-shadow: 0 24px 44px -28px rgba(60, 35, 25, 0.45);
+  transition:
+    opacity 0.4s ease,
+    transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.bst-plate:hover {
+  transform: translateY(-4px);
+}
+.bst-plate.dim {
+  opacity: 0.4;
+}
+.p0 {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  left: auto;
+  top: auto;
+  width: auto;
+}
+.p1 {
+  grid-column: 2;
+  grid-row: 1;
+  right: auto;
+  top: auto;
+  width: auto;
+}
+.p2 {
+  grid-column: 2;
+  grid-row: 2;
+  left: auto;
+  right: auto;
+  bottom: auto;
+  width: auto;
+}
+.bst-ph {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: 0;
+  background: var(--photo);
+  overflow: hidden;
+}
+.bst-ph img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% 50%;
+  transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.p1 .bst-ph img,
+.p2 .bst-ph img {
+  object-position: 74% 50%;
+}
+.bst-plate:hover .bst-ph img {
+  transform: scale(1.05);
+}
+
+.bst-tag {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  max-width: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.86);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: none;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text);
+}
+.bst-tag b {
+  display: block;
+  margin: 0;
+  font-weight: 500;
+  color: var(--black);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bst-tag s {
+  margin-left: 6px;
+  color: #9a9a9a;
+}
+.p1 .bst-tag,
+.p2 .bst-tag {
+  padding: 6px 10px;
+  font-size: 0;
+}
+.p1 .bst-tag b,
+.p2 .bst-tag b {
+  font-size: 12px;
+}
+
+.bst-tabs {
+  counter-reset: t;
+  display: flex;
+  gap: 26px;
+  margin-bottom: 36px;
+  border-bottom: 1px solid rgba(28, 26, 25, 0.14);
+  flex-wrap: wrap;
+}
+.bst-tab {
+  counter-increment: t;
+  position: relative;
+  padding: 0 0 13px;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  font-size: 14px;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: color 0.25s;
+}
+.bst-tab::before {
+  content: "0" counter(t);
+  margin-right: 8px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  opacity: 0.55;
+}
+.bst-tab:hover {
+  background: none;
+  border: 0;
+  color: var(--black);
+}
+.bst-tab[aria-selected="true"] {
+  background: none;
+  border: 0;
+  color: var(--black);
+  font-weight: 500;
+}
+.bst-tab[aria-selected="true"]::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--black);
+}
+
+.bst-side-body {
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+.bst.swap .bst-stage {
+  opacity: 0;
+  transform: scale(0.985);
+}
+.bst.swap .bst-side-body {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.bst h3 {
+  text-wrap: balance;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: var(--black);
+}
+.bst-desc {
+  margin-top: 16px;
+  max-width: 420px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+.bst-list {
+  margin: 30px 0 34px;
+}
+.bst-row {
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  margin: 0;
+  border-radius: 0;
+  border-top: 1px solid rgba(28, 26, 25, 0.12);
+  transition: padding 0.3s ease;
+}
+.bst-row + .bst-row {
+  border-top: 1px solid rgba(28, 26, 25, 0.12);
+}
+.bst-row:last-child {
+  border-bottom: 1px solid rgba(28, 26, 25, 0.12);
+}
+.bst-row:hover {
+  background: none;
+  transform: none;
+  padding-left: 8px;
+}
+.bst-row:hover .bst-nm {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+.bst-th {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--photo);
+}
+.bst-th img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% 50%;
+  transform: scale(1.1);
+}
+.bst-nm {
+  font-size: 14.5px;
+  font-weight: 400;
+  color: var(--black);
+}
+.bst-pr {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+  text-align: right;
+  white-space: nowrap;
+}
+.bst-pr s {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: #9a9a9a;
+}
+.bst-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.bst-cta .btn-solid,
+.bst-cta .btn-ghost {
+  border-radius: 4px;
+  padding: 13px 26px;
+  font-size: 14px;
+}
+
+/* ---------- MUA SẮM THEO DANH MỤC ---------- */
+.dm {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 104px 24px 48px;
+}
+.dm-head {
+  margin-bottom: 48px;
+}
+.dm-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.dm .dm-p,
+.dm .cat-tile {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  aspect-ratio: auto;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid #efe6df;
+  box-shadow: none;
+  transform: none;
+  margin-top: 0;
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.45s ease,
+    border-color 0.3s;
+}
+.dm .dm-p:hover {
+  transform: translateY(-6px);
+  border-color: #e4d6cc;
+  box-shadow: 0 26px 40px -26px rgba(60, 35, 25, 0.4);
+}
+.dm-p:nth-child(even) {
+  margin-top: 0;
+}
+
+.dm-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 10 / 11;
+  height: auto;
+  border-radius: 0;
+  object-fit: cover;
+  object-position: 68% 50%;
+  background: var(--photo);
+  transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.dm-p:hover .dm-img {
+  transform: scale(1.06);
+}
+.dm-p {
+  overflow: hidden;
+}
+.dm-p .dm-img {
+  position: relative;
+}
+
+.dm-body {
+  position: static;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: baseline;
+  gap: 4px 10px;
+  padding: 18px 18px 20px;
+  background: #fff;
+  color: var(--black);
+  text-align: left;
+  flex: 1;
+}
+.dm-name {
+  grid-column: 1;
+  grid-row: 1;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--black);
+  text-shadow: none;
+  white-space: nowrap;
+}
+.dm .cat-count {
+  grid-column: 2;
+  grid-row: 1;
+  position: static;
+  padding: 0;
+  margin: 0;
+  background: none;
+  backdrop-filter: none;
+  border-radius: 0;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: var(--accent);
+  opacity: 1;
+}
+.dm .cat-count:empty {
+  display: none;
+}
+.dm-line {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  margin-top: 2px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-light);
+  max-width: none;
+  min-height: 22px;
+}
+.dm-go {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  justify-self: start;
+  margin-top: 12px;
+  padding-bottom: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  color: var(--black);
+  border-bottom: 1px solid var(--black);
+  opacity: 1;
+  transition:
+    gap 0.3s,
+    color 0.3s,
+    border-color 0.3s;
+}
+.dm-go::after {
+  content: "→";
+  font-size: 14px;
+  transition: transform 0.3s;
+}
+.dm-p:hover .dm-go {
+  gap: 12px;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.dm-p:hover .dm-name {
+  color: var(--black);
+}
+
+.bst a:focus-visible,
+.bst button:focus-visible,
+.dm a:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1100px) {
+  .bst-in {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .bst-stage {
+    max-width: 680px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .dm-strip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .bst {
+    padding: 64px 0 72px;
+  }
+  .bst-head,
+  .dm-head {
+    margin-bottom: 34px;
+  }
+  .bst-title,
+  .dm-title {
+    font-size: 36px;
+  }
+  .bst h3 {
+    font-size: 34px;
+  }
+  .dm {
+    padding-top: 68px;
+  }
+  .dm-strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .dm-p:last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 7px);
+    justify-self: center;
+    max-width: none;
+  }
+}
+@media (max-width: 520px) {
+  .bst-stage {
+    grid-template-columns: 1.6fr 1fr;
+    gap: 8px;
+    aspect-ratio: 6 / 5;
+  }
+  .bst-tag {
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+  .bst-tag s {
+    display: none;
+  }
+  .bst-tabs {
+    gap: 18px;
+  }
+  .bst-th {
+    width: 52px;
+    height: 52px;
+  }
+  .bst-row {
+    grid-template-columns: 52px 1fr auto;
+    gap: 12px;
+  }
+  .dm-body {
+    padding: 12px 12px 14px;
+  }
+  .dm-name {
+    font-size: 20px;
+  }
+  .dm-line {
+    display: none;
+  }
+  .dm-go {
+    margin-top: 6px;
+  }
+  .dm-go::after {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dm *,
+  .bst * {
+    transition: none !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
 }
