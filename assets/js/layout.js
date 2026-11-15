@@ -259,6 +259,12 @@
       });
   }
   function render() {
+    if (
+      new URLSearchParams(location.search).get("modal") === "1" ||
+      window.self !== window.top
+    ) {
+      return;
+    }
     let h = document.getElementById("site-header");
 
     if (!h) {
