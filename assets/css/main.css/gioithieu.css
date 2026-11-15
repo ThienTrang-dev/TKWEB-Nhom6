@@ -1,35 +1,44 @@
-/* =====================================
+/* =========================================
    TRANG GIỚI THIỆU - NETTO CLOTHES
-   Chỉ chỉnh sửa nội dung trang
-   Không tác động header, menu, footer
-===================================== */
+   Phong cách: Feminine - Elegant - Modern
+   Chỉ tác động nội dung trang
+========================================= */
+
+
+/* Nền và bố cục chung */
+
+.page-gioithieu {
+    background: #fffdfb;
+}
 
 
 /* Tiêu đề chính */
 
 .page-gioithieu>h1:first-of-type {
     max-width: 950px;
-    margin: 55px auto 35px;
+    margin: 65px auto 45px;
+    padding: 0 20px;
     text-align: center;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
+    font-size: 54px;
     font-weight: 600;
     color: #986d68;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 
-/* Các tiêu đề phần */
+/* Các tiêu đề phụ */
 
 .page-gioithieu>h1:not(:first-of-type) {
     max-width: 950px;
-    margin: 65px auto 30px;
+    margin: 75px auto 38px;
+    padding: 0 20px;
     text-align: center;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 38px;
+    font-size: 42px;
     font-weight: 600;
     color: #986d68;
-    position: relative;
+    letter-spacing: 1px;
 }
 
 
@@ -38,23 +47,25 @@
 .page-gioithieu>h1::after {
     content: "";
     display: block;
-    width: 55px;
+    width: 65px;
     height: 2px;
-    background-color: #d8aaa3;
-    margin: 12px auto 0;
+    margin: 15px auto 0;
+    background: #d5a49b;
+    border-radius: 10px;
 }
 
 
-/* Nội dung đoạn văn */
+/* Đoạn văn */
 
 .page-gioithieu>p {
     max-width: 900px;
-    margin: 0 auto 20px;
-    padding: 0 20px;
-    color: #554943;
+    margin: 0 auto 22px;
+    padding: 0 25px;
+    color: #5f514c;
     font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 15px;
-    line-height: 2;
+    font-weight: 400;
+    line-height: 2.1;
     text-align: justify;
 }
 
@@ -67,70 +78,162 @@
 }
 
 
+/* Tạo điểm nhấn cho phần giới thiệu thương hiệu */
+
+.page-gioithieu>p:first-of-type {
+    padding-top: 25px;
+    font-size: 16px;
+    color: #795d57;
+}
+
+
 /* Danh sách sản phẩm và cam kết */
 
 .page-gioithieu>ul {
     max-width: 850px;
-    margin: 20px auto 30px;
-    padding: 22px 35px 22px 60px;
-    background-color: #f8eeeb;
-    border-left: 3px solid #d8aaa3;
-    border-radius: 8px;
-    color: #554943;
-    font-size: 15px;
-    line-height: 2.3;
+    margin: 25px auto 35px;
+    padding: 25px 35px 25px 65px;
+    background: linear-gradient(135deg, #fbf3f0, #f8eeeb);
+    border-left: 4px solid #d5a49b;
+    border-radius: 4px 14px 14px 4px;
+    box-shadow: 0 5px 20px rgba(152, 109, 104, 0.06);
+    color: #5f514c;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 14px;
+    line-height: 2.5;
 }
 
 
 /* Dấu đầu dòng */
 
+.page-gioithieu>ul li {
+    padding-left: 5px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
 .page-gioithieu>ul li::marker {
     color: #bd8981;
 }
 
+.page-gioithieu>ul li:hover {
+    color: #a8736d;
+    transform: translateX(4px);
+}
 
-/* Dòng cam kết của Netto Clothes */
+
+/* Tiêu đề Cam kết */
 
 .page-gioithieu>p:has(+ ul) {
-    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 15px;
     color: #986d68;
-    margin-top: 30px;
+    font-size: 17px;
+    font-weight: 600;
 }
 
 
 /* Đoạn kết thương hiệu */
 
 .page-gioithieu>p:last-of-type {
-    margin-top: 35px;
-    margin-bottom: 60px;
-    padding: 25px 30px;
-    background-color: #f8eeeb;
-    border-radius: 10px;
-    text-align: center;
+    max-width: 950px;
+    margin: 55px auto 75px;
+    padding: 35px 45px;
+    background: #f8eeeb;
+    border: 1px solid #f0dfda;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(152, 109, 104, 0.07);
     color: #986d68;
+    font-size: 15px;
+    line-height: 2.1;
     font-style: italic;
+    text-align: center;
 }
 
 
-/* Responsive */
+/* Hiệu ứng nhẹ khi rê chuột vào đoạn kết */
+
+.page-gioithieu>p:last-of-type:hover {
+    box-shadow: 0 10px 30px rgba(152, 109, 104, 0.12);
+    transition: box-shadow 0.3s ease;
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
 
 @media (max-width: 768px) {
     .page-gioithieu>h1:first-of-type {
-        font-size: 38px;
-        margin-top: 35px;
+        margin-top: 45px;
+        margin-bottom: 35px;
+        font-size: 43px;
     }
     .page-gioithieu>h1:not(:first-of-type) {
-        font-size: 32px;
-        margin-top: 45px;
+        margin-top: 55px;
+        margin-bottom: 30px;
+        font-size: 36px;
     }
     .page-gioithieu>p {
+        padding: 0 25px;
         font-size: 14px;
-        padding: 0 20px;
         line-height: 1.9;
     }
     .page-gioithieu>ul {
-        margin: 15px 20px 25px;
-        padding: 18px 20px 18px 45px;
+        margin: 20px 25px 30px;
+        padding: 20px 25px 20px 45px;
+        font-size: 13px;
+    }
+    .page-gioithieu>p:last-of-type {
+        margin: 40px 25px 55px;
+        padding: 25px;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+    .page-gioithieu>h1:first-of-type {
+        margin-top: 35px;
+        font-size: 37px;
+        letter-spacing: 1px;
+    }
+    .page-gioithieu>h1:not(:first-of-type) {
+        margin-top: 45px;
+        font-size: 31px;
+    }
+    .page-gioithieu>h1::after {
+        width: 48px;
+        margin-top: 10px;
+    }
+    .page-gioithieu>p {
+        padding: 0 20px;
+        margin-bottom: 17px;
+        font-size: 13px;
+        line-height: 1.9;
+        text-align: left;
+    }
+    .page-gioithieu>p:first-of-type {
+        padding-top: 10px;
         font-size: 14px;
+    }
+    .page-gioithieu>ul {
+        margin: 18px 20px 25px;
+        padding: 17px 18px 17px 38px;
+        font-size: 12px;
+        line-height: 2.2;
+    }
+    .page-gioithieu>p:has(+ ul) {
+        margin-top: 30px;
+        padding-left: 20px;
+        font-size: 15px;
+    }
+    .page-gioithieu>p:last-of-type {
+        margin: 35px 20px 45px;
+        padding: 22px 18px;
+        font-size: 13px;
+        line-height: 1.9;
     }
 }
