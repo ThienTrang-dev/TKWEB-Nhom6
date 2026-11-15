@@ -33,7 +33,7 @@ const baiViet = {
 
   "bao-quan-tweed": {
     tieuDe: "Cách giặt và bảo quản các thiết kế vải tweed luôn bền đẹp như mới",
-    tacGia: "Bảo Ngọc",
+    tacGia: "Thiên Trang",
     ngayDang: "23/05/2026",
     anh: "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?q=80&w=1200&auto=format&fit=crop",
     moTaAnh: "Trang phục thời trang cần được bảo quản đúng cách",
@@ -111,7 +111,7 @@ const baiViet = {
 
   "tram-se-chia": {
     tieuDe: "Trạm Sẻ Chia NETTO: thu hồi và làm mới trang phục cũ gửi tặng vùng cao",
-    tacGia: "Mai Ngọc",
+    tacGia: "Quang Phong",
     ngayDang: "01/02/2026",
     anh: "https://media.istockphoto.com/id/1494981853/vi/vec-to/kh%C3%A1i-ni%E1%BB%87m-t%C3%A1i-ch%E1%BA%BF-%C4%91i-xe-%C4%91%E1%BA%A1p-t%C3%A1i-s%E1%BB%AD-d%E1%BB%A5ng-l%C3%A0m-b%E1%BA%B1ng-tay-th%E1%BB%9Di-trang-ch%E1%BA%ADm-th%C6%B0%C6%A1ng-m%E1%BA%A1i-c%C3%B4ng-b%E1%BA%B1ng.jpg?s=612x612&w=0&k=20&c=XTV58hvIy8ac9HSujAYjS0Y3HTTFUvxj-gXpCgZoFV0=",
     moTaAnh: "Hoạt động tái sử dụng trang phục",
