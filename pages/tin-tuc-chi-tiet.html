@@ -49,7 +49,76 @@
       line-height: 1.8;
       color: #444;
     }
+.comments-section {
+  margin: 24px 0 60px;
+  padding: 28px 32px;
+  background: #fff;
+  border: 1px solid #f0e4e6;
+  border-radius: 14px;
+}
 
+.comments-section h2 {
+  margin-bottom: 20px;
+  color: #232837;
+}
+
+.comment-form {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.comment-form label {
+  font-weight: 600;
+}
+
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e5dadd;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.comment-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.comment-submit {
+  justify-self: start;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 8px;
+  background: #e86c8d;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.comment-message {
+  min-height: 1.5em;
+  color: #18794e;
+}
+
+.comment-item {
+  padding: 16px 0;
+  border-top: 1px solid #f0e4e6;
+}
+
+.comment-item time {
+  margin-left: 12px;
+  color: #777;
+  font-size: 13px;
+}
+
+.comment-item p {
+  margin: 8px 0 0;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
     @media (max-width: 600px) {
       .article-card {
         padding: 20px;
@@ -69,6 +138,33 @@
       <img class="article-image" id="article-image" src="" alt="">
       <div class="article-body" id="article-body"></div>
     </article>
+    <section id="comments-section" class="comments-section" hidden>
+  <h2>Bình luận</h2>
+
+  <form id="comment-form" class="comment-form">
+    <label for="comment-name">Tên của bạn</label>
+    <input
+      id="comment-name"
+      type="text"
+      maxlength="60"
+      required
+      placeholder="Nhập tên"
+    >
+
+    <label for="comment-content">Nội dung bình luận</label>
+    <textarea
+      id="comment-content"
+      maxlength="2000"
+      required
+      placeholder="Chia sẻ ý kiến của bạn"
+    ></textarea>
+
+    <button class="comment-submit" type="submit">Gửi bình luận</button>
+    <p id="comment-message" class="comment-message" role="status" aria-live="polite"></p>
+  </form>
+
+  <div id="comment-list" class="comment-list" aria-live="polite"></div>
+</section>
   </main>
 
   <div id="site-footer"></div>
