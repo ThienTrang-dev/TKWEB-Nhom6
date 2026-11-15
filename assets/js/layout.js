@@ -30,7 +30,7 @@
         <option value="">Tất cả</option>
         <option value="ao">Áo</option>
         <option value="quan">Quần</option>
-        <option value="vay">Váy / Chân váy</option>
+        <option value="vay">Chân váy</option>
       </select>
 
       <input type="text" placeholder="Tìm sản phẩm bạn mong muốn">
@@ -82,7 +82,7 @@
             <a href="${root}pages/sanpham.html?loai=ao">Áo</a>
           </li>
           <li>
-            <a href="${root}pages/sanpham.html?loai=vay">Váy / Chân váy</a>
+            <a href="${root}pages/sanpham.html?loai=vay">Chân váy</a>
           </li>
           
         </ul>
@@ -238,7 +238,11 @@
     const chu = document.getElementById("account-text");
     if (link && chu) {
       link.href = root + "pages/taikhoan.html";
-      chu.textContent = "Tài khoản";
+      const tt = users[user] || {};
+      // Thử lần lượt các tên trường hay dùng; không có thì dùng chính tên đăng nhập
+      const ten = tt.hoTen || tt.ten || tt.name || tt.fullname || user;
+      chu.textContent = ten;
+      link.title = ten;
     }
     document
       .querySelectorAll('.site-footer a[href*="form.html"]')
@@ -434,4 +438,34 @@ window.nettoGhiDon = function (tong, soSP) {
   });
   localStorage.setItem("netto_users", JSON.stringify(users));
   return true;
+};
+// ===== Tồn kho: ghi nhận số đã bán (lưu trong trình duyệt) =====
+window.nettoLayDaBan = function (id, mauTen) {
+  let ds = {};
+  try {
+    ds = JSON.parse(localStorage.getItem("nettoDaBan")) || {};
+  } catch (e) {}
+  if (mauTen === undefined) {
+    // không truyền màu: cộng tổng đã bán của cả sản phẩm
+    return Object.keys(ds)
+      .filter(function (k) {
+        return k.split("|")[0] === String(id);
+      })
+      .reduce(function (t, k) {
+        return t + ds[k];
+      }, 0);
+  }
+  return ds[id + "|" + mauTen] || 0;
+};
+
+window.nettoTruTon = function (items) {
+  let ds = {};
+  try {
+    ds = JSON.parse(localStorage.getItem("nettoDaBan")) || {};
+  } catch (e) {}
+  items.forEach(function (sp) {
+    const k = sp.id + "|" + (sp.mau || "");
+    ds[k] = (ds[k] || 0) + (Number(sp.soLuong) || 0);
+  });
+  localStorage.setItem("nettoDaBan", JSON.stringify(ds));
 };

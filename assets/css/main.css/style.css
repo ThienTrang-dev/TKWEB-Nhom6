@@ -1219,3 +1219,9 @@ button.btn-outline {
 .popup-thanhcong-hop button:hover {
   background: #e2543f;
 }
+.account-link #account-text {
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

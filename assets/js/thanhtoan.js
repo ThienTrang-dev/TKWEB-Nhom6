@@ -19,8 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
   let shipping = 30000;
   let discount = 0;
 
-  const gioHang = JSON.parse(localStorage.getItem("nettoCart")) || [];
-
+  const laMuaNgay = new URLSearchParams(location.search).get("muangay") === "1";
+  let gioHang = [];
+  try {
+    gioHang =
+      JSON.parse(localStorage.getItem(laMuaNgay ? "muaNgay" : "nettoCart")) ||
+      [];
+  } catch (e) {}
   function chuyenGiaThanhSo(gia) {
     return Number(String(gia || "").replace(/\D/g, "")) || 0;
   }
@@ -122,8 +127,23 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Giỏ hàng của bạn đang trống!");
         return;
       }
-      if (typeof nettoGhiDon === "function") nettoGhiDon(); //tính bằng tiền gốc chưa ap mã giảm giá để tính hạng tv luôn
-      localStorage.removeItem("nettoCart");
+      if (typeof nettoGhiDon === "function") {
+        if (laMuaNgay) {
+          // nettoGhiDon() không truyền tham số sẽ tính theo giỏ hàng, nên phải truyền tay
+          const soSP = gioHang.reduce(function (t, sp) {
+            return t + (Number(sp.soLuong) || 0);
+          }, 0);
+          nettoGhiDon(subtotal, soSP); // tiền gốc, chưa áp mã giảm giá
+        } else {
+          nettoGhiDon(); // đơn từ giỏ hàng, tính như cũ
+        }
+      }
+      if (typeof nettoTruTon === "function") nettoTruTon(gioHang);
+      if (laMuaNgay) {
+        localStorage.removeItem("muaNgay"); // giữ nguyên giỏ hàng
+      } else {
+        localStorage.removeItem("nettoCart");
+      }
       successModal.style.display = "flex";
     });
   }

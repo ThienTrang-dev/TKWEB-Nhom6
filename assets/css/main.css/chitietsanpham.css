@@ -674,3 +674,27 @@
   gap: 8px;
   margin-top: 10px;
 }
+#netto-toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  z-index: 99999;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  border-left: 4px solid #e06d82;
+  opacity: 0;
+  transform: translate(-50%, 20px);
+  pointer-events: none;
+  transition:
+    opacity 0.25s,
+    transform 0.25s;
+}
+#netto-toast.hien {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
