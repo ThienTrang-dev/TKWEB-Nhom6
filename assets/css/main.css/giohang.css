@@ -165,6 +165,19 @@
     background: #f7eeee;
 }
 
+
+/* Nút giảm bị vô hiệu hóa khi số lượng bằng 1 */
+
+.mini-cart-quantity button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    background: #f5f5f5;
+}
+
+.mini-cart-quantity button:disabled:hover {
+    background: #f5f5f5;
+}
+
 .mini-cart-quantity span {
     min-width: 30px;
     text-align: center;
@@ -178,10 +191,11 @@
     font-size: 13px;
     text-decoration: underline;
     cursor: pointer;
+    transition: color 0.2s ease;
 }
 
 .mini-cart-remove:hover {
-    color: #b47b78;
+    color: #d9534f;
 }
 
 
@@ -319,5 +333,27 @@
     .cart-item-checkbox {
         flex-shrink: 0;
         margin: 0 4px;
+    }
+}
+
+
+/* Hiệu ứng khi thêm sản phẩm vào giỏ */
+
+.cart-link.cart-added {
+    animation: cartAdded 0.6s ease;
+}
+
+@keyframes cartAdded {
+    0% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(1.25);
+    }
+    60% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
     }
 }

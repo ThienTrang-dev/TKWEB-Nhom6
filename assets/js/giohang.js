@@ -296,3 +296,36 @@ document.addEventListener("click", function(e) {
 
     window.location.href = thuMucGoc + "pages/thanhtoan.html";
 });
+// Xử lý nút tăng, giảm và xóa sản phẩm
+document.addEventListener("click", function(e) {
+    const nut = e.target.closest("[data-action]");
+
+    if (!nut) return;
+
+    const hanhDong = nut.dataset.action;
+    const index = Number(nut.dataset.index);
+
+    const gioHang = layGioHang();
+
+    if (index < 0 || index >= gioHang.length) return;
+
+    // Xóa sản phẩm
+    if (hanhDong === "xoa") {
+        gioHang.splice(index, 1);
+    }
+
+    // Giảm số lượng
+    else if (hanhDong === "giam") {
+        if (Number(gioHang[index].soLuong) > 1) {
+            gioHang[index].soLuong--;
+        }
+    }
+
+    // Tăng số lượng
+    else if (hanhDong === "tang") {
+        gioHang[index].soLuong = Number(gioHang[index].soLuong || 1) + 1;
+    }
+
+    luuGioHang(gioHang);
+    hienThiGioHang();
+});
