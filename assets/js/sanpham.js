@@ -211,6 +211,39 @@ fetch("../assets/data/products.json")
     const tuKhoaTuUrl = new URLSearchParams(location.search).get("q") || "";
     const tokensTim = boDau(tuKhoaTuUrl).split(/\s+/).filter(Boolean);
 
+    // Đếm số từ khóa mà một sản phẩm khớp (tên, loại, số thứ tự)
+    function diemTuKhoa(c) {
+      const ten = (c.querySelector(".sp-ten") || {}).textContent || "";
+      const loai = c.dataset.loai || "";
+      const hay =
+        " " +
+        boDau(ten) +
+        " " +
+        boDau(loai.replace(/-/g, " ")) +
+        " " +
+        c.dataset.stt +
+        " ";
+      return tokensDung.filter(function (t) {
+        // số phải khớp nguyên từ (tránh "4" khớp 40, 41...)
+        if (/^\d+$/.test(t)) return hay.indexOf(" " + t + " ") > -1;
+        // chữ khớp đầu từ
+        return hay.indexOf(" " + t) > -1;
+      }).length;
+    }
+
+    // Mặc định phải khớp đủ mọi từ. Nếu không sản phẩm nào khớp đủ
+    // (vd "váy ngắn" nhưng shop chỉ có "chân váy") thì bỏ dần từ cuối
+    // cho tới khi có kết quả (-> "váy").
+    let tokensDung = tokensTim.slice();
+    while (tokensDung.length > 1) {
+      const coKetQua = Array.from(cards).some(function (c) {
+        return diemTuKhoa(c) >= tokensDung.length;
+      });
+      if (coKetQua) break;
+      tokensDung.pop();
+    }
+    const nguongTim = tokensDung.length;
+
     // ===== Lọc loại + từ khóa tìm kiếm + sắp xếp giá =====
     function locSanPham() {
       const r = document.querySelector('.bo-loc input[name="Clothes"]:checked');
@@ -237,24 +270,7 @@ fetch("../assets/data/products.json")
         }
 
         // Lọc theo từ khóa tìm kiếm (?q=)
-        if (tokensTim.length) {
-          const ten = (c.querySelector(".sp-ten") || {}).textContent || "";
-          const loai = c.dataset.loai || "";
-          const hay =
-            " " +
-            boDau(ten) +
-            " " +
-            boDau(loai.replace(/-/g, " ")) +
-            " " +
-            c.dataset.stt +
-            " ";
-          return tokensTim.every(function (t) {
-            // số phải khớp nguyên từ (tránh "4" khớp 40, 41...)
-            if (/^\d+$/.test(t)) return hay.indexOf(" " + t + " ") > -1;
-            // chữ khớp đầu từ
-            return hay.indexOf(" " + t) > -1;
-          });
-        }
+        if (tokensTim.length) return diemTuKhoa(c) >= nguongTim;
         return true;
       });
 
@@ -314,6 +330,33 @@ fetch("../assets/data/products.json")
         );
         if (r) {
           r.checked = true;
+        }
+      }
+    }
+
+    // Tìm kiếm ra sản phẩm thuộc đúng một loại thì tự chọn nút loại đó ở bộ lọc
+    // (vd tìm "váy" -> sáng nút "Váy"; tìm "quần ngắn" -> sáng nút "Quần ngắn").
+    // Kết quả trải nhiều loại (vd "quần", "áo") thì giữ nguyên lựa chọn hiện tại.
+    if (tokensTim.length && !chonNoiBat) {
+      const loaiTimThay = [];
+      cards.forEach(function (c) {
+        if (
+          diemTuKhoa(c) >= nguongTim &&
+          loaiTimThay.indexOf(c.dataset.loai) < 0
+        ) {
+          loaiTimThay.push(c.dataset.loai);
+        }
+      });
+      if (loaiTimThay.length === 1) {
+        const rLoai = Array.from(radios).find(function (r) {
+          return r.value === loaiTimThay[0];
+        });
+        if (rLoai) {
+          nhomChon = null;
+          radios.forEach(function (r) {
+            r.checked = false;
+          });
+          rLoai.checked = true;
         }
       }
     }
