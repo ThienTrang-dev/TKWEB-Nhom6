@@ -20,10 +20,15 @@
     tiktok: "https://www.tiktok.com/@nettoclothings",
     facebook: "https://www.facebook.com/share/19o8LaZC9B/?mibextid=wwXIfr",
   };
+
+  //html cua header
+  // Gồm: topbar (logo, ô tìm kiếm, đăng nhập, giỏ hàng),
+  // menu chính có dropdown (Sản phẩm, Chính sách) và hotline.
+  // data-page dùng để tô sáng menu của trang hiện tại.
   const header = `
 <header class="site-header">
   <div class="topbar">
-    <a href="${root}index.html" class="logo">NETTO</a>
+    <a href="${root}index.html" class="logo">NETTO</a>   
 
     <div class="search-box">
       <select class="search-select">
@@ -228,15 +233,20 @@
     </svg>
   </button>
 </div>`;
+
+//cập nhật giao diện khi người dùng đăng nhập
   function capNhatTaiKhoan() {
+    // Lấy danh sách người dùng và người dùng hiện tại từ localStorage
     const users = JSON.parse(localStorage.getItem("netto_users") || "{}");
     let user = localStorage.getItem("netto_current");
+    // Nếu người dùng hiện tại không tồn tại trong danh sách, xóa thông tin đăng nhập
     if (user && !users[user]) {
       localStorage.removeItem("netto_current");
       user = null;
     }
+    // Nếu không có người dùng hiện tại, không cần cập nhật giao diện
     if (!user) return;
-
+    // Cập nhật liên kết và tên hiển thị của người dùng
     const link = document.getElementById("account-link");
     const chu = document.getElementById("account-text");
     if (link && chu) {
@@ -247,6 +257,7 @@
       chu.textContent = ten;
       link.title = ten;
     }
+    // Ẩn các liên kết đăng nhập/đăng ký trong footer, chỉ giữ lại 1 liên kết dẫn tới trang tài khoản
     document
       .querySelectorAll('.site-footer a[href*="form.html"]')
       .forEach(function (a, i) {
@@ -258,13 +269,16 @@
         }
       });
   }
+
   function render() {
+    //trang đang nằm trong khung đăng nhập nổi thì không cần tạo header/footer/chatbox
     if (
       new URLSearchParams(location.search).get("modal") === "1" ||
       window.self !== window.top
     ) {
       return;
     }
+    // Tạo header nếu chưa có
     let h = document.getElementById("site-header");
 
     if (!h) {
@@ -273,6 +287,7 @@
       document.body.prepend(h);
     }
 
+    // Tạo footer nếu chưa có
     let f = document.getElementById("site-footer");
 
     if (!f) {
@@ -280,7 +295,7 @@
       f.id = "site-footer";
       document.body.append(f);
     }
-
+    // Gán nội dung header/footer
     h.innerHTML = header;
     f.innerHTML = footer;
     capNhatTaiKhoan();

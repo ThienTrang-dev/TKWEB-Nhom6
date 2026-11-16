@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   if (slides.length) {
-    startAutoSlide();
+    startAutoSlide();         // Bắt đầu tự động chuyển slide khi trang được tải
   }
 
 

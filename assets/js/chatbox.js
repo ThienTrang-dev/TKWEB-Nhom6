@@ -13,7 +13,6 @@
     // tạo form rồi dán URL dạng "https://formspree.io/f/xxxxxxxx" vào đây.
     // Để trống thì tin chỉ lưu trong trình duyệt (dùng để demo).
     adminEndpoint: "",
-
     // Các trang bot tự đọc để trả lời. Muốn bot biết thêm gì thì thêm một dòng.
     //  file : tên file trong thư mục pages/
     //  khoi : selector của từng khối nội dung (mỗi khối là một "đoạn kiến thức")

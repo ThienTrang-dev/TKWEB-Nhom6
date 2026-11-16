@@ -45,7 +45,7 @@
       .replace(/đ/g, "d")
       .trim();
   }
-
+//tìm sp theo từ khóa, loại
   function timSanPham(tuKhoa, loai) {
     if (!duLieu.length) return [];
     const tokens = boDau(tuKhoa).split(/\s+/).filter(Boolean);
@@ -70,6 +70,8 @@
   window.NETTO.boDau = boDau;
   window.NETTO.timSanPham = timSanPham;
 
+
+  //tạo dòng gợi ý sp
   function taoThe(sp) {
     const a = document.createElement("a");
     a.className = "sg-item";
@@ -215,4 +217,16 @@
     }
     if (!e.target.closest(".search-box")) dongPanel();
   });
+  // Điền lại từ khóa và loại từ URL vào ô tìm kiếm ở header
+(function () {
+  const p = new URLSearchParams(location.search);
+  document.querySelectorAll(".search-box").forEach(function (box) {
+    const i = box.querySelector("input");
+    const s = box.querySelector(".search-select");
+    if (i && p.get("q")) i.value = p.get("q");
+    if (s && p.get("loai") && s.querySelector('option[value="' + p.get("loai") + '"]')) {
+      s.value = p.get("loai");
+    }
+  });
+})();
 })();
