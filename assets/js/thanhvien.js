@@ -98,7 +98,7 @@
   const style = document.createElement("style");
   style.textContent = `
 .tv-box{position:fixed;left:16px;bottom:110px;width:340px;max-width:calc(100vw - 24px);height:460px;
-  max-height:calc(100vh - 140px);background:#fff;border-radius:14px;box-shadow:0 14px 40px rgba(0,0,0,.2);
+  max-height:calc(100vh - 110px - var(--nt-hdr,160px) - 12px);background:#fff;border-radius:14px;box-shadow:0 14px 40px rgba(0,0,0,.2);
   display:none;flex-direction:column;overflow:hidden;z-index:9999;font-family:"Be Vietnam Pro",sans-serif;font-size:14px}
 .tv-box.open{display:flex}
 .tv-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:#111;color:#fff;font-weight:600}

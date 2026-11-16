@@ -70,7 +70,7 @@
   const style = document.createElement("style");
   style.textContent = `
 .nt-chat{position:fixed;right:20px;bottom:92px;width:350px;max-width:calc(100vw - 24px);height:480px;
-  max-height:calc(100vh - 120px);background:#fff;border-radius:14px;box-shadow:0 14px 40px rgba(0,0,0,.2);
+  max-height:calc(100vh - 92px - var(--nt-hdr,160px) - 12px);background:#fff;border-radius:14px;box-shadow:0 14px 40px rgba(0,0,0,.2);
   display:none;flex-direction:column;overflow:hidden;z-index:9999;font-family:"Be Vietnam Pro",sans-serif;font-size:14px}
 .nt-chat.open{display:flex}
 .nt-chat-head{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:#111;color:#fff;font-weight:600}
