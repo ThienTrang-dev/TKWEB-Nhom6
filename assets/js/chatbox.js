@@ -18,6 +18,7 @@
     //  khoi : selector của từng khối nội dung (mỗi khối là một "đoạn kiến thức")
     //  tieuDe: selector tiêu đề trong khối (có thể bỏ trống)
     //  dong : selector các dòng nội dung trong khối
+    geminiEndpoint: "http://localhost:3000/api/chat", 
     nguon: [
       { file: "chinh-sach.html", khoi: ".policy-section", tieuDe: "h3", dong: "p, li, h4" },
       { file: "huongdan.html", khoi: ".luu-y-van p", dong: "" },
@@ -382,6 +383,27 @@
     return el ? el.textContent.trim() : "";
   }
 
+  const lichSuAI = [];
+async function hoiGemini(text) {
+  if (!CONFIG.geminiEndpoint) return null;
+  lichSuAI.push({ role: "user", text: text });
+  try {
+    const r = await fetch(CONFIG.geminiEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messages: lichSuAI.slice(-10) }),
+    });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    const d = await r.json();
+    if (!d.reply) throw new Error("empty");
+    lichSuAI.push({ role: "model", text: d.reply });
+    return d.reply;
+  } catch (e) {
+    console.warn("Gemini lỗi:", e);
+    lichSuAI.pop();
+    return null;
+  }
+}
   async function xuLyTinNhan(text) {
     themTinNhan(text, "user");
     const s = boDau(text);
@@ -468,7 +490,12 @@
       }
       return;
     }
-
+    const traLoiAI = await hoiGemini(text);
+if (traLoiAI) {
+  chat.miss = 0;
+  botNoi(traLoiAI);
+  return;
+}
     // Chưa hiểu: hỏi lại trước, gợi ý gần đúng, lần thứ 2 mới đề nghị chuyển nhân viên
     // (không tự chuyển, khách đồng ý mới chuyển)
     chat.miss++;

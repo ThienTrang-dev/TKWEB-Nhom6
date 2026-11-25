@@ -60,14 +60,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const bankInfoBox = document.getElementById("bankInfoBox");
 
     paymentRadios.forEach(radio => {
-        radio.addEventListener("change", function () {
-            if (this.value === "qr") {
-                bankInfoBox.style.display = "block";
-            } else {
-                bankInfoBox.style.display = "none";
-            }
-        });
+    radio.addEventListener("change", function () {
+        if (this.value === "qr") {
+            bankInfoBox.style.display = "block";
+            batDauDemNguoc();
+        } else {
+            bankInfoBox.style.display = "none";
+            dungDemNguoc();
+        }
     });
+});
 
     // 2. Hiển thị danh sách giỏ hàng cơ bản gọn gàng
     const itemsContainer = document.getElementById("checkoutItemsList");
@@ -109,7 +111,64 @@ document.addEventListener("DOMContentLoaded", function () {
             shipping = 0;
         }
     }
+   const VIETQR = { bank: "MB", account: "0817923001", name: "NETTO CLOTHES" };
+const QR_SECONDS = 5 * 60;
 
+let maDonHang = taoMaDon();
+let tongHienTai = 0;
+let conLai = QR_SECONDS;
+let qrTimer = null;
+
+function taoMaDon() {
+    const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+    let s = "";
+    for (let i = 0; i < 8; i++) s += chars[Math.floor(Math.random() * chars.length)];
+    return "NT" + s;
+}
+
+function veQR() {
+    const img = document.getElementById("vietqrImg");
+    if (!img) return;
+    if (tongHienTai <= 0) { img.style.display = "none"; return; }
+    img.src = "https://img.vietqr.io/image/" + VIETQR.bank + "-" + VIETQR.account + "-compact2.png" +
+        "?amount=" + Math.round(tongHienTai) +
+        "&addInfo=" + encodeURIComponent(maDonHang) +
+        "&accountName=" + encodeURIComponent(VIETQR.name);
+    img.style.display = "inline-block";
+    document.getElementById("qrAmount").innerText = tongHienTai.toLocaleString("vi-VN") + "đ";
+    document.getElementById("qrNote").innerText = maDonHang;
+}
+
+function hienDongHo() {
+    const m = String(Math.floor(conLai / 60)).padStart(2, "0");
+    const s = String(conLai % 60).padStart(2, "0");
+    const el = document.getElementById("qrTimer");
+    if (el) el.innerText = m + ":" + s;
+}
+
+function batDauDemNguoc() {
+    clearInterval(qrTimer);
+    conLai = QR_SECONDS;
+    hienDongHo();
+    qrTimer = setInterval(function () {
+        conLai--;
+        if (conLai <= 0) {
+            maDonHang = taoMaDon();   // hết 5 phút: đổi mã đơn mới
+            conLai = QR_SECONDS;
+            veQR();
+        }
+        hienDongHo();
+    }, 1000);
+}
+
+function dungDemNguoc() {
+    clearInterval(qrTimer);
+}
+
+function capNhatQR(tongTien) {
+    tongHienTai = tongTien;
+    veQR();
+}
     function updateTotals() {
         document.getElementById("subtotalPrice").innerText = subtotal.toLocaleString('vi-VN') + "đ";
         document.getElementById("shippingFee").innerText = shipping.toLocaleString('vi-VN') + "đ";
@@ -124,6 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const finalTotal = Math.max(0, subtotal + shipping - discount);
         document.getElementById("finalTotalPrice").innerText = finalTotal.toLocaleString('vi-VN') + "đ";
         document.getElementById("barTotalPrice").innerText = finalTotal.toLocaleString('vi-VN') + "đ";
+        capNhatQR(finalTotal);
 
         const barSavingText = document.getElementById("barSavingText");
         if (barSavingText) {
@@ -257,6 +317,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (isValid) {
                 localStorage.removeItem("nettoCart");
+                dungDemNguoc();
                 successModal.style.display = "flex";
             }
         });

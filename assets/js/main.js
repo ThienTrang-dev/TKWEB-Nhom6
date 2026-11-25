@@ -23,14 +23,14 @@ document.addEventListener('DOMContentLoaded', function () {
       dots[current].classList.add('active');
     }
 
-    track.style.transform = `translateX(-${current * 100}%)`;
+    track.style.transform = `translateX(-${current * 100}%)`;   /*làm banner chuyển động theo trục X ngang*/
   }
 
   function startAutoSlide() {
     if (slides.length > 1) {
       autoSlideTimer = setInterval(function () {
         goToSlide(current + 1);
-      }, 5000);
+      }, 5000);    /*cứ 5000 mili giây = 5 giây thì chuyển*/ 
     }
   }
 
