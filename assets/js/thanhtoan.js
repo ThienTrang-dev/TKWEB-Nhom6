@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
             shipping = 0;
         }
     }
-   const VIETQR = { bank: "MB", account: "0817923001", name: "NETTO CLOTHES" };
+   const VIETQR = { bank: "MB", account: "0355291529", name: "NETTO CLOTHES" };
 const QR_SECONDS = 5 * 60;
 
 let maDonHang = taoMaDon();
