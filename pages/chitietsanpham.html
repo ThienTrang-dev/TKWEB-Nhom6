@@ -144,5 +144,52 @@
     <script src="../assets/js/layout.js"></script>
 
     <script src="../assets/js/chitietsanpham.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const muaBtn = document.getElementById("ct-mua");
+        if (!muaBtn) return;
+
+        muaBtn.addEventListener("click", function () {
+          const anhLon = document.getElementById("ct-anh-lon");
+          const anhThumb = document.getElementById("ct-thumb");
+          const imgSrc =
+            (anhLon && anhLon.getAttribute("src") && anhLon.getAttribute("src").trim()) ||
+            (anhThumb && anhThumb.getAttribute("src") && anhThumb.getAttribute("src").trim()) ||
+            "";
+
+          const sizeActive =
+            document.querySelector("#ct-size .active, #ct-size .selected, #ct-size button[aria-pressed='true'], #ct-size input:checked") ||
+            document.querySelector("#ct-size button, #ct-size span");
+          const mauActive =
+            document.querySelector("#ct-mau .active, #ct-mau .selected, #ct-mau button[aria-pressed='true'], #ct-mau input:checked") ||
+            document.querySelector("#ct-mau button, #ct-mau span");
+
+          const ten = (document.getElementById("ct-ten")?.innerText || "").trim();
+          const gia = (document.getElementById("ct-gia")?.innerText || "").trim();
+          const ma = (document.getElementById("ct-ma")?.innerText || "").trim();
+          const soLuong = Math.max(1, Number(document.getElementById("ct-sl")?.value) || 1);
+          const size = sizeActive ? (sizeActive.value || sizeActive.dataset.size || sizeActive.innerText || "S").trim() : "S";
+          const mau = mauActive ? (mauActive.title || mauActive.dataset.mau || mauActive.dataset.color || mauActive.innerText || "Mặc định").trim() : "Mặc định";
+
+          const params = new URLSearchParams(window.location.search);
+          const id = params.get("id") || ma || "";
+
+          const buyNowItem = {
+            id: id,
+            ma: ma,
+            ten: ten || "Sản phẩm NETTO",
+            gia: gia || "289000",
+            anh: imgSrc,
+            mau: mau,
+            size: size,
+            soLuong: soLuong
+          };
+
+          localStorage.setItem("nettoBuyNow", JSON.stringify(buyNowItem));
+          localStorage.setItem("nettoCart", JSON.stringify([buyNowItem]));
+        }, true);
+      });
+    </script>
   </body>
 </html>
