@@ -1,3 +1,4 @@
+
 /* =====================================================
    NETTO - chatbox.js
    Chatbox hỗ trợ khách, câu khó chuyển cho quản trị viên.
@@ -9,16 +10,8 @@
 
   /* ============ CẤU HÌNH ============ */
   const CONFIG = {
-    // Nơi nhận tin gửi quản trị viên. Đăng ký miễn phí tại formspree.io,
-    // tạo form rồi dán URL dạng "https://formspree.io/f/xxxxxxxx" vào đây.
-    // Để trống thì tin chỉ lưu trong trình duyệt (dùng để demo).
     adminEndpoint: "",
-    // Các trang bot tự đọc để trả lời. Muốn bot biết thêm gì thì thêm một dòng.
-    //  file : tên file trong thư mục pages/
-    //  khoi : selector của từng khối nội dung (mỗi khối là một "đoạn kiến thức")
-    //  tieuDe: selector tiêu đề trong khối (có thể bỏ trống)
-    //  dong : selector các dòng nội dung trong khối
-    geminiEndpoint: "http://localhost:3000/api/chat", 
+    geminiEndpoint: "http://localhost:3000/api/chat",
     nguon: [
       { file: "chinh-sach.html", khoi: ".policy-section", tieuDe: "h3", dong: "p, li, h4" },
       { file: "huongdan.html", khoi: ".luu-y-van p", dong: "" },
@@ -31,7 +24,6 @@
   const self = document.currentScript;
   const root = self && self.src ? new URL("../../", self.src).href : "";
 
-  // Dùng lại hàm của search.js; nếu thiếu thì bot vẫn chạy nhưng không gợi ý sản phẩm
   const N = window.NETTO || {};
   const boDau =
     N.boDau ||
@@ -51,7 +43,6 @@
     "khieu nai", "phan nan", "tu van truc tiep", "nguoi that",
   ];
   const TU_CHAO = [" xin chao ", " chao ", " hello ", " hi ", " alo "];
-  // Từ đệm bỏ đi khi so khớp câu hỏi với nội dung các trang
   const TU_DEM = [
     "la", "co", "khong", "cua", "thi", "bao", "nhieu", "may", "nao", "gi", "o",
     "dau", "nhu", "the", "de", "va", "cac", "mot", "nay", "duoc", "ban", "minh",
@@ -82,12 +73,16 @@
 .nt-msg.user{align-self:flex-end;background:#e2543f;color:#fff;border-bottom-right-radius:4px}
 .nt-msg a{color:#e2543f;font-weight:600}
 .nt-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 14px 0;background:#fdf6f3}
-.nt-chips button{font-family:inherit;font-size:12.5px;padding:6px 10px;border:1px solid #e2543f;color:#e2543f;
-  background:#fff;border-radius:999px;cursor:pointer}
+.nt-chips button{font-family:inherit;font-size:12.5px;padding:6px 10px;border:1px solid #e2543f;color:#e2543f;background:#fff;border-radius:999px;cursor:pointer}
 .nt-chips button:hover{background:#e2543f;color:#fff}
 .nt-act{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .nt-act button{font-family:inherit;font-size:12.5px;padding:5px 10px;border:1px solid #e2543f;color:#e2543f;background:#fff;border-radius:999px;cursor:pointer}
 .nt-act button:hover{background:#e2543f;color:#fff}
+.nt-msg a.nt-sp{display:flex;align-items:center;gap:8px;margin-top:8px;padding:6px;border:1px solid #f0e3de;border-radius:10px;text-decoration:none;color:#333;font-weight:400;background:#fff}
+.nt-sp img{width:44px;height:56px;object-fit:cover;border-radius:6px;flex:none;background:#f3ece8}
+.nt-sp span{display:block;font-size:12.5px;line-height:1.35}
+.nt-sp b{color:#e2543f;font-weight:600}
+.nt-typing{color:#999;font-style:italic}
 .nt-chat-form{display:flex;gap:8px;padding:10px;border-top:1px solid #eee;background:#fff}
 .nt-chat-form input{flex:1;min-width:0;padding:10px 12px;border:1px solid #e8d9d3;border-radius:8px;font-family:inherit;font-size:14px;outline:none}
 .nt-chat-form input:focus{border-color:#e2543f}
@@ -106,13 +101,13 @@
     else d.appendChild(noiDung);
     elBody.appendChild(d);
     elBody.scrollTop = elBody.scrollHeight;
+    return d;
   }
 
   function botNoi(text) {
     themTinNhan(text, "bot");
   }
 
-  // Tin nhắn của bot kèm vài nút bấm nhanh
   function botNoiNut(text, nuts) {
     const box = document.createElement("div");
     box.appendChild(document.createTextNode(text));
@@ -132,7 +127,6 @@
     themTinNhan(box, "bot");
   }
 
-  // Chuẩn hoá câu hỏi để nhận ra "cùng một câu" dù gõ khác dấu/hoa thường
   function khoaCau(t) {
     return tachTu(t).join(" ");
   }
@@ -168,7 +162,7 @@
     elPanel.querySelector("form").addEventListener("submit", function (e) {
       e.preventDefault();
       const v = elInput.value.trim();
-      if (v) {
+      if (v && !chat.dangHoi) {
         elInput.value = "";
         xuLyTinNhan(v);
       }
@@ -190,8 +184,7 @@
     if (elPanel) elPanel.classList.remove("open");
   }
 
-  /* ============ XỬ LÝ TIN NHẮN ============ */
-  function coTu(chuoi, danhSach) {
+function coTu(chuoi, danhSach) {
     return danhSach.some(function (k) {
       return chuoi.indexOf(k) > -1;
     });
@@ -216,143 +209,86 @@
       return;
     }
     if (chat.pending) {
-      botNoi("Mình đang chờ bạn để lại số điện thoại hoặc email để nhân viên liên hệ nhé (hoặc gõ \"bỏ qua\").");
+      botNoi("Mình đang chờ bạn để lại số điện thoại hoặc email cho câu hỏi trước. Bạn nhập liên hệ hoặc gõ \"bỏ qua\" nhé.");
       return;
     }
+      chat.pending = { cauHoi: cauHoi, khoa: khoa };
     chat.lanSaiLH = 0;
-    chat.pending = { cauHoi: cauHoi, khoa: khoa };
-    botNoi(
-      "Câu này cần nhân viên NETTO hỗ trợ trực tiếp. Bạn để lại số điện thoại hoặc email, bên mình sẽ liên hệ sớm nhất nhé. (Gõ \"bỏ qua\" nếu không muốn để lại.)"
-    );
+    botNoi("Bạn để lại số điện thoại hoặc email để NETTO phản hồi nhé. Nếu không muốn, bạn có thể gõ \"bỏ qua\".");
   }
 
-  /* ============ BOT TỰ ĐỌC NỘI DUNG CÁC TRANG ============ */
-  function gon(t) {
-    return String(t || "").replace(/\s+/g, " ").trim();
+  /* ============ ĐỌC KIẾN THỨC TỪ TRANG WEB ============ */
+  let kbCache = null;
+  async function taiKienThuc() {
+    if (kbCache) return kbCache;
+    const out = [];
+    for (const src of CONFIG.nguon) {
+      try {
+        const r = await fetch(root + "pages/" + src.file);
+        if (!r.ok) continue;
+        const html = await r.text();
+        const doc = new DOMParser().parseFromString(html, "text/html");
+        doc.querySelectorAll(src.khoi).forEach(function (k) {
+          const t = src.tieuDe ? k.querySelector(src.tieuDe) : null;
+          const ds = src.dong ? k.querySelectorAll(src.dong) : [k];
+          const dong = Array.from(ds).map(function (e) {
+            return e.textContent.trim();
+          }).filter(Boolean);
+          if (dong.length) {
+            out.push({
+              file: src.file,
+              id: k.id || "",
+              tieuDe: t ? t.textContent.trim() : "",
+              dong: dong,
+            });
+          }
+        });
+      } catch (e) {}
+    }
+    kbCache = out;
+    return out;
   }
 
-  function tachTu(t) {
-    return boDau(t).replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean);
+  function tachTu(text) {
+    return boDau(text).replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean);
   }
 
-  // Cắt một trang HTML thành nhiều "đoạn kiến thức" theo cấu hình nguon
-  function cacDoan(doc, ng) {
-    const kq = [];
-    doc.querySelectorAll(ng.khoi).forEach(function (el) {
-      const tdEl = ng.tieuDe ? el.querySelector(ng.tieuDe) : null;
-      const tieuDe = tdEl ? gon(tdEl.textContent).replace(/^\d+\.\s*/, "") : "";
-      let dong = ng.dong
-        ? Array.from(el.querySelectorAll(ng.dong)).map(function (n) { return gon(n.textContent); })
-        : [gon(el.textContent)];
-      dong = dong.filter(Boolean);
-      if (dong.length) kq.push({ tieuDe: tieuDe, dong: dong, id: el.id || "", file: ng.file });
-    });
-    return kq;
-  }
-
-  function chuanBi(d) {
-    d.tuTieuDe = new Set(tachTu(d.tieuDe));
-    const hetTu = tachTu(d.tieuDe + " " + d.dong.join(" "));
-    d.tu = new Set(hetTu);
-    d.doDai = hetTu.length || 1;
-    return d;
-  }
-
-  let kbPromise = null;
-  function taiKienThuc() {
-    if (kbPromise) return kbPromise;
-    kbPromise = Promise.all(
-      CONFIG.nguon.map(function (ng) {
-        return fetch(root + "pages/" + ng.file)
-          .then(function (r) {
-            if (!r.ok) throw new Error("HTTP " + r.status);
-            return r.text();
-          })
-          .then(function (html) {
-            return cacDoan(new DOMParser().parseFromString(html, "text/html"), ng);
-          })
-          .catch(function (e) {
-            // Mở web bằng file:// sẽ bị chặn đọc; hãy dùng Live Server hoặc đưa lên host
-            console.warn("Chatbot không đọc được " + ng.file + ":", e);
-            return [];
-          });
-      })
-    ).then(function (ds) {
-      const tat = [].concat.apply([], ds);
-      // Giờ mở cửa lấy từ footer đang hiển thị
-      document.querySelectorAll(".site-footer .contact-list li").forEach(function (li) {
-        const t = gon(li.textContent);
-        if (t) tat.push({ tieuDe: "", dong: [t], id: "", file: "" });
-      });
-      return tat.map(chuanBi);
-    });
-    return kbPromise;
-  }
-
-  function tuKhoaCauHoi(text) {
-    const set = new Set(
-      tachTu(text).filter(function (t) {
-        return TU_DEM.indexOf(t) === -1;
-      })
-    );
-    return Array.from(set);
-  }
-
-  function demKhop(tokens, tapTu) {
-    return tokens.filter(function (t) {
-      return tapTu.has(t);
+  function demKhop(tokens, text) {
+    const t = tachTu(text);
+    return tokens.filter(function (w) {
+      return TU_DEM.indexOf(w) === -1 && t.indexOf(w) > -1;
     }).length;
   }
 
   function timDapAn(text, kb) {
-    const tokens = tuKhoaCauHoi(text);
-    if (!tokens.length) return null;
-    let tot = null;
-    let diemTot = 0;
-    kb.forEach(function (d) {
-      const khop = demKhop(tokens, d.tu);
-      if (!khop) return;
-      const khopTieuDe = demKhop(tokens, d.tuTieuDe);
-      // ưu tiên đoạn khớp nhiều từ nhất, rồi tới tiêu đề khớp, rồi đoạn ngắn sát ý hơn đoạn dài
-      const diem = 3 * khop + 2 * khopTieuDe + (3 * khop) / Math.sqrt(d.doDai);
-      // Đoạn ngắn (một dòng liên hệ, một lưu ý...) chỉ cần khớp 1 từ chính
-      const duDieuKien =
-        khop >= 2 ||
-        d.doDai <= 25 ||
-        (tokens.length === 1 && khopTieuDe >= 1);
-      if (duDieuKien && khop / tokens.length >= 0.5 && diem > diemTot) {
-        diemTot = diem;
-        tot = d;
-      }
+    const tokens = tachTu(text).filter(function (w) {
+      return TU_DEM.indexOf(w) === -1;
     });
-    if (!tot) return null;
-
-    // Chỉ hiện 2 dòng sát câu hỏi nhất thay vì cả đoạn dài
-    let dong = tot.dong;
-    if (dong.length > 2) {
-      const diemDong = dong.map(function (l, i) {
-        return { l: l, i: i, d: demKhop(tokens, new Set(tachTu(l))) };
-      });
-      const cao = Math.max.apply(null, diemDong.map(function (x) { return x.d; }));
-      // chỉ giữ các dòng sát câu hỏi nhất (tối đa 2)
-      let chon = diemDong
-        .filter(function (x) { return cao > 0 && x.d === cao; })
-        .slice(0, 2);
-      if (!chon.length) chon = diemDong.slice(0, 2);
-      dong = chon
-        .sort(function (a, b) { return a.i - b.i; })
-        .map(function (x) { return x.l; });
-    }
-    return { tieuDe: tot.tieuDe, dong: dong, id: tot.id, file: tot.file };
+    if (!tokens.length) return null;
+    const scored = kb.map(function (d) {
+      const k = demKhop(tokens, d.tieuDe + " " + d.dong.join(" "));
+      return { d: d, k: k };
+    }).filter(function (x) { return x.k > 0; })
+      .sort(function (a, b) { return b.k - a.k; });
+    if (!scored.length || scored[0].k < 1) return null;
+    const best = scored[0].k;
+    const top = scored.filter(function (x) { return x.k === best; }).slice(0, 3);
+    return {
+      file: top[0].d.file,
+      id: top[0].d.id,
+      tieuDe: top.map(function (x) { return x.d.tieuDe; }).filter(Boolean).join("\n"),
+      dong: top.flatMap(function (x) { return x.d.dong; }).slice(0, 8),
+    };
   }
 
-  // Không đủ chắc để trả lời, nhưng có đoạn gần nghĩa -> gợi ý tiêu đề cho khách chọn
-  function timGanDung(text, kb) {
-    const tokens = tuKhoaCauHoi(text);
-    if (!tokens.length) return [];
+function timGanDung(text, kb) {
+    const tokens = tachTu(text).filter(function (w) {
+      return TU_DEM.indexOf(w) === -1;
+    });
     const daThay = {};
-    return kb
-      .map(function (d) { return { d: d, k: demKhop(tokens, d.tu) }; })
+    return kb.map(function (d) {
+      return { d: d, k: demKhop(tokens, d.tieuDe + " " + d.dong.join(" ")) };
+    })
       .filter(function (x) { return x.k > 0 && x.d.tieuDe; })
       .sort(function (a, b) { return b.k - a.k; })
       .filter(function (x) {
@@ -383,34 +319,104 @@
     return el ? el.textContent.trim() : "";
   }
 
+
+  /* ============ GEMINI ============ */
   const lichSuAI = [];
-async function hoiGemini(text) {
-  if (!CONFIG.geminiEndpoint) return null;
-  lichSuAI.push({ role: "user", text: text });
-  try {
-    const r = await fetch(CONFIG.geminiEndpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ messages: lichSuAI.slice(-10) }),
-    });
-    if (!r.ok) throw new Error("HTTP " + r.status);
-    const d = await r.json();
-    if (!d.reply) throw new Error("empty");
-    lichSuAI.push({ role: "model", text: d.reply });
-    return d.reply;
-  } catch (e) {
-    console.warn("Gemini lỗi:", e);
-    lichSuAI.pop();
-    return null;
+
+  async function hoiGemini(text) {
+    if (!CONFIG.geminiEndpoint) return null;
+
+    chat.dangHoi = true;
+    lichSuAI.push({ role: "user", text: text });
+
+    const cho = themTinNhan("Đang soạn tin...", "bot");
+    cho.classList.add("nt-typing");
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 35000);
+
+    try {
+      const r = await fetch(CONFIG.geminiEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          messages: lichSuAI.slice(-10)
+        }),
+        signal: controller.signal
+      });
+
+      const d = await r.json();
+
+      if (!r.ok) {
+        throw new Error(d.error || "HTTP " + r.status);
+      }
+
+      if (!d.reply && !d.handoff) {
+        throw new Error("Gemini trả về nội dung rỗng");
+      }
+
+      lichSuAI.push({
+        role: "model",
+        text: d.reply || "Mình sẽ chuyển câu hỏi cho nhân viên."
+      });
+
+      return d;
+
+    } catch (e) {
+      console.error("Lỗi gọi Gemini:", e);
+      lichSuAI.pop();
+      return { error: true };
+
+    } finally {
+      clearTimeout(timeout);
+      cho.remove();
+      chat.dangHoi = false;
+    }
   }
-}
+
+
+  function hienTraLoiAI(ai, cauHoi) {
+    if (ai.handoff) {
+      chat.xacNhan = { cauHoi: cauHoi };
+      botNoiNut(
+        (ai.reply || "Câu này mình chưa trả lời được.") + " Bạn có muốn mình chuyển cho nhân viên NETTO không?",
+        ["Có, chuyển nhân viên", "Không cần"]
+      );
+      return;
+    }
+    const box = document.createElement("div");
+    box.appendChild(document.createTextNode(ai.reply));
+    (ai.products || []).forEach(function (p) {
+      const a = document.createElement("a");
+      a.className = "nt-sp";
+      a.href = root + "pages/chitietsanpham.html?id=" + encodeURIComponent(p.id);
+      if (p.anh) {
+        const img = document.createElement("img");
+        img.src = root + p.anh;
+        img.alt = "";
+        a.appendChild(img);
+      }
+      const info = document.createElement("span");
+      info.appendChild(document.createTextNode(p.ten));
+      info.appendChild(document.createElement("br"));
+      const gia = document.createElement("b");
+      gia.textContent = p.gia;
+      info.appendChild(gia);
+      a.appendChild(info);
+      box.appendChild(a);
+    });
+    themTinNhan(box, "bot");
+  }
+
   async function xuLyTinNhan(text) {
+    if (chat.dangHoi) return;
     themTinNhan(text, "user");
     const s = boDau(text);
     const tu = tachTu(text);
 
-    // Bot vừa hỏi "có muốn chuyển nhân viên không?"
-    if (chat.xacNhan) {
+  if (chat.xacNhan) {
       const cau = chat.xacNhan.cauHoi;
       if (tu.length <= 4 && coTu(" " + tu.join(" ") + " ", [" co ", " ok ", " vang ", " dong y ", " chuyen ", " duoc "])) {
         chuyenChoNhanVien(cau);
@@ -421,11 +427,9 @@ async function hoiGemini(text) {
         botNoi("Ok bạn, nếu cần gì thêm cứ hỏi mình nhé.");
         return;
       }
-      chat.xacNhan = null; // khách hỏi chuyện khác -> bỏ qua câu hỏi cũ
+      chat.xacNhan = null;
     }
-
-    // Đang chờ khách để lại liên hệ (vẫn cho hỏi chuyện khác, không bị kẹt)
-    if (chat.pending) {
+  if (chat.pending) {
       const g = text.replace(/[\s.\-]/g, "");
       const email = text.match(/[^\s@]+@[^\s@]+\.[^\s@]+/);
       const sdt = g.match(/(\+?84|0)\d{9}/);
@@ -437,8 +441,7 @@ async function hoiGemini(text) {
         guiQuanTri(chat.pending.cauHoi, "");
         return;
       }
-      // Không phải liên hệ: nếu bot trả lời được thì cứ trả lời, không bắt nhập lại
-    }
+  }
 
     if (coTu(s, TU_GAP_NGUOI)) {
       chat.miss = 0;
@@ -446,7 +449,20 @@ async function hoiGemini(text) {
       return;
     }
 
-    // Hỏi về sản phẩm
+    const giongLienHe = chat.pending && /\d{6,}|@/.test(text);
+    const ai = giongLienHe ? null : await hoiGemini(text);
+
+    if (ai?.error) {
+  botNoi("Mình đang gặp sự cố kết nối với trợ lý AI. Bạn vui lòng thử lại sau ít phút nhé.");
+  return;
+}
+
+if (ai) {
+  chat.miss = 0;
+  hienTraLoiAI(ai, text);
+  return;
+}
+
     const rutGon = boTuThua(text);
     const sp = rutGon ? timSanPham(rutGon) : [];
     if (sp.length) {
@@ -464,10 +480,8 @@ async function hoiGemini(text) {
       themTinNhan(box, "bot");
       return;
     }
-
-    // Hỏi về chính sách, hướng dẫn, khuyến mãi, liên hệ: bot đọc từ các trang của web
-    const kb = await taiKienThuc();
-    const kq = timDapAn(text, kb);
+  const kb = await taiKienThuc();
+  const kq = timDapAn(text, kb);
     if (kq) {
       chat.miss = 0;
       hienDapAn(kq);
@@ -479,8 +493,7 @@ async function hoiGemini(text) {
       return;
     }
 
-    // Đang chờ liên hệ mà khách gõ câu khó hiểu: nhắc nhẹ, sai 2 lần thì thôi không ép
-    if (chat.pending) {
+  if (chat.pending) {
       chat.lanSaiLH++;
       if (chat.lanSaiLH >= 2) {
         chat.pending = null;
@@ -490,14 +503,7 @@ async function hoiGemini(text) {
       }
       return;
     }
-    const traLoiAI = await hoiGemini(text);
-if (traLoiAI) {
-  chat.miss = 0;
-  botNoi(traLoiAI);
-  return;
-}
-    // Chưa hiểu: hỏi lại trước, gợi ý gần đúng, lần thứ 2 mới đề nghị chuyển nhân viên
-    // (không tự chuyển, khách đồng ý mới chuyển)
+
     chat.miss++;
     if (chat.miss === 1) {
       const gy = timGanDung(text, kb);
@@ -516,8 +522,7 @@ if (traLoiAI) {
     botNoiNut("Câu này mình chưa trả lời được. Bạn có muốn mình chuyển cho nhân viên NETTO không?", ["Có, chuyển nhân viên", "Không cần"]);
   }
 
-  // Gửi cho quản trị viên: lưu trong trình duyệt + gửi qua Formspree nếu đã cấu hình
-  async function guiQuanTri(cauHoi, lienHe) {
+async function guiQuanTri(cauHoi, lienHe) {
     if (chat.dangGui) return;
     chat.dangGui = true;
     const data = {
@@ -526,7 +531,7 @@ if (traLoiAI) {
       trang: location.href,
       thoi_gian: new Date().toLocaleString("vi-VN"),
     };
-    if (lienHe && lienHe.indexOf("@") > -1) data.email = lienHe; // để chủ shop bấm Reply
+    if (lienHe && lienHe.indexOf("@") > -1) data.email = lienHe;
 
     try {
       const kho = JSON.parse(localStorage.getItem("netto_chat_inbox") || "[]");
@@ -568,8 +573,7 @@ if (traLoiAI) {
   });
 
   function khoiTao() {
-    // Bỏ khung chào cũ (nút "Chat Now" giả), thay bằng chatbox mới
-    document.querySelectorAll(".chatbox-popup").forEach(function (el) {
+      document.querySelectorAll(".chatbox-popup").forEach(function (el) {
       el.remove();
     });
   }

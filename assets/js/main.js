@@ -221,10 +221,11 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 
-  /* ============ KHÁCH HÀNG NÓI GÌ VỀ NETTO ============ */
-  // Lấy đánh giá 5 sao khách đã viết ở trang chi tiết sản phẩm
-  // (lưu trong localStorage, khoá "netto-danhgia-<id sản phẩm>", xem chitietsanpham.js).
-  // Hiện 3 nhận xét đầu, nút "Xem thêm" mở các nhận xét còn lại.
+
+    /* ============ KHÁCH HÀNG NÓI GÌ VỀ NETTO ============ */
+  // Lấy tất cả đánh giá khách đã viết ở trang chi tiết sản phẩm
+  // (localStorage, khoá "netto-danhgia-<id sản phẩm>").
+  // Sắp xếp rating cao → thấp, hiện 3 nhận xét đầu, nút "Xem thêm" mở rộng tại chỗ.
   const reviewGrid = document.getElementById('review-grid-home');
   const reviewMore = document.getElementById('review-more');
 
@@ -232,10 +233,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const TIEN_TO = 'netto-danhgia-';
     const BAN_DAU = 3;
 
-    // "5/11/2026" -> số để sắp xếp (mới nhất trước)
+    // "5/11/2026" -> số để sắp xếp
     const ngayThanhSo = function (ngay) {
       const m = String(ngay || '').match(/(\d+)\/(\d+)\/(\d+)/);
       return m ? Number(m[3]) * 10000 + Number(m[2]) * 100 + Number(m[1]) : 0;
+    };
+
+    // ★★★★☆ theo số sao (1–5)
+    const chuoiSao = function (n) {
+      const diem = Math.max(1, Math.min(5, Number(n) || 5));
+      return '★★★★★'.slice(0, diem) + '☆☆☆☆☆'.slice(0, 5 - diem);
     };
 
     const docDanhGia = function () {
@@ -250,20 +257,31 @@ document.addEventListener('DOMContentLoaded', function () {
             arr = JSON.parse(localStorage.getItem(khoa)) || [];
           } catch (e) {}
           arr.forEach(function (d) {
-            if (d && d.diem === 5 && d.nd) {
+            // Lấy mọi đánh giá có nội dung (1–5 sao)
+            if (d && d.nd && Number(d.diem) >= 1 && Number(d.diem) <= 5) {
               const anh = Array.isArray(d.anh)
                 ? d.anh.filter(function (a) { return /^data:image\//.test(a); })
                 : [];
-              ds.push({ idSp: idSp, ten: d.ten || 'Khách', nd: d.nd, ngay: d.ngay, anh: anh });
+              ds.push({
+                idSp: idSp,
+                ten: d.ten || 'Khách',
+                nd: d.nd,
+                diem: Number(d.diem),
+                ngay: d.ngay,
+                anh: anh
+              });
             }
           });
         }
       } catch (e) {}
-      // mới nhất trước (cùng ngày giữ nguyên thứ tự)
+
+      // Rating cao → thấp, cùng sao thì mới nhất trước
       return ds
         .map(function (d, i) { return { d: d, i: i }; })
         .sort(function (a, b) {
-          return ngayThanhSo(b.d.ngay) - ngayThanhSo(a.d.ngay) || a.i - b.i;
+          return (b.d.diem - a.d.diem) ||
+                 (ngayThanhSo(b.d.ngay) - ngayThanhSo(a.d.ngay)) ||
+                 (a.i - b.i);
         })
         .map(function (x) { return x.d; });
     };
@@ -274,13 +292,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const stars = document.createElement('div');
       stars.className = 'review-stars';
-      stars.textContent = '★★★★★';
+      stars.textContent = chuoiSao(d.diem);   // hiện đúng số sao
 
       const text = document.createElement('p');
       text.className = 'review-text';
       text.textContent = d.nd;
 
-      // Ảnh khách đính kèm (nếu có), bấm để phóng to
       let photos = null;
       if (d.anh && d.anh.length) {
         photos = document.createElement('div');
@@ -288,10 +305,12 @@ document.addEventListener('DOMContentLoaded', function () {
         d.anh.forEach(function (src) {
           const im = document.createElement('img');
           im.src = src;
-          im.alt = 'Ảnh đánh giá của ' + d.ten;
-          im.loading = 'lazy';
+          im.alt = '';
           im.addEventListener('click', function () {
-            if (window.nettoMoAnh) window.nettoMoAnh(src);
+            // phóng to ảnh nếu có sẵn logic ở nơi khác
+            if (typeof window.xemAnhPhongTo === 'function') {
+              window.xemAnhPhongTo(src);
+            }
           });
           photos.appendChild(im);
         });
@@ -329,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const danhGia = docDanhGia();
 
-    // Chưa có đánh giá 5 sao nào: giữ 3 đánh giá mẫu có sẵn trong HTML
+    // Chưa có đánh giá thật: giữ 3 đánh giá mẫu trong HTML
     if (danhGia.length) {
       fetch('assets/data/products.json')
         .then(function (res) { return res.ok ? res.json() : []; })
@@ -344,19 +363,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
           reviewGrid.innerHTML = '';
           cacThe.forEach(function (c, i) {
-            c.hidden = i >= BAN_DAU;
+            c.hidden = i >= BAN_DAU;   // ẩn từ comment thứ 4 trở đi
             reviewGrid.appendChild(c);
           });
 
           if (cacThe.length > BAN_DAU) {
             let moRong = false;
             reviewMore.hidden = false;
+            reviewMore.textContent = 'Xem tất cả nhận xét';
             reviewMore.addEventListener('click', function () {
               moRong = !moRong;
               cacThe.forEach(function (c, i) {
                 c.hidden = !moRong && i >= BAN_DAU;
               });
-              reviewMore.textContent = moRong ? 'Thu gọn' : 'Xem thêm nhận xét';
+              reviewMore.textContent = moRong ? 'Thu gọn' : 'Xem tất cả nhận xét';
             });
           }
         });
