@@ -437,3 +437,55 @@ body {
         justify-content: space-between;
     }
 }
+.bank-info-box {
+    margin-top: 12px;
+    padding: 14px 16px;
+    background-color: #fff5f7;
+    border: 1px dashed #e06d82;
+    border-radius: 10px;
+    font-size: 13.5px;
+    color: #444;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.bank-info-details {
+    flex: 1;
+}
+
+.bank-qr-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.qr-code-img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #fff;
+    padding: 6px;
+    border: 1px solid #f2cbd3;
+}
+
+.qr-caption {
+    font-size: 11.5px;
+    color: #777;
+    margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+    .bank-info-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .bank-qr-box {
+        align-self: center;
+    }
+}
