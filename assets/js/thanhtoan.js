@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
 
                 citySelect.addEventListener("change", function () {
-                    const selectedCityCode = this.options[this.selectedIndex].dataset.code;
+                    const selectedCityCode = this.options[this.selectedIndex]?.dataset.code;
                     districtSelect.innerHTML = '<option value="">Chọn Quận / Huyện</option>';
                     wardSelect.innerHTML = '<option value="">Chọn Phường / Xã</option>';
 
@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
 
                 districtSelect.addEventListener("change", function () {
-                    const selectedCityCode = citySelect.options[citySelect.selectedIndex].dataset.code;
-                    const selectedDistrictCode = this.options[this.selectedIndex].dataset.code;
+                    const selectedCityCode = citySelect.options[citySelect.selectedIndex]?.dataset.code;
+                    const selectedDistrictCode = this.options[this.selectedIndex]?.dataset.code;
                     wardSelect.innerHTML = '<option value="">Chọn Phường / Xã</option>';
 
                     const selectedCity = data.find(c => c.code == selectedCityCode);
@@ -67,10 +67,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             if (this.value === "qr") {
-                bankInfoBox.style.display = "block";
+                if (bankInfoBox) bankInfoBox.style.display = "block";
+                veQR();
                 batDauDemNguoc();
             } else {
-                bankInfoBox.style.display = "none";
+                if (bankInfoBox) bankInfoBox.style.display = "none";
                 dungDemNguoc();
             }
         });
@@ -129,7 +130,49 @@ document.addEventListener("DOMContentLoaded", function () {
         };
     }
 
-    // 2. Hiển thị danh sách giỏ hàng liên kết từ nettoCart (kèm tăng/giảm/xóa)
+    function chuanHoaSanPham(sp) {
+        if (!sp || typeof sp !== "object") return null;
+        const ten = sp.ten || sp.name || sp.title || sp.tenSanPham || "";
+        if (!ten && !sp.id && !sp.ma) return null;
+        const listAnh = taoDanhSachUngVienAnh(sp);
+        return {
+            ...sp,
+            ten: ten || "Sản phẩm NETTO",
+            gia: sp.gia || sp.price || sp.donGia || "0",
+            mau: sp.mauTen || sp.mau || sp.color || "Mặc định",
+            size: sp.size || sp.kichThuoc || "S",
+            soLuong: Math.max(1, Number(sp.soLuong || sp.quantity || sp.qty || 1)),
+            anh: listAnh[0] || "../assets/images/logo.png"
+        };
+    }
+
+    function docSanPhamMuaNgayTuStorage() {
+        const buyNowKeys = [
+            "nettoBuyNow",
+            "buyNowProduct",
+            "buyNowItem",
+            "checkoutProduct",
+            "selectedProduct",
+            "muaNgay"
+        ];
+        for (const key of buyNowKeys) {
+            const raw = sessionStorage.getItem(key) || localStorage.getItem(key);
+            if (!raw || raw === "null" || raw === "undefined") continue;
+            try {
+                const parsed = JSON.parse(raw);
+                const arr = Array.isArray(parsed) ? parsed : [parsed];
+                const normalized = arr.map(chuanHoaSanPham).filter(Boolean);
+                if (normalized.length > 0) {
+                    sessionStorage.removeItem(key);
+                    localStorage.removeItem(key);
+                    return normalized;
+                }
+            } catch (_) {}
+        }
+        return null;
+    }
+
+    // 2. Khởi tạo danh sách giỏ hàng (Ưu tiên: Mua ngay -> Sản phẩm đã tick -> Toàn bộ nettoCart)
     const itemsContainer = document.getElementById("checkoutItemsList");
     const cartItemCountLabel = document.getElementById("cartItemCountLabel");
     let subtotal = 0;
@@ -137,11 +180,49 @@ document.addEventListener("DOMContentLoaded", function () {
     let discount = 0;
     let currentVoucherCode = "";
 
-    let gioHang = (JSON.parse(localStorage.getItem("nettoCart")) || []).map(sp => {
-        const listAnh = taoDanhSachUngVienAnh(sp);
-        return { ...sp, anh: listAnh[0] || "../assets/images/logo.png" };
-    });
-    localStorage.setItem("nettoCart", JSON.stringify(gioHang));
+    const urlParams = new URLSearchParams(window.location.search);
+    const isBuyNow =
+        urlParams.get("muangay") === "1" ||
+        urlParams.get("buynow") === "1" ||
+        urlParams.get("mode") === "buynow";
+    const buyNowId = urlParams.get("id") || urlParams.get("ma") || urlParams.get("sanpham") || urlParams.get("productId");
+    const buyNowName = urlParams.get("ten") || urlParams.get("name") || "";
+    const buyNowPrice = urlParams.get("gia") || urlParams.get("price") || "";
+    const buyNowImg = urlParams.get("anh") || urlParams.get("img") || urlParams.get("image") || "";
+    const buyNowQty = Math.max(1, Number(urlParams.get("soluong") || urlParams.get("qty")) || 1);
+    const buyNowSize = urlParams.get("size") || "S";
+    const buyNowColor = urlParams.get("mau") || urlParams.get("color") || "";
+
+    let gioHang = [];
+    const buyNowFromStorage = docSanPhamMuaNgayTuStorage();
+    const checkoutOnlyCart = JSON.parse(localStorage.getItem("nettoCheckoutCart") || "null");
+
+    if (buyNowFromStorage && buyNowFromStorage.length > 0) {
+        gioHang = buyNowFromStorage;
+    } else if (isBuyNow && buyNowName) {
+        const itemFromQuery = chuanHoaSanPham({
+            id: buyNowId || "BUYNOW",
+            ten: buyNowName,
+            gia: buyNowPrice || "0",
+            anh: buyNowImg,
+            mau: buyNowColor || "Mặc định",
+            size: buyNowSize,
+            soLuong: buyNowQty
+        });
+        if (itemFromQuery) gioHang = [itemFromQuery];
+    } else if (Array.isArray(checkoutOnlyCart) && checkoutOnlyCart.length > 0) {
+        gioHang = checkoutOnlyCart.map(chuanHoaSanPham).filter(Boolean);
+        localStorage.removeItem("nettoCheckoutCart");
+    } else {
+        const rawCart = JSON.parse(localStorage.getItem("nettoCart") || "[]");
+        if (Array.isArray(rawCart)) {
+            gioHang = rawCart.map(chuanHoaSanPham).filter(Boolean);
+        }
+    }
+
+    if (gioHang.length > 0) {
+        localStorage.setItem("nettoCart", JSON.stringify(gioHang));
+    }
 
     function chuyenGiaThanhSo(gia) {
         return Number(String(gia || "").replace(/\D/g, "")) || 0;
@@ -254,8 +335,12 @@ document.addEventListener("DOMContentLoaded", function () {
     function veQR() {
         const img = document.getElementById("vietqrImg");
         if (!img) return;
+        img.onerror = function () {
+            this.onerror = null;
+            this.src = "../assets/images/logo.png";
+        };
         if (tongHienTai <= 0) {
-            img.src = "../assets/images/qr.jpg";
+            img.src = "../assets/images/logo.png";
             document.getElementById("qrAmount").innerText = "0đ";
             document.getElementById("qrNote").innerText = maDonHang;
             return;
@@ -403,28 +488,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Tự động nạp sản phẩm khi bấm "Mua ngay" (?muangay=1)
-    const urlParams = new URLSearchParams(window.location.search);
-    const isBuyNow = urlParams.get("muangay") === "1";
-    const buyNowId = urlParams.get("id") || urlParams.get("ma") || urlParams.get("sanpham");
-    const buyNowQty = Math.max(1, Number(urlParams.get("soluong")) || 1);
-    const buyNowSize = urlParams.get("size") || "S";
-    const buyNowColor = urlParams.get("mau") || "";
-    const savedBuyNow = JSON.parse(localStorage.getItem("nettoBuyNow") || "null");
-
-    if (isBuyNow && savedBuyNow && savedBuyNow.ten) {
-        const listAnh = taoDanhSachUngVienAnh(savedBuyNow);
-        gioHang = [{
-            ...savedBuyNow,
-            anh: listAnh[0] || savedBuyNow.anh || "../assets/images/logo.png",
-            soLuong: savedBuyNow.soLuong || buyNowQty,
-            size: savedBuyNow.size || buyNowSize,
-            mau: savedBuyNow.mau || buyNowColor || "Mặc định"
-        }];
-        localStorage.setItem("nettoCart", JSON.stringify(gioHang));
-        localStorage.removeItem("nettoBuyNow");
-        renderCheckoutCart();
-    } else if (isBuyNow && gioHang.length === 0 && buyNowId) {
+    // Nếu bấm "Mua ngay" (?muangay=1&id=...) mà chưa có sẵn trong storage thì tải từ products.json
+    if (isBuyNow && gioHang.length === 0 && buyNowId) {
         fetch("../assets/data/products.json")
             .then(res => res.json())
             .then(products => {
@@ -433,7 +498,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (target) {
                     const defaultColorName = (Array.isArray(target.mau) && target.mau[0] && target.mau[0].ten) || "Mặc định";
-                    const itemMoi = {
+                    const itemMoi = chuanHoaSanPham({
                         id: target.id,
                         ten: target.name || target.ten || "Sản phẩm NETTO",
                         gia: target.price || target.gia || "289000",
@@ -442,11 +507,12 @@ document.addEventListener("DOMContentLoaded", function () {
                         size: buyNowSize,
                         soLuong: buyNowQty,
                         mauArr: target.mau
-                    };
-                    itemMoi.anh = taoDanhSachUngVienAnh(itemMoi)[0] || "../assets/images/logo.png";
-                    gioHang = [itemMoi];
-                    localStorage.setItem("nettoCart", JSON.stringify(gioHang));
-                    renderCheckoutCart();
+                    });
+                    if (itemMoi) {
+                        gioHang = [itemMoi];
+                        localStorage.setItem("nettoCart", JSON.stringify(gioHang));
+                        renderCheckoutCart();
+                    }
                 }
             })
             .catch(err => console.log("Không nạp được sản phẩm mua ngay:", err));
@@ -485,14 +551,11 @@ document.addEventListener("DOMContentLoaded", function () {
             phoneError.style.display = "none";
             emailError.style.display = "none";
 
-            let isValid = true;
-
             const nameWords = fullname.split(/\s+/).filter(Boolean);
             if (nameWords.length < 2) {
                 fullnameError.innerText = "⚠️ Vui lòng nhập họ và tên đầy đủ từ 2 từ trở lên!";
                 fullnameError.style.display = "block";
                 fullnameInput.focus();
-                isValid = false;
                 return;
             }
 
@@ -501,7 +564,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 phoneError.innerText = "⚠️ Số điện thoại phải gồm đúng 10 chữ số và bắt đầu bằng số 0!";
                 phoneError.style.display = "block";
                 phoneInput.focus();
-                isValid = false;
                 return;
             }
 
@@ -509,15 +571,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 emailError.innerText = "⚠️ Địa chỉ email phải chứa ký tự '@'!";
                 emailError.style.display = "block";
                 emailInput.focus();
-                isValid = false;
                 return;
             }
 
-            if (isValid) {
-                localStorage.removeItem("nettoCart");
-                dungDemNguoc();
-                successModal.style.display = "flex";
-            }
+            localStorage.removeItem("nettoCart");
+            dungDemNguoc();
+            if (successModal) successModal.style.display = "flex";
         });
     }
 
@@ -528,12 +587,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-const checkoutOnlyCart = JSON.parse(localStorage.getItem("nettoCheckoutCart") || "null");
-    if (Array.isArray(checkoutOnlyCart) && checkoutOnlyCart.length > 0) {
-        gioHang = checkoutOnlyCart.map(sp => {
-            const listAnh = taoDanhSachUngVienAnh(sp);
-            return { ...sp, anh: listAnh[0] || "../assets/images/logo.png" };
-        });
-        localStorage.setItem("nettoCart", JSON.stringify(gioHang));
-        localStorage.removeItem("nettoCheckoutCart");
-    }

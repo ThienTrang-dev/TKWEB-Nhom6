@@ -380,78 +380,199 @@ document.addEventListener("click", function(e) {
 });
 
 
-// 1. Khi tick/bỏ tick từng sản phẩm hoặc "Chọn tất cả", lưu trạng thái checked vào nettoCart
-function capNhatTrangThaiTick() {
-    const checkboxes = document.querySelectorAll(".cart-item-checkbox"); // chỉnh theo class checkbox thực tế
-    checkboxes.forEach((cb, idx) => {
-        if (gioHang[idx]) {
-            gioHang[idx].checked = cb.checked;
+
+
+(function () {
+    const CHECKOUT_CART_KEY = "nettoCheckoutCart";
+    const MAIN_CART_KEY = "nettoCart";
+
+    function isSelectAll(el) {
+        const text = (
+            (el.closest("label")?.innerText || el.parentElement?.innerText || "") +
+            " " +
+            (el.id || "") +
+            " " +
+            (el.className || "")
+        ).toLowerCase();
+        return (
+            text.includes("chọn tất cả") ||
+            text.includes("chon tat ca") ||
+            text.includes("select-all") ||
+            text.includes("selectall") ||
+            text.includes("check-all") ||
+            text.includes("checkall")
+        );
+    }
+
+    function parsePrice(val) {
+        return Number(String(val || "").replace(/\D/g, "")) || 0;
+    }
+
+    function getCartItemElements() {
+        const selectors = [
+            ".cart-item",
+            ".cart-row",
+            ".cart-product-item",
+            ".drawer-cart-item",
+            ".gio-hang-item",
+            "[data-cart-index]",
+            "[data-index]"
+        ];
+
+        for (const sel of selectors) {
+            const nodes = Array.from(document.querySelectorAll(sel)).filter(node =>
+                Boolean(node.querySelector('input[type="checkbox"]') || node.querySelector("img"))
+            );
+            if (nodes.length > 0) return nodes;
         }
-    });
-    localStorage.setItem("nettoCart", JSON.stringify(gioHang));
-}
 
-// 2. Khi bấm "TIẾN HÀNH THANH TOÁN", chỉ giữ các sản phẩm đang được tick
-const btnThanhToan = document.getElementById("btnCheckout") || document.querySelector(".btn-checkout, .checkout-btn");
-if (btnThanhToan) {
-    btnThanhToan.addEventListener("click", function (e) {
-        const checkboxes = document.querySelectorAll(".cart-item-checkbox");
-        let danhSachDaChon = gioHang;
+        const allCheckboxes = Array.from(document.querySelectorAll('input[type="checkbox"]')).filter(
+            cb => !isSelectAll(cb)
+        );
+        const itemContainers = [];
+        allCheckboxes.forEach(cb => {
+            let parent = cb.parentElement;
+            for (let i = 0; i < 5 && parent; i++) {
+                if (parent.querySelector("img") && parent.querySelectorAll('input[type="checkbox"]').length === 1) {
+                    if (!itemContainers.includes(parent)) {
+                        itemContainers.push(parent);
+                    }
+                    break;
+                }
+                parent = parent.parentElement;
+            }
+        });
+        return itemContainers;
+    }
 
-        if (checkboxes.length > 0) {
-            danhSachDaChon = gioHang.filter((_, idx) => checkboxes[idx] && checkboxes[idx].checked);
-        } else if (gioHang.some(sp => typeof sp.checked === "boolean")) {
-            danhSachDaChon = gioHang.filter(sp => sp.checked !== false);
+    function getCheckedIndicesFromDOM(cartLength) {
+        const itemEls = getCartItemElements();
+        if (itemEls.length > 0) {
+            const checkedIdx = [];
+            itemEls.forEach((el, idx) => {
+                const cb = el.querySelector('input[type="checkbox"]');
+                if (cb && !cb.disabled && cb.checked) {
+                    checkedIdx.push(idx);
+                }
+            });
+            return checkedIdx;
         }
 
-        if (danhSachDaChon.length === 0) {
-            e.preventDefault();
-            alert("Vui lòng tick chọn ít nhất 1 sản phẩm trước khi thanh toán!");
+        const cbs = Array.from(document.querySelectorAll('input[type="checkbox"]')).filter(
+            cb => !isSelectAll(cb) && !cb.disabled
+        );
+        if (cbs.length > 0) {
+            return cbs.map((cb, idx) => (cb.checked ? idx : -1)).filter(idx => idx >= 0 && idx < cartLength);
+        }
+
+        return null;
+    }
+
+    // Cập nhật lại tổng tiền hiển thị trên drawer giỏ hàng chỉ tính các món được tích
+    function capNhatTongTienDrawer() {
+        const cart = JSON.parse(localStorage.getItem(MAIN_CART_KEY) || "[]");
+        if (!Array.isArray(cart)) return;
+
+        const checkedIndices = getCheckedIndicesFromDOM(cart.length);
+        const selectedItems = Array.isArray(checkedIndices)
+            ? checkedIndices.map(idx => cart[idx]).filter(Boolean)
+            : cart.filter(item => item.checked !== false);
+
+        const totalMoney = selectedItems.reduce(
+            (sum, sp) => sum + parsePrice(sp.gia || sp.price) * (Number(sp.soLuong || sp.quantity) || 1),
+            0
+        );
+
+        const totalSelectors = [
+            "#cartTotal",
+            "#cart-total",
+            ".cart-total-price",
+            ".cart-total-amount",
+            ".drawer-total-price"
+        ];
+        for (const sel of totalSelectors) {
+            const el = document.querySelector(sel);
+            if (el) {
+                el.innerText = totalMoney.toLocaleString("vi-VN") + "đ";
+            }
+        }
+    }
+
+    // Lưu trạng thái tick/bỏ tick của từng món vào nettoCart (KHÔNG xóa món bỏ tick)
+    document.addEventListener("change", function (e) {
+        if (!e.target || !e.target.matches('input[type="checkbox"]')) return;
+
+        const cart = JSON.parse(localStorage.getItem(MAIN_CART_KEY) || "[]");
+        if (!Array.isArray(cart) || cart.length === 0) return;
+
+        if (isSelectAll(e.target)) {
+            const checkAllState = e.target.checked;
+            cart.forEach(item => {
+                item.checked = checkAllState;
+            });
+            localStorage.setItem(MAIN_CART_KEY, JSON.stringify(cart));
+            setTimeout(capNhatTongTienDrawer, 0);
             return;
         }
 
-        localStorage.setItem("nettoCart", JSON.stringify(danhSachDaChon));
-    });
-}
-
-document.addEventListener("click", function (e) {
-    const trigger = e.target.closest("a, button");
-    if (!trigger) return;
-
-    const btnText = (trigger.innerText || trigger.textContent || "").trim().toLowerCase();
-    const isCheckoutBtn =
-        btnText.includes("thanh toán") ||
-        trigger.id === "btnCheckout" ||
-        trigger.classList.contains("btn-checkout") ||
-        trigger.classList.contains("checkout-btn");
-
-    if (!isCheckoutBtn) return;
-
-    // Tìm toàn bộ checkbox sản phẩm (loại trừ checkbox "Chọn tất cả")
-    const allCheckboxes = Array.from(document.querySelectorAll('input[type="checkbox"]'));
-    const itemCheckboxes = allCheckboxes.filter(cb => {
-        const labelText = ((cb.closest("label")?.innerText || cb.parentElement?.innerText || "") + " " + (cb.id || "") + " " + (cb.className || "")).toLowerCase();
-        return !labelText.includes("chọn tất cả") && !labelText.includes("select-all") && !labelText.includes("checkall");
-    });
-
-    if (itemCheckboxes.length === 0) return;
-
-    const checkedIndexes = itemCheckboxes
-        .map((cb, idx) => (cb.checked ? idx : -1))
-        .filter(idx => idx !== -1);
-
-    if (checkedIndexes.length === 0) {
-        e.preventDefault();
-        e.stopPropagation();
-        alert("Vui lòng tick chọn ít nhất 1 sản phẩm trước khi thanh toán!");
-        return;
-    }
-
-    const currentCart = JSON.parse(localStorage.getItem("nettoCart") || "[]");
-    if (Array.isArray(currentCart) && currentCart.length > 0) {
-        const filteredCart = currentCart.filter((_, idx) => checkedIndexes.includes(idx));
-        if (filteredCart.length > 0) {
-            localStorage.setItem("nettoCart", JSON.stringify(filteredCart));
+        const itemEls = getCartItemElements();
+        if (itemEls.length === cart.length) {
+            itemEls.forEach((el, idx) => {
+                const cb = el.querySelector('input[type="checkbox"]');
+                if (cb && cart[idx]) {
+                    cart[idx].checked = cb.checked;
+                }
+            });
+            localStorage.setItem(MAIN_CART_KEY, JSON.stringify(cart));
         }
-    }
-}, true);
+        setTimeout(capNhatTongTienDrawer, 0);
+    });
+
+    // Khi bấm TIẾN HÀNH THANH TOÁN: chỉ gửi các món được tick vào nettoCheckoutCart, giữ nguyên nettoCart
+    document.addEventListener(
+        "click",
+        function (e) {
+            const trigger = e.target.closest("a, button");
+            if (!trigger) return;
+
+            const text = (trigger.innerText || trigger.textContent || "").trim().toLowerCase();
+            const href = (trigger.getAttribute("href") || "").toLowerCase();
+            const isCheckoutBtn =
+                href.includes("thanhtoan") ||
+                text.includes("tiến hành thanh toán") ||
+                text.includes("tien hanh thanh toan") ||
+                text.includes("thanh toán") ||
+                text.includes("thanh toan") ||
+                trigger.id === "btnCheckout" ||
+                trigger.classList.contains("btn-checkout") ||
+                trigger.classList.contains("checkout-btn");
+
+            if (!isCheckoutBtn) return;
+
+            const cart = JSON.parse(localStorage.getItem(MAIN_CART_KEY) || "[]");
+            if (!Array.isArray(cart) || cart.length === 0) return;
+
+            const checkedIndices = getCheckedIndicesFromDOM(cart.length);
+            let selectedItems = [];
+
+            if (Array.isArray(checkedIndices)) {
+                selectedItems = checkedIndices.map(idx => cart[idx]).filter(Boolean);
+            } else if (cart.some(item => typeof item.checked === "boolean")) {
+                selectedItems = cart.filter(item => item.checked !== false);
+            } else {
+                selectedItems = cart;
+            }
+
+            if (selectedItems.length === 0) {
+                e.preventDefault();
+                e.stopPropagation();
+                alert("Vui lòng tick chọn ít nhất 1 sản phẩm để thanh toán!");
+                return;
+            }
+
+            // Chỉ lưu món được chọn sang nettoCheckoutCart, KHÔNG ghi đè xóa mất món chưa chọn ở nettoCart
+            localStorage.setItem(CHECKOUT_CART_KEY, JSON.stringify(selectedItems));
+        },
+        true
+    );
+})();
