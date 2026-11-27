@@ -12,7 +12,9 @@ body {
     overflow-x: hidden;
 }
 
+
 /* Bố cục 2 cột đều nhau, chống co bóp cột trái */
+
 .checkout-wrapper {
     max-width: 1240px;
     margin: 28px auto 40px;
@@ -34,7 +36,9 @@ body {
     min-width: 0;
 }
 
+
 /* Mỗi phần là một thẻ trắng tách biệt */
+
 .checkout-box {
     background: #ffffff;
     padding: 24px 26px;
@@ -76,7 +80,9 @@ body {
     white-space: nowrap;
 }
 
+
 /* Banner Đã có tài khoản - giữ nút Đăng nhập gọn 1 dòng */
+
 .login-banner-cool {
     display: flex;
     align-items: center;
@@ -130,7 +136,9 @@ body {
     background-color: #c9566b;
 }
 
+
 /* Form nhập liệu cân đều các cột */
+
 .field-label {
     display: block;
     font-size: 13px;
@@ -265,7 +273,9 @@ body {
     flex-shrink: 0;
 }
 
+
 /* Phương thức thanh toán */
+
 .payment-methods-list {
     display: flex;
     flex-direction: column;
@@ -327,7 +337,9 @@ body {
     margin-top: 2px;
 }
 
+
 /* Hộp QR chuyển khoản */
+
 .bank-info-box {
     margin-top: 14px;
     padding: 16px 18px;
@@ -406,7 +418,9 @@ body {
     border-top: 1px dashed #f3c6cf;
 }
 
+
 /* Giỏ hàng cột phải */
+
 .promo-alert-cool {
     display: flex;
     align-items: center;
@@ -540,7 +554,9 @@ body {
     color: #dc2626;
 }
 
+
 /* Mã giảm giá & thẻ voucher */
+
 .voucher-input-group {
     display: flex;
     gap: 10px;
@@ -677,7 +693,9 @@ body {
     background: radial-gradient(#e06d82 45%, #fff 50%);
 }
 
+
 /* Chi tiết thanh toán */
+
 .summary-rows {
     display: flex;
     flex-direction: column;
@@ -708,7 +726,9 @@ body {
     font-size: 19px;
 }
 
+
 /* Thanh cố định ở đáy */
+
 .checkout-bottom-bar {
     position: fixed;
     bottom: 0;
@@ -789,7 +809,9 @@ body {
     background-color: #c9566b;
 }
 
+
 /* Modal thành công */
+
 .success-modal-overlay {
     display: none;
     position: fixed;
@@ -862,4 +884,11 @@ body {
     .btn-place-order-coolmate {
         padding: 0 28px;
     }
+}
+
+
+/* Ẩn nút giỏ hàng trên trang thanh toán */
+
+#header-cart-toggle {
+    display: none !important;
 }

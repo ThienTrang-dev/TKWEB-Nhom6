@@ -96,6 +96,49 @@ function dongGioHang() {
 
     document.body.style.overflow = "";
 }
+// Thông báo khi giỏ hàng trống hoặc chưa chọn sản phẩm
+function hienThongBaoChonSanPham() {
+    if (document.getElementById("cart-warning")) return;
+
+    const thongBao = document.createElement("div");
+    thongBao.id = "cart-warning";
+    thongBao.className = "cart-warning";
+
+    thongBao.innerHTML = `
+        <div class="cart-warning-box">
+            <button type="button" class="cart-warning-close">&times;</button>
+
+            <div class="cart-warning-icon">🛍️</div>
+
+            <h3>Chưa có sản phẩm được chọn!</h3>
+
+            <p>
+                Vui lòng chọn ít nhất một sản phẩm
+                trước khi tiến hành thanh toán nhé.
+            </p>
+
+            <button type="button" class="cart-warning-btn">
+                Đã hiểu
+            </button>
+        </div>
+    `;
+
+    document.body.appendChild(thongBao);
+
+    thongBao.querySelector(".cart-warning-close").addEventListener("click", function() {
+        thongBao.remove();
+    });
+
+    thongBao.querySelector(".cart-warning-btn").addEventListener("click", function() {
+        thongBao.remove();
+    });
+
+    thongBao.addEventListener("click", function(e) {
+        if (e.target === thongBao) {
+            thongBao.remove();
+        }
+    });
+}
 
 // Hiển thị danh sách sản phẩm
 
@@ -236,6 +279,12 @@ document.addEventListener("keydown", function(e) {
 document.addEventListener("DOMContentLoaded", function() {
     capNhatSoLuongGioHang();
 });
+
+// Cập nhật lại khi quay lại trang bằng nút Back/Forward
+window.addEventListener("pageshow", function() {
+    capNhatSoLuongGioHang();
+});
+
 // Xử lý chọn/bỏ chọn sản phẩm
 document.addEventListener("change", function(e) {
     const gioHang = layGioHang();
@@ -271,7 +320,7 @@ document.addEventListener("click", function(e) {
     });
 
     if (sanPhamDuocChon.length === 0) {
-        alert("Vui lòng chọn ít nhất một sản phẩm!");
+        hienThongBaoChonSanPham();
         return;
     }
 
