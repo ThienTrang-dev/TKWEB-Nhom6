@@ -231,23 +231,13 @@ fetch("../assets/data/products.json")
   let diem = 5; // số sao đang chọn khi viết
   let loc = 0; // 0 = tất cả, 1..5 = lọc theo số sao
 
+    // Toàn bộ đánh giá của sản phẩm này (server dùng chung + máy này), nạp ở cuối khối
+  let tatCa = [];
+  let online = true;
+
   function doc() {
-    try {
-      return JSON.parse(localStorage.getItem(KHOA)) || [];
-    } catch (e) {
-      return [];
-    }
+    return tatCa;
   }
-
-  function ghi(arr) {
-    try {
-      localStorage.setItem(KHOA, JSON.stringify(arr));
-      return true;
-    } catch (e) {
-      return false; // thường do bộ nhớ trình duyệt đầy (ảnh nặng)
-    }
-  }
-
   // ---- Ảnh đính kèm (tối đa 3), thu nhỏ trước khi lưu để không đầy bộ nhớ ----
   const TOI_DA_ANH = 3;
   const inputAnh = document.getElementById("dg-anh");
@@ -392,7 +382,9 @@ fetch("../assets/data/products.json")
 
       const ngay = document.createElement("div");
       ngay.className = "dg-ngay";
-      ngay.textContent = d.ngay;
+      ngay.textContent = window.NettoDanhGia
+        ? NettoDanhGia.dinhDangNgay(d.ngay)
+        : d.ngay;
 
       const nd = document.createElement("p");
       nd.textContent = d.nd;
@@ -401,7 +393,28 @@ fetch("../assets/data/products.json")
       body.appendChild(sao);
       body.appendChild(ngay);
       body.appendChild(nd);
-
+            const thongTin = [];
+      if (d.size) thongTin.push("Kích thước: " + d.size);
+      if (d.mau) thongTin.push("Màu: " + d.mau);
+      if (d.fit && window.NettoDanhGia) thongTin.push("Vừa vặn: " + NettoDanhGia.FIT[d.fit]);
+      if (d.cao) thongTin.push("Cao " + d.cao + "cm");
+      if (d.nang) thongTin.push("Nặng " + d.nang + "kg");
+      if (thongTin.length) {
+        const tt = document.createElement("div");
+        tt.className = "dg-thongtin";
+        tt.textContent = thongTin.join(" · ");
+        body.insertBefore(tt, nd);
+      }
+      if (Array.isArray(d.tags) && d.tags.length) {
+        const tg = document.createElement("div");
+        tg.className = "dg-the";
+        d.tags.forEach(function (t) {
+          const s = document.createElement("span");
+          s.textContent = t;
+          tg.appendChild(s);
+        });
+        body.appendChild(tg);
+      }
       if (Array.isArray(d.anh) && d.anh.length) {
         const dsAnh = document.createElement("div");
         dsAnh.className = "dg-anh-ds";
@@ -458,41 +471,112 @@ fetch("../assets/data/products.json")
 
   nutMo.addEventListener("click", function () {
     form.hidden = !form.hidden;
+    if (!form.hidden) napLuaChon();
     nutMo.textContent = form.hidden ? "Viết đánh giá" : "Đóng";
   });
+
+    // ---- Chọn size/màu (lấy từ các nút của sản phẩm) + thẻ "điều bạn hài lòng" ----
+  const oSize = document.getElementById("dg-size");
+  const oMau = document.getElementById("dg-mau");
+  const boxTags = document.getElementById("dg-tags");
+  let tagChon = [];
+
+  function napLuaChon() {
+    function dien(select, nuts, layChu) {
+      if (!select) return;
+      const cu = select.value;
+      select.innerHTML = "";
+      nuts.forEach(function (n) {
+        const o = document.createElement("option");
+        o.value = o.textContent = layChu(n);
+        select.appendChild(o);
+      });
+      if (cu) select.value = cu;
+    }
+    dien(oSize, document.querySelectorAll("#ct-size button"), function (n) {
+      return n.textContent.trim();
+    });
+    dien(oMau, document.querySelectorAll("#ct-mau button"), function (n) {
+      return n.title || "Mặc định";
+    });
+  }
+
+  if (boxTags && window.NettoDanhGia) {
+    NettoDanhGia.TAGS.forEach(function (t) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.textContent = t;
+      b.addEventListener("click", function () {
+        const i = tagChon.indexOf(t);
+        if (i >= 0) tagChon.splice(i, 1);
+        else tagChon.push(t);
+        b.classList.toggle("on", i < 0);
+      });
+      boxTags.appendChild(b);
+    });
+  }
+
+  function taiLai() {
+    return NettoDanhGia.layTatCa().then(function (kq) {
+      online = kq.online;
+      tatCa = kq.ds.filter(function (d) {
+        return String(d.idSp) === String(id);
+      });
+      tatCa.sort(function (a, b) {
+        return NettoDanhGia.ngaySo(b) - NettoDanhGia.ngaySo(a);
+      });
+      ve();
+    });
+  }
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     const nd = document.getElementById("dg-nd").value.trim();
     if (!nd) return;
-    const ten = document.getElementById("dg-ten").value.trim() || "Khách";
-    const arr = doc();
+    const nutGui = form.querySelector(".dg-gui");
+    const fitChon = form.querySelector('input[name="dg-fit"]:checked');
     const moi = {
-      ten: ten,
+      idSp: id,
+      ten: document.getElementById("dg-ten").value.trim() || "Khách",
       diem: diem,
       nd: nd,
-      ngay: new Date().toLocaleDateString("vi-VN"),
+      size: oSize ? oSize.value : "",
+      mau: oMau ? oMau.value : "",
+      cao: document.getElementById("dg-cao").value,
+      nang: document.getElementById("dg-nang").value,
+      fit: fitChon ? fitChon.value : "",
+      tags: tagChon.slice(),
+      anh: anhChon.slice(),
     };
-    if (anhChon.length) moi.anh = anhChon.slice();
-    arr.unshift(moi);
-    if (!ghi(arr)) {
-      alert(
-        "Không lưu được đánh giá: bộ nhớ trình duyệt đã đầy. Bạn thử bớt ảnh nhé.",
-      );
-      return;
-    }
-    form.reset();
-    anhChon = [];
-    veXemAnh();
-    chonSao(5);
-    form.hidden = true;
-    nutMo.textContent = "Viết đánh giá";
-    loc = 0;
-    ve();
+    nutGui.disabled = true;
+    NettoDanhGia.gui(moi).then(function (kq) {
+      nutGui.disabled = false;
+      if (!kq.ok) {
+        alert(kq.loi || "Không gửi được đánh giá.");
+        return;
+      }
+      if (!kq.online) {
+        alert(
+          "Server đánh giá chưa bật nên đánh giá này tạm chỉ lưu trên máy của bạn. Hãy chạy server (npm start trong thư mục server) để mọi máy cùng thấy.",
+        );
+      }
+      form.reset();
+      anhChon = [];
+      tagChon = [];
+      boxTags.querySelectorAll("button").forEach(function (b) {
+        b.classList.remove("on");
+      });
+      veXemAnh();
+      chonSao(5);
+      form.hidden = true;
+      nutMo.textContent = "Viết đánh giá";
+      loc = 0;
+      taiLai();
+    });
   });
 
-  chonSao(5);
-  ve();
+  // Nạp đánh giá (server + máy này) rồi vẽ lại
+  taiLai();
 })();
 // ===== % giảm giá + Sản phẩm gợi ý (4 sản phẩm cố định theo nhóm) =====
 (function () {

@@ -132,7 +132,9 @@ function tachReply(raw) {
 /* ============ API ============ */
 const app = express();
 app.use(cors({ origin: process.env.ALLOWED_ORIGIN || true }));
-app.use(express.json({ limit: "50kb" }));
+app.use((req, res, next) =>
+  req.path === "/api/danhgia" ? next() : express.json({ limit: "50kb" })(req, res, next)
+);
 
 app.post("/api/chat", async (req, res) => {
   if (!KEY) return res.status(500).json({ reply: "", error: "Thiếu GEMINI_API_KEY" });
@@ -174,7 +176,105 @@ app.post("/api/chat", async (req, res) => {
     res.status(500).json({ reply: "" });
   }
 });
+/* ============ ĐÁNH GIÁ DÙNG CHUNG (mọi máy cùng thấy) ============ */
+const DG_FILE = path.join(__dirname, "data", "danhgia.json");
+const DG_TAGS = [
+  "Sản phẩm đẹp",
+  "Giá tốt",
+  "Đóng gói đẹp",
+  "Giao hàng nhanh",
+  "Chăm sóc khách hàng tận tình",
+  "Chất vải tốt",
+  "Form chuẩn",
+];
+const DG_FIT = ["chat", "dung", "rong"];
 
+function docDanhGia() {
+  try {
+    const j = JSON.parse(fs.readFileSync(DG_FILE, "utf8"));
+    return Array.isArray(j) ? j : [];
+  } catch {
+    return [];
+  }
+}
+
+// Ghi lần lượt, ghi ra file tạm rồi đổi tên để file không bị hỏng khi nhiều người gửi cùng lúc
+let hangDoiGhi = Promise.resolve();
+function ghiDanhGia(moi) {
+  hangDoiGhi = hangDoiGhi.then(async () => {
+    const ds = docDanhGia();
+    ds.unshift(moi);
+    await fs.promises.mkdir(path.dirname(DG_FILE), { recursive: true });
+    const tmp = DG_FILE + ".tmp";
+    await fs.promises.writeFile(tmp, JSON.stringify(ds));
+    await fs.promises.rename(tmp, DG_FILE);
+  });
+  return hangDoiGhi;
+}
+
+const luotGuiDG = new Map();
+function guiQuaNhanh(ip) {
+  const now = Date.now();
+  const ds = (luotGuiDG.get(ip) || []).filter((t) => now - t < 60_000);
+  ds.push(now);
+  luotGuiDG.set(ip, ds);
+  return ds.length > 5;
+}
+setInterval(() => luotGuiDG.clear(), 10 * 60_000).unref();
+
+const soTrongKhoang = (v, min, max) => {
+  const n = Number(v);
+  return Number.isFinite(n) && n >= min && n <= max ? Math.round(n) : "";
+};
+
+function lamSachDanhGia(b) {
+  const nd = String(b?.nd || "").trim().slice(0, 500);
+  const diem = Number(b?.diem);
+  const idSp = String(b?.idSp || "");
+  if (!nd || !(diem >= 1 && diem <= 5) || !/^\d{1,6}$/.test(idSp)) return null;
+  if (idSp && SAN_PHAM.length && !SP_THEO_ID.has(Number(idSp))) return null;
+
+  const anh = (Array.isArray(b.anh) ? b.anh : [])
+    .filter((a) => typeof a === "string" && /^data:image\/(jpeg|png|webp);base64,/.test(a) && a.length <= 400_000)
+    .slice(0, 3);
+
+  const d = new Date();
+  const p = (n) => String(n).padStart(2, "0");
+  const gio = new Date(d.getTime() + 7 * 3600_000); // giờ Việt Nam
+  return {
+    id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
+    idSp,
+    ten: String(b.ten || "").trim().slice(0, 40) || "Khách",
+    diem: Math.round(diem),
+    nd,
+    ngay: `${p(gio.getUTCDate())}/${p(gio.getUTCMonth() + 1)}/${gio.getUTCFullYear()}`,
+    t: d.getTime(),
+    size: String(b.size || "").slice(0, 10),
+    mau: String(b.mau || "").slice(0, 30),
+    cao: soTrongKhoang(b.cao, 100, 220),
+    nang: soTrongKhoang(b.nang, 30, 150),
+    fit: DG_FIT.includes(b.fit) ? b.fit : "",
+    tags: (Array.isArray(b.tags) ? b.tags : []).filter((t) => DG_TAGS.includes(t)).slice(0, 5),
+    anh,
+  };
+}
+
+app.get("/api/danhgia", (req, res) => {
+  res.json({ danhGia: docDanhGia() });
+});
+
+app.post("/api/danhgia", express.json({ limit: "2mb" }), async (req, res) => {
+  if (guiQuaNhanh(req.ip)) return res.status(429).json({ error: "Bạn gửi quá nhanh, thử lại sau ít phút nhé." });
+  const moi = lamSachDanhGia(req.body);
+  if (!moi) return res.status(400).json({ error: "Đánh giá chưa hợp lệ." });
+  try {
+    await ghiDanhGia(moi);
+    res.json({ ok: true, id: moi.id });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: "Không lưu được đánh giá." });
+  }
+});
 export { tachReply, SYSTEM, app };
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

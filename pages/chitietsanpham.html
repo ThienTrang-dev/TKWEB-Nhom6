@@ -101,7 +101,7 @@
         <button type="button" class="dg-mo-form" id="dg-mo-form">
           Viết đánh giá
         </button>
-        <form class="dg-form" id="dg-form" hidden>
+                <form class="dg-form" id="dg-form" hidden>
           <p class="dg-nhan">Bạn chấm mấy sao?</p>
           <div class="dg-chon-sao" id="dg-chon-sao">
             <button type="button" data-v="1">★</button>
@@ -116,6 +116,30 @@
             placeholder="Tên của bạn"
             maxlength="40"
           />
+          <div class="dg-hang">
+            <label>Kích thước
+              <select id="dg-size"></select>
+            </label>
+            <label>Màu sắc
+              <select id="dg-mau"></select>
+            </label>
+          </div>
+          <div class="dg-hang">
+            <label>Chiều cao (cm)
+              <input type="number" id="dg-cao" min="100" max="220" placeholder="VD: 160" />
+            </label>
+            <label>Cân nặng (kg)
+              <input type="number" id="dg-nang" min="30" max="150" placeholder="VD: 50" />
+            </label>
+          </div>
+          <p class="dg-nhan">Sản phẩm có vừa với bạn không?</p>
+          <div class="dg-fit" id="dg-fit">
+            <label><input type="radio" name="dg-fit" value="chat" /> Chật</label>
+            <label><input type="radio" name="dg-fit" value="dung" checked /> Đúng kích thước</label>
+            <label><input type="radio" name="dg-fit" value="rong" /> Rộng</label>
+          </div>
+          <p class="dg-nhan">Điều bạn hài lòng</p>
+          <div class="dg-tags" id="dg-tags"></div>
           <textarea
             id="dg-nd"
             placeholder="Chia sẻ cảm nhận của bạn về sản phẩm"
@@ -139,6 +163,7 @@
 
     <script src="../assets/js/layout.js"></script>
     <script src="../assets/js/giohang.js"></script>
+    <script src="../assets/js/danhgia-api.js"></script>
     <script src="../assets/js/main.js"></script>
     <script></script>
     <script src="../assets/js/layout.js"></script>

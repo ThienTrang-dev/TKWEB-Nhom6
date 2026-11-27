@@ -698,3 +698,82 @@
   opacity: 1;
   transform: translate(-50%, 0);
 }
+/* ===== Form đánh giá: size/màu/chiều cao/cân nặng/vừa vặn/thẻ ===== */
+.dg-hang {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.dg-hang label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--text-light);
+}
+.dg-hang select,
+.dg-hang input {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  margin: 0;
+}
+.dg-fit {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+.dg-fit label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+.dg-fit input {
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+.dg-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.dg-tags button {
+  padding: 7px 14px;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  background: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.dg-tags button.on {
+  background: #1c1a19;
+  border-color: #1c1a19;
+  color: #fff;
+}
+.dg-thongtin {
+  font-size: 13px;
+  color: #9a9a9a;
+  margin: 2px 0 6px;
+}
+.dg-the {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+.dg-the span {
+  padding: 5px 12px;
+  border: 1px solid #e2e2e2;
+  border-radius: 999px;
+  font-size: 12px;
+}

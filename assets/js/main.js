@@ -222,165 +222,197 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 
-    /* ============ KHÁCH HÀNG NÓI GÌ VỀ NETTO ============ */
-  // Lấy tất cả đánh giá khách đã viết ở trang chi tiết sản phẩm
-  // (localStorage, khoá "netto-danhgia-<id sản phẩm>").
-  // Sắp xếp rating cao → thấp, hiện 3 nhận xét đầu, nút "Xem thêm" mở rộng tại chỗ.
-  const reviewGrid = document.getElementById('review-grid-home');
-  const reviewMore = document.getElementById('review-more');
+   /* ============ KHÁCH HÀNG NÓI GÌ VỀ NETTO ============ */
+  // Đánh giá lấy từ server (dùng chung mọi máy) qua assets/js/danhgia-api.js.
+  // Bên trái: điểm trung bình + mức độ vừa vặn. Bên phải: danh sách, sắp xếp, phân trang.
+  const rvRoot = document.getElementById('review-home');
 
-  if (reviewGrid && reviewMore) {
-    const TIEN_TO = 'netto-danhgia-';
-    const BAN_DAU = 3;
+  if (rvRoot && window.NettoDanhGia) {
+    const MOI_TRANG = 10;
+    const elDiem = document.getElementById('rv-diem');
+    const elSao = document.getElementById('rv-sao');
+    const elSub = document.getElementById('rv-sub');
+    const elFit = document.getElementById('rv-fit');
+    const elDem = document.getElementById('rv-dem');
+    const elDs = document.getElementById('rv-ds');
+    const elPage = document.getElementById('rv-page');
+    const elSort = document.getElementById('rv-sort');
 
-    // "5/11/2026" -> số để sắp xếp
-    const ngayThanhSo = function (ngay) {
-      const m = String(ngay || '').match(/(\d+)\/(\d+)\/(\d+)/);
-      return m ? Number(m[3]) * 10000 + Number(m[2]) * 100 + Number(m[1]) : 0;
+    let tatCa = [];
+    let tenSp = {};
+    let trang = 1;
+
+    const el = function (tag, cls, text) {
+      const e = document.createElement(tag);
+      if (cls) e.className = cls;
+      if (text !== undefined) e.textContent = text;
+      return e;
     };
 
-    // ★★★★☆ theo số sao (1–5)
-    const chuoiSao = function (n) {
-      const diem = Math.max(1, Math.min(5, Number(n) || 5));
-      return '★★★★★'.slice(0, diem) + '☆☆☆☆☆'.slice(0, 5 - diem);
+    // Sao đầy theo phần trăm (hỗ trợ 4.8 sao…)
+    const veSao = function (diem, cls) {
+      const s = el('span', 'rv-stars-i' + (cls ? ' ' + cls : ''));
+      s.style.setProperty('--p', Math.max(0, Math.min(100, (diem / 5) * 100)) + '%');
+      s.setAttribute('role', 'img');
+      s.setAttribute('aria-label', diem.toFixed(1) + ' trên 5 sao');
+      return s;
     };
 
-    const docDanhGia = function () {
-      const ds = [];
-      try {
-        for (let i = 0; i < localStorage.length; i++) {
-          const khoa = localStorage.key(i);
-          if (!khoa || khoa.indexOf(TIEN_TO) !== 0) continue;
-          const idSp = khoa.slice(TIEN_TO.length);
-          let arr = [];
-          try {
-            arr = JSON.parse(localStorage.getItem(khoa)) || [];
-          } catch (e) {}
-          arr.forEach(function (d) {
-            // Lấy mọi đánh giá có nội dung (1–5 sao)
-            if (d && d.nd && Number(d.diem) >= 1 && Number(d.diem) <= 5) {
-              const anh = Array.isArray(d.anh)
-                ? d.anh.filter(function (a) { return /^data:image\//.test(a); })
-                : [];
-              ds.push({
-                idSp: idSp,
-                ten: d.ten || 'Khách',
-                nd: d.nd,
-                diem: Number(d.diem),
-                ngay: d.ngay,
-                anh: anh
-              });
-            }
-          });
-        }
-      } catch (e) {}
-
-      // Rating cao → thấp, cùng sao thì mới nhất trước
-      return ds
-        .map(function (d, i) { return { d: d, i: i }; })
-        .sort(function (a, b) {
-          return (b.d.diem - a.d.diem) ||
-                 (ngayThanhSo(b.d.ngay) - ngayThanhSo(a.d.ngay)) ||
-                 (a.i - b.i);
-        })
-        .map(function (x) { return x.d; });
+    const sapXep = function (ds) {
+      const kieu = elSort.value;
+      let r = ds.slice();
+      if (kieu === 'anh') r = r.filter(function (d) { return d.anh.length; });
+      return r.sort(function (a, b) {
+        if (kieu === 'cao') return (b.diem - a.diem) || (NettoDanhGia.ngaySo(b) - NettoDanhGia.ngaySo(a));
+        if (kieu === 'thap') return (a.diem - b.diem) || (NettoDanhGia.ngaySo(b) - NettoDanhGia.ngaySo(a));
+        return NettoDanhGia.ngaySo(b) - NettoDanhGia.ngaySo(a);
+      });
     };
 
-    const taoThe = function (d, tenSp) {
-      const card = document.createElement('article');
-      card.className = 'review-card';
+    const veTomTat = function () {
+      const n = tatCa.length;
+      const tb = n ? tatCa.reduce(function (t, d) { return t + d.diem; }, 0) / n : 0;
+      elDiem.textContent = n ? tb.toFixed(1) : '0';
+      elSao.innerHTML = '';
+      elSao.appendChild(veSao(tb));
 
-      const stars = document.createElement('div');
-      stars.className = 'review-stars';
-      stars.textContent = chuoiSao(d.diem);   // hiện đúng số sao
+      const coFit = tatCa.filter(function (d) { return d.fit; });
+      const dem = { chat: 0, dung: 0, rong: 0 };
+      coFit.forEach(function (d) { dem[d.fit]++; });
+      const pct = function (k) { return coFit.length ? (dem[k] / coFit.length) * 100 : 0; };
 
-      const text = document.createElement('p');
-      text.className = 'review-text';
-      text.textContent = d.nd;
+      elSub.textContent = n
+        ? n + ' đánh giá' + (coFit.length ? ' · ' + pct('dung').toFixed(1).replace('.0', '') + '% khách nói đúng size' : '')
+        : 'Chưa có đánh giá nào';
 
-      let photos = null;
-      if (d.anh && d.anh.length) {
-        photos = document.createElement('div');
-        photos.className = 'review-photos';
+      elFit.innerHTML = '';
+      [['chat', 'Chật'], ['dung', 'Đúng kích thước'], ['rong', 'Rộng']].forEach(function (x) {
+        const hang = el('div', 'rv-fit-row');
+        const bar = el('div', 'rv-fit-bar');
+        const fill = el('span', 'rv-fit-fill' + (dem[x[0]] && dem[x[0]] === Math.max(dem.chat, dem.dung, dem.rong) ? ' max' : ''));
+        fill.style.width = pct(x[0]) + '%';
+        bar.appendChild(fill);
+        hang.appendChild(el('span', 'rv-fit-name', x[1]));
+        hang.appendChild(bar);
+        hang.appendChild(el('span', 'rv-fit-pct', pct(x[0]).toFixed(1).replace('.0', '') + '%'));
+        elFit.appendChild(hang);
+      });
+    };
+
+    const taoMuc = function (d) {
+      const it = el('article', 'rv-item');
+
+      const dau = el('div', 'rv-item-head');
+      dau.appendChild(el('span', 'rv-avatar', (d.ten || 'K').charAt(0).toUpperCase()));
+      dau.appendChild(el('strong', 'rv-name', d.ten));
+      dau.appendChild(el('span', 'rv-dot', '·'));
+      dau.appendChild(el('span', 'rv-date', NettoDanhGia.dinhDangNgay(d.ngay)));
+      it.appendChild(dau);
+
+      it.appendChild(veSao(d.diem, 'rv-stars-lg'));
+
+      const meta = el('div', 'rv-meta');
+      const them = function (nhan, giaTri) {
+        if (!giaTri) return;
+        const m = el('span', 'rv-meta-i');
+        m.appendChild(el('b', '', nhan + ': '));
+        m.appendChild(document.createTextNode(giaTri));
+        meta.appendChild(m);
+      };
+      them('Kích thước', d.size);
+      them('Màu sắc', d.mau);
+      them('Phù hợp với cơ thể', NettoDanhGia.FIT[d.fit]);
+      them('Chiều cao', d.cao ? d.cao + 'cm' : '');
+      them('Cân nặng', d.nang ? d.nang + 'kg' : '');
+      if (meta.childNodes.length) it.appendChild(meta);
+
+      it.appendChild(el('p', 'rv-text', d.nd));
+
+      if (d.anh.length) {
+        const ph = el('div', 'rv-photos');
         d.anh.forEach(function (src) {
           const im = document.createElement('img');
           im.src = src;
-          im.alt = '';
+          im.alt = 'Ảnh đánh giá của ' + d.ten;
+          im.loading = 'lazy';
           im.addEventListener('click', function () {
-            // phóng to ảnh nếu có sẵn logic ở nơi khác
-            if (typeof window.xemAnhPhongTo === 'function') {
-              window.xemAnhPhongTo(src);
-            }
+            if (typeof window.xemAnhPhongTo === 'function') window.xemAnhPhongTo(src);
+            else if (typeof window.nettoMoAnh === 'function') window.nettoMoAnh(src);
           });
-          photos.appendChild(im);
+          ph.appendChild(im);
         });
+        it.appendChild(ph);
       }
 
-      const author = document.createElement('div');
-      author.className = 'review-author';
-
-      const avatar = document.createElement('div');
-      avatar.className = 'review-avatar';
-      avatar.textContent = d.ten.charAt(0).toUpperCase();
-
-      const info = document.createElement('div');
-      info.className = 'review-author-info';
-      const ten = document.createElement('span');
-      ten.textContent = d.ten;
-      info.appendChild(ten);
-
-      if (tenSp) {
-        const sp = document.createElement('a');
-        sp.className = 'review-product';
-        sp.href = 'pages/chitietsanpham.html?id=' + encodeURIComponent(d.idSp);
-        sp.textContent = tenSp;
-        info.appendChild(sp);
+      if (d.tags.length) {
+        const tg = el('div', 'rv-tags');
+        d.tags.forEach(function (t) { tg.appendChild(el('span', 'rv-tag', t)); });
+        it.appendChild(tg);
       }
 
-      author.appendChild(avatar);
-      author.appendChild(info);
-      card.appendChild(stars);
-      card.appendChild(text);
-      if (photos) card.appendChild(photos);
-      card.appendChild(author);
-      return card;
+      if (tenSp[d.idSp]) {
+        const a = el('a', 'rv-product', tenSp[d.idSp]);
+        a.href = 'pages/chitietsanpham.html?id=' + encodeURIComponent(d.idSp);
+        it.appendChild(a);
+      }
+      return it;
     };
 
-    const danhGia = docDanhGia();
-
-    // Chưa có đánh giá thật: giữ 3 đánh giá mẫu trong HTML
-    if (danhGia.length) {
-      fetch('assets/data/products.json')
-        .then(function (res) { return res.ok ? res.json() : []; })
-        .catch(function () { return []; })
-        .then(function (dsSp) {
-          const tenTheoId = {};
-          dsSp.forEach(function (sp) { tenTheoId[sp.id] = sp.ten; });
-
-          const cacThe = danhGia.map(function (d) {
-            return taoThe(d, tenTheoId[d.idSp]);
-          });
-
-          reviewGrid.innerHTML = '';
-          cacThe.forEach(function (c, i) {
-            c.hidden = i >= BAN_DAU;   // ẩn từ comment thứ 4 trở đi
-            reviewGrid.appendChild(c);
-          });
-
-          if (cacThe.length > BAN_DAU) {
-            let moRong = false;
-            reviewMore.hidden = false;
-            reviewMore.textContent = 'Xem tất cả nhận xét';
-            reviewMore.addEventListener('click', function () {
-              moRong = !moRong;
-              cacThe.forEach(function (c, i) {
-                c.hidden = !moRong && i >= BAN_DAU;
-              });
-              reviewMore.textContent = moRong ? 'Thu gọn' : 'Xem tất cả nhận xét';
-            });
-          }
+    const vePhanTrang = function (tong) {
+      elPage.innerHTML = '';
+      const soTrang = Math.ceil(tong / MOI_TRANG);
+      if (soTrang <= 1) return;
+      const nut = function (nhan, t, tat, on) {
+        const b = el('button', 'rv-page-btn' + (on ? ' on' : ''), nhan);
+        b.type = 'button';
+        b.disabled = !!tat;
+        b.addEventListener('click', function () {
+          trang = t;
+          ve();
+          rvRoot.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
-    }
+        elPage.appendChild(b);
+      };
+      nut('‹', trang - 1, trang === 1);
+      for (let i = 1; i <= soTrang; i++) nut(String(i), i, false, i === trang);
+      nut('›', trang + 1, trang === soTrang);
+    };
+
+    const ve = function () {
+      const ds = sapXep(tatCa);
+      const tong = ds.length;
+      const dau = (trang - 1) * MOI_TRANG;
+      const hien = ds.slice(dau, dau + MOI_TRANG);
+
+      elDem.textContent = tong
+        ? 'Hiển thị ' + (dau + 1) + '–' + (dau + hien.length) + ' trên ' + tong + ' đánh giá'
+        : '';
+
+      elDs.innerHTML = '';
+      if (!hien.length) {
+        const p = el('p', 'rv-empty', tatCa.length
+          ? 'Chưa có đánh giá nào có hình ảnh.'
+          : 'Chưa có đánh giá nào. Hãy mua sắm và là người đầu tiên chia sẻ cảm nhận nhé!');
+        elDs.appendChild(p);
+      } else {
+        hien.forEach(function (d) { elDs.appendChild(taoMuc(d)); });
+      }
+      vePhanTrang(tong);
+    };
+
+    elSort.addEventListener('change', function () { trang = 1; ve(); });
+
+    Promise.all([
+      NettoDanhGia.layTatCa(),
+      fetch('assets/data/products.json')
+        .then(function (r) { return r.ok ? r.json() : []; })
+        .catch(function () { return []; })
+    ]).then(function (kq) {
+      tatCa = kq[0].ds;
+      kq[1].forEach(function (sp) { tenSp[sp.id] = sp.ten; });
+      veTomTat();
+      ve();
+    });
   }
   /* ============ SỐ LIỆU THƯƠNG HIỆU ============ */
   // Lấy số thật từ products.json: tổng mẫu, số danh mục, số mẫu đang giảm giá
@@ -570,4 +602,4 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(function (ds) { ds.forEach(function (p) { DATA[p.id] = p; }); })
     .catch(function () {})
     .then(function () { ve(0); });
-})();
+  })();

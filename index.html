@@ -386,46 +386,37 @@
     <section class="section reviews reveal">
       <h2 class="section-title">Khách hàng nói gì về NETTO</h2>
 
-      <div class="review-grid" id="review-grid-home">
-        <!-- 3 đánh giá mẫu này chỉ hiện khi chưa có đánh giá 5 sao nào; main.js sẽ thay bằng đánh giá thật từ trang chi tiết sản phẩm -->
-        <article class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Vải mềm, form chuẩn, giao hàng nhanh. Mình sẽ ủng hộ shop dài dài.
-          </p>
-          <div class="review-author">
-            <div class="review-avatar">M</div>
-            <span>Minh Anh</span>
+      <div class="rv-wrap" id="review-home">
+        <aside class="rv-side">
+          <div class="rv-score">
+            <span class="rv-score-num" id="rv-diem">0</span>
+            <span class="rv-score-max">/5</span>
           </div>
-        </article>
+          <div class="rv-stars" id="rv-sao"></div>
+          <p class="rv-sub" id="rv-sub">Đang tải đánh giá…</p>
 
-        <article class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            Đóng gói cẩn thận, chất lượng đúng như hình, giá hợp lý.
-          </p>
-          <div class="review-author">
-            <div class="review-avatar">T</div>
-            <span>Thu Trang</span>
-          </div>
-        </article>
+          <h3 class="rv-fit-title">Phù hợp với cơ thể</h3>
+          <div class="rv-fit" id="rv-fit"></div>
+        </aside>
 
-        <article class="review-card">
-          <div class="review-stars">★★★★☆</div>
-          <p class="review-text">
-            Áo lên form đẹp, tư vấn size nhiệt tình, sẽ quay lại mua thêm.
-          </p>
-          <div class="review-author">
-            <div class="review-avatar">B</div>
-            <span>Bảo Ngọc</span>
+        <div class="rv-main">
+          <div class="rv-bar">
+            <span class="rv-dem" id="rv-dem"></span>
+            <div class="rv-sort-wrap">
+              <select id="rv-sort" aria-label="Sắp xếp đánh giá">
+                <option value="moi">Mới nhất</option>
+                <option value="cao">Sao cao → thấp</option>
+                <option value="thap">Sao thấp → cao</option>
+                <option value="anh">Có hình ảnh</option>
+              </select>
+            </div>
           </div>
-        </article>
+
+          <div class="rv-ds" id="rv-ds"></div>
+          <nav class="rv-page" id="rv-page" aria-label="Phân trang đánh giá"></nav>
+        </div>
       </div>
-
-      <button type="button" class="btn-outline" id="review-more" hidden>
-        Xem thêm nhận xét
-      </button>
-    </section>
+     </section>
 
     <!-- ============ FOOTER ============ -->
     <div id="site-footer"></div>
@@ -464,7 +455,25 @@
         <a href="pages/sanpham.html" class="popup-btn"> Xem sản phẩm ngay </a>
       </div>
     </div>
-
+    <script>
+      // Đã đăng nhập thì banner không mời "Đăng ký ngay" nữa
+      (function () {
+        var user = localStorage.getItem("netto_current");
+        var users = {};
+        try { users = JSON.parse(localStorage.getItem("netto_users") || "{}"); } catch (e) {}
+        if (!user || !users[user]) return;
+        var band = document.querySelector(".promo-band");
+        if (!band) return;
+        band.querySelector("h2").textContent = "Ưu đãi dành riêng cho thành viên NETTO";
+        band.querySelector("p:not(.brand-eyebrow)").textContent =
+          "Bạn đã là thành viên của NETTO. Bấm nút \ud83c\udf81 \u201cThành viên thân thiết\u201d ở góc trái màn hình để kiểm tra hạng của bạn và nhận voucher giảm đến 3\u20135% cho mỗi đơn hàng.";
+        var dangKy = band.querySelector(".btn-solid");
+        if (dangKy) {
+          dangKy.textContent = "Mua sắm ngay";
+          dangKy.setAttribute("href", "pages/sanpham.html");
+        }
+      })();
+    </script>
     <!-- JavaScript -->
     <script src="assets/js/products.js"></script>
     <script src="assets/js/layout.js"></script>
@@ -472,5 +481,6 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/thanhvien.js"></script>
     <script src="assets/js/popup.js"></script>
+    <script src="assets/js/danhgia-api.js"></script>
   </body>
 </html>
