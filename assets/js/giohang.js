@@ -378,3 +378,80 @@ document.addEventListener("click", function(e) {
     luuGioHang(gioHang);
     hienThiGioHang();
 });
+
+
+// 1. Khi tick/bỏ tick từng sản phẩm hoặc "Chọn tất cả", lưu trạng thái checked vào nettoCart
+function capNhatTrangThaiTick() {
+    const checkboxes = document.querySelectorAll(".cart-item-checkbox"); // chỉnh theo class checkbox thực tế
+    checkboxes.forEach((cb, idx) => {
+        if (gioHang[idx]) {
+            gioHang[idx].checked = cb.checked;
+        }
+    });
+    localStorage.setItem("nettoCart", JSON.stringify(gioHang));
+}
+
+// 2. Khi bấm "TIẾN HÀNH THANH TOÁN", chỉ giữ các sản phẩm đang được tick
+const btnThanhToan = document.getElementById("btnCheckout") || document.querySelector(".btn-checkout, .checkout-btn");
+if (btnThanhToan) {
+    btnThanhToan.addEventListener("click", function (e) {
+        const checkboxes = document.querySelectorAll(".cart-item-checkbox");
+        let danhSachDaChon = gioHang;
+
+        if (checkboxes.length > 0) {
+            danhSachDaChon = gioHang.filter((_, idx) => checkboxes[idx] && checkboxes[idx].checked);
+        } else if (gioHang.some(sp => typeof sp.checked === "boolean")) {
+            danhSachDaChon = gioHang.filter(sp => sp.checked !== false);
+        }
+
+        if (danhSachDaChon.length === 0) {
+            e.preventDefault();
+            alert("Vui lòng tick chọn ít nhất 1 sản phẩm trước khi thanh toán!");
+            return;
+        }
+
+        localStorage.setItem("nettoCart", JSON.stringify(danhSachDaChon));
+    });
+}
+
+document.addEventListener("click", function (e) {
+    const trigger = e.target.closest("a, button");
+    if (!trigger) return;
+
+    const btnText = (trigger.innerText || trigger.textContent || "").trim().toLowerCase();
+    const isCheckoutBtn =
+        btnText.includes("thanh toán") ||
+        trigger.id === "btnCheckout" ||
+        trigger.classList.contains("btn-checkout") ||
+        trigger.classList.contains("checkout-btn");
+
+    if (!isCheckoutBtn) return;
+
+    // Tìm toàn bộ checkbox sản phẩm (loại trừ checkbox "Chọn tất cả")
+    const allCheckboxes = Array.from(document.querySelectorAll('input[type="checkbox"]'));
+    const itemCheckboxes = allCheckboxes.filter(cb => {
+        const labelText = ((cb.closest("label")?.innerText || cb.parentElement?.innerText || "") + " " + (cb.id || "") + " " + (cb.className || "")).toLowerCase();
+        return !labelText.includes("chọn tất cả") && !labelText.includes("select-all") && !labelText.includes("checkall");
+    });
+
+    if (itemCheckboxes.length === 0) return;
+
+    const checkedIndexes = itemCheckboxes
+        .map((cb, idx) => (cb.checked ? idx : -1))
+        .filter(idx => idx !== -1);
+
+    if (checkedIndexes.length === 0) {
+        e.preventDefault();
+        e.stopPropagation();
+        alert("Vui lòng tick chọn ít nhất 1 sản phẩm trước khi thanh toán!");
+        return;
+    }
+
+    const currentCart = JSON.parse(localStorage.getItem("nettoCart") || "[]");
+    if (Array.isArray(currentCart) && currentCart.length > 0) {
+        const filteredCart = currentCart.filter((_, idx) => checkedIndexes.includes(idx));
+        if (filteredCart.length > 0) {
+            localStorage.setItem("nettoCart", JSON.stringify(filteredCart));
+        }
+    }
+}, true);

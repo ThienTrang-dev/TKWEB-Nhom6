@@ -527,3 +527,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+const checkoutOnlyCart = JSON.parse(localStorage.getItem("nettoCheckoutCart") || "null");
+    if (Array.isArray(checkoutOnlyCart) && checkoutOnlyCart.length > 0) {
+        gioHang = checkoutOnlyCart.map(sp => {
+            const listAnh = taoDanhSachUngVienAnh(sp);
+            return { ...sp, anh: listAnh[0] || "../assets/images/logo.png" };
+        });
+        localStorage.setItem("nettoCart", JSON.stringify(gioHang));
+        localStorage.removeItem("nettoCheckoutCart");
+    }
