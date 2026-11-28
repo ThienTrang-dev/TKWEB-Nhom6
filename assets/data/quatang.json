@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "ten": "Móc khóa độc quyền của NETTO siêu dễ thương",
+    "anh": "moc-khoa.png",
+    "mota": "Móc khóa in logo NETTO, tặng kèm cho đơn hàng bất kỳ.",
+    "chiTiet": [
+      "Chất liệu: vải bông",
+      "Kích thước: 7 x 10 cm",
+      "Điều kiện nhận: đơn bất kỳ",
+      "Số lượng có hạn, không bán lẻ"
+    ]
+  },
+  {
+    "id": 2,
+    "ten": "Móc khóa độc quyền của NETTO siêu dễ thương",
+    "anh": "moc-khoa2.png",
+    "mota": "Móc khóa in logo NETTO, tặng kèm cho đơn hàng từ 500.000đ.",
+    "chiTiet": [
+      "Chất liệu: vải bông mềm mại",
+      "Kích thước: 7 x 10 cm",
+      "Điều kiện nhận: đơn hàng từ 500.000đ",
+      "Số lượng có hạn, không bán lẻ"
+    ]
+  }
+]

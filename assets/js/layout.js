@@ -83,13 +83,15 @@
         <li>
         <a href ="${root}pages/sanpham.html?loai=quan">Quần</a>
         </li>
-          <li>
-            <a href="${root}pages/sanpham.html?loai=ao">Áo</a>
+        <li>
+        <a href="${root}pages/sanpham.html?loai=ao">Áo</a>
+        </li>
+        <li>
+        <a href="${root}pages/sanpham.html?loai=vay">Chân váy</a>
+        </li>
+                    <li>
+            <a href="${root}pages/quatang-ds.html">Quà tặng (không bán)</a>
           </li>
-          <li>
-            <a href="${root}pages/sanpham.html?loai=vay">Chân váy</a>
-          </li>
-          
         </ul>
       </li>
 
@@ -234,7 +236,7 @@
   </button>
 </div>`;
 
-//cập nhật giao diện khi người dùng đăng nhập
+  //cập nhật giao diện khi người dùng đăng nhập
   function capNhatTaiKhoan() {
     // Lấy danh sách người dùng và người dùng hiện tại từ localStorage
     const users = JSON.parse(localStorage.getItem("netto_users") || "{}");
@@ -414,7 +416,12 @@ window.addEventListener("message", function (e) {
   if (e.data.dangKy) {
     hienPopupDangKy();
   } else {
-    window.location.href = window.nettoRoot + "index.html";
+    let quayLai = null;
+    try {
+      quayLai = sessionStorage.getItem("nettoQuayLai");
+      sessionStorage.removeItem("nettoQuayLai");
+    } catch (err) {}
+    window.location.href = quayLai || window.nettoRoot + "index.html";
   }
 });
 

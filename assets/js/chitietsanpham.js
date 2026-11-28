@@ -230,8 +230,66 @@ fetch("../assets/data/products.json")
   const nutMo = document.getElementById("dg-mo-form");
   let diem = 5; // số sao đang chọn khi viết
   let loc = 0; // 0 = tất cả, 1..5 = lọc theo số sao
+  // Trả về tên tài khoản đang đăng nhập, chưa đăng nhập thì trả về null
+  function layUserDangNhap() {
+    try {
+      const ten = localStorage.getItem("netto_current");
+      const users = JSON.parse(localStorage.getItem("netto_users") || "{}");
+      return ten && users[ten] ? ten : null;
+    } catch (e) {
+      return null;
+    }
+  }
+  // Cửa sổ thông báo yêu cầu đăng nhập
+  function hienCuaSoDangNhap() {
+    if (document.getElementById("dg-yc-dn")) return;
 
-    // Toàn bộ đánh giá của sản phẩm này (server dùng chung + máy này), nạp ở cuối khối
+    if (!document.getElementById("dg-yc-dn-css")) {
+      const st = document.createElement("style");
+      st.id = "dg-yc-dn-css";
+      st.textContent =
+        "#dg-yc-dn{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index:99999;padding:16px}" +
+        "#dg-yc-dn .hop{background:#fff;border-radius:14px;max-width:380px;width:100%;padding:28px 24px;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,.25);animation:dgYcDn .2s ease}" +
+        "#dg-yc-dn .icon{font-size:42px;margin-bottom:8px}" +
+        "#dg-yc-dn h3{margin:0 0 8px;font-size:18px;color:#222}" +
+        "#dg-yc-dn p{margin:0 0 20px;font-size:14px;color:#666;line-height:1.5}" +
+        "#dg-yc-dn .nut{display:flex;gap:10px;justify-content:center}" +
+        "#dg-yc-dn button{flex:1;padding:11px 14px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;border:1px solid #ddd;background:#fff;color:#333}" +
+        "#dg-yc-dn button.chinh{background:#111;color:#fff;border-color:#111}" +
+        "@keyframes dgYcDn{from{transform:translateY(10px);opacity:0}to{transform:none;opacity:1}}";
+      document.head.appendChild(st);
+    }
+
+    const lop = document.createElement("div");
+    lop.id = "dg-yc-dn";
+    lop.innerHTML =
+      '<div class="hop">' +
+      '<div class="icon">🔒</div>' +
+      "<h3>Bạn chưa đăng nhập</h3>" +
+      "<p>Vui lòng đăng nhập tài khoản để viết đánh giá sản phẩm.</p>" +
+      '<div class="nut">' +
+      '<button type="button" class="dong">Để sau</button>' +
+      '<button type="button" class="chinh dn">Đăng nhập</button>' +
+      "</div></div>";
+
+    function dong() {
+      lop.remove();
+    }
+    lop.addEventListener("click", function (e) {
+      if (e.target === lop) dong();
+    });
+    lop.querySelector(".dong").addEventListener("click", dong);
+    lop.querySelector(".dn").addEventListener("click", function () {
+      dong();
+      // nhớ trang hiện tại để đăng nhập xong quay lại đúng sản phẩm này
+      try {
+        sessionStorage.setItem("nettoQuayLai", location.href);
+      } catch (e) {}
+      moKhungDangNhap((window.nettoRoot || "../") + "pages/form.html");
+    });
+    document.body.appendChild(lop);
+  }
+  // Toàn bộ đánh giá của sản phẩm này (server dùng chung + máy này), nạp ở cuối khối
   let tatCa = [];
   let online = true;
 
@@ -393,10 +451,11 @@ fetch("../assets/data/products.json")
       body.appendChild(sao);
       body.appendChild(ngay);
       body.appendChild(nd);
-            const thongTin = [];
+      const thongTin = [];
       if (d.size) thongTin.push("Kích thước: " + d.size);
       if (d.mau) thongTin.push("Màu: " + d.mau);
-      if (d.fit && window.NettoDanhGia) thongTin.push("Vừa vặn: " + NettoDanhGia.FIT[d.fit]);
+      if (d.fit && window.NettoDanhGia)
+        thongTin.push("Vừa vặn: " + NettoDanhGia.FIT[d.fit]);
       if (d.cao) thongTin.push("Cao " + d.cao + "cm");
       if (d.nang) thongTin.push("Nặng " + d.nang + "kg");
       if (thongTin.length) {
@@ -470,12 +529,22 @@ fetch("../assets/data/products.json")
   });
 
   nutMo.addEventListener("click", function () {
+    const tenUser = layUserDangNhap();
+    if (!tenUser) {
+      hienCuaSoDangNhap();
+      return;
+    }
     form.hidden = !form.hidden;
-    if (!form.hidden) napLuaChon();
+    if (!form.hidden) {
+      napLuaChon();
+      const oTen = document.getElementById("dg-ten");
+      oTen.value = tenUser;
+      oTen.readOnly = true;
+    }
     nutMo.textContent = form.hidden ? "Viết đánh giá" : "Đóng";
   });
 
-    // ---- Chọn size/màu (lấy từ các nút của sản phẩm) + thẻ "điều bạn hài lòng" ----
+  // ---- Chọn size/màu (lấy từ các nút của sản phẩm) + thẻ "điều bạn hài lòng" ----
   const oSize = document.getElementById("dg-size");
   const oMau = document.getElementById("dg-mau");
   const boxTags = document.getElementById("dg-tags");
@@ -531,13 +600,18 @@ fetch("../assets/data/products.json")
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+    const tenUser = layUserDangNhap();
+    if (!tenUser) {
+      hienCuaSoDangNhap();
+      return;
+    }
     const nd = document.getElementById("dg-nd").value.trim();
     if (!nd) return;
     const nutGui = form.querySelector(".dg-gui");
     const fitChon = form.querySelector('input[name="dg-fit"]:checked');
     const moi = {
       idSp: id,
-      ten: document.getElementById("dg-ten").value.trim() || "Khách",
+      ten: tenUser,
       diem: diem,
       nd: nd,
       size: oSize ? oSize.value : "",

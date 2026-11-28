@@ -344,3 +344,13 @@
 .trang-sanpham .luoi-sanpham .sp-card .sp-gia .sp-gia-cu {
   font-size: 12px !important;
 }
+.bo-loc .qt-link-loc {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.9;
+  color: var(--text);
+}
+.bo-loc .qt-link-loc:hover {
+  color: #e2543f;
+}

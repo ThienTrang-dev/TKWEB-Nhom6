@@ -40,11 +40,16 @@
   margin-top: 14px;
 }
 .ct-thumbs img {
-  width: 64px;
-  height: 64px;
-  object-fit: cover;
-  border: 2px solid #e2543f;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  background: #faf3f0;
+  border: 2px solid transparent;
   border-radius: var(--radius);
+  cursor: pointer;
+}
+.ct-thumbs img.active {
+  border-color: #e2543f;
 }
 
 /* Thông tin */
