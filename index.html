@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="vi">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -14,59 +15,47 @@
     <link rel="stylesheet" href="assets/css/popup.css" />
 
     <link rel="icon" href="assets/images/favicon.png" />
-  </head>
+</head>
 
-  <body>
+<body>
     <!-- ============ HEADER ============ -->
     <div id="site-header"></div>
     <!-- ============ HERO BANNER (slider) ============ -->
     <section class="hero-banner">
-      <button class="hero-arrow hero-arrow-left" aria-label="Ảnh trước">
+        <button class="hero-arrow hero-arrow-left" aria-label="Ảnh trước">
         &#10094;
       </button>
 
-      <div class="hero-track">
-        <!-- Mỗi .hero-slide là 1 ảnh banner -->
-        <div class="hero-slide active">
-          <img src="assets/images/banner-1.png" alt="NETTO look mới 1" />
+        <div class="hero-track">
+            <!-- Mỗi .hero-slide là 1 ảnh banner -->
+            <div class="hero-slide active">
+                <img src="assets/images/banner 1.png" alt="NETTO look mới 1" />
+            </div>
+            <div class="hero-slide">
+                <img src="assets/images/banner 2.png" alt="NETTO look mới 2" loading="lazy" />
+            </div>
+            <div class="hero-slide">
+                <img src="assets/images/banner-3.png" alt="NETTO look mới 3" loading="lazy" />
+            </div>
         </div>
-        <div class="hero-slide">
-          <img
-            src="assets/images/banner-2.png"
-            alt="NETTO look mới 2"
-            loading="lazy" 
-          />
-        </div>
-        <div class="hero-slide">
-          <img
-            src="assets/images/banner-3.png"
-            alt="NETTO look mới 3"
-            loading="lazy"
-          />
-        </div>
-      </div>
 
-      <button class="hero-arrow hero-arrow-right" aria-label="Ảnh sau">
+        <button class="hero-arrow hero-arrow-right" aria-label="Ảnh sau">
         &#10095;
       </button>
 
-      <div class="hero-dots">
-        <button
-          class="dot active"
-          data-slide="0"
-          aria-label="Xem slide 1"
-        ></button>
-        <button class="dot" data-slide="1" aria-label="Xem slide 2"></button>
-        <button class="dot" data-slide="2" aria-label="Xem slide 3"></button>
-      </div>
+        <div class="hero-dots">
+            <button class="dot active" data-slide="0" aria-label="Xem slide 1"></button>
+            <button class="dot" data-slide="1" aria-label="Xem slide 2"></button>
+            <button class="dot" data-slide="2" aria-label="Xem slide 3"></button>
+        </div>
     </section>
 
     <!-- ============ DẢI ƯU ĐIỂM ============ -->
     <section class="usp-strip reveal">
-      <div class="usp-item">
-        <span class="usp-icon" aria-hidden="true">🚚</span>
-        <div>
-          <strong>Giao hàng toàn quốc</strong
+        <div class="usp-item">
+            <span class="usp-icon" aria-hidden="true">🚚</span>
+            <div>
+                <strong>Giao hàng toàn quốc</strong
           ><span>Nhận hàng trong 4 – 7 ngày</span>
         </div>
       </div>
@@ -74,12 +63,12 @@
         <span class="usp-icon" aria-hidden="true">↺</span>
         <div>
           <strong>Đổi trả trong 7 ngày</strong><span>Kể từ ngày nhận hàng</span>
+            </div>
         </div>
-      </div>
-      <div class="usp-item">
-        <span class="usp-icon" aria-hidden="true">🎁</span>
-        <div>
-          <strong>Ưu đãi thành viên</strong
+        <div class="usp-item">
+            <span class="usp-icon" aria-hidden="true">🎁</span>
+            <div>
+                <strong>Ưu đãi thành viên</strong
           ><span>Giảm đến 5% mỗi đơn hàng</span>
         </div>
       </div>
@@ -287,148 +276,128 @@
         <div class="brand-stats" id="brand-stats">
           <div class="stat-card">
             <strong data-stat="members">0</strong>
-            <span>thành viên sáng lập</span>
-          </div>
-          <div class="stat-card">
-            <strong data-stat="products">0</strong>
-            <span>mẫu sản phẩm</span>
-          </div>
-          <div class="stat-card">
-            <strong data-stat="categories">0</strong>
-            <span>nhóm danh mục</span>
-          </div>
-          <div class="stat-card">
-            <strong data-stat="sale">0</strong>
-            <span>mẫu đang giảm giá</span>
-          </div>
+                <span>thành viên sáng lập</span>
+            </div>
+            <div class="stat-card">
+                <strong data-stat="products">0</strong>
+                <span>mẫu sản phẩm</span>
+            </div>
+            <div class="stat-card">
+                <strong data-stat="categories">0</strong>
+                <span>nhóm danh mục</span>
+            </div>
+            <div class="stat-card">
+                <strong data-stat="sale">0</strong>
+                <span>mẫu đang giảm giá</span>
+            </div>
         </div>
-      </div>
+        </div>
     </section>
 
     <!-- ============ TIN TỨC ============ -->
     <section class="section home-news reveal">
-      <h2 class="section-title">Tin tức từ NETTO</h2>
-      <p class="section-sub">
-        Mẹo hay, hoạt động cộng đồng và sự kiện cửa hàng
-      </p>
+        <h2 class="section-title">Tin tức từ NETTO</h2>
+        <p class="section-sub">
+            Mẹo hay, hoạt động cộng đồng và sự kiện cửa hàng
+        </p>
 
-      <div class="home-news-grid">
-        <a href="pages/tin-tuc.html" class="home-news-card">
-          <img
-            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=600&auto=format&fit=crop"
-            alt="Mẹo chọn size quần áo"
-            class="home-news-thumb"
-            loading="lazy"
-          />
-          <div class="home-news-body">
-            <span class="home-news-tag">Mẹo hay &amp; Phối đồ</span>
-            <time>25/05/2026</time>
-            <h3>
-              Bí quyết chọn size quần áo chuẩn xác tại nhà, không sợ chật rộng
-            </h3>
-            <p>
-              Mua sắm online nhưng vẫn muốn vừa vặn như đo thợ may? Khám phá
-              bảng quy đổi S - M - L và mẹo tự đo vòng eo, ngực ngay tại nhà.
-            </p>
-            <span class="home-news-more">Xem thêm →</span>
-          </div>
-        </a>
+        <div class="home-news-grid">
+            <a href="pages/tin-tuc.html" class="home-news-card">
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=600&auto=format&fit=crop" alt="Mẹo chọn size quần áo" class="home-news-thumb" loading="lazy" />
+                <div class="home-news-body">
+                    <span class="home-news-tag">Mẹo hay &amp; Phối đồ</span>
+                    <time>25/05/2026</time>
+                    <h3>
+                        Bí quyết chọn size quần áo chuẩn xác tại nhà, không sợ chật rộng
+                    </h3>
+                    <p>
+                        Mua sắm online nhưng vẫn muốn vừa vặn như đo thợ may? Khám phá bảng quy đổi S - M - L và mẹo tự đo vòng eo, ngực ngay tại nhà.
+                    </p>
+                    <span class="home-news-more">Xem thêm →</span>
+                </div>
+            </a>
 
-        <a href="pages/tin-tuc.html" class="home-news-card">
-          <img
-            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=600&auto=format&fit=crop"
-            alt="Hành trình Vòng Tay Ấm"
-            class="home-news-thumb"
-            loading="lazy"
-          />
-          <div class="home-news-body">
-            <span class="home-news-tag">Hoạt động thiện nguyện</span>
-            <time>22/05/2026</time>
-            <h3>
-              Hành trình "Vòng Tay Ấm": khi thời trang kết nối những nhịp đập tử
-              tế
-            </h3>
-            <p>
-              Mỗi đơn hàng đặt thành công trên website, NETTO trích 10.000 VNĐ
-              vào quỹ phúc lợi và gửi tặng áo ấm cho trẻ em vùng cao.
-            </p>
-            <span class="home-news-more">Xem thêm →</span>
-          </div>
-        </a>
+            <a href="pages/tin-tuc.html" class="home-news-card">
+                <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=600&auto=format&fit=crop" alt="Hành trình Vòng Tay Ấm" class="home-news-thumb" loading="lazy" />
+                <div class="home-news-body">
+                    <span class="home-news-tag">Hoạt động thiện nguyện</span>
+                    <time>22/05/2026</time>
+                    <h3>
+                        Hành trình "Vòng Tay Ấm": khi thời trang kết nối những nhịp đập tử tế
+                    </h3>
+                    <p>
+                        Mỗi đơn hàng đặt thành công trên website, NETTO trích 10.000 VNĐ vào quỹ phúc lợi và gửi tặng áo ấm cho trẻ em vùng cao.
+                    </p>
+                    <span class="home-news-more">Xem thêm →</span>
+                </div>
+            </a>
 
-        <a href="pages/tin-tuc.html" class="home-news-card">
-          <img
-            src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?q=80&w=600&auto=format&fit=crop"
-            alt="Showroom NETTO"
-            class="home-news-thumb"
-            loading="lazy"
-          />
-          <div class="home-news-body">
-            <span class="home-news-tag">Sự kiện cửa hàng</span>
-            <time>12/05/2026</time>
-            <h3>
-              Ghé thăm showroom NETTO tại 12 Chùa Bộc: trải nghiệm thử đồ miễn
-              phí
-            </h3>
-            <p>
-              Không gian tông hồng pastel ngọt ngào đã sẵn sàng đón bạn: thử đồ
-              trực tiếp, nhận quà tặng độc quyền và check-in cực xịn.
-            </p>
-            <span class="home-news-more">Xem thêm →</span>
-          </div>
-        </a>
-      </div>
+            <a href="pages/tin-tuc.html" class="home-news-card">
+                <img src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?q=80&w=600&auto=format&fit=crop" alt="Showroom NETTO" class="home-news-thumb" loading="lazy" />
+                <div class="home-news-body">
+                    <span class="home-news-tag">Sự kiện cửa hàng</span>
+                    <time>12/05/2026</time>
+                    <h3>
+                        Ghé thăm showroom NETTO tại 12 Chùa Bộc: trải nghiệm thử đồ miễn phí
+                    </h3>
+                    <p>
+                        Không gian tông hồng pastel ngọt ngào đã sẵn sàng đón bạn: thử đồ trực tiếp, nhận quà tặng độc quyền và check-in cực xịn.
+                    </p>
+                    <span class="home-news-more">Xem thêm →</span>
+                </div>
+            </a>
+        </div>
 
-      <a href="pages/tin-tuc.html" class="btn-outline">Xem tất cả tin tức</a>
+        <a href="pages/tin-tuc.html" class="btn-outline">Xem tất cả tin tức</a>
     </section>
 
     <!-- ============ ĐÁNH GIÁ SẢN PHẨM ============ -->
     <section class="section reviews reveal">
-      <h2 class="section-title">Khách hàng nói gì về NETTO</h2>
+        <h2 class="section-title">Khách hàng nói gì về NETTO</h2>
 
-      <div class="rv-wrap" id="review-home">
-        <aside class="rv-side">
-          <div class="rv-score">
-            <span class="rv-score-num" id="rv-diem">0</span>
-            <span class="rv-score-max">/5</span>
-          </div>
-          <div class="rv-stars" id="rv-sao"></div>
-          <p class="rv-sub" id="rv-sub">Đang tải đánh giá…</p>
+        <div class="rv-wrap" id="review-home">
+            <aside class="rv-side">
+                <div class="rv-score">
+                    <span class="rv-score-num" id="rv-diem">0</span>
+                    <span class="rv-score-max">/5</span>
+                </div>
+                <div class="rv-stars" id="rv-sao"></div>
+                <p class="rv-sub" id="rv-sub">Đang tải đánh giá…</p>
 
-          <h3 class="rv-fit-title">Phù hợp với cơ thể</h3>
-          <div class="rv-fit" id="rv-fit"></div>
-        </aside>
+                <h3 class="rv-fit-title">Phù hợp với cơ thể</h3>
+                <div class="rv-fit" id="rv-fit"></div>
+            </aside>
 
-        <div class="rv-main">
-          <div class="rv-bar">
-            <span class="rv-dem" id="rv-dem"></span>
-            <div class="rv-sort-wrap">
-              <select id="rv-sort" aria-label="Sắp xếp đánh giá">
+            <div class="rv-main">
+                <div class="rv-bar">
+                    <span class="rv-dem" id="rv-dem"></span>
+                    <div class="rv-sort-wrap">
+                        <select id="rv-sort" aria-label="Sắp xếp đánh giá">
                 <option value="moi">Mới nhất</option>
                 <option value="cao">Sao cao → thấp</option>
                 <option value="thap">Sao thấp → cao</option>
                 <option value="anh">Có hình ảnh</option>
               </select>
-            </div>
-          </div>
+                    </div>
+                </div>
 
-          <div class="rv-ds" id="rv-ds"></div>
-          <nav class="rv-page" id="rv-page" aria-label="Phân trang đánh giá"></nav>
+                <div class="rv-ds" id="rv-ds"></div>
+                <nav class="rv-page" id="rv-page" aria-label="Phân trang đánh giá"></nav>
+            </div>
         </div>
-      </div>
-     </section>
+    </section>
 
     <!-- ============ FOOTER ============ -->
     <div id="site-footer"></div>
 
     <!-- ============ CHATBOX ============ -->
     <div class="chatbox-widget">
-      <div class="chatbox-popup" id="chatboxPopup">
-        <button class="chatbox-close" id="chatboxClose">&times;</button>
-        <p>Chào mừng bạn đến với NETTO ♡</p>
-        <a href="#" class="chatbox-btn">Chat Now</a>
-      </div>
-      <button class="chatbox-icon" id="chatboxToggle" aria-label="Mở chat">
+        <div class="chatbox-popup" id="chatboxPopup">
+            <button class="chatbox-close" id="chatboxClose">&times;</button>
+            <p>Chào mừng bạn đến với NETTO ♡</p>
+            <a href="#" class="chatbox-btn">Chat Now</a>
+        </div>
+        <button class="chatbox-icon" id="chatboxToggle" aria-label="Mở chat">
         <svg viewBox="0 0 24 24" width="26" height="26">
           <path
             fill="#fff"
@@ -440,39 +409,40 @@
 
     <!-- Popup thông báo -->
     <div id="myPopup" class="popup-overlay">
-      <div class="popup-content">
-        <span class="popup-close">×</span>
+        <div class="popup-content">
+            <span class="popup-close">×</span>
 
-        <img src="assets/images/xink.jpg" alt="Netto Sale" class="popup-img" />
+            <img src="assets/images/xink.jpg" alt="Netto Sale" class="popup-img" />
 
-        <h3 class="popup-title">THÔNG BÁO TỪ NETTO</h3>
+            <h3 class="popup-title">THÔNG BÁO TỪ NETTO</h3>
 
-        <p>
-          Chào mừng bạn đến với Netto Clothes! Khám phá ngay bộ sưu tập thời
-          trang mới nhất mùa này nhé 💕
-        </p>
+            <p>
+                Chào mừng bạn đến với Netto Clothes! Khám phá ngay bộ sưu tập thời trang mới nhất mùa này nhé 💕
+            </p>
 
-        <a href="pages/sanpham.html" class="popup-btn"> Xem sản phẩm ngay </a>
-      </div>
+            <a href="pages/sanpham.html" class="popup-btn"> Xem sản phẩm ngay </a>
+        </div>
     </div>
     <script>
-      // Đã đăng nhập thì banner không mời "Đăng ký ngay" nữa
-      (function () {
-        var user = localStorage.getItem("netto_current");
-        var users = {};
-        try { users = JSON.parse(localStorage.getItem("netto_users") || "{}"); } catch (e) {}
-        if (!user || !users[user]) return;
-        var band = document.querySelector(".promo-band");
-        if (!band) return;
-        band.querySelector("h2").textContent = "Ưu đãi dành riêng cho thành viên NETTO";
-        band.querySelector("p:not(.brand-eyebrow)").textContent =
-          "Bạn đã là thành viên của NETTO. Bấm nút \ud83c\udf81 \u201cThành viên thân thiết\u201d ở góc trái màn hình để kiểm tra hạng của bạn và nhận voucher giảm đến 3\u20135% cho mỗi đơn hàng.";
-        var dangKy = band.querySelector(".btn-solid");
-        if (dangKy) {
-          dangKy.textContent = "Mua sắm ngay";
-          dangKy.setAttribute("href", "pages/sanpham.html");
-        }
-      })();
+        // Đã đăng nhập thì banner không mời "Đăng ký ngay" nữa
+        (function() {
+            var user = localStorage.getItem("netto_current");
+            var users = {};
+            try {
+                users = JSON.parse(localStorage.getItem("netto_users") || "{}");
+            } catch (e) {}
+            if (!user || !users[user]) return;
+            var band = document.querySelector(".promo-band");
+            if (!band) return;
+            band.querySelector("h2").textContent = "Ưu đãi dành riêng cho thành viên NETTO";
+            band.querySelector("p:not(.brand-eyebrow)").textContent =
+                "Bạn đã là thành viên của NETTO. Bấm nút \ud83c\udf81 \u201cThành viên thân thiết\u201d ở góc trái màn hình để kiểm tra hạng của bạn và nhận voucher giảm đến 3\u20135% cho mỗi đơn hàng.";
+            var dangKy = band.querySelector(".btn-solid");
+            if (dangKy) {
+                dangKy.textContent = "Mua sắm ngay";
+                dangKy.setAttribute("href", "pages/sanpham.html");
+            }
+        })();
     </script>
     <!-- JavaScript -->
     <script src="assets/js/products.js"></script>
@@ -482,5 +452,6 @@
     <script src="assets/js/thanhvien.js"></script>
     <script src="assets/js/popup.js"></script>
     <script src="assets/js/danhgia-api.js"></script>
-  </body>
+</body>
+
 </html>

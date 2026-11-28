@@ -96,6 +96,49 @@ function dongGioHang() {
 
     document.body.style.overflow = "";
 }
+// Thông báo khi giỏ hàng trống hoặc chưa chọn sản phẩm
+function hienThongBaoChonSanPham() {
+    if (document.getElementById("cart-warning")) return;
+
+    const thongBao = document.createElement("div");
+    thongBao.id = "cart-warning";
+    thongBao.className = "cart-warning";
+
+    thongBao.innerHTML = `
+        <div class="cart-warning-box">
+            <button type="button" class="cart-warning-close">&times;</button>
+
+            <div class="cart-warning-icon">🛍️</div>
+
+            <h3>Chưa có sản phẩm được chọn!</h3>
+
+            <p>
+                Vui lòng chọn ít nhất một sản phẩm
+                trước khi tiến hành thanh toán nhé.
+            </p>
+
+            <button type="button" class="cart-warning-btn">
+                Đã hiểu
+            </button>
+        </div>
+    `;
+
+    document.body.appendChild(thongBao);
+
+    thongBao.querySelector(".cart-warning-close").addEventListener("click", function() {
+        thongBao.remove();
+    });
+
+    thongBao.querySelector(".cart-warning-btn").addEventListener("click", function() {
+        thongBao.remove();
+    });
+
+    thongBao.addEventListener("click", function(e) {
+        if (e.target === thongBao) {
+            thongBao.remove();
+        }
+    });
+}
 
 // Hiển thị danh sách sản phẩm
 
@@ -236,6 +279,12 @@ document.addEventListener("keydown", function(e) {
 document.addEventListener("DOMContentLoaded", function() {
     capNhatSoLuongGioHang();
 });
+
+// Cập nhật lại khi quay lại trang bằng nút Back/Forward
+window.addEventListener("pageshow", function() {
+    capNhatSoLuongGioHang();
+});
+
 // Xử lý chọn/bỏ chọn sản phẩm
 document.addEventListener("change", function(e) {
     const gioHang = layGioHang();
@@ -271,7 +320,7 @@ document.addEventListener("click", function(e) {
     });
 
     if (sanPhamDuocChon.length === 0) {
-        alert("Vui lòng chọn ít nhất một sản phẩm!");
+        hienThongBaoChonSanPham();
         return;
     }
 
@@ -329,3 +378,201 @@ document.addEventListener("click", function(e) {
     luuGioHang(gioHang);
     hienThiGioHang();
 });
+
+
+
+
+(function () {
+    const CHECKOUT_CART_KEY = "nettoCheckoutCart";
+    const MAIN_CART_KEY = "nettoCart";
+
+    function isSelectAll(el) {
+        const text = (
+            (el.closest("label")?.innerText || el.parentElement?.innerText || "") +
+            " " +
+            (el.id || "") +
+            " " +
+            (el.className || "")
+        ).toLowerCase();
+        return (
+            text.includes("chọn tất cả") ||
+            text.includes("chon tat ca") ||
+            text.includes("select-all") ||
+            text.includes("selectall") ||
+            text.includes("check-all") ||
+            text.includes("checkall")
+        );
+    }
+
+    function parsePrice(val) {
+        return Number(String(val || "").replace(/\D/g, "")) || 0;
+    }
+
+    function getCartItemElements() {
+        const selectors = [
+            ".cart-item",
+            ".cart-row",
+            ".cart-product-item",
+            ".drawer-cart-item",
+            ".gio-hang-item",
+            "[data-cart-index]",
+            "[data-index]"
+        ];
+
+        for (const sel of selectors) {
+            const nodes = Array.from(document.querySelectorAll(sel)).filter(node =>
+                Boolean(node.querySelector('input[type="checkbox"]') || node.querySelector("img"))
+            );
+            if (nodes.length > 0) return nodes;
+        }
+
+        const allCheckboxes = Array.from(document.querySelectorAll('input[type="checkbox"]')).filter(
+            cb => !isSelectAll(cb)
+        );
+        const itemContainers = [];
+        allCheckboxes.forEach(cb => {
+            let parent = cb.parentElement;
+            for (let i = 0; i < 5 && parent; i++) {
+                if (parent.querySelector("img") && parent.querySelectorAll('input[type="checkbox"]').length === 1) {
+                    if (!itemContainers.includes(parent)) {
+                        itemContainers.push(parent);
+                    }
+                    break;
+                }
+                parent = parent.parentElement;
+            }
+        });
+        return itemContainers;
+    }
+
+    function getCheckedIndicesFromDOM(cartLength) {
+        const itemEls = getCartItemElements();
+        if (itemEls.length > 0) {
+            const checkedIdx = [];
+            itemEls.forEach((el, idx) => {
+                const cb = el.querySelector('input[type="checkbox"]');
+                if (cb && !cb.disabled && cb.checked) {
+                    checkedIdx.push(idx);
+                }
+            });
+            return checkedIdx;
+        }
+
+        const cbs = Array.from(document.querySelectorAll('input[type="checkbox"]')).filter(
+            cb => !isSelectAll(cb) && !cb.disabled
+        );
+        if (cbs.length > 0) {
+            return cbs.map((cb, idx) => (cb.checked ? idx : -1)).filter(idx => idx >= 0 && idx < cartLength);
+        }
+
+        return null;
+    }
+
+    // Cập nhật lại tổng tiền hiển thị trên drawer giỏ hàng chỉ tính các món được tích
+    function capNhatTongTienDrawer() {
+        const cart = JSON.parse(localStorage.getItem(MAIN_CART_KEY) || "[]");
+        if (!Array.isArray(cart)) return;
+
+        const checkedIndices = getCheckedIndicesFromDOM(cart.length);
+        const selectedItems = Array.isArray(checkedIndices)
+            ? checkedIndices.map(idx => cart[idx]).filter(Boolean)
+            : cart.filter(item => item.checked !== false);
+
+        const totalMoney = selectedItems.reduce(
+            (sum, sp) => sum + parsePrice(sp.gia || sp.price) * (Number(sp.soLuong || sp.quantity) || 1),
+            0
+        );
+
+        const totalSelectors = [
+            "#cartTotal",
+            "#cart-total",
+            ".cart-total-price",
+            ".cart-total-amount",
+            ".drawer-total-price"
+        ];
+        for (const sel of totalSelectors) {
+            const el = document.querySelector(sel);
+            if (el) {
+                el.innerText = totalMoney.toLocaleString("vi-VN") + "đ";
+            }
+        }
+    }
+
+    // Lưu trạng thái tick/bỏ tick của từng món vào nettoCart (KHÔNG xóa món bỏ tick)
+    document.addEventListener("change", function (e) {
+        if (!e.target || !e.target.matches('input[type="checkbox"]')) return;
+
+        const cart = JSON.parse(localStorage.getItem(MAIN_CART_KEY) || "[]");
+        if (!Array.isArray(cart) || cart.length === 0) return;
+
+        if (isSelectAll(e.target)) {
+            const checkAllState = e.target.checked;
+            cart.forEach(item => {
+                item.checked = checkAllState;
+            });
+            localStorage.setItem(MAIN_CART_KEY, JSON.stringify(cart));
+            setTimeout(capNhatTongTienDrawer, 0);
+            return;
+        }
+
+        const itemEls = getCartItemElements();
+        if (itemEls.length === cart.length) {
+            itemEls.forEach((el, idx) => {
+                const cb = el.querySelector('input[type="checkbox"]');
+                if (cb && cart[idx]) {
+                    cart[idx].checked = cb.checked;
+                }
+            });
+            localStorage.setItem(MAIN_CART_KEY, JSON.stringify(cart));
+        }
+        setTimeout(capNhatTongTienDrawer, 0);
+    });
+
+    // Khi bấm TIẾN HÀNH THANH TOÁN: chỉ gửi các món được tick vào nettoCheckoutCart, giữ nguyên nettoCart
+    document.addEventListener(
+        "click",
+        function (e) {
+            const trigger = e.target.closest("a, button");
+            if (!trigger) return;
+
+            const text = (trigger.innerText || trigger.textContent || "").trim().toLowerCase();
+            const href = (trigger.getAttribute("href") || "").toLowerCase();
+            const isCheckoutBtn =
+                href.includes("thanhtoan") ||
+                text.includes("tiến hành thanh toán") ||
+                text.includes("tien hanh thanh toan") ||
+                text.includes("thanh toán") ||
+                text.includes("thanh toan") ||
+                trigger.id === "btnCheckout" ||
+                trigger.classList.contains("btn-checkout") ||
+                trigger.classList.contains("checkout-btn");
+
+            if (!isCheckoutBtn) return;
+
+            const cart = JSON.parse(localStorage.getItem(MAIN_CART_KEY) || "[]");
+            if (!Array.isArray(cart) || cart.length === 0) return;
+
+            const checkedIndices = getCheckedIndicesFromDOM(cart.length);
+            let selectedItems = [];
+
+            if (Array.isArray(checkedIndices)) {
+                selectedItems = checkedIndices.map(idx => cart[idx]).filter(Boolean);
+            } else if (cart.some(item => typeof item.checked === "boolean")) {
+                selectedItems = cart.filter(item => item.checked !== false);
+            } else {
+                selectedItems = cart;
+            }
+
+            if (selectedItems.length === 0) {
+                e.preventDefault();
+                e.stopPropagation();
+                alert("Vui lòng tick chọn ít nhất 1 sản phẩm để thanh toán!");
+                return;
+            }
+
+            // Chỉ lưu món được chọn sang nettoCheckoutCart, KHÔNG ghi đè xóa mất món chưa chọn ở nettoCart
+            localStorage.setItem(CHECKOUT_CART_KEY, JSON.stringify(selectedItems));
+        },
+        true
+    );
+})();
